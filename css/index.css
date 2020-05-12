@@ -395,9 +395,13 @@ a {
     align-items: flex-end;
 }
 .home-second-house-card-list .list .item .detail .price .total {
-    font-size: 4vw;
+    font-size: .3rem;
     color: #fa5741;
     font-weight: 700;
+}
+.home-second-house-card-list .list .item .detail .price .totals {
+    font-size: .3rem;
+    color: #fa5741;
 }
 .home-second-house-card-list .list .item .detail .price .total-unit {
     font-size: 3.467vw;
@@ -428,4 +432,24 @@ a {
     justify-content: center;
     font-weight: 700;
     color: #3072f6;
+}
+/* 新房推荐 */
+.second .sec-item4 {
+    background-image: url(../img/home/h4.png);
+}
+.second .sec-item5 {
+    background-image: url(../img/home/h5.png);
+}
+.second .sec-item6 {
+    background-image: url(../img/home/h6.png);
+}
+.hn .title p{
+    color: #fff;
+}
+/* 新房信息 */
+.home-second-house-card-list .list .item .detail .location {
+    font-family: PingFang SC;
+    margin-top: 2.133vw;
+    font-size: 3.467vw;
+    color: #999;
 }

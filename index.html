@@ -202,7 +202,7 @@
         <!-- 二手房信息 -->
         <div class="home-second-house-card-list">
             <div class="list" id="house_sec">
-                <a href="#" class="item">
+                <!-- <a href="#" class="item">
                     <div class="img-wrap">
                         <img src="img/home/1.jpg" alt="" class="img">
                     </div>
@@ -218,7 +218,89 @@
                             <span class="unit">29298元/平</span>
                         </div>
                     </div>
-                </a>
+                </a> -->
+            </div>
+        </div>
+        <!-- app内获取更多 -->
+        <div>
+            <a href="#" class="home-more-btn">APP内获取更多</a>
+        </div>
+        <!-- 新房推荐 -->
+        <div class="home-house-card-more">
+            <div class="cont">
+                <div class="header">
+                    <span class="title">为您推荐新房</span>
+                </div>
+                <div class="list second hn">
+                    <a href="#" class="item sec-item4">
+                        <p class="title">低价捡漏榜</p>
+                        <p class="sub-title">高性价比房</p>
+                    </a>
+                    <a href="#" class="item sec-item5">
+                        <p class="title">低价捡漏榜</p>
+                        <p class="sub-title">高性价比房</p>
+                    </a>
+                    <a href="#" class="item sec-item6">
+                        <p class="title">低价捡漏榜</p>
+                        <p class="sub-title">高性价比房</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 新房信息 -->
+        <div class="home-second-house-card-list">
+            <div class="list" id="house_new_rec">
+                <!-- <a href="#" class="item">
+                    <div class="img-wrap">
+                        <img src="img/home/1.jpg" alt="" class="img">
+                    </div>
+                    <div class="detail">
+                        <p class="title more-row">福晟谦祥钱隆城</p>
+                        <p class="info">高新万达 华中师范附属学校</p>
+                        <p class="location">住宅 高新</p>
+                        <div class="tags">
+                            <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">视频看房</span>
+                            <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">小户型</span>
+                        </div>
+                        <div class="price">
+                            <span class="totals">29298元/平</span>
+                            <span class="unit">建面 69-142㎡</span>
+                        </div>
+                    </div>
+                </a> -->
+            </div>
+        </div>
+        <!-- app内获取更多 -->
+        <div>
+            <a href="#" class="home-more-btn">APP内获取更多</a>
+        </div>
+        <!-- 租房推荐 -->
+        <div class="home-house-card-more">
+            <div class="cont">
+                <div class="header">
+                    <span class="title">为您推荐租房</span>
+                </div>
+        </div>
+        </div>
+        <!-- 租房信息 -->
+        <div class="home-second-house-card-list">
+            <div class="list" id="house_rent_rec">
+                <!-- <a href="#" class="item">
+                    <div class="img-wrap">
+                        <img src="img/home/1.jpg" alt="" class="img">
+                    </div>
+                    <div class="detail">
+                        <p class="title more-row">整租·秀水苑 2室2厅</p>
+                        <p class="location">120㎡/南北</p>
+                        <div class="tags">
+                            <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">有电梯</span>
+                            <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">随时看房</span>
+                        </div>
+                        <div class="price">
+                            <span class="totals">2928元/月</span>
+                        </div>
+                    </div>
+                </a> -->
             </div>
         </div>
         <!-- app内获取更多 -->
@@ -226,16 +308,12 @@
             <a href="#" class="home-more-btn">APP内获取更多</a>
         </div>
     </div>
-
     <script>
         //自适应字体大小
         (function () {
             function w() {
                 var all = document.documentElement;
                 var test = all.getBoundingClientRect().width;
-                // if(test>750) {
-                //     test=750;
-                // }
                 rem = test / 7.5;
                 all.style.fontSize = rem + 'px'
             }
@@ -296,6 +374,46 @@
                             </div>
                         </div>
                     </a>
+                    `)
+                    // 新房推荐渲染
+                    $("#house_new_rec").append(`
+                        <a href="#" class="item">
+                            <div class="img-wrap">
+                                <img src="${data[i].img}" alt="" class="img">
+                            </div>
+                            <div class="detail">
+                                <p class="title more-row">${data[i].Community}</p>
+                                <p class="info">高新万达 华中师范附属学校</p>
+                                <p class="location">${data[i].use} ${data[i].Position}</p>
+                                <div class="tags">
+                                    <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">视频看房</span>
+                                    <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">小户型</span>
+                                </div>
+                                <div class="price">
+                                    <span class="totals">${data[i].prices}元/平</span>
+                                    <span class="unit">建面 ${data[i].area}㎡</span>
+                                </div>
+                            </div>
+                        </a>
+                    `)
+                    // 租房推荐渲染
+                    $("#house_rent_rec").append(`
+                        <a href="#" class="item">
+                            <div class="img-wrap">
+                                <img src="${data[i].img}" alt="" class="img">
+                            </div>
+                            <div class="detail">
+                                <p class="title more-row">整租·${data[i].Community} ${data[i].house_type}</p>
+                                <p class="location">${data[i].area}㎡/${data[i].towards}</p>
+                                <div class="tags">
+                                    <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">${data[i].lift}</span>
+                                    <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">随时看房</span>
+                                </div>
+                                <div class="price">
+                                    <span class="totals">${data[i].prices}元/月</span>
+                                </div>
+                            </div>
+                        </a>
                     `)
                 }
             }
