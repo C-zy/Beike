@@ -453,3 +453,125 @@ a {
     font-size: 3.467vw;
     color: #999;
 }
+/* 登录 */
+.kem__user-icon {
+    position: fixed!important;
+    right: 6.4vw;
+    bottom: 6.4vw;
+    z-index: 999;
+    width: 12.8vw;
+    height: 12.8vw;
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 0.533vw 1.333vw rgba(0,0,0,.05);
+    position: relative;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.kem__user-icon .user-icon {
+    width: 6.4vw;
+    height: 6.4vw;
+    background: url(../img/home/user.png) no-repeat;
+    background-size: 6.4vw 6.4vw;
+    z-index: 999;
+}
+/* 底部 */
+.kem__footer {
+    margin-top: 8.533vw;
+    padding: 0 4vw 5.333vw;
+    background: #2f3130;
+    overflow: hidden;
+}
+.kem__footer, .kem__footer a {
+    color: #939494;
+}
+.footer-breadcrumb{
+    font-size: .2rem;
+    padding: .15rem 0rem;
+    border-bottom: 1px solid #3e403f;
+}
+.kem__footer .footer-nav {
+    margin-top: 4.267vw;
+    overflow: hidden;
+}
+.kem__footer .footer-nav .link-tit {
+    display: flex;
+}
+.kem__footer .footer-nav .link-tit .tit.active {
+    background-color: #3c3f3d;
+    color: #fff;
+}
+.kem__footer .footer-nav .link-tit .tit {
+    flex: 1 1;
+    width: 30%;
+    margin-right: 4vw;
+    height: 8.533vw;
+    line-height: 8.533vw;
+    text-align: center;
+    font-weight: 600;
+    font-size: 3.733vw;
+    color: #6e6e6e;
+    background-color: #212121;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.link-cont{
+    overflow: hidden;
+}
+.kem__footer .footer-nav .link-cont .cont {
+    padding: 2.667vw 0;
+}
+.co2{
+    display: none;
+}
+.kem__footer .footer-nav .link-cont .cont li {
+    font-size: 3.733vw;
+    list-style-type: disc;
+    list-style-position: inside;
+    float: left;
+    height: 8vw;
+    line-height: 8vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 33.33%;
+    padding-left: 2.133vw;
+    box-sizing: border-box;
+}
+.kem__footer .bottom-info {
+    display: flex;
+    align-items: center;
+    margin-top: 3.2vw;
+}
+.kem__footer .bottom-info .icon-box {
+    width: 33.333vw;
+    flex: 1 1;
+}
+.kem__footer .bottom-info .icon-box .icon-android, .kem__footer .bottom-info .icon-box .icon-iphone {
+    display: inline-block;
+    width: 14vw;
+    height: 6.133vw;
+    background: url(../img/foot/f1.png) no-repeat;
+    background-size: 16vw;
+    font-size: 0;
+    vertical-align: top;
+    opacity: .32;
+}
+.kem__footer .bottom-info .icon-box .icon-android {
+    background-position: 0 -6.133vw;
+}
+.kem__footer .bottom-info .copyright {
+    font-size: 2.133vw;
+    line-height: 1.5;
+    width: 58.667vw;
+    text-align: right;
+}
+.kem__footer .bottom-info .copyright .record img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1.333vw;
+}
