@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff;
+    p {
+        margin: 0;
+    }
+    li {
+        list-style: none;
+    }
+}
+
+.all {
+    width: 100%;
+}
+
+.all_pd {
+    padding: 0 .4rem;
+}
+
+.header {
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #e4e6f0;
+}
+
+.jt {
+    position: absolute;
+    left: 6%;
+    font-size: .3rem !important;
+    font-weight: bolder;
+}
+
+.logo {
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    img {
+        height: 100%;
+    }
+}
+
+.search_bottom {
+    display: flex;
+    flex-wrap: wrap;
+    margin: .5rem 0;
+    li {
+        width: 20%;
+        font-size: .25rem;
+        text-align: center;
+        position: relative;
+        font-weight: bolder;
+        img {
+            display: block;
+            width: 50%;
+            margin: 0 auto .12rem;
+        }
+        .top_new,
+        .top_img {
+            position: absolute;
+            top: 0;
+            right: .2rem;
+            width: 50%;
+        }
+        .top_new {
+            right: 0;
+        }
+    }
+}
+
+.new {
+    background-color: #F8F8F9;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    .content {
+        height: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    p {
+        color: #000;
+        font-size: .27rem;
+        line-height: .27rem;
+    }
+    .img {
+        height: 50%;
+        text-align: center;
+        margin: 0 .4rem;
+        img {
+            height: 100%;
+        }
+    }
+}
+
+.price {
+    padding-top: .3rem;
+    .top {
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: .3rem;
+        div {
+            width: 50%;
+            box-sizing: border-box;
+        }
+        .right {
+            padding-left: .5rem;
+        }
+        .title {
+            font-size: .27rem;
+            line-height: .27rem;
+            color: #999;
+            margin-bottom: .2rem;
+        }
+        .xq {
+            font-size: .25rem;
+            font-weight: bolder;
+            color: #000;
+        }
+        .bg {
+            display: inline-block;
+            width: .25rem;
+            height: .25rem;
+            vertical-align: middle;
+        }
+        .bg1 {
+            background: url(../img_shang/4-1.png) no-repeat;
+            background-size: 100%;
+        }
+        .bg2 {
+            background: url(../img_shang/4-2.png) no-repeat;
+            background-size: 100%;
+        }
+        .big {
+            font-size: .5rem;
+        }
+    }
+    .top2 {
+        border-bottom: 1px solid #e8e8e8;
+    }
+}
+
+.more {
+    .nav {
+        padding: .4rem 0;
+        padding-right: .4rem;
+        z-index: 999;
+        background-color: #fff;
+        li {
+            padding-left: .15rem;
+            text-align: center;
+            float: left;
+            width: 25%;
+            font-size: .3rem;
+            font-weight: bolder;
+            position: relative;
+            span {
+                position: absolute;
+                bottom: -.2rem;
+                left: 50%;
+                transform: translateX(-30%);
+                display: inline-block;
+                width: .4rem;
+                height: .05rem;
+                background-color: #3072F6;
+                display: none;
+            }
+        }
+        .active {
+            color: #3072F6;
+            span {
+                display: inline-block;
+            }
+        }
+    }
+    .content {
+        padding-top: .5rem;
+        h3 {
+            font-size: .45rem;
+        }
+        .content_center {
+            overflow: hidden;
+            .nav_right {
+                font-weight: bolder;
+                p {
+                    line-height: .25rem;
+                    font-size: .25rem;
+                    margin-left: .2rem;
+                }
+            }
+            .user {
+                padding-top: 1rem;
+                input {
+                    height: 1rem;
+                    border: none;
+                    width: 70%;
+                    font-size: .3rem;
+                }
+                .btn {
+                    display: inline-block;
+                    text-align: center;
+                    width: 25%;
+                    padding: 5px 0;
+                    border: 1px solid #3072F6;
+                    color: #3072F6;
+                    font-size: .25rem;
+                    line-height: .25rem;
+                }
+            }
+        }
+        .active {
+            color: #3072F6;
+        }
+    }
+}
+
+.flexd {
+    position: fixed;
+    top: 0;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.zw {
+    height: 5000px;
+}
