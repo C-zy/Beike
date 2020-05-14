@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.s_t{
+    display: flex;
+    align-items: center;
+    padding:3% 5%;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+.s_t span{
+    margin: 0 auto;
+    font-size: .3rem;
+    font-weight: 700;
+}
+.s_t a{
+    margin-right: 0;
+    font-size: .3rem;
+    text-decoration: none;
+    color: #222;
+}
+.s_m{
+    padding-top: 10%;
+}
+.m_img{
+    width:16%;
+    margin: 0 auto;
+}
+.m_img img{
+    width: 100%;
+}
+.s_m p{
+    color: #999;
+    font-size: .22rem;
+    text-align: center;
+}
+.s_b .load{
+    display: flex;
+    padding: 5% 0;
+    align-items: center;
+    box-sizing: border-box;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+}
+.s_b .load a{
+  text-decoration: none;
+    font-size: .3rem;
+    font-weight: 700;
+    padding:3% 5%;
+    background: #3072f6;
+    color: #fff;
+    width: 100%;
+}
+.b_img{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin:  0 auto;
+}
+.b_img img{
+    width: 100%;
+}
+.b_last{
+    padding:5% 5% 0 5%;
+}
+.b_last li{
+    position: relative;
+    overflow: hidden;
+    height: 2rem;
+}
+.b_last li .last-l{
+    width: 14%;
+    float: left;
+    position: absolute;
+    top:21%;
+    left:0
+}
+.b_last li .last-l img{
+    width: 100%;
+}
+.b_last li .last-r{
+    width: 80%;
+    float: right;
+    height: 1rem;
+    position: absolute;
+    top: -15%;
+    left: 20%;
+}
+.b_last li .last-r span{
+    line-height: .3rem;
+    font-size: .3rem;
+    font-weight: 700;
+}
+.b_last li .last-r p{
+    color: #999;
+    font-size: .23rem;
+}
+/* .s-step2{
+    height:1000px;
+} */
+.s2_m{
+    padding-top: 10%;
+}
+.s2_m .s2_clock  span{
+    position: relative;
+    margin: 0 auto;
+    display:block;
+    width: 1rem;
+    height: 1rem;
+    background: #33be85;
+    border-radius: 50%;
+}
+.s2_m .s2_clock  span:before{
+    position: absolute;
+    top: 45%;
+    left: 42%;
+    content: "";
+    display: inline-block;
+    width: .4rem;
+    height: .07rem;
+    background: #fff;
+    border-radius: .3rem;
+}
+.s2_m .s2_clock  span::after{
+    position: absolute;
+    top: 10%;
+    left: 42%;
+    content: "";
+    display: inline-block;
+    width: .07rem;
+    height: .4rem;
+    background: #fff;
+    border-radius: .3rem;
+}
+.s2_m p.s2_audit{
+    text-align: center;
+    font-size: .3rem;
+    color: #3a4043;;
+    padding: 3% 0;
+    background-color: #F8F8F9;
+}
+.s2_text p{
+    text-align: center;
+    background-color: #F8F8F9;
+    color: #9399a5;
+    font-size: .25rem;
+}
+.s2_load a{
+    display:block;
+    width: 80%;
+    margin: 0 auto;
+    font-size: .25rem;
+    font-weight: 700;
+    background-color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 2% 0;
+    color: #33be85;
+}

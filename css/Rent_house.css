@@ -1,0 +1,166 @@
+/* 头部 */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+header{
+    width: 100%;
+    height:1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e4e6f0;
+    box-sizing: border-box;
+    padding: 0% 5%;
+}
+.h_left{
+    display: flex;
+    width:33%;
+}
+.h_left,.h_middle,.h_right{
+    font-size:.3rem;
+}
+.h_left a{
+    text-decoration: none;
+}
+.h_left a:first-child{
+   margin-right: 20%;
+   width:10%;
+}
+.h_left a:first-child img{
+    width:100%;
+    vertical-align: middle;
+}
+.h_left a:last-child{
+    /* width: 25%; */
+    color: #222;
+    vertical-align: top;
+    
+}
+.h_left a:last-child img{
+    width: 20%;
+    padding-left: 10%;
+    vertical-align: middle;
+}
+.h_middle{
+    text-align: left;
+    display: flex;
+    /* margin-top: 5%; */
+    margin: 0 auto;
+}
+.h_middle img{
+   width: 55%;
+   vertical-align: middle;
+}
+.h_right{
+    display: flex;
+    text-align: right;
+}
+.h_right img{
+    width: 50%;
+    vertical-align: middle;
+}
+/* 搜索框 */
+.r_search{
+    font-size: .25rem;
+    width: 100%;
+    box-sizing:border-box;
+    padding: 3% 2%;
+}
+.r_search a{
+    display: inline-block;
+    width: 100%;
+    height: .6rem;
+    border-radius:.3rem;
+    line-height: .6rem;
+    text-align: center;
+    text-decoration: none;
+    background: #f5f5f5;
+    color: #ccc;
+    margin: 0 auto;
+}
+.r_search a img{
+    width: 3.5%;
+    padding-right: 1%;
+    vertical-align:middle;
+}
+/* 图标导航部分整租 合租… */
+.r_nav{
+    width: 100%;
+    padding: 0 3%;
+    /* margin: 0 5%; */
+    box-sizing: border-box;
+    padding-bottom: 5%;
+    border-bottom: 1px solid #e4e6f0;
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+}
+.r_nav li{
+    text-align: center;
+    width: 25%;
+    margin-top: 2%;
+}
+.r_nav li a{
+    text-decoration: none;
+}
+.r_nav li img{
+    width: 50%;
+}
+.r_nav li p{
+    font-size: .25rem;
+    color: #101d37;
+    font-weight: 600;
+}
+/*  优选房源 */
+.r_proper{
+    margin-top: 5%;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+.r_proper h2{
+    font-size: .4rem;
+}
+.pro_details a{
+    display: flex;
+    text-decoration: none;
+    color:#222;
+}
+.pro_l{
+    flex: 0 0 108px;
+}
+.pro_l img{
+    width: 100%;
+    border-radius: .05rem;
+    vertical-align: middle;
+}
+.pro_r{
+    width: 70%;
+    flex-shrink: 0;
+    font-size: 16px;
+    padding-left: 5%;
+    box-sizing: border-box;
+}
+.pro_r p:nth-child(2){
+    font-size: 12.5px;
+    margin-top: 1%;
+}
+.pro_r p:nth-child(3) span{
+    font-size: 12px;
+    color: #849aae;
+    background: rgba(237,240,243,.8);
+    padding: 0 1%;
+    border-radius: .05rem;
+}
+.pro_r p:nth-child(4){
+    margin-top:1%;
+    color:  #fa5741;
+}
+.pro_r p:nth-child(4) span:nth-child(1){
+    font-weight: 700;
+}
+.pro_r p:nth-child(4) span:nth-child(2){
+    padding-left: 3%;
+    font-size: 12px;
+}

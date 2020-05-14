@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/zepto.min(1.2.0).js"></script>
+    <link rel="stylesheet" href="./css/Rent_house.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <div class="h_left">
+            <a href="">
+                <img src="./img/back.png" alt="">
+            </a>
+            <a href="">郑州<img src="./img/down.png" alt=""></a>
+        </div>
+        <div class="h_middle">
+            <a href=""><img src="./img/logo.png" alt=""></a>
+        </div>
+        <div class="h_right">
+            <a href=""><img src="./img/user.png" alt=""></a>
+        </div>
+    </header>
+    <!-- 搜索框 -->
+    <div class="r_search">
+        <a href=""> <img src="./img/search.png" alt="">你想住在哪？</a>
+    </div>
+    <!-- 图标导航部分整租 合租… -->
+    <ul class="r_nav">
+        <li>
+            <a href="">
+                <img src="./img/Rent_t1.png" alt="">
+                <p>整租</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="./img/Rent_t2.png" alt="">
+                <p>合租</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="./img/Rent_t3.png" alt="">
+                <p>独栋公寓</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="./img/Rent_t4.png" alt="">
+                <p>月租</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="./img/Rent_t5.png" alt="">
+                <p>我要出租</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="./img/Rent_t6.png" alt="">
+                <p>品质搬家</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="./img/Rent_t7.png" alt="">
+                <p>联系我们</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="" alt="">
+            </a>
+        </li>
+    </ul>
+    <!-- 优选房源 -->
+    <div class="r_proper">
+        <h2>优选房源</h2>
+        <div class="pro_details" id="pro_details" style="padding-top: 3%;">
+            <a href="">
+                <div class="pro_l">
+                    <img src="./img/proper.jpg!m_fill,w_248,h_186,l_fbk,o_auto" alt="">
+                </div>
+                <div class="pro_r">
+                    <p>整租·尚景佳园 2室1厅 南</p>
+                    <p>链家/75㎡/郑州东站</p>
+                    <p><span>随时看房</span></p>
+                    <p><span>1150</span><span>元/月</span></p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script>
+        // 字体适配
+        (function () {
+            function font() {
+                var all = document.documentElement;  // 获取html元素
+                var w = all.getBoundingClientRect().width;  // 获取当前设备的宽度
+                if (w > 750) {
+                    w = 750;
+                }
+                rem = w / 7.5;
+                all.style.fontSize = rem + 'px'
+            }
+            font();
+            window.addEventListener("resize", function () {
+                font()
+            }, false)
+        })();
+
+        // 优选房源数据页面渲染
+        // new Vue({
+        //     el:"#pro_details",
+        //     data:{
+        //         lists:[],
+        //     }
+        // })
+        // $.get('')
+    </script>
+</body>
+
+</html>
