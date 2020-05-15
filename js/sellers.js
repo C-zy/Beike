@@ -43,35 +43,33 @@ $("#unit_number2").click(() => {
 // 一单元
 $("#items_tab1").click(() => {
     $(".items_tab1").show().siblings().hide()
-    // $(".unit_number").hide()
 })
 //  二单元
 $("#items_tab2").click(() => {
     $(".items_tab2").show().siblings().hide()
-    // $(".unit_number").hide()
 })
 // 三单元
 $("#items_tab3").click(() => {
     $(".items_tab3").show().siblings().hide()
-    // $(".unit_number").hide()
 })
 //选择无单元号跳转手动输入门牌号
 $("#items_tab4").click(() => {
     $(".items_tab4").show().siblings().hide()
-    // $(".unit_number").hide()
 })
 blackmodel1=()=>{
     if($("#community_name").val()==""){
         $("#house_number").attr("readonly",true)
         $(".blackmodel1").show()
     }else{
-        // $(".sellers").hide()
+        $(".sellers").hide()
         $(".house_number").show()
     }
     setTimeout(() => {
         $(".blackmodel1").hide()
     }, 1000);
-}
+} 
+
+
 blackmodel2=()=>{
     var patt=/[0-9]{1}/
     if($("#community_name").val()==""){
@@ -93,15 +91,6 @@ blackmodel2=()=>{
         $(".blackmodel9").show()
         window.location.href="./success.html"
     }
-    // 正则表达
-   
-    // if(){
-    //     $(".blackmodel8").show()
-    // }else{
-    //     setTimeout(()=>{
-    //         $(".blackmodel8").hide()
-    //     })
-    // }
     setTimeout(() => {
         $(".blackmodel2").hide()
         $(".blackmodel3").hide()
@@ -113,14 +102,7 @@ blackmodel2=()=>{
         $(".blackmodel9").hide()
     }, 1000);
 }
-// blackmodel3=()=>{
-//     if($("#unit_input0").val()==""){
-//         $(".blackmodel3").show()
-//     }else{
-//         $(".sellers").hide()
-//         $(".blackmodel3").show().siblings().hide()
-//     }
-// }
+
 
 // 获取到小区名称的值
 $("#enter_btn").click(() => {

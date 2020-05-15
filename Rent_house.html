@@ -7,6 +7,8 @@
     <title>Document</title>
     <script src="./js/zepto.min(1.2.0).js"></script>
     <link rel="stylesheet" href="./css/Rent_house.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
 </head>
 
 <body>
@@ -83,21 +85,50 @@
     <div class="r_proper">
         <h2>优选房源</h2>
         <div class="pro_details" id="pro_details" style="padding-top: 3%;">
-            <a href="">
-                <div class="pro_l">
-                    <img src="./img/proper.jpg!m_fill,w_248,h_186,l_fbk,o_auto" alt="">
-                </div>
-                <div class="pro_r">
-                    <p>整租·尚景佳园 2室1厅 南</p>
-                    <p>链家/75㎡/郑州东站</p>
-                    <p><span>随时看房</span></p>
-                    <p><span>1150</span><span>元/月</span></p>
-                </div>
-            </a>
+            <div v-for="list in lists" class="data_link">
+                <a href="">
+                    <div class="pro_l">
+                        <img :src=list.rent_img alt="">
+                    </div>
+                    <div class="pro_r">
+                        <p>{{list.title}}</p>
+                        <p>{{list.content}}</p>
+                        <p v-if="lists.length>0">
+                            <span>{{list.content_item1}}</span>
+                            <span>{{list.content_item2}}</span>
+                            <span>{{list.content_item3}}</span>
+                            <span>{{list.content_item4}}</span>
+                        </p>
+                        <p><span>{{list.number}}</span><span>元/月</span></p>
+                    </div>
+                </a>
+            </div>
+           <div class="r_all">
+               <a href="" style="text-decoration: none;color: #222;">查看全部房源
+                <img src="./img/down1.png" alt="">
+               </a>
+           </div>
         </div>
     </div>
+    <div class="r_fixed">
+    </div>
+    <!-- 底部 -->
+    <div class="r_footer">
+        <p class="f_top">
+            <a href="./Rent_house.html" style="color: rgb(142, 142, 142);">郑州租房网</a>
+            >
+            <a href="">郑州租房</a>
+        </p>
+        <div class="f_center">
+           <div class="tab_title">
+                <p>热门商圈</p>
+                <p>推荐小区</p>
+                <p>租房城市</p>
+           </div>
+        </div>
+    </div>
+    <!-- <script src="./js/rent_house.js"></script> -->
     <script>
-        // 字体适配
         (function () {
             function font() {
                 var all = document.documentElement;  // 获取html元素
@@ -113,15 +144,22 @@
                 font()
             }, false)
         })();
-
-        // 优选房源数据页面渲染
-        // new Vue({
-        //     el:"#pro_details",
-        //     data:{
-        //         lists:[],
-        //     }
-        // })
-        // $.get('')
+        new Vue({
+            el: "#pro_details",
+            data: {
+                lists: [],
+            },
+            
+            mounted() {
+                axios.get('http://localhost:3000/cont').then(res => {
+                    console.log(res.data.data)
+                    this.lists=this.lists.concat(res.data.data)
+                }).catch(err => {
+                    console.log(err)
+                })
+            },
+        })
+        
     </script>
 </body>
 
