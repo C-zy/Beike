@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京二手房_北京二手房出售买卖信息网【北京贝壳找房】</title>
+    <link rel="icon" href="img/logo.ico" type="images/x-ico" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <link rel="stylesheet" href="css/send-hand.css">
+</head>
+
+<body>
+    <div class="inner">
+        <div class="inner-item item1">
+            <span class="icon-back"></span>
+            <span class="city">郑州</span>
+            <span class="icon-down"></span>
+        </div>
+        <div class="inner-item login"></div>
+        <div class="inner-item icon-user"></div>
+    </div>
+    <div class="search">
+        <div class="ipt">
+            <input type="text" placeholder="请输入小区或商圈名称">
+            <i class="icon-search"></i>
+        </div>
+    </div>
+    <div id="select">
+        <ul class="tab_item">
+            <li v-for="(title,index) in titles" class="select-item" v-on:click="select(index)"
+                v-bind:class="{active:num==index}">
+                <p class="tit-con">{{title}}
+                    <i class="triangleGray" v-show="num!=index"></i>
+                    <i class="triangleBlue" v-show="num==index"></i>
+                </p>
+            </li>
+        </ul>
+        <div class="tit">
+            <div class="tit-content" v-show="num==0">1</div>
+            <div class="tit-content" v-show="num==1">2</div>
+            <div class="tit-content" v-show="num==2">3</div>
+            <div class="tit-content" v-show="num==3">4</div>
+            <div class="tit-content" v-show="num==4">5</div>
+        </div>
+    </div>
+    <div class="tit-type">
+        <span class="type-item">满五年</span>
+        <span class="type-item">近地铁</span>
+        <span class="type-item">VR房源</span>
+        <span class="type-item">7日以上</span>
+    </div>
+    <div class="tit-san"></div>
+    <script src="js/ershoufang.js"></script>
+</body>
+
+</html>
