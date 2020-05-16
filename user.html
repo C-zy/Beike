@@ -33,8 +33,8 @@
             <!-- 头像 -->
             <img src="img/user/user.png" alt="" class="img_head">
             <!-- 登录注册 -->
-            <div class="user_num">
-                <a href="#">登录</a>
+            <div class="user_num" id="user">
+                <a href="login.html">登录</a>
                 <a href="#">注册</a>
             </div>
         </div>
@@ -68,6 +68,8 @@
                 </li>
             </ul>
         </div>
+        <!-- 退出登录 -->
+        <div class="logout" id="err">退出登录</div>
     </div>
     <script>
         //自适应字体大小
@@ -83,6 +85,24 @@
                 w()
             }, false)
         })();
+        // 判断是否登录
+        var name=sessionStorage.name;
+        if(name=="undefined"){
+            $(".logout").hide()
+        }else{
+            $("#user a").hide()
+            $("#user").prepend(`
+                <div>欢迎你，${name}</div>
+            `)
+            $(".logout").show()
+        }
+        // 退出登录
+        $(".logout").click(()=>{
+            sessionStorage.removeItem("name")
+            $("#user a").show()
+            $(".logout").hide()
+            $("#user div").hide()
+        })
     </script>
 </body>
 </html>

@@ -218,3 +218,13 @@ img {
 .page_list ul>li>.item_focus_zu_youhui {
     background-image: url(../img/user/ban2.png);
 }
+/* 退出登录 */
+.content .logout {
+    display: block;
+    margin: 1.75rem .625rem 1rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #c5c5c5;
+}

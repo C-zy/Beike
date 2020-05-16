@@ -309,7 +309,7 @@
         </div>
         <!-- 登录 -->
         <div class="kem__user-icon">
-            <a class="user-icon"></a>
+            <a class="user-icon" href="user.html"></a>
         </div>
         <!-- 底部 -->
         <div class="kem__footer">
@@ -395,7 +395,7 @@
         // 渲染页面商品
         $.ajax({
             type : "get",
-            url : "http://localhost/beike/house.php",
+            url : "http://localhost/beike/PHP/house.php",
             data : {},
             success : function(result) {
                 var data = JSON.parse(result);
@@ -509,6 +509,13 @@
                 $("#ho_tpl").addClass("active")
             }
         })
+        // 用户本地存储
+        var na = decodeURI(window.location.search.split("=")[1]);
+        if(na=="undefined"){
+            
+        }else{
+            sessionStorage.name=na;
+        }
     </script>
 </body>
 
