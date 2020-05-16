@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="https://s1.ljcdn.com/clogin/favicon.ico">
     <meta name="viewport"
         content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="css/index.css">
@@ -395,10 +396,13 @@
         // 渲染页面商品
         $.ajax({
             type : "get",
-            url : "http://localhost/beike/PHP/house.php",
+            url : "http://localhost:3000/index",
+            // url : "http://localhost/beike/PHP/house.php",
             data : {},
             success : function(result) {
-                var data = JSON.parse(result);
+                // console.log(result)
+                // var data = JSON.parse(result);
+                var data=result.data
                 // console.log(data)
                 for(var i=0;i<3;i++){
                     // 二手房数据渲染
