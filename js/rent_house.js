@@ -19,8 +19,6 @@ const connection = mysql.createConnection({
 
 connection.connect()
 
-
-
 // connection.end()
 app.get('/cont', (req, res) => {
     connection.query('select * from rent_house', function (err, rent) {

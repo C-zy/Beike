@@ -142,19 +142,18 @@ header{
 }
 .pro_r{
     width: 66%;
+   
     flex-shrink: 0;
     font-size: 16px;
     padding-left:6%;
     box-sizing: border-box;
 }
-.pro_r p:nth-child(1){
-    /* overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis; */
-}
 .pro_r p:nth-child(2){
     font-size: 12.5px;
     margin-top: 1%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .pro_r p:nth-child(3) span{
     font-size: 12px;
@@ -188,20 +187,24 @@ header{
     width: 7%;
 }
 .r_fixed{
-    width: 1rem;
-    height: 1rem;
-    background-color: #fff;
-    background: url(../img/Rent_fixed.png) center center no-repeat;
-    background-size: 50% 50%;
-    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     top: 70%;
     right: 5%;
+    width: 1rem;
+    height: 1rem;
+    background-color: #fff;
+    border-radius: 50%;
     box-shadow: 0 0.25rem 1.0625rem 0 rgba(0,0,0,.3)
+}
+.r_fixed img{
+    width: 50%;
 }
 .r_footer{
     background: #2f3130;
-    height: 800px;
 }
 .r_footer .f_top{
     margin: 2% 5%;
@@ -228,4 +231,73 @@ header{
     color: rgb(125, 125, 125);
     background: rgb(33, 33, 33);
     padding: 2% 3%;
+}
+.tab_title p.tab_active{
+    background: rgb(60, 63, 61);
+    color: #fff;
+}
+/* 底部的tab切换 */
+.show_item ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 2% 0;
+    padding-left: 3%;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+.show_cont{
+    width: 30%;
+    text-align: left;
+    display: flex;
+    padding: 3% 0;
+}
+.show_cont a{
+    width: 93%;
+    font-size: .35rem;
+    color: #828383;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.show_cont a::before{
+    margin-right: 10%;
+    display: inline-block;
+    content: "";
+    width: .12rem;
+    height: .12rem;
+    border-radius: 50%;
+    background-color: #737373;
+}
+.f_foo{
+    overflow: hidden;
+    position: relative;
+    padding-top: 3%;
+}
+.foo_l{
+    position: absolute;
+    top: 18%;
+    left: 0%;
+    width: 50%;
+    padding-left: 6%;
+    box-sizing: border-box;
+
+}
+.foo_l a{
+    text-decoration: none;
+    width:100%;
+}
+.foo_l a img{
+    width: 35%;
+}
+.foo_r{
+    width: 65%;
+    float: right;
+    padding-right: 4%;
+}
+.foo_r p{
+    text-align: right;
+    font-size: .2rem;
+    color: #717171;;
 }

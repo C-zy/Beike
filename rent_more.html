@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/rent_more.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <div class="h_left">
+            <a href="">
+                <img src="./img/back.png" alt="">
+            </a>
+            <a href="">郑州<img src="./img/down.png" alt=""></a>
+        </div>
+        <div class="h_middle">
+            <a href=""><img src="./img/logo.png" alt=""></a>
+        </div>
+        <div class="h_right">
+            <a href=""><img src="./img/user.png" alt=""></a>
+        </div>
+    </header>
+    <!-- 搜索框 -->
+    <div class="r_search">
+        <a href=""> <img src="./img/search.png" alt="">请输入小区/商圈/地铁</a>
+    </div>
+    <div id="app">
+        <child :titles="titles" :areas="areas"></child>
+    </div>
+
+    <script>
+        (function () {
+            function font() {
+                var all = document.documentElement;  // 获取html元素
+                var w = all.getBoundingClientRect().width;  // 获取当前设备的宽度
+                if (w > 750) {
+                    w = 750;
+                }
+                rem = w / 7.5;
+                all.style.fontSize = rem + 'px'
+            }
+            font();
+            window.addEventListener("resize", function () {
+                font()
+            }, false)
+        })();
+        Vue.component('child',{
+            props:['titles','areas'],
+            data(){
+                return {
+                    num:0,
+                    num1:null
+                }
+            },
+            template:`
+            <div class="all_back">
+                <ul class="lists-t">
+                    <li v-for="title in titles">{{title}}<span></span></li>
+                </ul>
+                <div class="contents">
+                    <ul class="area_keys1">
+                        <li v-for="(areas,key1,index) in areas" @click="chanage_area1(index)" :class="{area_active:num==index}">{{key1}}</li>
+                    </ul>
+                    <ul class="area_keys2">
+                        <li v-for="(area,key2,index) in areas" v-show="num==index">
+                            <p v-for="(areas,key3,index) in areas[key2]" @click="change_area2(key3)">{{key3}}</p>
+                        </li>
+                    </ul>
+                    <ul class="area_keys3">
+                        <li v-for="(area,key2,index) in areas">
+                            <div v-for="(area,key3,index) in areas[key2]"  v-show="num1==key3">
+                                <p v-for="keys in areas[key2][key3]">{{keys}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                `,
+            methods:{
+                    chanage_area1(i){
+                        console.log(this.num)
+                        this.num=i
+                    },
+                    change_area2(val){
+                        console.log(val)
+                        this.num1=val
+                    }
+                }
+        })
+        new Vue({
+            el: "#app",
+            data: {
+                titles: ["区域", "方式", "租金", "筛选"],
+                areas:{
+                    "区域":{
+                        "不限":[],
+                        "二七":["不限", "碧沙岗", "常西湖", "电力新村", "帝湖", "古玩城", "管南区域", "火车站"],
+                        "中原":["不限", "碧沙岗", "常西湖", "电力新村", "儿童公园"]
+                    },
+                    "地铁":{
+                        "不限":[],
+                        "1号线":["不限","河南大学","文苑北路","龙子湖"],
+                        "14号线":["不限","市委党校","铁炉","奥体中心"],
+                        "2号线":["不限","贾河","惠济区政府"],
+                        "城郊线":["不限","十八里河"],
+                        "5号线":["不限","五一公园"]
+                    },
+                    "附近":{
+                        "不限":[],
+                        "1km":[],
+                        "2km":[],
+                        "3km":[]
+                    }
+                },
+                // areasits:{
+                //     "附近":["不限", "1km", "2km", "3km"],
+                
+                // <li v-for="(areasits,key11,index) in areasits" @click="change_near(key11)">{{key11}}</li>
+                // <li>
+                //             <div v-for="(areasits,key11,index) in areasits">
+                //                 <p v-for="(val,index) in areasits">{{val}}</p>
+                //             </div>
+                //         </li>
+                // },
+              
+                
+            }
+        })
+
+    </script>
+
+
+</body>
+
+</html>
