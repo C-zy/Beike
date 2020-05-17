@@ -1,0 +1,23 @@
+{
+  "name": "beike",
+  "version": "1.0.0",
+  "description": "贝壳找房移动端项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C-zy/Beike.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/C-zy/Beike/issues"
+  },
+  "homepage": "https://github.com/C-zy/Beike#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}

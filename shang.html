@@ -18,7 +18,13 @@
         <span class="logo"><img src="img_shang/0.png" alt=""></span>
     </div>
     <div class="search all">
-        <div class="search_top"></div>
+        <div class="search_top all all_pd">
+            <div class="city">
+                <a href="" class="city_txt">北京<span class="sjx"></span></a>
+                <a href="" class="ipt"><input type="text" placeholder="搜索商铺或写字楼"></a>
+            </div>
+            <a href="" class="bg"></a>
+        </div>
         <ul class="search_bottom">
             <li class="list"><img src="img_shang/1-1.png" alt="">租商铺
                 <div class="top_img"><img src="img_shang/2-1.png" alt=""></div>
@@ -79,20 +85,49 @@
     </div>
     <div class="more all">
         <ul class="nav all" id="nav">
-            <li class="active">租商铺 <span></span></li>
-            <li>买商铺 <span></span></li>
-            <li>租写字楼 <span></span></li>
-            <li>买写字楼 <span></span></li>
+            <li class="active tab">租商铺 <span></span></li>
+            <li class="tab">买商铺 <span></span></li>
+            <li class="tab">租写字楼 <span></span></li>
+            <li class="tab">买写字楼 <span></span></li>
         </ul>
         <div class="content all all_pd">
             <div class="content_top">
                 <h3>大家都在搜</h3>
                 <div class="box">
+                    <div class="box_top all">
+                        <div class="left city_bg">
+                            <span class="city_top"></span>
+                            <span class="city_show">查看</span>
+                        </div>
+                        <div class="right">
+                            <div class="top city_bg">
+                                <span class="city_top"></span>
+                                <span class="city_show">查看</span>
+                            </div>
+                            <div class="bottom">
+                                <div class="left_small fl city_bg">
+                                    <span class="city_top"></span>
+                                    <span class="city_show">查看</span>
+                                </div>
+                                <div class="right_small fr city_bg">
+                                    <span class="city_top"></span>
+                                    <span class="city_show">查看</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="box_bottom all">
+
+                    </div>
                 </div>
             </div>
+            <h3 class="show_h3">推荐楼盘</h3>
+            <div class="recomment all">
+
+            </div>
             <div class="content_center">
-                <h3 class="fl">帮我租商铺</h3>
+                <h3 class="fl" id="change_txt1">帮我租商铺</h3>
                 <div class="nav_right fr" id="tab">
                     <p class="active fl">帮忙找房</p>
                     <p class="fl">投放房源</p>
@@ -102,13 +137,17 @@
                     <p class="btn">获取验证码</p>
                     <input type="number" placeholder="请输入验证码">
                 </div>
+                <div class="btn_sent">提交</div>
             </div>
             <div class="content_bottom">
-                <h3>热门商铺租凭</h3>
+                <h3 id="change_txt2">热门商铺租凭</h3>
+                <ul class="lists" id="list_add">
+
+                </ul>
+                <div><a href="" class="more" id="change_txt3">更多租赁商铺</a></div>
             </div>
         </div>
     </div>
-    <div class="zw"></div>
 </body>
 <script>
     function fn() {
@@ -129,9 +168,79 @@
             $('#nav').removeClass('flexd')
         }
     })
-    $('#nav li,#tab p').click(function() {
+    $('#tab p').click(function() {
         $(this).addClass('active').siblings().removeClass('active')
     })
+    $('.tab').click(function() {
+        $(this).addClass('active').siblings().removeClass('active')
+        tab($(this).index())
+        tab_list($(this).index())
+        $('.box_bottom').get(0).innerHTML = ''
+        $('#list_add').get(0).innerHTML = ''
+        $('.recomment').get(0).innerHTML = ''
+    })
+
+    function tab(i) {
+        var txt1 = ['帮我租商铺', '帮我买卖商铺', '帮我租写字楼', '帮我买卖写字楼']
+        var txt2 = ['热门商铺租赁', '热门商铺买卖', '热门写字楼租赁', '热门写字楼买卖']
+        var txt3 = ['更多租赁商铺', '更多买卖商铺', '更多租赁写字楼', '更多买卖写字楼']
+        $('#change_txt1').text(txt1[i])
+        $('#change_txt2').text(txt2[i])
+        $('#change_txt3').text(txt3[i])
+        $.getJSON('http://localhost:3000/city?num=' + i, function(data) {
+            for (var i = 0; i < 4; i++) {
+                $('.city_top').eq(i).text(data[i].title)
+                $('.city_bg').eq(i).css('background', 'url(' + data[i].img + ') 100%')
+            }
+            for (var i = 4; i < data.length; i++) {
+                $('.box_bottom').get(0).innerHTML += `
+                <span class="city_bottom"><a href="">${data[i].title}</a></span>`
+            }
+        })
+    }
+    tab(0)
+
+    function tab_list(a) {
+        $('.show_h3').hide()
+        $.getJSON('http://localhost:3000/list?num=' + a, function(data) {
+            if (a > 1) {
+                $('.show_h3').show()
+                for (var i = 0; i < 6; i++) {
+                    $('.recomment').get(0).innerHTML += `
+                            <div class="recomment_list">
+                                <img src="${data[i].img}">
+                                <p class="list_name">${data[i].name}</p>
+                                <p class="list_price">
+                                    <span class="clr_red">${data[i].price1}</span>
+                                    <span class="clr_gray">${data[i].price2}</span>
+                                </p>
+                            </div>
+                            `
+                }
+            }
+
+            for (var i = 0; i < data.length; i++) {
+                $('#list_add').get(0).innerHTML += `
+                        <li class="list">
+                            <a href="">
+                                <div class="list_img fl"><img src="${data[i].img}"></div>
+                                <div class="list_content fl">
+                                    <p class="list_name">${data[i].name}</p>
+                                    <p class="present">${data[i].present}</p>
+                                    <p class="list_nice">
+                                        <span class="bg_blue nice">${data[i].nice}</span>
+                                    </p>
+                                    <p class="list_price">
+                                        <span class="clr_red">${data[i].price1}</span>
+                                        <span class="clr_gray">${data[i].price2}</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>`
+            }
+        })
+    }
+    tab_list(0)
 </script>
 
 </html>
