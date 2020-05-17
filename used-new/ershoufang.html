@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>北京二手房_北京二手房出售买卖信息网【北京贝壳找房】</title>
     <link rel="icon" href="img/logo.ico" type="images/x-ico" />
     <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
@@ -11,46 +11,120 @@
 </head>
 
 <body>
-    <div class="inner">
-        <div class="inner-item item1">
-            <span class="icon-back"></span>
-            <span class="city">郑州</span>
-            <span class="icon-down"></span>
+    <div class="content">
+        <div class="inner">
+            <div class="inner-item item1">
+                <span class="icon-back"></span>
+                <span class="city">郑州</span>
+                <span class="icon-down"></span>
+            </div>
+            <div class="inner-item login"></div>
+            <div class="inner-item icon-user"></div>
         </div>
-        <div class="inner-item login"></div>
-        <div class="inner-item icon-user"></div>
-    </div>
-    <div class="search">
-        <div class="ipt">
-            <input type="text" placeholder="请输入小区或商圈名称">
-            <i class="icon-search"></i>
+        <div class="search">
+            <div class="ipt">
+                <input type="text" placeholder="请输入小区或商圈名称">
+                <i class="icon-search"></i>
+            </div>
+        </div>
+        <div id="select">
+            <ul class="tab_item">
+                <li v-for="(title,index) in titles" class="select-item" :key="index" v-bind:data-index="index"
+                    v-on:click="select(index)">
+                    <p class="tit-con"><span class="title">{{title}}</span>
+                        <i class="triangleGray"></i>
+                        <i class="triangleBlue"></i>
+                    </p>
+                </li>
+            </ul>
+            <div class="tit">
+                <div class="tit-content content1">
+                    <div class="cont1-left">
+                        <p class="left-p1" v-for="(city,index) in citys" :key="index" @click="city1(index)"
+                            v-bind:class="{active1:num==index}">{{city}}</p>
+                    </div>
+                    <div class="cont1-zhong">
+                        <p class="zhong-p1" v-for="(next_city,index) in next_citys" :key="index" v-show="num==0"
+                            @click="city_next(index)" v-bind:class="{active1:num1==index}">{{next_city}}</p>
+                        <p class="zhong-p2" v-for="(metro,index) in metros" :key="index" v-show="num==1"
+                            @click="city_next(index)" v-bind:class="{active1:num1==index}">{{metro}}</p>
+                    </div>
+                    <div class="cont1-right">
+                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2" @click="change(index,next_city)"
+                            v-show="num2==0"  v-bind:class="{active1:num3==index}">{{next_city}}</p>
+                        <p v-for="(city,index) in citys" :key="index" class="zhong-p2" @click="change(index,city)"
+                            v-show="num2==1"  v-bind:class="{active1:num3==index}">{{city}}</p>
+                        <p v-for="(title,index) in titles" :key="index" class="zhong-p2" @click="change(index,title)"
+                            v-show="num2==2"  v-bind:class="{active1:num3==index}">{{title}}</p>
+                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2" @click="change(index,next_city)"
+                            v-show="num2==3"  v-bind:class="{active1:num3==index}">{{next_city}}</p>
+                        <p v-for="(city,index) in citys" :key="index" class="zhong-p2" @click="change(index,city)"
+                            v-show="num2==4"  v-bind:class="{active1:num3==index}">{{city}}</p>
+                        <p v-for="(type,index) in types" :key="index" class="zhong-p2" @click="change(index,type)"
+                            v-show="num2==5" v-bind:class="{active1:num3==index}">{{type}}</p>
+                        <p v-for="(metro,index) in metros" :key="index" class="zhong-p2" @click="change(index,metro)"
+                            v-show="num2==6" v-bind:class="{active1:num3==index}">{{metro}}</p>
+                        <p v-for="(title,index) in titles" :key="index" class="zhong-p2" @click="change(index,title)"
+                            v-show="num2==7" v-bind:class="{active1:num3==index}">{{title}}</p>
+                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2" @click="change(index,next_city)"
+                            v-show="num2==8" v-bind:class="{active1:num3==index}">{{next_city}}</p>
+                        <p v-for="(title,index) in titles" :key="index" class="zhong-p2" @click="change(index,title)"
+                            v-show="num2==9" v-bind:class="{active1:num3==index}">{{title}}</p>
+                        <p v-for="(city,index) in citys" :key="index" class="zhong-p2" @click="change(index,city)"
+                            v-show="num2==10" v-bind:class="{active1:num3==index}">{{city}}</p>
+                        <p v-for="(title,index) in titles" :key="index" class="zhong-p2" @click="change(index,title)"
+                            v-show="num2==11" v-bind:class="{active1:num3==index}">{{title}}</p>
+                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2" @click="change(index,next_city)"
+                            v-show="num2==12" v-bind:class="{active1:num3==index}">{{next_city}}</p>
+                        <p v-for="(metro,index) in metros" :key="index" class="zhong-p2" @click="change(index,metro)"
+                            v-show="num2==13" v-bind:class="{active1:num3==index}">{{metro}}</p>
+                        <p v-for="(type,index) in types" :key="index" class="zhong-p2" @click="change(index,type)"
+                            v-show="num2==14" v-bind:class="{active1:num3==index}">{{type}}</p>
+                        <p v-for="(title,index) in titles" :key="index" class="zhong-p2" @click="change(index,title)"
+                            v-show="num2==15" v-bind:class="{active1:num3==index}">{{title}}</p>
+                        <p v-for="(metro,index) in metros" :key="index" class="zhong-p2" @click="change(index,metro)"
+                            v-show="num2==16" v-bind:class="{active1:num3==index}">{{metro}}</p>
+                    </div>
+                </div>
+                <div class="tit-content content2">
+                    <div class="cont2-top">
+                        <h3>价格区间 (万)</h3>
+                        <p class="cont2-p1">
+                            <input type="text" class="input-top" placeholder="最低价格">
+                            <span>至</span>
+                            <input type="text" class="input-top" placeholder="最高价格">
+                        </p>
+                        <ul class="cont2-ul">
+                            <li @click="cont2_ul(index,price)" v-for="(price,index) in prices" :key="index">{{price}}</li>
+                        </ul>
+                    </div>
+                    <div class="cont2-bottom">
+                        <div class="cont2-bot1">
+                            <p class="bot1-img"><img src="img/sweep.png" alt=""></p>
+                            <p class="bot1-text">重置</p>
+                        </div>
+                        <div class="cont2-bot2" @click="cont2">
+                            查看房源
+                        </div>
+                    </div>
+                </div>
+                <div class="tit-content">3</div>
+                <div class="tit-content">4</div>
+                <div class="tit-content">5</div>
+            </div>
+        </div>
+        <div class="tit-type">
+            <span class="type-item">满五年</span>
+            <span class="type-item">近地铁</span>
+            <span class="type-item">VR房源</span>
+            <span class="type-item">7日以上</span>
+        </div>
+        <div class="tit-san"></div>
+        <div class="type-bottom">
+            <span>保存搜索条件，获取最新房源</span>
+            <span class="install">安装app</span>
         </div>
     </div>
-    <div id="select">
-        <ul class="tab_item">
-            <li v-for="(title,index) in titles" class="select-item" v-on:click="select(index)"
-                v-bind:class="{active:num==index}">
-                <p class="tit-con">{{title}}
-                    <i class="triangleGray" v-show="num!=index"></i>
-                    <i class="triangleBlue" v-show="num==index"></i>
-                </p>
-            </li>
-        </ul>
-        <div class="tit">
-            <div class="tit-content" v-show="num==0">1</div>
-            <div class="tit-content" v-show="num==1">2</div>
-            <div class="tit-content" v-show="num==2">3</div>
-            <div class="tit-content" v-show="num==3">4</div>
-            <div class="tit-content" v-show="num==4">5</div>
-        </div>
-    </div>
-    <div class="tit-type">
-        <span class="type-item">满五年</span>
-        <span class="type-item">近地铁</span>
-        <span class="type-item">VR房源</span>
-        <span class="type-item">7日以上</span>
-    </div>
-    <div class="tit-san"></div>
     <script src="js/ershoufang.js"></script>
 </body>
 
