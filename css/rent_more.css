@@ -87,6 +87,9 @@ header{
 }
 /* 筛选部分 */
 .lists-t{
+    background-color: #fff;
+    width: 100%;
+    display: flex;
     overflow: hidden;
     width: 100%;
     padding: 3% 0;
@@ -95,42 +98,195 @@ header{
 }
 .lists-t li{
     width: 25%;
-    text-align: center;
-    float: left;
-    font-size: .35rem;
+    display: flex;
+   justify-content: center;
 }
 .lists-t li span{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    float: left;
+    font-size: .3rem;
+}
+.lists-t li i{
     display: inline-block;
+    font-style: normal;
     width: 0;
     height: 0;
-    margin: -3% 0;
+    margin: 10% 0;
     margin-left: 8%;
     border: .1rem solid transparent;
     border-top-color: #9ea1a3;
+    transition: all .1s;
+    transform-origin: 60% 25%;
+}
+.lists-t li i.act{
+    transform: rotateZ(180deg);
+    border-top-color: #3072f6;
 }
 .contents{
+    background: #fff;
     display: flex;
+    height: 7rem;
     justify-content: space-between;
-    padding: 5% 5%;
+   padding-left: 5%;
+    box-sizing: border-box;
+}
+.contents ul{
+    width: 33%;
+    overflow: scroll;
 }
 .contents ul li{
-    font-size: .35rem;
+    font-size: .3rem;
 }
 .area_keys1{
     background: #fff;
+    padding-top: 5%;
   
 }
 .area_keys1 li{
-    padding: 30% 0;
+    padding-bottom: 15%;
 
 }
 .area_keys2{
     background-color: #f5f5f5;
+    padding-top: 5%;
+    margin-left: -1%;
 
+}
+.area_keys2 li p{
+    padding-bottom: 15%;
+    padding-left: 5%;
+}
+.area_keys3{
+    background-color: #f2f2f2;
+    padding-top: 5%;
+    margin-left: -2%;
+}
+.area_keys3 li div p{
+    padding-bottom: 15%; 
+    padding-left: 5%;
 }
 .area_active{
     color: #3072f6;
 }
-.area_keys3 li p span{
-   
+.contents1,.contents2{
+    height: 7rem;
+}
+.contents1{
+    background-color: #fff;
+}
+.contents1 a{
+    display: block;
+    text-decoration: none;
+    font-size: .3rem;
+    padding: 5% 0;
+    margin: 0 5%;
+    border-bottom: 1px solid #e4e6f0;
+}
+.contents2{
+    background-color: #fff;
+}
+.contents2 ul{
+    height: 5.5rem;
+    overflow: scroll;
+}
+.contents2 a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: .3rem;
+    padding: 5% 0;
+    margin: 0 5%;
+}
+.contents2 div{
+    display: flex;
+    padding: 5% 5%;
+    justify-content: space-around;
+    border-top: 1px solid #e4e6f0;
+    box-sizing: border-box;
+}
+.contents2 input{
+    width: 7%;
+    padding: 1.5% 5%;
+    font-size: .23rem;
+}
+.contents2 i{
+    font-size: .3rem;
+    font-style: normal;
+}
+.contents2 div button{
+    width: 35%;
+    border: none;
+    border: 1px solid  #3072f6;
+    background-color: #fff;
+    color:#3072f6;
+    outline: none;
+    font-size: .3rem;
+}
+.contents3{
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: flex-end;;
+}
+.contents3 .right{
+    width: 80%;
+    background: #fff;
+}
+.contents3 .right .ff_rr{
+    padding-left: 8%;
+    height: 80%;
+    overflow: scroll;
+}
+.contents3 .right .ff_rr li{
+    font-size:.35rem;
+    padding-top: 5%;
+    padding-bottom: 10%;
+    border-bottom: 1px solid #e4e6f0;
+  
+}
+.contents3 .right .ff_rr li span{
+    display: block;
+}
+
+.contents3 .right .ff_rr li a{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #9399a5;
+    font-size:.3rem;
+    display: inline-block;
+    border: 1px solid #ccc;
+    width: 27%;
+    text-align: center;
+    padding: 1% 0;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+.contents3 .right .ff_rr li a.fliter_last{
+    background-color: rgba(48,114,246,.15);
+    border-color: rgba(48,114,246,.15);
+    color: #3072f6;
+}
+.ff_zz{
+    display: flex;
+    width: 80%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+}
+.ff_zz span{
+    padding: 5% 10%;
+    background: #fff;
+    font-size: .35rem;
+
+}
+.ff_zz button{
+    padding: 5% 28%;
+    font-size: .35rem;
+    border: none;
+    outline: none;
+    background: #3072f6;
+    color: #fff;
 }
