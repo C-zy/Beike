@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://s1.ljcdn.com/clogin/favicon.ico">
+    <meta name="viewport"
+        content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="css/city.css">
+    <script src="js/jquery.min.js"></script>
+    <title>选择城市</title>
+</head>
+<body>
+    <div class="content">
+        <!-- 顶部搜索框 -->
+        <div class="search_input">
+            <a href="index.html">
+                <i class="close_search_icon"></i>
+            </a>
+            <div class="search_input_wrap">
+                <input type="text" placeholder="请输入城市名称">
+                <i class="search_icon"></i>
+            </div>
+        </div>
+        <!-- tab切换 -->
+        <div class="tab_warp">
+            <ul>
+                <li class="inside_tab active" id="dom">国内城市</li>
+                <li class="outside_tab " id="over">海外城市</li>
+            </ul>
+        </div>
+        <!-- 城市 -->
+        <!-- 国内 -->
+        <div class="tab_content">
+            <!-- 侧栏 -->
+            <div class="choose_city_wrap">
+                <span>#</span>
+                <span>热</span>
+                <span>A</span>
+                <span>B</span>
+                <span>C</span>
+                <span>D</span>
+                <span>E</span>
+                <span>F</span>
+                <span>G</span>
+                <span>H</span>
+                <span>I</span>
+                <span>J</span>
+                <span>K</span>
+                <span>L</span>
+                <span>M</span>
+                <span>N</span>
+                <span>O</span>
+                <span>P</span>
+                <span>Q</span>
+                <span>R</span>
+                <span>S</span>
+                <span>T</span>
+                <span>W</span>
+                <span>X</span>
+                <span>Y</span>
+                <span>Z</span>
+            </div>
+            <!-- 内容 -->
+            <div class="group">
+                <h6>热门城市</h6>
+                <div class="block city_block citys">
+                    <div class="city_block_item">北京</div>
+                    <div class="city_block_item">上海</div>
+                    <div class="city_block_item">郑州</div>
+                    <div class="city_block_item">杭州</div>
+                </div>
+            </div>
+            <div class="group">
+                <h6>A</h6>
+                <div class="block city_block citys">
+                    <div class="city_block_item">安庆</div>
+                    <div class="city_block_item">鞍山</div>
+                    <div class="city_block_item">安顺</div>
+                </div>
+            </div>
+            <div class="group">
+                <h6>B</h6>
+                <div class="block city_block citys">
+                    <div class="city_block_item">北京</div>
+                    <div class="city_block_item">北海</div>
+                    <div class="city_block_item">保定</div>
+                    <div class="city_block_item">包头</div>
+                    <div class="city_block_item">宝山</div>
+                    <div class="city_block_item">郝洲</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //自适应字体大小
+        (function () {
+            function w() {
+                var all = document.documentElement;
+                var test = all.getBoundingClientRect().width;
+                rem = test / 26;
+                all.style.fontSize = rem + 'px'
+            }
+            w();
+            window.addEventListener("resize", function () {
+                w()
+            }, false)
+        })();
+        // tab切换
+        $("#dom").click(()=>{
+            $("#over").removeClass('active')
+            $("#dom").addClass('active')
+        })
+        $("#over").click(()=>{
+            $("#dom").removeClass('active')
+            $("#over").addClass('active')
+        })
+        // 点击城市
+        $(".citys div").click((e)=>{
+            console.log(e.target.innerHTML)
+        })
+    </script>
+</body>
+</html>
