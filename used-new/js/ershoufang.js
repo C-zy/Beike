@@ -39,7 +39,8 @@ new Vue({
         num6: 0,
         num7: 0,
         num8: 0,
-        num9:0,
+        num9: 0,
+        num10: null,
         titles: ["区域", "价格", "房型", "更多", "排序"],
         types: ["满五年", "近地铁", "VR房源", "7日以上"],
         citys: ["区域", "地铁"],
@@ -58,22 +59,25 @@ new Vue({
             lift: ["有电梯", "无电梯"],
             owner: ["商品房", "公房", "经适房", "其他"],
             type: ["塔楼", "板楼", "板塔结合"],
-            heating:["自供暖","集体供暖"]
+            heating: ["自供暖", "集体供暖"]
         }],
-        sorts:["默认排序","最新发布","总价从高到低","总价从低到高","单价从高到低","面积从大到小"]
+        sorts: ["默认排序", "最新发布", "总价从高到低", "总价从低到高", "单价从高到低", "面积从大到小"]
     },
     methods: {
         select(a) {
             this.num4 = a;
             var m = this.$el.children[0].children;
+            this.$el.setAttribute("class", "fle");
             if (tit_con[a].parentElement.classList[1] == "active") {
                 this.$el.removeAttribute("class", "fle");
+                document.getElementsByTagName("body")[0].style.overflow = "auto"
                 triangleGray[a].style.display = "none";
                 triangleBlue[a].style.display = "inline-block";
                 tit_content[a].style.display = "block";
                 tit_san.style.display = "none";
             } else {
                 this.$el.setAttribute("class", "fle");
+                document.getElementsByTagName("body")[0].style.overflow = "hidden"
                 this.$el.children[0].children[a].classList.add("active");
                 triangleGray[a].style.display = "inline-block";
                 triangleBlue[a].style.display = "none";
@@ -87,7 +91,7 @@ new Vue({
                 tit_content[i].style.display = "none";
             }
             this.$el.children[1].style.display = "block";
-            if (this.$el.getAttribute("class") == "fle") {
+            if (this.$el.classList[0] == "fle") {
                 triangleGray[a].style.display = "none";
                 triangleBlue[a].style.display = "inline-block";
                 select_item[a].classList.add("active")
@@ -113,7 +117,7 @@ new Vue({
                 triangleBlue[2].style.display = "inline-block";
                 triangleGray[2].style.display = "none";
             }
-            if (this.num9>=1) {
+            if (this.num9 >= 1) {
                 this.$el.children[0].children[3].children[0].children[0].classList.add("active");
                 triangleBlue[3].style.display = "inline-block";
                 triangleGray[3].style.display = "none";
@@ -138,6 +142,7 @@ new Vue({
             document.getElementsByClassName("tit")[0].style.display = "none";
             this.$el.removeAttribute("class");
             tit_san.style.display = "none";
+            document.getElementsByTagName("body")[0].style.overflow = "auto"
         },
         // 价格下面的颜色变化
         cont2_ul(a, data) {
@@ -162,15 +167,19 @@ new Vue({
                         this.titles.splice(this.num4, 1, name)
                     }
                 }
-                // console.log(this.$el.children[0].children[1].children[0].children[0].innerHTML)
             } else if (this.num6 > 1) {
                 this.titles.splice(this.num4, 1, "更多")
+            }
+            else {
+                this.titles.splice(this.num4, 1, "价格");
+                this.$el.children[0].children[this.num4].children[0].children[0].classList.remove("active")
             }
             if (this.num6 == 0) {
                 this.$el.children[0].children[this.num4].classList.remove("active");
                 triangleBlue[this.num4].style.display = "none";
                 triangleGray[this.num4].style.display = "inline-block"
             }
+            document.getElementsByTagName("body")[0].style.overflow = "auto"
         },
         cont3(index, name) {
             if (this.$el.children[1].children[2].children[0].children[1].children[index].classList[0] == "active2") {
@@ -195,32 +204,50 @@ new Vue({
                 }
             } else if (this.num7 > 1) {
                 this.titles.splice(this.num4, 1, "更多")
+            } else {
+                this.titles.splice(this.num4, 1, "房型");
+                this.$el.children[0].children[this.num4].children[0].children[0].classList.remove("active")
             }
-            if (this.num7 == 0) { 
+            if (this.num7 == 0) {
                 this.$el.children[0].children[this.num4].classList.remove("active");
                 triangleBlue[this.num4].style.display = "none";
-                triangleGray[this.num4].style.display="inline-block"
+                triangleGray[this.num4].style.display = "inline-block"
             }
+            document.getElementsByTagName("body")[0].style.overflow = "auto"
         },
-        more(index) { 
+        more(index) {
             if (event.target.classList[0] == "active2") {
                 event.target.classList.remove("active2");
                 this.num9--
-            } else { 
+            } else {
                 event.target.classList.add("active2")
                 this.num9++
             }
         },
-        more_btn() { 
+        more_btn() {
             tit_san.style.display = "none";
             document.getElementsByClassName("tit")[0].style.display = "none";
             this.$el.removeAttribute("class");
+            console.log(this.num9)
+            if (this.num9 == 0) {
+                this.$el.children[0].children[this.num4].classList.remove("active")
+                this.$el.children[0].children[3].children[0].children[0].classList.remove("active");
+                triangleGray[3].style.display = "inline-block";
+                triangleBlue[3].style.display = "none";
+            }
+            document.getElementsByTagName("body")[0].style.overflow = "auto"
         },
-        cont5(sort) { 
+        cont5(sort, index) {
             tit_san.style.display = "none";
+            this.num10 = index
+            for (var i = 0; i < this.$el.children[1].children[this.num4].children[0].children.length; i++) {
+                this.$el.children[1].children[this.num4].children[0].children[i].classList.remove("active");
+            }
             document.getElementsByClassName("tit")[0].style.display = "none";
             this.$el.removeAttribute("class");
-            this.titles.splice(this.num4,1,sort)
+            this.$el.children[1].children[this.num4].children[0].children[this.num10].classList.add("active");
+            this.titles.splice(this.num4, 1, sort);
+            document.getElementsByTagName("body")[0].style.overflow = "auto"
         }
     }
 });
@@ -243,6 +270,7 @@ tit_san.onclick = function () {
             triangleGray[i].style.display = "inline-block";
         }
     }
+    document.getElementsByTagName("body")[0].style.overflow = "auto"
 }
 // tab切换下面的类型颜色的变化
 var type_item = document.getElementsByClassName("type-item")
@@ -260,16 +288,29 @@ for (var i = 0; i < type_item.length; i++) {
 var list = document.getElementById("list");
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "http://localhost:3000/ershoufang", true);
-xhr.onreadystatechange = function(){ 
-    if (xhr.readyState === 4 && xhr.status === 200) { 
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
         var data = JSON.parse(xhr.responseText)
         console.log(data.data)
-        for (var i = 0; i < data.data.length; i++) { 
+        for (var i = 0; i < data.data.length; i++) {
             list.innerHTML += `
-                <li>
+                <li class="list-item">
                     <div class="lists-left">
                         <img src="${data.data[i].img}">
-                    <div>
+                    </div>
+                    <div class="lists-right">
+                        <div class="right-item1">
+                        <img src="https://img.ljcdn.com/beike/bikanhaofang/1581996690584.png" class="good">${data.data[i].title}
+                    </div>
+                    <p class="desc">${data.data[i].desc}<p>
+                    <p style="margin-bottom:0.3rem">
+                        <span class="price">${data.data[i].price}万</span>
+                        <span class="price1">${data.data[i].price1}</span>
+                    </p>
+                    <p class="rob">
+                        <img src="https://img.ljcdn.com/beike/bangdan/1565234456984.png" class="plate">
+                        <span>${data.data[i].rob}</span>
+                    </p>
                 </li>
             `
         }

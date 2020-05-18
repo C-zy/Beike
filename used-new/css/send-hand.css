@@ -120,8 +120,8 @@ content{
     font-weight: 700;
 }
 .fle{
-    position: absolute;
-    top: 0.8rem;
+    position: fixed;
+    top: 0;
     left: 0;
 }
 .tit{
@@ -152,7 +152,7 @@ content{
 }
 .title{
     display: inline-block;
-    width: 2rem;
+    width: 2.5rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -316,3 +316,95 @@ content{
     color: #3072f6;
     border: 1px solid #3072f6;
 }
+/* 房子列表 */
+.list-item{
+    display: flex;
+    margin: 0 1rem;
+    height: 10rem;
+    border-bottom: 1px solid #cecece;
+}
+.lists-left{
+    width: 40%;
+    position: relative;
+}
+.lists-right{
+    width: 60%;
+    margin-top:1rem ;
+}
+.lists-left img{
+    width: 8rem;
+    height: 7rem;
+    position: absolute;
+    left: 50%;
+    z-index: -1;
+    margin-top:1rem ;
+    transform: translateX(-50%);
+}
+.good{
+    width: 3.5rem;
+    height: 1.25rem;
+    margin-right: 0.3rem;
+    vertical-align: middle;
+}
+.right-item1{
+    height: 3rem;
+    font-weight: 700;
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.desc{
+    font-size: 0.8rem;
+    color: gray;
+    margin-bottom: 0.2rem;
+}
+.price{
+    color: #c33;
+    font-weight: 700;
+}
+.price1{
+    color: gray;
+    font-size: 0.6rem;
+}
+.plate{
+    width: 1rem;
+    height: 1rem;
+    vertical-align: bottom;
+}
+.rob{
+    font-size: 0.75rem;
+}
+/* 尾部 */
+.footer{
+    padding: 0 1rem;
+    background-color: #2f3130;
+    color: #cecece;
+}
+.footer-item1 span{
+    font-size: 0.7rem;
+}
+.span1{
+    margin-right: 0.5rem;
+}
+/* @media(min-width:950px){
+    .lists-left img{
+        width: 10rem;
+        height: 7rem;
+        position: absolute;
+        left: 50%;
+        z-index: -1;
+        margin-top:1rem ;
+        transform: translateX(-50%);
+    }
+}
+@media (min-width:1150px){
+    .lists-left img{
+        width: 13rem;
+        height: 7rem;
+        position: absolute;
+        left: 50%;
+        z-index: -1;
+        margin-top:1rem ;
+        transform: translateX(-50%);
+    }
+} */

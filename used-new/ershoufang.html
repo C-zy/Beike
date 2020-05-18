@@ -191,7 +191,7 @@
                     </div>
                     <div class="tit-content">
                         <ul class="cont5-tit">
-                            <li v-for="(sort,index) in sorts" @click="cont5(sort)">{{sort}}</li>
+                            <li v-for="(sort,index) in sorts" :key="index" @click="cont5(sort,index)">{{sort}}</li>
                         </ul>
                     </div>
                 </div>
@@ -209,6 +209,16 @@
             </div>
             <div class="lists">
                 <ul id="list"></ul>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-item1">
+                <span class="span1">贝壳找房郑州站</span>
+                <span>郑州二手房</span>
+                <span>|</span>
+                <span>营业执照</span>
+                <span>|</span>
+                <span>ICP证</span>
             </div>
         </div>
         <script src="js/ershoufang.js"></script>
