@@ -36,13 +36,31 @@ new Vue({
         num3: 0,
         num4: null,
         num5: null,
-        num6:0,
+        num6: 0,
+        num7: 0,
+        num8: 0,
+        num9:0,
         titles: ["区域", "价格", "房型", "更多", "排序"],
         types: ["满五年", "近地铁", "VR房源", "7日以上"],
         citys: ["区域", "地铁"],
         next_citys: ["不限", "二七", "郑东新区", "荥阳市", "新郑市", "上街区", "巩义市", "新密市", "登封市", "中牟县", "经开区", "高新", "航空港区", "中原", "管城回族区", "惠济区", "金水区"],
         metros: ["不限", "1号线", "2号线", "城郊线", "5号线", "14号线"],
-        prices: ["60万以下", "60-80万", "80-100万", "100-150万", "150-200万", "200-300万", "300-400万", "400万以上"]
+        prices: ["60万以下", "60-80万", "80-100万", "100-150万", "150-200万", "200-300万", "300-400万", "400万以上"],
+        house_types: ["一室", "二室", "三室", "四室", "五室", "五室及以上"],
+        groups: [{
+            areas: ["50m²以上", "50-70m²", "70-90m²", "70-110m²", "110-130m²", "130-150m²", "150-200m²", "200m²以上"],
+            features: ["比看好房", "满五年", "满两年", "近地铁", "VR房源", "7日新上", "随时看房", "全景窗台"],
+            oris: ["南北", "朝南", "朝东", "朝北", "朝西"],
+            floors: ["低楼层", "中楼层", "高楼层"],
+            towerages: ["5年以内", "10年以内", "15年以内", "20以内", "20年以外"],
+            finish: ["精装修", "普通装修", "毛坯房"],
+            use: ["普通住宅", "商业类", "别墅", "四合院", "车位", "其他"],
+            lift: ["有电梯", "无电梯"],
+            owner: ["商品房", "公房", "经适房", "其他"],
+            type: ["塔楼", "板楼", "板塔结合"],
+            heating:["自供暖","集体供暖"]
+        }],
+        sorts:["默认排序","最新发布","总价从高到低","总价从低到高","单价从高到低","面积从大到小"]
     },
     methods: {
         select(a) {
@@ -87,14 +105,23 @@ new Vue({
             }
             if (name1 != "价格") {
                 this.$el.children[0].children[1].children[0].children[0].classList.add("active");
-                triangleBlue[0].style.display = "inline-block";
-                triangleGray[0].style.display = "none";
+                triangleBlue[1].style.display = "inline-block";
+                triangleGray[1].style.display = "none";
             }
-            if (name2 != "房型") { 
+            if (name2 != "房型") {
                 this.$el.children[0].children[2].children[0].children[0].classList.add("active");
-                console.log(1111)
-                triangleBlue[0].style.display = "inline-block";
-                triangleGray[0].style.display = "none";
+                triangleBlue[2].style.display = "inline-block";
+                triangleGray[2].style.display = "none";
+            }
+            if (this.num9>=1) {
+                this.$el.children[0].children[3].children[0].children[0].classList.add("active");
+                triangleBlue[3].style.display = "inline-block";
+                triangleGray[3].style.display = "none";
+            }
+            if (name4 != "排序") {
+                this.$el.children[0].children[4].children[0].children[0].classList.add("active");
+                triangleBlue[4].style.display = "inline-block";
+                triangleGray[4].style.display = "none";
             }
         },
         city1(a) {
@@ -113,7 +140,7 @@ new Vue({
             tit_san.style.display = "none";
         },
         // 价格下面的颜色变化
-        cont2_ul(a,data) {
+        cont2_ul(a, data) {
             if (this.$el.children[1].children[1].children[0].children[2].children[a].classList[0] == "active2") {
                 this.$el.children[1].children[1].children[0].children[2].children[a].classList.remove("active2");
                 this.num6--
@@ -124,10 +151,10 @@ new Vue({
         },
         cont2() {
             tit_san.style.display = "none";
-            document.getElementsByClassName("tit")[0].style.display = "none"
+            document.getElementsByClassName("tit")[0].style.display = "none";
             this.$el.removeAttribute("class");
             var a = this.$el.children[1].children[1].children[0].children[2].children
-            // console.log(a)
+            console.log(a)
             if (this.num6 == 1) {
                 for (var i = 0; i < a.length; i++) {
                     if (a[i].classList[0] == "active2") {
@@ -136,11 +163,65 @@ new Vue({
                     }
                 }
                 // console.log(this.$el.children[0].children[1].children[0].children[0].innerHTML)
-            } else if(this.num6>1){ 
+            } else if (this.num6 > 1) {
                 this.titles.splice(this.num4, 1, "更多")
             }
+            if (this.num6 == 0) {
+                this.$el.children[0].children[this.num4].classList.remove("active");
+                triangleBlue[this.num4].style.display = "none";
+                triangleGray[this.num4].style.display = "inline-block"
+            }
+        },
+        cont3(index, name) {
+            if (this.$el.children[1].children[2].children[0].children[1].children[index].classList[0] == "active2") {
+                this.$el.children[1].children[2].children[0].children[1].children[index].classList.remove("active2");
+                this.num7--
+            } else {
+                this.$el.children[1].children[2].children[0].children[1].children[index].classList.add("active2");
+                this.num7++
+            }
+        },
+        cont3_btn() {
+            tit_san.style.display = "none";
+            document.getElementsByClassName("tit")[0].style.display = "none";
+            this.$el.removeAttribute("class");
+            var a = this.$el.children[1].children[2].children[0].children[1].children;
+            if (this.num7 == 1) {
+                for (var i = 0; i < a.length; i++) {
+                    if (a[i].classList == "active2") {
+                        var name = a[i].innerHTML;
+                        this.titles.splice(this.num4, 1, name)
+                    }
+                }
+            } else if (this.num7 > 1) {
+                this.titles.splice(this.num4, 1, "更多")
+            }
+            if (this.num7 == 0) { 
+                this.$el.children[0].children[this.num4].classList.remove("active");
+                triangleBlue[this.num4].style.display = "none";
+                triangleGray[this.num4].style.display="inline-block"
+            }
+        },
+        more(index) { 
+            if (event.target.classList[0] == "active2") {
+                event.target.classList.remove("active2");
+                this.num9--
+            } else { 
+                event.target.classList.add("active2")
+                this.num9++
+            }
+        },
+        more_btn() { 
+            tit_san.style.display = "none";
+            document.getElementsByClassName("tit")[0].style.display = "none";
+            this.$el.removeAttribute("class");
+        },
+        cont5(sort) { 
+            tit_san.style.display = "none";
+            document.getElementsByClassName("tit")[0].style.display = "none";
+            this.$el.removeAttribute("class");
+            this.titles.splice(this.num4,1,sort)
         }
-
     }
 });
 // 点击遮罩层
@@ -174,5 +255,26 @@ for (var i = 0; i < type_item.length; i++) {
         }
     }
 };
+
+// 请求房子数据
+var list = document.getElementById("list");
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://localhost:3000/ershoufang", true);
+xhr.onreadystatechange = function(){ 
+    if (xhr.readyState === 4 && xhr.status === 200) { 
+        var data = JSON.parse(xhr.responseText)
+        console.log(data.data)
+        for (var i = 0; i < data.data.length; i++) { 
+            list.innerHTML += `
+                <li>
+                    <div class="lists-left">
+                        <img src="${data.data[i].img}">
+                    <div>
+                </li>
+            `
+        }
+    }
+}
+xhr.send()
 
 

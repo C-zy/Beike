@@ -50,32 +50,36 @@
                             @click="city_next(index)" v-bind:class="{active1:num1==index}">{{metro}}</p>
                     </div>
                     <div class="cont1-right">
-                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2" @click="change(index,next_city)"
-                            v-show="num2==0"  v-bind:class="{active1:num3==index}">{{next_city}}</p>
+                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2"
+                            @click="change(index,next_city)" v-show="num2==0" v-bind:class="{active1:num3==index}">
+                            {{next_city}}</p>
                         <p v-for="(city,index) in citys" :key="index" class="zhong-p2" @click="change(index,city)"
-                            v-show="num2==1"  v-bind:class="{active1:num3==index}">{{city}}</p>
+                            v-show="num2==1" v-bind:class="{active1:num3==index}">{{city}}</p>
                         <p v-for="(title,index) in titles" :key="index" class="zhong-p2" @click="change(index,title)"
-                            v-show="num2==2"  v-bind:class="{active1:num3==index}">{{title}}</p>
-                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2" @click="change(index,next_city)"
-                            v-show="num2==3"  v-bind:class="{active1:num3==index}">{{next_city}}</p>
+                            v-show="num2==2" v-bind:class="{active1:num3==index}">{{title}}</p>
+                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2"
+                            @click="change(index,next_city)" v-show="num2==3" v-bind:class="{active1:num3==index}">
+                            {{next_city}}</p>
                         <p v-for="(city,index) in citys" :key="index" class="zhong-p2" @click="change(index,city)"
-                            v-show="num2==4"  v-bind:class="{active1:num3==index}">{{city}}</p>
+                            v-show="num2==4" v-bind:class="{active1:num3==index}">{{city}}</p>
                         <p v-for="(type,index) in types" :key="index" class="zhong-p2" @click="change(index,type)"
                             v-show="num2==5" v-bind:class="{active1:num3==index}">{{type}}</p>
                         <p v-for="(metro,index) in metros" :key="index" class="zhong-p2" @click="change(index,metro)"
                             v-show="num2==6" v-bind:class="{active1:num3==index}">{{metro}}</p>
                         <p v-for="(title,index) in titles" :key="index" class="zhong-p2" @click="change(index,title)"
                             v-show="num2==7" v-bind:class="{active1:num3==index}">{{title}}</p>
-                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2" @click="change(index,next_city)"
-                            v-show="num2==8" v-bind:class="{active1:num3==index}">{{next_city}}</p>
+                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2"
+                            @click="change(index,next_city)" v-show="num2==8" v-bind:class="{active1:num3==index}">
+                            {{next_city}}</p>
                         <p v-for="(title,index) in titles" :key="index" class="zhong-p2" @click="change(index,title)"
                             v-show="num2==9" v-bind:class="{active1:num3==index}">{{title}}</p>
                         <p v-for="(city,index) in citys" :key="index" class="zhong-p2" @click="change(index,city)"
                             v-show="num2==10" v-bind:class="{active1:num3==index}">{{city}}</p>
                         <p v-for="(title,index) in titles" :key="index" class="zhong-p2" @click="change(index,title)"
                             v-show="num2==11" v-bind:class="{active1:num3==index}">{{title}}</p>
-                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2" @click="change(index,next_city)"
-                            v-show="num2==12" v-bind:class="{active1:num3==index}">{{next_city}}</p>
+                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2"
+                            @click="change(index,next_city)" v-show="num2==12" v-bind:class="{active1:num3==index}">
+                            {{next_city}}</p>
                         <p v-for="(metro,index) in metros" :key="index" class="zhong-p2" @click="change(index,metro)"
                             v-show="num2==13" v-bind:class="{active1:num3==index}">{{metro}}</p>
                         <p v-for="(type,index) in types" :key="index" class="zhong-p2" @click="change(index,type)"
@@ -95,7 +99,8 @@
                             <input type="text" class="input-top" placeholder="最高价格">
                         </p>
                         <ul class="cont2-ul">
-                            <li @click="cont2_ul(index,price)" v-for="(price,index) in prices" :key="index">{{price}}</li>
+                            <li @click="cont2_ul(index,price)" v-for="(price,index) in prices" :key="index">{{price}}
+                            </li>
                         </ul>
                     </div>
                     <div class="cont2-bottom">
@@ -108,24 +113,105 @@
                         </div>
                     </div>
                 </div>
-                <div class="tit-content">3</div>
-                <div class="tit-content">4</div>
-                <div class="tit-content">5</div>
+                <div class="tit-content content3">
+                    <div class="cont2-top">
+                        <h3>房型</h3>  
+                        <ul class="cont2-ul2">
+                            <li @click="cont3(index,house_type)" v-for="(house_type,index) in house_types" :key="index">{{house_type}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cont2-bottom">
+                        <div class="cont2-bot1">
+                            <p class="bot1-img"><img src="img/sweep.png" alt=""></p>
+                            <p class="bot1-text">重置</p>
+                        </div>
+                        <div class="cont2-bot2" @click="cont3_btn">
+                            查看房源
+                        </div>
+                        </div>
+                    </div>
+                    <div class="tit-content">
+                        <div class="cont2-top cont2-top1" v-for="group in groups">
+                            <h3>建筑面积</h3>  
+                            <ul class="cont2-ul3">
+                                <li v-for="(area,index) in group.areas" :key="index" @click="more(index)">{{area}}
+                                </li>
+                            </ul>
+                            <h3>房源特色</h3>
+                            <ul class="cont2-ul3">
+                                <li v-for="(feature,index) in group.features" :key="index"  @click="more(index)">{{feature}}</li>
+                            </ul>
+                            <h3>朝向</h3>
+                            <ul class="cont2-ul3">
+                                <li v-for="(ori,index) in group.oris" :key="index"  @click="more(index)">{{ori}}</li>
+                            </ul>
+                            <h3>楼层</h3>
+                            <ul class="cont2-ul3">
+                                <li v-for="(floor,index) in group.floors" :key="index"   @click="more(index)">{{floor}}</li>
+                            </ul>
+                            <h3>楼龄</h3>
+                            <ul class="cont2-ul3">
+                            <li v-for="(towerage,index) in group.towerages" :key="index"  @click="more(index)">{{towerage}}</li>
+                            </ul>
+                            <h3>装修</h3>
+                            <ul class="cont2-ul3">
+                                <li v-for="(finish,index) in group.finish" :key="index"    @click="more(index)">{{finish}}</li>
+                            </ul>
+                            <h3>用途</h3>
+                            <ul class="cont2-ul3">
+                                <li v-for="(use,index) in group.use" :key="index"  @click="more(index)" >{{use}}</li>
+                            </ul>
+                            <h3>电梯</h3>
+                            <ul class="cont2-ul3">
+                                <li v-for="(lift,index) in group.lift" :key="index"   @click="more(index)">{{lift}}</li>
+                            </ul>
+                            <h3>供暖</h3>
+                            <ul class="cont2-ul3">
+                                <li v-for="(heating,index) in group.heating" :key="index"  @click="more(index)" >{{heating}}</li>
+                            </ul>
+                            <h3>权属</h3>
+                            <ul class="cont2-ul3">
+                                <li v-for="(owner,index) in group.owner" :key="index"   @click="more(index)">{{owner}}</li>
+                            </ul>
+                            <h3>类型</h3>
+                            <ul class="cont2-ul3">
+                                <li v-for="(type,index) in group.type" :key="index"  @click="more(index)" >{{type}}</li>
+                            </ul>
+                        </div>
+                        <div class="cont2-bottom">
+                            <div class="cont2-bot1">
+                                <p class="bot1-img"><img src="img/sweep.png" alt=""></p>
+                                <p class="bot1-text">重置</p>
+                            </div>
+                            <div class="cont2-bot2" @click="more_btn">
+                                查看房源
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tit-content">
+                        <ul class="cont5-tit">
+                            <li v-for="(sort,index) in sorts" @click="cont5(sort)">{{sort}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tit-type">
+                <span class="type-item">满五年</span>
+                <span class="type-item">近地铁</span>
+                <span class="type-item">VR房源</span>
+                <span class="type-item">7日以上</span>
+            </div>
+            <div class="tit-san"></div>
+            <div class="type-bottom">
+                <span>保存搜索条件，获取最新房源</span>
+                <span class="install">安装app</span>
+            </div>
+            <div class="lists">
+                <ul id="list"></ul>
             </div>
         </div>
-        <div class="tit-type">
-            <span class="type-item">满五年</span>
-            <span class="type-item">近地铁</span>
-            <span class="type-item">VR房源</span>
-            <span class="type-item">7日以上</span>
-        </div>
-        <div class="tit-san"></div>
-        <div class="type-bottom">
-            <span>保存搜索条件，获取最新房源</span>
-            <span class="install">安装app</span>
-        </div>
-    </div>
-    <script src="js/ershoufang.js"></script>
+        <script src="js/ershoufang.js"></script>
 </body>
 
 </html>
