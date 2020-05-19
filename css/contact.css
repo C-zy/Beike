@@ -1,0 +1,63 @@
+/* 头部 */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+header{
+    width: 100%;
+    height:1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e4e6f0;
+    box-sizing: border-box;
+    padding: 0% 5%;
+}
+.h_left{
+    display: flex;
+    width:33%;
+}
+.h_left,.h_middle,.h_right{
+    font-size:.3rem;
+}
+.h_left a{
+    text-decoration: none;
+}
+.h_left a:first-child{
+   margin-right: 20%;
+   width:10%;
+}
+.h_left a:first-child img{
+    width:100%;
+    vertical-align: middle;
+}
+.h_left a:last-child{
+    /* width: 25%; */
+    color: #222;
+    vertical-align: top;
+    
+}
+.h_left a:last-child img{
+    width: 20%;
+    padding-left: 10%;
+    vertical-align: middle;
+}
+.h_middle{
+    text-align: left;
+    display: flex;
+    /* margin-top: 5%; */
+    margin: 0 auto;
+}
+.h_middle img{
+   width: 55%;
+   vertical-align: middle;
+}
+.h_right{
+    display: flex;
+    text-align: right;
+}
+.h_right img{
+    width: 50%;
+    vertical-align: middle;
+}

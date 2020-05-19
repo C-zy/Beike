@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生活服务</title>
+    <link rel="stylesheet" href="./css/move_house.css">
+</head>
+
+<body>
+    <div class="life">
+        <div class="header">
+            <a href="./movehouse_ite.html">
+                <img src="./img/move_banner.jpg" alt="">
+            </a>
+        </div>
+        <!-- 我的 -->
+        <div class="mine">
+            <a href="">我的</a>
+        </div>
+        <!-- 家庭维修 -->
+        <div class="container">
+            <div class="con1">
+                <p class="con_title">家庭维修</p>
+                <div class="home">
+                    <div class="home_em">
+                        <div>
+                            <img src="./img/home1.png" alt="">
+                        </div>
+                        <p>家电清洗</p>
+                    </div>
+                    <div class="home_em">
+                        <div>
+                            <img src="./img/home2.png" alt="">
+                        </div>
+                        <p>开换锁</p>
+                    </div>
+                    <div class="home_em">
+                        <div>
+                            <img src="./img/home3.png" alt="">
+                        </div>
+                        <p>厨卫维修</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 专业保洁 -->
+        <div class="container">
+            <div class="con1">
+                <p class="con_title">专业保洁</p>
+                <div class="home">
+                    <div class="home_em">
+                        <div>
+                            <img src="./img/clean1.png" alt="">
+                        </div>
+                        <p>日常保洁</p>
+                    </div>
+                    <div class="home_em">
+                        <div>
+                            <img src="./img/clean2.png" alt="">
+                        </div>
+                        <p>深度保洁</p>
+                    </div>
+                    <div class="home_em">
+                        <div>
+                            <img src="./img/clean3.png" alt="">
+                        </div>
+                        <p>开荒保洁</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 品质搬家 -->
+        <div class="container">
+            <div class="con1">
+                <p class="con_title">品质搬家</p>
+                <div class="home">
+                    <div class="home_em">
+                        <div>
+                            <img src="./img/move.png" alt="">
+                        </div>
+                        <p>小面搬家</p>
+                    </div>
+                    <div class="home_em">
+                        <div>
+                            <img src="./img/move1.png" alt="">
+                        </div>
+                        <p>金杯搬家</p>
+                    </div>
+                    <div class="home_em">
+                        <div>
+                            <img src="./img/move2.png" alt="">
+                        </div>
+                        <p>箱货搬家</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 宽带安装 -->
+        <div class="container">
+            <div class="con1">
+                <p class="con_title">宽带安装</p>
+                <div class="home">
+                    <div class="home_em">
+                        <div>
+                            <img src="./img/broadband1.png" alt="">
+                        </div>
+                        <p>贝克宽带</p>
+                    </div>
+                    <div class="home_em">
+                        <div style="width: 1rem;height: 1rem;">
+                            <img src="./img/broadband2.png" alt="">
+                        </div>
+                        <p>快速</p>
+                    </div>
+                    <div class="home_em">
+                        <div style="width: 1rem;height: 1rem;">
+                            <img src="./img/broadband3.png" alt="">
+                        </div>
+                        <p>优惠多</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 底部 -->
+        <div class="footer">
+            <p class="f_title">品质服务保障</p>
+            <div class="f_con">
+                <div class="f_11">
+                    <div>
+                        <img src="./img/footer_mm1.png" alt="">
+                    </div>
+                    <p>实名认证</p>
+                </div>
+                <div class="f_11">
+                    <div>
+                        <img src="./img/footer_mm2.png" alt="">
+                    </div>
+                    <p>专业工具</p>
+                </div>
+                <div class="f_11">
+                    <div>
+                        <img src="./img/footer_mm3.png" alt="">
+                    </div>
+                    <p>标准流程</p>
+                </div>
+                <div class="f_11">
+                    <div>
+                        <img src="./img/footer_mm4.png" alt="">
+                    </div>
+                    <p>售后保障</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            function font() {
+                var all = document.documentElement;  // 获取html元素
+                var w = all.getBoundingClientRect().width;  // 获取当前设备的宽度
+                if (w > 750) {
+                    w = 750;
+                }
+                rem = w / 7.5;
+                all.style.fontSize = rem + 'px'
+            }
+            font();
+            window.addEventListener("resize", function () {
+                font()
+            }, false)
+        })();
+    </script>
+</body>
+
+</html>

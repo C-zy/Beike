@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./css/contact.css"> -->
+    <link rel="stylesheet" href="./css/Rent_house.css">
+
+</head>
+<body>
+     <!-- 头部 -->
+     <header>
+        <div class="h_left">
+            <a href="">
+                <img src="./img/back.png" alt="">
+            </a>
+            <a href="">郑州<img src="./img/down.png" alt=""></a>
+        </div>
+        <div class="h_middle">
+            <a href=""><img src="./img/logo.png" alt=""></a>
+        </div>
+        <div class="h_right">
+            <a href=""><img src="./img/user.png" alt=""></a>
+        </div>
+    </header>
+    <script>
+         (function () {
+            function font() {
+                var all = document.documentElement;  // 获取html元素
+                var w = all.getBoundingClientRect().width;  // 获取当前设备的宽度
+                if (w > 750) {
+                    w = 750;
+                }
+                rem = w / 7.5;
+                all.style.fontSize = rem + 'px'
+            }
+            font(); 
+            window.addEventListener("resize", function () {
+                font()
+            }, false)
+        })();
+    </script>
+</body>
+</html>

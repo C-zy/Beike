@@ -6,68 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/rent_more.css">
+    <link rel="stylesheet" href="./css/mui.min.css">
+    <script src="./js/mui.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- <script src="./js/zepto.min(1.2.0).js"></script> -->
 </head>
 
 <body>
-    <!-- 头部 -->
-    <header>
-        <div class="h_left">
-            <a href="">
-                <img src="./img/back.png" alt="">
-            </a>
-            <a href="">郑州<img src="./img/down.png" alt=""></a>
+
+    <div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="position: inherit;">
+
+        <div class="mui-scroll">
+            <!-- 头部 -->
+            <header>
+                <div class="h_left">
+                    <a href="">
+                        <img src="./img/back.png" alt="">
+                    </a>
+                    <a href="">郑州<img src="./img/down.png" alt=""></a>
+                </div>
+                <div class="h_middle">
+                    <a href=""><img src="./img/logo.png" alt=""></a>
+                </div>
+                <div class="h_right">
+                    <a href=""><img src="./img/user.png" alt=""></a>
+                </div>
+            </header>
+            <!-- 搜索框 -->
+            <div class="r_search">
+                <a href=""> <img src="./img/search.png" alt="">请输入小区/商圈/地铁</a>
+            </div>
+            <div id="app">
+                <child :titles="titles" :areas="areas" :ways="ways" :rentals="rentals" :filter_rr="filter_rr"></child>
+            </div>
+            <!--数据列表-->
+            <div class="mui-table-view mui-table-view-chevron">
+                <div class="pro_details" id="more_housing">
+
+                </div>
+            </div>
+            
         </div>
-        <div class="h_middle">
-            <a href=""><img src="./img/logo.png" alt=""></a>
-        </div>
-        <div class="h_right">
-            <a href=""><img src="./img/user.png" alt=""></a>
-        </div>
-    </header>
-    <!-- 搜索框 -->
-    <div class="r_search">
-        <a href=""> <img src="./img/search.png" alt="">请输入小区/商圈/地铁</a>
-    </div>
-    <div id="app">
-        <child :titles="titles" :areas="areas" :ways="ways" :rentals="rentals" :filter_rr="filter_rr"></child>
     </div>
 
+
+    <script type="text/javascript" src="./js/rent_more.js"></script>
     <script>
-        
-        (function () {
-            function font() {
-                var all = document.documentElement;  // 获取html元素
-                var w = all.getBoundingClientRect().width;  // 获取当前设备的宽度
-                if (w > 750) {
-                    w = 750;
-                }
-                rem = w / 7.5;
-                all.style.fontSize = rem + 'px'
-            }
-            font();
-            window.addEventListener("resize", function () {
-                font()
-            }, false)
-        })();
-        Vue.component('child',{
-            props:['titles','areas','ways','rentals','filter_rr'],
-            data(){
+        Vue.component('child', {
+            props: ['titles', 'areas', 'ways', 'rentals', 'filter_rr'],
+            data() {
                 return {
-                    num:0,
-                    val:null,
-                    tab_tt:null,
-                    num1:null,
-                    way_num:null,
-                    val_t:null,
-                    rent_num:null,
-                    sum:0
+                    num: 0,
+                    val: "不限",
+                    tab_tt: null,
+                    num1: null,
+                    way_num: 0,
+                    val_t: "不限",
+                    rent_num: "不限",
+                    sum: 0
                 }
             },
-            template:`
-            <div class="all_back">
+            template: `
+            <div class="all_back" style="z-index: 10;">
                 <ul class="lists-t">
                     <li v-for="(title,index) in titles" @click="tab_t(index)"><span :class="{area_active:tab_tt==index}">{{title}}</span><i :class="{act:tab_tt==index}"></i></li>
                 </ul>
@@ -120,186 +121,188 @@
                 </div>
             </div>
                 `,
-            mounted(){
+            mounted() {
                 $(".area_keys3").hide()
-                $(".area_keys2").css("width","50%")
-                $(".area_keys1").css("width","50%")
+                $(".area_keys2").css("width", "50%")
+                $(".area_keys1").css("width", "50%")
             },
-            methods:{
-                    chanage_area1(i){
-                        $(".area_keys2").css("width","50%")
-                        $(".area_keys1").css("width","50%")
+            methods: {
+                chanage_area1(i) {
+                    console.log(444)
+                    $(".area_keys2").css("width", "50%")
+                    $(".area_keys1").css("width", "50%")
+                    $(".area_keys3").hide()
+                    this.num = i
+
+                },
+                // 二级
+                change_area2(key) {
+                    console.log(key)
+                    $(".area_keys1").css("width", "33%")
+                    $(".area_keys2").css("width", "33%")
+                    $(".area_keys3").css("width", "33%")
+                    this.val = key
+                    $(".area_keys3").show()
+                    if (this.val == "1km" || this.val == "2km" || this.val == "3km") {
                         $(".area_keys3").hide()
-                        this.num=i
-                      
-                    },
-                    // 二级
-                    change_area2(key){
-                        console.log(key)
-                        $(".area_keys1").css("width","33%")
-                        $(".area_keys2").css("width","33%")
-                        $(".area_keys3").css("width","33%")
-                        this.val=key
-                        $(".area_keys3").show()
-                        if(this.val=="1km"||this.val=="2km"||this.val=="3km"){
-                            $(".area_keys3").hide()
-                            alert("位置服务被拒绝")
-                            $(".area_keys2").css("width","50%")
-                            $(".area_keys1").css("width","50%")
-                        }
-                        if(key=="不限"){
-                            $(".area_keys3").hide()
-                            $(".area_keys2").css("width","50%")
-                            $(".area_keys1").css("width","50%")
-                        }
-                    },
-                    // 替换标题的内容
-                    replace(val){
-                        this.titles.splice(0,1,val)
-                        this.val_t=val
-                        this.num1=null //选择完之后当前的块隐藏
-                        console.log(this.num1)
-                        if(val=="不限"){
-                            console.log(12345)
-                            this.titles.splice(0,1,"区域")
-                        }
-                        $(".all_back").css("position","relative")
-                    },
-                //   点击对应的title显示对应的内容
-                    tab_t(i){
-                        this.tab_tt=i//控制title颜色
-                        this.num1=i
-                        // var jq=$.noConflict()
-                        // $(".contents").show()
-                        // $(".contents").slideDown("slow")
-                        $(".all_back").css({
-                            position:"fixed",
-                            top:0,
-                            left:0,
-                            width:"100%",
-                           " background-color":" rgba(0,0,0,.5)"
-                        })
-                        if(i==0){
-                            $(".contents").slideDown()
-                        }
-                        if(i==1){
-                            $(".contents1").slideDown()
-                        }
-                        if(i==2){
-                            $(".contents2").slideDown()
-                        }
-                        if(i==3){
-                            $(".lists-t").hide()
-                            $(".contents3").fadeIn("slow")
-                        }
-                    },
-                    // 方式下拉模块
-                    way_w(i,val){
-                        console.log(123)
-                        this.num1=null
-                        this.way_num=i
-                        this.titles.splice(1,1,val)
-                        if(val=="不限"){
-                            this.titles.splice(0,1,"方式")
-                        }
-                        $(".all_back").css("position","relative")
-                    },
-                    therent(i,val){
-                        this.num1=null
-                        this.titles.splice(2,1,val)
-                        this.rent_num=val
-                        if(val=="不限"){
-                            this.titles.splice(0,1,"租金")
-                        }
-                        $(".all_back").css("position","relative")
-                    },
-                    sure_rr(){
-                        this.num1=null
-                        if($("#r_ipt1").val()!=""&&$("#r_ipt2").val()==""){
-                            this.titles.splice(2,1,$("#r_ipt1").val()+'元以下')
-                        }else if($("#r_ipt1").val()==""&&$("#r_ipt2").val()!=""){
-                            this.titles.splice(2,1,$("#r_ipt2").val()+'元以上')
-                        }else if($("#r_ipt1").val()==""&&$("#r_ipt2").val()==""){
-                            this.titles.splice(0,1,"租金")
-                        }else{
-                            this.titles.splice(2,1,$("#r_ipt1").val()+'-'+$("#r_ipt2").val()+'元')
-                        }
-                        $(".all_back").css("position","relative")
-                    },
-                    f_type(e,val){
-                        if(e.target.classList.contains("fliter_last")){
-                            e.target.classList.remove("fliter_last");
-                            this.sum--
-                        }else{
-                            e.target.classList.add("fliter_last")
-                            this.sum++
-                        }
-                        if(this.sum!=1){
-                            this.titles.splice(3,1,"筛选")
-                        }else{
-                            this.titles.splice(3,1,val)
-                        }
-                       
-                    },
-                    remove_cl(){
-                        $(".blue").removeClass("fliter_last")
-                    },
-                    sure_cl(){
-                        $(".lists-t").show()
-                        this.num1=null
-                        $(".all_back").css("position","relative")
+                        alert("位置服务被拒绝")
+                        $(".area_keys2").css("width", "50%")
+                        $(".area_keys1").css("width", "50%")
                     }
-                   
+                    if (key == "不限") {
+                        this.titles.splice(0, 1, "区域")
+                        $(".area_keys3").hide()
+                        this.num1 = null
+                        $(".area_keys2").css("width", "50%")
+                        $(".area_keys1").css("width", "50%")
+                        $(".all_back").css("position", "relative")
+                    }
+                },
+                // 替换标题的内容
+                replace(val) {
+                    this.titles.splice(0, 1, val)
+                    this.val_t = val
+                    this.num1 = null //选择完之后当前的块隐藏
+                    console.log(this.num1)
+                    if (val == "不限") {
+                        console.log(12345)
+                        this.titles.splice(0, 1, "区域")
+
+                    }
+                    $(".all_back").css("position", "relative")
+                },
+                //   点击对应的title显示对应的内容
+                tab_t(i) {
+                    this.tab_tt = i//控制title颜色
+                    this.num1 = i
+                    $(".all_back").css({
+                        position: "fixed",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        " background-color": " rgba(0,0,0,.5)"
+                    })
+                    if (i == 0) {
+                        $(".contents").slideDown()
+                    }
+                    if (i == 1) {
+                        $(".contents1").slideDown()
+                    }
+                    if (i == 2) {
+                        $(".contents2").slideDown()
+                    }
+                    if (i == 3) {
+                        $(".lists-t").hide()
+                        $(".contents3").fadeIn("slow")
+                    }
+                },
+                // 方式下拉模块
+                way_w(i, val) {
+                    this.num1 = null
+                    this.way_num = i
+                    this.titles.splice(1, 1, val)
+                    if (val == "不限") {
+                        this.titles.splice(1, 1, "方式")
+                    }
+                    $(".all_back").css("position", "relative")
+                },
+                // 租金下拉模块
+                therent(i, val) {
+                    this.num1 = null
+                    this.titles.splice(2, 1, val)
+                    this.rent_num = val
+                    if (val == "不限") {
+                        this.titles.splice(2, 1, "租金")
+                    }
+                    $(".all_back").css("position", "relative")
+                },
+                sure_rr() {
+                    this.num1 = null
+                    if ($("#r_ipt1").val() != "" && $("#r_ipt2").val() == "") {
+                        this.titles.splice(2, 1, $("#r_ipt1").val() + '元以下')
+                    } else if ($("#r_ipt1").val() == "" && $("#r_ipt2").val() != "") {
+                        this.titles.splice(2, 1, $("#r_ipt2").val() + '元以上')
+                    } else if ($("#r_ipt1").val() == "" && $("#r_ipt2").val() == "") {
+                        this.titles.splice(2, 1, "租金")
+                    } else {
+                        this.titles.splice(2, 1, $("#r_ipt1").val() + '-' + $("#r_ipt2").val() + '元')
+                    }
+                    $(".all_back").css("position", "relative")
+                },
+                f_type(e, val) {
+                    if (e.target.classList.contains("fliter_last")) {
+                        e.target.classList.remove("fliter_last");
+                        this.sum--
+                    } else {
+                        e.target.classList.add("fliter_last")
+                        this.sum++
+                    }
+                    if (this.sum != 1) {
+                        this.titles.splice(3, 1, "筛选")
+                    } else {
+                        this.titles.splice(3, 1, val)
+                    }
+
+                },
+                remove_cl() {
+                    $(".blue").removeClass("fliter_last")
+                },
+                sure_cl() {
+                    $(".lists-t").show()
+                    this.num1 = null
+                    $(".all_back").css("position", "relative")
                 }
+
+            }
         })
         new Vue({
             el: "#app",
             data: {
                 titles: ["区域", "方式", "租金", "筛选"],
-                ways:["不限","整租","合租"],
-                rentals:["不限","≤1000元","1000-1500元","1500-2000元","2000-3000元","3000-4000元","≥4500元"],
-                areas:{
-                    "区域":{
-                        "不限":[],
-                        "二七":["不限", "碧沙岗", "常西湖", "电力新村", "帝湖", "古玩城", "管南区域", "火车站"],
-                        "中原":["不限", "碧沙岗", "常西湖", "电力新村", "儿童公园"],
-                        "管城回族区":["不限","第三大街","第八建材","东建材","二里岗","凤凰路","管南区域","火车站","航空港商圈","世纪欢乐园","万客来","鞋城","燕庄","紫荆山"],
-                        "惠济":["不限","北大学城","绿茵广场","刘寨","庙李","省体育中心","新郑大","石佛","索林路北段"],
-                        "金水":["不限","北大学城","财富广场","陈寨","CBD","大石桥","海洋馆","富田大厦"],
-                        "郑东新区":["不限","白沙"],
-                        "荥阳市":["不限","巩义市","新密市"],
-                        "新郑市":["不限","园博园商圈","南龙湖商圈","双鹤湖商圈","新郑市"],
-                        "上街区":["不限","上街区"],
-                        "登封市":["不限","登封市","巩义市"],
-                        "经开区":["不限","黄河南路","航空港圈","通泰路","郑州东站"],
+                ways: ["不限", "整租", "合租"],
+                rentals: ["不限", "≤1000元", "1000-1500元", "1500-2000元", "2000-3000元", "3000-4000元", "≥4500元"],
+                areas: {
+                    "区域": {
+                        "不限": [],
+                        "二七": ["不限", "碧沙岗", "常西湖", "电力新村", "帝湖", "古玩城", "管南区域", "火车站"],
+                        "中原": ["不限", "碧沙岗", "常西湖", "电力新村", "儿童公园"],
+                        "管城回族区": ["不限", "第三大街", "第八建材", "东建材", "二里岗", "凤凰路", "管南区域", "火车站", "航空港商圈", "世纪欢乐园", "万客来", "鞋城", "燕庄", "紫荆山"],
+                        "惠济": ["不限", "北大学城", "绿茵广场", "刘寨", "庙李", "省体育中心", "新郑大", "石佛", "索林路北段"],
+                        "金水": ["不限", "北大学城", "财富广场", "陈寨", "CBD", "大石桥", "海洋馆", "富田大厦"],
+                        "郑东新区": ["不限", "白沙"],
+                        "荥阳市": ["不限", "巩义市", "新密市"],
+                        "新郑市": ["不限", "园博园商圈", "南龙湖商圈", "双鹤湖商圈", "新郑市"],
+                        "上街区": ["不限", "上街区"],
+                        "登封市": ["不限", "登封市", "巩义市"],
+                        "经开区": ["不限", "黄河南路", "航空港圈", "通泰路", "郑州东站"],
                     },
-                    "地铁":{
-                        "不限":[],
-                        "1号线":["不限","河南大学","文苑北路","龙子湖","博学路","东风南路","农业南路","黄河南路","会展中心","民航路","燕庄"],
-                        "14号线":["不限","市委党校","铁炉","奥体中心"],
-                        "2号线":["不限","贾河","惠济区政府","黄河迎宾馆","金洼","金达路","柳林","沙门","北三环","东风路","关虎屯","陇海东路","二里岗"],
-                        "城郊线":["不限","十八里河","双湖大道","华南城西","沙窝里","华南城","孟妆","康平河","南湖公园","恩平湖","新郑机场"],
-                        "5号线":["不限","五一公园","桐淮","后河芦","京广南路","南五里堡","城东南路","航海广场","福塔东","沙口路","月季公园","海滩寺"],
+                    "地铁": {
+                        "不限": [],
+                        "1号线": ["不限", "河南大学", "文苑北路", "龙子湖", "博学路", "东风南路", "农业南路", "黄河南路", "会展中心", "民航路", "燕庄"],
+                        "14号线": ["不限", "市委党校", "铁炉", "奥体中心"],
+                        "2号线": ["不限", "贾河", "惠济区政府", "黄河迎宾馆", "金洼", "金达路", "柳林", "沙门", "北三环", "东风路", "关虎屯", "陇海东路", "二里岗"],
+                        "城郊线": ["不限", "十八里河", "双湖大道", "华南城西", "沙窝里", "华南城", "孟妆", "康平河", "南湖公园", "恩平湖", "新郑机场"],
+                        "5号线": ["不限", "五一公园", "桐淮", "后河芦", "京广南路", "南五里堡", "城东南路", "航海广场", "福塔东", "沙口路", "月季公园", "海滩寺"],
                     },
-                    "附近":{
-                        "不限":[],
-                        "1km":[],
-                        "2km":[],
-                        "3km":[]
+                    "附近": {
+                        "不限": [],
+                        "1km": [],
+                        "2km": [],
+                        "3km": []
                     }
                 },
-                filter_rr:{
-                    "户型":["一居","二居","三居","四居+"],
-                    "朝向":["东","西","南","北","南北"],
-                    "品牌":["链家","龙湖冠寓","广发租房","倍乐公寓","咖咖公寓","天达公寓","上京寓"],
-                    "房屋亮点":["近地铁","拎包入住","精装修","房屋供暖","押一付一","新上","随时看房","业主推荐"],
-                    "租期":["月租","年租","一个月起租","1-3个月","1-4个月"],
-                    "服务保障":["品质认证","租住保障"]
+                filter_rr: {
+                    "户型": ["一居", "二居", "三居", "四居+"],
+                    "朝向": ["东", "西", "南", "北", "南北"],
+                    "品牌": ["链家", "龙湖冠寓", "广发租房", "倍乐公寓", "咖咖公寓", "天达公寓", "上京寓"],
+                    "房屋亮点": ["近地铁", "拎包入住", "精装修", "房屋供暖", "押一付一", "新上", "随时看房", "业主推荐"],
+                    "租期": ["月租", "年租", "一个月起租", "1-3个月", "1-4个月"],
+                    "服务保障": ["品质认证", "租住保障"]
                 }
-                
+
             }
         })
-       
+
     </script>
 
 

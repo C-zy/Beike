@@ -142,21 +142,20 @@ header{
 }
 .pro_r{
     width: 66%;
-   
     flex-shrink: 0;
-    font-size: 16px;
+    font-size: .33rem;
     padding-left:6%;
     box-sizing: border-box;
 }
 .pro_r p:nth-child(2){
-    font-size: 12.5px;
+    font-size: .25rem;;
     margin-top: 1%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 .pro_r p:nth-child(3) span{
-    font-size: 12px;
+    font-size: .24rem;
     text-align: center;
     color: #849aae;
     background: rgba(237,240,243,.8);
@@ -172,7 +171,7 @@ header{
 }
 .pro_r p:nth-child(4) span:nth-child(2){
     padding-left: 3%;
-    font-size: 12px;
+    font-size: .24rem;
 }
 .pro_details .r_all{
     font-size: .37rem;
@@ -203,6 +202,7 @@ header{
 .r_fixed img{
     width: 50%;
 }
+/* 底部 */
 .r_footer{
     background: #2f3130;
 }
