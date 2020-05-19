@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #F8F8F9; }
+
+body p {
+  margin: 0; }
+
+body li {
+  list-style: none; }
+
+.all {
+  width: 100%; }
+
+.all_pd {
+  padding: 0 .5rem; }
+
+.header {
+  background-color: #fff;
+  height: 1.2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #e4e6f0; }
+
+.jt {
+  position: absolute;
+  left: .5rem;
+  font-size: .45rem !important;
+  font-weight: bolder;
+  color: blue; }
+
+.logo {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: .3rem; }
+  .logo .icon-user {
+    display: inline-block;
+    width: 30%;
+    font-size: .45rem;
+    color: blue;
+    text-align: right;
+    padding-right: .3rem; }
+  .logo .header_city {
+    display: inline-block;
+    padding-left: .7rem;
+    box-sizing: border-box;
+    width: 30%; }
+    .logo .header_city .jt_s {
+      font-size: .2rem; }
+  .logo a {
+    color: #000; }
+
+.logo img {
+  height: 100%; }
+
+.search {
+  height: .8rem;
+  margin: .3rem 0;
+  position: relative; }
+  .search input {
+    text-align: center;
+    height: 100%;
+    font-size: .3rem; }
+  .search .icon-search {
+    position: absolute;
+    font-size: .4rem;
+    color: #999;
+    left: .7rem;
+    top: 50%;
+    transform: translateY(-50%); }
+
+/*# sourceMappingURL=village.css.map */

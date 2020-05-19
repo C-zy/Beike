@@ -76,25 +76,39 @@ body li {
     font-weight: bolder;
     font-size: .4rem;
     width: 20%;
+    margin-right: 5%;
 }
 
 .search_top .city .ipt {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
     width: 70%;
 }
 
+.search_top .city .ipt .line {
+    font-size: .3rem;
+    color: #e4e6f0;
+}
+
 .search_top .city .ipt input {
+    width: 85%;
     margin: 0 !important;
     font-size: .3rem;
     line-height: .3rem;
-    height: auto;
+}
+
+.search_top .city .ipt .icon-search {
+    margin-left: .2rem;
+    font-size: .3rem;
 }
 
 .search_top .city .sjx {
     width: 0;
     height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #222;
+    border-left: .1rem solid transparent;
+    border-right: .1rem solid transparent;
+    border-top: .1rem solid #222;
 }
 
 .search_top a {
@@ -103,7 +117,7 @@ body li {
 }
 
 .search_top a.bg {
-    background: url(../img_shang/0-1.png) no-repeat;
+    background: url(../img/img_shang/0-1.png) no-repeat;
     background-size: 100%;
     width: 8%;
     height: .6rem;
@@ -215,12 +229,12 @@ body li {
 }
 
 .price .top .bg1 {
-    background: url(../img_shang/4-1.png) no-repeat;
+    background: url(../img/img_shang/4-1.png) no-repeat;
     background-size: 100%;
 }
 
 .price .top .bg2 {
-    background: url(../img_shang/4-2.png) no-repeat;
+    background: url(../img/img_shang/4-2.png) no-repeat;
     background-size: 100%;
 }
 

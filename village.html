@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>找小区</title>
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/village.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <script src="js/zepto.js"></script>
+    <script src="js/mui.min.js"></script>
+</head>
+
+<body>
+    <div class="header all">
+        <span class="iconfont icon-zuojiantou jt"></span>
+        <div class="logo">
+            <a href="" class="header_city">北京
+            <span class="iconfont icon-xiajiantou jt_s"></span>
+            </a>
+            <img src="img/img_village/0.png" alt="">
+            <span class="iconfont icon-user"></span>
+        </div>
+    </div>
+    <div class="search all all_pd">
+        <a href="">
+            <span class="iconfont icon-search"></span>
+            <input type="text" placeholder="请输入小区或商圈名~">
+        </a>
+    </div>
+</body>
+<script>
+    function fn() {
+        var all = document.documentElement;
+        var all_width = all.getBoundingClientRect().width;
+        rem = all_width / 7.5
+        all.style.fontSize = rem + 'px'
+    }
+    fn();
+    window.addEventListener("resize", function() {
+        fn()
+    }, false)
+</script>
+
+</html>
