@@ -22,7 +22,7 @@
         <!-- 搜索框 -->
         <div class="search-box">
             <div class="lj-track">
-                <div class="search-city">
+                <div class="search-city" id="city">
                     郑州
                     <span class="arrow"></span>
                 </div>
@@ -520,7 +520,15 @@
         }else{
             sessionStorage.name=na;
         }
+        // 城市改变
+        $("#city").click(()=>{
+            window.location.href="city.html"
+        })
+        if(sessionStorage.city){
+            $("#city").html(sessionStorage.city+"<span class='arrow'></span>")
+        }else{
+            $("#city").html("郑州<span class='arrow'></span>")
+        }
     </script>
 </body>
-
 </html>

@@ -19,7 +19,7 @@
                     <a href="index.html" class="header_back"></a>
                     <a href="#" class="city_wrap">
                         <span class="switch_city">
-                            <em class="city">郑州</em>
+                            <em class="city" id="city">郑州</em>
                             <i class="icon_pull"></i>
                         </span>
                     </a>
@@ -104,6 +104,11 @@
             $(".logout").hide()
             $("#user div").hide()
         })
+        // 城市改变
+        $("#city").click(()=>{
+            window.location.href="city.html"
+        })
+        $("#city").html(sessionStorage.city)
     </script>
 </body>
 </html>
