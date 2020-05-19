@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://s1.ljcdn.com/clogin/favicon.ico">
+    <meta name="viewport"
+        content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="css/user.css">
+    <script src="js/jquery.min.js"></script>
+    <title>个人中心</title>
+</head>
+<body>
+    <div class="content">
+        <!-- 上半部分 -->
+        <div class="user_comp">
+            <!-- 头部 -->
+            <div class="header">
+                <div class="flexbox left">
+                    <a href="index.html" class="header_back"></a>
+                    <a href="#" class="city_wrap">
+                        <span class="switch_city">
+                            <em class="city" id="city">郑州</em>
+                            <i class="icon_pull"></i>
+                        </span>
+                    </a>
+                </div>
+                <a href="#" class="logo_wrap center">
+                    <span class="logo">贝壳找房</span>
+                </a>
+                <a href="#" class="my right ua">
+                    <i class="icon_user"></i>
+                </a>
+            </div>
+            <!-- 头像 -->
+            <img src="img/user/user.png" alt="" class="img_head">
+            <!-- 登录注册 -->
+            <div class="user_num" id="user">
+                <a href="login.html">登录</a>
+                <a href="registered.html">注册</a>
+            </div>
+        </div>
+        <!-- 下半部分 -->
+        <div class="page_list">
+            <ul>
+                <li> 
+                    <a href="#">我关注的房源</a>
+                    <span class="list_item"></span>
+                    <span class="right_arrow"></span>
+                </li>
+                <li> 
+                    <a href="#">我关注的小区</a>
+                    <span class="list_item item_focus_community"></span>
+                    <span class="right_arrow"></span>
+                </li>
+                <li> 
+                    <a href="#">我关注的新房</a>
+                    <span class="list_item item_focus_new_house"></span>
+                    <span class="right_arrow"></span>
+                </li>
+                <li> 
+                    <a href="#">我关注的租房</a>
+                    <span class="list_item item_focus_zu_house"></span>
+                    <span class="right_arrow"></span>
+                </li>
+                <li> 
+                    <a href="#">我的租房优惠券</a>
+                    <span class="list_item item_focus_zu_youhui"></span>
+                    <span class="right_arrow"></span>
+                </li>
+            </ul>
+        </div>
+        <!-- 退出登录 -->
+        <div class="logout" id="err">退出登录</div>
+    </div>
+    <script>
+        //自适应字体大小
+        (function () {
+            function w() {
+                var all = document.documentElement;
+                var test = all.getBoundingClientRect().width;
+                rem = test / 26;
+                all.style.fontSize = rem + 'px'
+            }
+            w();
+            window.addEventListener("resize", function () {
+                w()
+            }, false)
+        })();
+        // 判断是否登录
+        var name=sessionStorage.name;
+        if(name=="undefined"){
+            $(".logout").hide()
+        }else{
+            $("#user a").hide()
+            $("#user").prepend(`
+                <div>欢迎你，${name}</div>
+            `)
+            $(".logout").show()
+        }
+        // 退出登录
+        $(".logout").click(()=>{
+            sessionStorage.removeItem("name")
+            $("#user a").show()
+            $(".logout").hide()
+            $("#user div").hide()
+        })
+        // 城市改变
+        $("#city").click(()=>{
+            window.location.href="city.html"
+        })
+        $("#city").html(sessionStorage.city)
+    </script>
+</body>
+</html>

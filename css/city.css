@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+    outline: none;
+}
+a {
+    background: transparent;
+    text-decoration: none;
+}
+.content {
+    background: #F8F8F9;
+}
+/* 顶部搜索框 */
+.history_city_list ul, .search_input, .tab_warp ul {
+    overflow: hidden;
+}
+.search_input {
+    position: relative;
+    padding: .44rem .94rem;
+    background-color: #fff;
+}
+.page_cities, .page_cities a {
+    color: #101D37;
+}
+.search_input .close_search_icon {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(../img/home/x.png);
+    background-size: 1.5rem 1.5rem;
+    margin-top: .4rem;
+}
+.search_input .search_input_wrap {
+    float: right;
+    position: relative;
+    width: 88.69%;
+}
+.search_input .search_input_wrap>input {
+    border: none;
+    height: 2.31rem;
+    width: 100%;
+    background-color: #F8F8F9;
+    border-radius: 6.25rem;
+    font-size: .81rem;
+    line-height: 2.31rem;
+    padding-left: 2rem;
+}
+.search_input .search_input_wrap .search_icon {
+    position: absolute;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url(../img/home/search.png);
+    background-size: 1rem 1rem;
+    top: 50%;
+    margin-top: -.5rem;
+    margin-left: .88rem;
+    left: 0;
+}
+/* tab切换 */
+.tab_warp {
+    height: 2.75rem;
+    background-color: #fff;
+}
+.tab_warp ul {
+    width: 47.5%;
+    margin: 0 auto;
+}
+.tab_warp ul li {
+    line-height: 2.75rem;
+    font-size: 1rem;
+    color: #9399A5;
+}
+.tab_warp ul li.inside_tab {
+    float: left;
+}
+.tab_warp ul li.active {
+    color: #101D37;
+    font-weight: 700;
+    position: relative;
+}
+.tab_warp ul li.outside_tab {
+    float: right;
+}
+.tab_warp ul li.active::after {
+    position: absolute;
+    content: "";
+    height: .19rem;
+    width: 1rem;
+    background: #3072F6;
+    bottom: .31rem;
+    left: 50%;
+    margin-left: -.5rem;
+    border-radius: .095rem;
+}
+/* 城市 */
+.choose_city_wrap {
+    position: fixed;
+    width: .69rem;
+    right: .31rem;
+    top: 9.69rem;
+    line-height: 1.13rem;
+    font-size: .69rem;
+    text-align: center;
+    color: #101D37
+}
+.choose_city_wrap span {
+    margin-bottom: .31rem;
+}
+.group h6, .geo {
+    padding: 0 1.5rem;
+}
+.group h6 {
+    font-size: .81rem;
+    color: #9399A5;
+    height: 2.38rem;
+    line-height: 2.38rem;
+}
+.city_block {
+    background-color: #fff;
+    padding: 0 1.5rem;
+    /* border-top: 1px solid #E4E6F0; */
+}
+.group .city_block_item{
+    /* display: block; */
+    font-size: 1rem;
+    height: 3.75rem;
+    /* width: 80%; */
+    line-height: 3.75rem;
+    border-bottom: 1px solid #E4E6F0;
+}

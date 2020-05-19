@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a {
+    background: transparent;
+    text-decoration: none;
+    color: #000;
+}
+em {
+    font-style: normal;
+}
+input{
+    background:none;
+    outline:none;
+    border:0px;
+}
+/* 登陆 */
+.App {
+    padding: 1.5625rem;
+    color: #222;
+}
+.App .head {
+    margin-bottom: 1.375rem;
+    position: relative;
+}
+.App .head .close-btn {
+    width: 1rem;
+    height: 1rem;
+}
+.App .head .register {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #999;
+}
+.App a, .App button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    cursor: pointer;
+}
+/* 登陆 */
+input, textarea {
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+.App .view-title {
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+    margin-bottom: .75rem;
+}
+.App .input-col {
+    height: 3.875rem;
+    color: #ccc;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+.App .input-col .input-field {
+    height: 100%;
+    flex-grow: 1;
+}
+.App .input-col:after {
+    position: absolute;
+    height: 1px;
+    content: " ";
+    bottom: 0;
+    left: -50%;
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+    width: 200%;
+    background: #e4e6f0;
+}
+.App .submit-btn {
+    border-radius: .3125rem;
+    display: block;
+    height: 3.125rem;
+    color: #fff;
+    text-align: center;
+    line-height: 3.125rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 1.5rem 0 1.25rem;
+    width: 100%;
+}
+.App .ke .submit-btn, .App .submit-btn {
+    background: #3072f6;
+}
+.App .view-footer .footer-actions {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.App .view-footer .footer-actions a, .App .view-footer .footer-actions button {
+    margin: 0 .25rem;
+    padding: 0;
+    font-size: .875rem;
+    background: none;
+    border: none;
+}
+.App .view-footer .footer-comment {
+    font-size: .875rem;
+    line-height: 121%;
+    letter-spacing: -.00625rem;
+    color: #ccc;
+}
+.App .view-footer .footer-comment .link {
+    color: #3072f6;
+}
+.App .view-footer .footer-comment a {
+    text-decoration: underline;
+}

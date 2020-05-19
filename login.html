@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://s1.ljcdn.com/clogin/favicon.ico">
+    <meta name="viewport"
+        content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <script src="js/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/login.css">
+    <title>欢迎登陆</title>
+</head>
+<body>
+    <div class="content">
+        <div class="App ke">
+            <div class="head">
+                <a href="user.html"><img src="img/login/x.svg" class="close-btn" alt=""></a>
+                <a href="registered.html"><button class="register">注册</button></a>
+            </div>
+            <!-- 登陆 -->
+            <div>
+                <div class="view-title">账号密码登录</div>
+                <!-- <form action="http://localhost:3000/login"> -->
+                    <div class="input-col">
+                        <input type="tel" name="phone" id="phone" class="input-field" placeholder="请输入手机号" >
+                    </div>
+                    <div class="input-col">
+                        <input type="tel" name="password" class="input-field" id="paw" placeholder="请输入密码" >
+                    </div>
+                    <input type="submit" class="submit-btn" id="login" value="登录"></input>
+                <!-- </form> -->
+                <div class="view-footer">
+                    <div class="footer-actions">
+                        <button>手机快捷登录</button>
+                        <button>忘记密码</button>
+                    </div>
+                    <span class="footer-comment">
+                        注册/登录即代表同意
+                        <a href="https://m.ke.com/user/protocol" class="link">《贝壳隐私政策》</a>
+                        及
+                        <a href="https://m.ke.com/user/serviceProtocol" class="link">《贝壳用户使用协议》</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        //自适应字体大小
+        (function () {
+            function w() {
+                var all = document.documentElement;
+                var test = all.getBoundingClientRect().width;
+                rem = test / 26;
+                all.style.fontSize = rem + 'px'
+            }
+            w();
+            window.addEventListener("resize", function () {
+                w()
+            }, false)
+        })();
+        // 判断密码是否正确
+        $("#login").click(()=>{
+            $.ajax({
+                type : "get",
+                url : "http://localhost:3000/login",
+                data : {
+                    phone:$("#phone").val()
+                },
+                success : function(result) {
+                    var data=result.data
+                    if(data.length==0){
+                        // 密码错误
+                        alert("密码错误！")
+                    }else{
+                        var paw=data[0].password;
+                        var id=$("#phone").val()
+                        if(paw==$("#paw").val()){
+                            // 登录成功
+                            console.log(22)
+                            window.location.href="index.html?id="+id;
+                        }else{
+                            alert("密码错误！")
+                        }
+                    }
+                }
+            })
+        })
+        
+    </script>
+</body>
+</html>

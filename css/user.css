@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a {
+    background: transparent;
+    text-decoration: none;
+    color: #000;
+}
+em {
+    font-style: normal;
+}
+/* 头部 */
+.user_comp {
+    height: 15.5625rem;
+    background-image: url(../img/user/bgi.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.header {
+    margin-bottom: 1.5rem;
+    display: flex;
+    width: 100%;
+    height: 3.125rem;
+    padding: 0 1.1875rem 0 1.25rem;
+    text-align: left;
+    box-sizing: border-box;
+    justify-content: space-between;
+    background-color: #fff;
+    z-index: 10;
+    border-bottom: 1px solid #E4E6F0;
+}
+.header .left {
+    text-align: left;
+}
+.flexbox {
+    display: flex;
+}
+.header .header_back {
+    display: block;
+    height: 100%;
+    font-size: 0;
+    margin-right: .9375rem;
+}
+.header .header_back:after, .header .icon_pull, .header .icon_user, .header .logo, .home_header .icon_user {
+    font-size: 0;
+    display: inline-block;
+    background-image: url(../img/user/s2.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -webkit-transform: none;
+    transform: none;
+}
+.header .header_back:after {
+    content: "";
+    height: 1.25rem;
+    width: 1.25rem;
+    background-size: 1.25rem;
+    margin: .9375rem 0 0 -.3125rem;
+    background-position: 0 -1.484375rem;
+}
+.header .city_wrap {
+    display: block;
+    padding: 0 .5rem;
+    font-size: 0;
+}
+.header .switch_city {
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+}
+.header, .header .switch_city {
+    color: #222;
+    line-height: 3.125rem;
+}
+.header .switch_city .city {
+    font-size: .8125rem;
+    vertical-align: middle;
+}
+.header .icon_pull {
+    width: .5625rem;
+    height: .6rem;
+    background-size: .5625rem;
+    background-position: 0 -4.0078125rem;
+    margin: 0 0 0 .18rem;
+}
+.header .logo_wrap {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+}
+.header .center, .header .left, .header .right {
+    padding: 0;
+    font-size: 0;
+    -webkit-box: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+.header .logo {
+    display: inline-block;
+    width: 5rem;
+    height: 2rem;
+    margin: 0 -1.125rem 0 0;
+    background-image: url(../img/user/logo.png);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    vertical-align: middle;
+    background-position: 0;
+}
+.header .icon_user {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-size: 1.8rem;
+    margin-top: .2rem;
+    margin-right: -.3rem;
+}
+.header .app, .header .my {
+    display: inline-block;
+    width: 2.5rem;
+    height: 100%;
+    line-height: 1em;
+    padding-top: .5rem;
+    font-size: .75rem;
+    color: #3072f6;
+    text-align: center;
+    box-sizing: border-box;
+}
+.header .right {
+    text-align: right;
+}
+/* 头像 */
+img {
+    max-width: 100%;
+}
+.user_comp .img_head {
+    width: 3.375rem;
+    border-radius: 3.375rem;
+    margin-top: 1rem;
+    height: 3.375rem;
+}
+/* 登录注册 */
+.user_comp .user_num {
+    margin-top: 1.15rem;
+    color: #fff;
+    font-size: 1rem;
+}
+.user_comp .user_num a {
+    display: inline-block;
+    width: 5.5rem;
+    height: 2.25rem;
+    border: 1px solid #fff;
+    line-height: 2.25rem;
+    margin: 0 .3rem;
+    border-radius: 2px;
+    text-align: center;
+    color: #fff;
+}
+/* 下半部分 */
+.page_list {
+    margin-top: .78125rem;
+    background-color: #fff;
+    border-top: 1px solid #E4E6F0;
+    border-bottom: 1px solid #E4E6F0;
+    font-size: .9rem;
+}
+.page_list>ul {
+    padding-left: 3.125rem;
+}
+.page_list>ul>li {
+    border-bottom: 1px solid #e2e2e2;
+    position: relative;
+}
+.page_list ul>li>a {
+    color: #000;
+    display: block;
+    height: 3.1875rem;
+    line-height: 3.1875rem;
+}
+.page_list ul>li>.list_item {
+    position: absolute;
+    left: -1.875rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-image: url(../img/user/ban1.png);
+    width: 1rem;
+    height: 1rem;
+    background-size: cover;
+}
+.page_list ul>li>.right_arrow {
+    float: right;
+    border-right: 1px solid #999;
+    border-top: 1px solid #999;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: .6375rem;
+    height: .6375rem;
+    position: absolute;
+    right: .75rem;
+    top: 40%;
+    margin-right: 1.25rem;
+}
+.page_list ul>li>.item_focus_community {
+    background-position: 0 -1.0234375rem;
+    height: 1.0625rem;
+}
+.page_list ul>li>.item_focus_new_house {
+    background-position: 0 -2.0625rem;
+}
+.page_list ul>li>.item_focus_zu_youhui {
+    background-image: url(../img/user/ban2.png);
+}
+/* 退出登录 */
+.content .logout {
+    display: block;
+    margin: 1.75rem .625rem 1rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #c5c5c5;
+}

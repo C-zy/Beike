@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://s1.ljcdn.com/clogin/favicon.ico">
+    <meta name="viewport"
+        content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery.min.js"></script>
+    <title>贝壳找房首页</title>
+</head>
+
+<body>
+    <div class="content">
+        <!-- 顶部app -->
+        <div class="top-app">
+            <div class="logo"></div>
+            <div class="title">贝壳找房APP</div>
+            <div class="top-btn">立即打开</div>
+        </div>
+        <!-- 搜索框 -->
+        <div class="search-box">
+            <div class="lj-track">
+                <div class="search-city" id="city">
+                    郑州
+                    <span class="arrow"></span>
+                </div>
+            </div>
+            <div class="lj-track search-input">
+                <span class="search-icon"></span>
+                <input type="text" class="input" placeholder="你想住哪里？">
+            </div>
+        </div>
+        <!-- 功能模块 -->
+        <div class="home-hot-menu">
+            <ul class="home-ul">
+                <li>
+                    <a href="#">
+                        <div class="li-img">
+                            <img src="img/top-img/t1.png" alt="">
+                        </div>
+                        <div class="li-txt">
+                            <span>二手房</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="li-img">
+                            <img src="img/top-img/t2.png" alt="">
+                        </div>
+                        <div class="li-txt">
+                            <span>新房</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="li-img">
+                            <img src="img/top-img/t3.png" alt="">
+                        </div>
+                        <div class="li-txt">
+                            <span>租房</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="shang.html">
+                        <div class="li-img">
+                            <img src="img/top-img/t4.png" alt="">
+                        </div>
+                        <div class="li-txt">
+                            <span>商铺办公</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="li-img">
+                            <img src="img/top-img/t5.png" alt="">
+                        </div>
+                        <div class="li-txt">
+                            <span>海外</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="home-ul">
+                <li>
+                    <a href="#">
+                        <div class="li-img2">
+                            <img src="img/top-img/t6.png" alt="">
+                        </div>
+                        <div class="li-txt">
+                            <span>卖房</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="li-img2">
+                            <img src="img/top-img/t7.png" alt="">
+                        </div>
+                        <div class="li-txt">
+                            <span>找小区</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="li-img2">
+                            <img src="img/top-img/t8.png" alt="">
+                        </div>
+                        <div class="li-txt">
+                            <span>去估价</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="li-img2">
+                            <img src="img/top-img/t9.png" alt="">
+                        </div>
+                        <div class="li-txt">
+                            <span>找经纪人</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="li-img2">
+                            <img src="img/top-img/t10.png" alt="">
+                        </div>
+                        <div class="li-txt">
+                            <span>百科</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="home-ul">
+                <li>
+                    <a href="#">
+                        <div class="li-img2">
+                            <img src="img/top-img/t11.png" alt="">
+                        </div>
+                        <div class="li-txt">
+                            <span>客服电话</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 二手房 -->
+        <div class="home-house-card-more">
+            <div class="cont">
+                <div class="header">
+                    <span class="title">二手房·全城必看好房</span>
+                    <a href="#" class="more">
+                        更多二手房
+                        <i class="link"></i>
+                    </a>
+                </div>
+                <div class="card-list" id="house_se">
+                </div>
+            </div>
+        </div>
+        <!-- 新房 -->
+        <div class="home-house-card-more">
+            <div class="cont">
+                <div class="header">
+                    <span class="title">新房·本周热门好盘</span>
+                    <a href="#" class="more">
+                        更多在售楼盘
+                        <i class="link"></i>
+                    </a>
+                </div>
+                <div class="card-list" id="house_new"></div>
+            </div>
+        </div>
+        <!-- 二手房推荐 -->
+        <div class="home-house-card-more">
+            <div class="cont">
+                <div class="header">
+                    <span class="title">为您推荐二手房</span>
+                </div>
+                <div class="list second">
+                    <a href="#" class="item sec-item0">
+                        <p class="title">低价捡漏榜</p>
+                        <p class="sub-title">高性价比房</p>
+                    </a>
+                    <a href="#" class="item sec-item1">
+                        <p class="title">低价捡漏榜</p>
+                        <p class="sub-title">高性价比房</p>
+                    </a>
+                    <a href="#" class="item sec-item2">
+                        <p class="title">低价捡漏榜</p>
+                        <p class="sub-title">高性价比房</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 二手房信息 -->
+        <div class="home-second-house-card-list">
+            <div class="list" id="house_sec">
+                <!-- <a href="#" class="item">
+                    <div class="img-wrap">
+                        <img src="img/home/1.jpg" alt="" class="img">
+                    </div>
+                    <div class="detail">
+                        <p class="title more-row">阿卡迪亚临河观景 观CBD大三房 诚意出售</p>
+                        <p class="info">3室2厅/131.41m²/南 北/中义·阿卡迪亚</p>
+                        <div class="tags">
+                            <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">随时可看</span>
+                            <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">地铁</span>
+                        </div>
+                        <div class="price">
+                            <span class="total">333 <span class="total-unit">万</span></span>
+                            <span class="unit">29298元/平</span>
+                        </div>
+                    </div>
+                </a> -->
+            </div>
+        </div>
+        <!-- app内获取更多 -->
+        <div>
+            <a href="#" class="home-more-btn">APP内获取更多</a>
+        </div>
+        <!-- 新房推荐 -->
+        <div class="home-house-card-more">
+            <div class="cont">
+                <div class="header">
+                    <span class="title">为您推荐新房</span>
+                </div>
+                <div class="list second hn">
+                    <a href="#" class="item sec-item4">
+                        <p class="title">低价捡漏榜</p>
+                        <p class="sub-title">高性价比房</p>
+                    </a>
+                    <a href="#" class="item sec-item5">
+                        <p class="title">低价捡漏榜</p>
+                        <p class="sub-title">高性价比房</p>
+                    </a>
+                    <a href="#" class="item sec-item6">
+                        <p class="title">低价捡漏榜</p>
+                        <p class="sub-title">高性价比房</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 新房信息 -->
+        <div class="home-second-house-card-list">
+            <div class="list" id="house_new_rec">
+                <!-- <a href="#" class="item">
+                    <div class="img-wrap">
+                        <img src="img/home/1.jpg" alt="" class="img">
+                    </div>
+                    <div class="detail">
+                        <p class="title more-row">福晟谦祥钱隆城</p>
+                        <p class="info">高新万达 华中师范附属学校</p>
+                        <p class="location">住宅 高新</p>
+                        <div class="tags">
+                            <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">视频看房</span>
+                            <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">小户型</span>
+                        </div>
+                        <div class="price">
+                            <span class="totals">29298元/平</span>
+                            <span class="unit">建面 69-142㎡</span>
+                        </div>
+                    </div>
+                </a> -->
+            </div>
+        </div>
+        <!-- app内获取更多 -->
+        <div>
+            <a href="#" class="home-more-btn">APP内获取更多</a>
+        </div>
+        <!-- 租房推荐 -->
+        <div class="home-house-card-more">
+            <div class="cont">
+                <div class="header">
+                    <span class="title">为您推荐租房</span>
+                </div>
+        </div>
+        </div>
+        <!-- 租房信息 -->
+        <div class="home-second-house-card-list">
+            <div class="list" id="house_rent_rec">
+                <!-- <a href="#" class="item">
+                    <div class="img-wrap">
+                        <img src="img/home/1.jpg" alt="" class="img">
+                    </div>
+                    <div class="detail">
+                        <p class="title more-row">整租·秀水苑 2室2厅</p>
+                        <p class="location">120㎡/南北</p>
+                        <div class="tags">
+                            <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">有电梯</span>
+                            <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">随时看房</span>
+                        </div>
+                        <div class="price">
+                            <span class="totals">2928元/月</span>
+                        </div>
+                    </div>
+                </a> -->
+            </div>
+        </div>
+        <!-- app内获取更多 -->
+        <div>
+            <a href="#" class="home-more-btn">APP内获取更多</a>
+        </div>
+        <!-- 登录 -->
+        <div class="kem__user-icon">
+            <a class="user-icon" href="user.html"></a>
+        </div>
+        <!-- 底部 -->
+        <div class="kem__footer">
+            <div class="footer-breadcrumb">
+                贝壳找房郑州站
+                <span>|</span>
+                营业执照
+                <span>|</span>
+                ICP证
+            </div>
+            <div class="footer-nav">
+                <div class="link-tit">
+                    <h3 class="tit active" id="ho_tp">二手房</h3>
+                    <h3 class="tit " id="ho_tpl">小区</h3>
+                </div>
+                <div class="link-cont">
+                    <ul class="cont co1">
+                        <li><a href="#">北京二手房</a></li>
+                        <li><a href="#">上海二手房</a></li>
+                        <li><a href="#">广州二手房</a></li>
+                        <li><a href="#">深圳二手房</a></li>
+                        <li><a href="#">天津二手房</a></li>
+                        <li><a href="#">成都二手房</a></li>
+                        <li><a href="#">南京二手房</a></li>
+                        <li><a href="#">杭州二手房</a></li>
+                        <li><a href="#">青岛二手房</a></li>
+                        <li><a href="#">大连二手房</a></li>
+                        <li><a href="#">苏州二手房</a></li>
+                        <li><a href="#">厦门二手房</a></li>
+                    </ul>
+                    <ul class="cont co2">
+                        <li><a href="#">北京小区</a></li>
+                        <li><a href="#">上海小区</a></li>
+                        <li><a href="#">广州小区</a></li>
+                        <li><a href="#">深圳小区</a></li>
+                        <li><a href="#">天津小区</a></li>
+                        <li><a href="#">成都小区</a></li>
+                        <li><a href="#">南京小区</a></li>
+                        <li><a href="#">杭州小区</a></li>
+                        <li><a href="#">青岛小区</a></li>
+                        <li><a href="#">大连小区</a></li>
+                        <li><a href="#">苏州小区</a></li>
+                        <li><a href="#">厦门小区</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-info ke">
+                <div class="icon-box">
+                    <span class="icon-iphone ">iPhone客户端</span>
+                    <span class="icon-android ">Android客户端</span>
+                </div>
+                <div class="copyright">
+                    <p class="company">天津小屋信息科技有限公司</p>
+                    <p class="record">C座一层112室09单元</p>
+                    <p class="record">电话:111111111</p>
+                    <p class="record">网络经营许可证</p>
+                    <p class="record">津ICP备18000836号</p>
+                    <p class="record">网络文化经营许可证 津网文（2017）2063-011号</p>
+                    <p class="record">ICP经营许可证 津B2-20170026</p>
+                    <p class="record">copyright©</p>
+                    <p class="record">
+                        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12019002000223"><img src="img/foot/f2.png"alt="">
+                            津公网安备 12019002000223号</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //自适应字体大小
+        (function () {
+            function w() {
+                var all = document.documentElement;
+                var test = all.getBoundingClientRect().width;
+                rem = test / 7.5;
+                all.style.fontSize = rem + 'px'
+            }
+            w();
+            window.addEventListener("resize", function () {
+                w()
+            }, false)
+        })();
+        // 渲染页面商品
+        $.ajax({
+            type : "get",
+            url : "http://localhost:3000/index",
+            // url : "http://localhost/beike/PHP/house.php",
+            data : {},
+            success : function(result) {
+                // console.log(result)
+                // var data = JSON.parse(result);
+                var data=result.data
+                // console.log(data)
+                for(var i=0;i<3;i++){
+                    // 二手房数据渲染
+                    $("#house_se").append(`
+                        <a href="#" class="card-item">
+                            <div class="img-wrap">
+                                <span class="area-tag">${data[i].Position}</span>
+                                <img src="${data[i].img}" alt="" class="img">
+                            </div>
+                            <div class="card-title">${data[i].house_type}/${data[i].area}m²</div>
+                            <div class="focus">5人关注此房</div>
+                            <div class="price">${data[i].price}万</div>
+                        </a>
+                    `)
+                    //新房数据渲染
+                    $("#house_new").append(`
+                        <a href="#" class="card-item">
+                            <div class="img-wrap">
+                                <span class="area-tag">${data[i+3].Position}</span>
+                                <img src="${data[i+3].img}" class="img" alt="">
+                            </div>
+                            <div class="card-title">${data[i+3].Community}</div>
+                            <div class="focus">${data[i+3].area}m²</div>
+                            <div class="price">${data[i+3].prices}元/平</div>
+                        </a>
+                    `)
+                    // 二手房推荐渲染
+                    $("#house_sec").append(`
+                        <a href="#" class="item">
+                        <div class="img-wrap">
+                            <img src="${data[i].img}" alt="" class="img">
+                        </div>
+                        <div class="detail">
+                            <p class="title more-row">${data[i].title}</p>
+                            <p class="info">${data[i].house_type}/${data[i].area}m²/${data[i].towards}/${data[i].Community}</p>
+                            <div class="tags">
+                                <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">随时可看</span>
+                                <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">地铁</span>
+                            </div>
+                            <div class="price">
+                                <span class="total">${data[i].price} <span class="total-unit">万</span></span>
+                                <span class="unit">${data[i].prices}元/平</span>
+                            </div>
+                        </div>
+                    </a>
+                    `)
+                    // 新房推荐渲染
+                    $("#house_new_rec").append(`
+                        <a href="#" class="item">
+                            <div class="img-wrap">
+                                <img src="${data[i].img}" alt="" class="img">
+                            </div>
+                            <div class="detail">
+                                <p class="title more-row">${data[i].Community}</p>
+                                <p class="info">高新万达 华中师范附属学校</p>
+                                <p class="location">${data[i].use} ${data[i].Position}</p>
+                                <div class="tags">
+                                    <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">视频看房</span>
+                                    <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">小户型</span>
+                                </div>
+                                <div class="price">
+                                    <span class="totals">${data[i].prices}元/平</span>
+                                    <span class="unit">建面 ${data[i].area}㎡</span>
+                                </div>
+                            </div>
+                        </a>
+                    `)
+                    // 租房推荐渲染
+                    $("#house_rent_rec").append(`
+                        <a href="#" class="item">
+                            <div class="img-wrap">
+                                <img src="${data[i].img}" alt="" class="img">
+                            </div>
+                            <div class="detail">
+                                <p class="title more-row">整租·${data[i].Community} ${data[i].house_type}</p>
+                                <p class="location">${data[i].area}㎡/${data[i].towards}</p>
+                                <div class="tags">
+                                    <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">${data[i].lift}</span>
+                                    <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">随时看房</span>
+                                </div>
+                                <div class="price">
+                                    <span class="totals">${data[i].prices}元/月</span>
+                                </div>
+                            </div>
+                        </a>
+                    `)
+                }
+            }
+        });
+        // 底部tap切换
+        $("#ho_tp").click(()=>{
+            if($("#ho_tp").hasClass("active")){
+
+            }else{
+                $(".co1").show()
+                $(".co2").hide()
+                $("#ho_tp").addClass("active")
+                $("#ho_tpl").removeClass("active")
+            }
+        })
+        $("#ho_tpl").click(()=>{
+            if($("#ho_tpl").hasClass("active")){
+
+            }else{
+                $(".co2").show()
+                $(".co1").hide()
+                $("#ho_tp").removeClass("active")
+                $("#ho_tpl").addClass("active")
+            }
+        })
+        // 用户本地存储
+        var na = decodeURI(window.location.search.split("=")[1]);
+        if(na=="undefined"){
+            
+        }else{
+            sessionStorage.name=na;
+        }
+        // 城市改变
+        $("#city").click(()=>{
+            window.location.href="city.html"
+        })
+        if(sessionStorage.city){
+            $("#city").html(sessionStorage.city+"<span class='arrow'></span>")
+        }else{
+            $("#city").html("郑州<span class='arrow'></span>")
+        }
+    </script>
+</body>
+</html>
