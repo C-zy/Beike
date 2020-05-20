@@ -26,7 +26,7 @@ var triangleGray = document.getElementsByClassName("triangleGray");
 // 区域里面相关数据
 var left_p1 = document.getElementsByClassName("left-p1");
 var cont2_ul = document.getElementsByClassName("cont2-ul")[0];
-var cont2_bot2 = document.getElementsByClassName("cont2-bot2")[0]
+var cont2_bot2 = document.getElementsByClassName("cont2-bot2")[0];
 new Vue({
     el: "#select",
     data: {
@@ -283,7 +283,17 @@ for (var i = 0; i < type_item.length; i++) {
         }
     }
 };
-
+var tab_item = document.getElementsByClassName('tab_item')[0];
+window.onscroll = function () {
+    if (window.scrollY > 125) {
+        tab_item.classList.add("top_tab");
+        document.getElementsByClassName("tit")[0].style.marginTop = 2.5 + "rem";
+        tit_san.classList.add("tit-san1");
+    } else { 
+        tab_item.classList.remove("top_tab");
+        document.getElementsByClassName("tit")[0].style.marginTop = 0;
+    }
+}
 // 请求房子数据
 var list = document.getElementById("list");
 var xhr = new XMLHttpRequest();
@@ -294,7 +304,7 @@ xhr.onreadystatechange = function () {
         console.log(data.data)
         for (var i = 0; i < data.data.length; i++) {
             list.innerHTML += `
-                <li class="list-item">
+                <li class="list-item" onclick="details(${data.data[i].id})">
                     <div class="lists-left">
                         <img src="${data.data[i].img}">
                     </div>
@@ -312,10 +322,25 @@ xhr.onreadystatechange = function () {
                         <span>${data.data[i].rob}</span>
                     </p>
                 </li>
-            `
+            `;
         }
     }
 }
-xhr.send()
+xhr.send();
+function details(id) { 
+    window.location.href = "er-details.html?id=" + id
+}
+
+// 点击底部的tab切换
+var tab_item1 = document.getElementsByClassName("tab-item1")[0];
+var tab_item2 = document.getElementsByClassName("tab-item2")[0];
+tab_item1.onclick = function () {
+    this.parentElement.nextElementSibling.children[0].style.display = "block";
+    this.parentElement.nextElementSibling.children[1].style.display ="none";
+}
+tab_item2.onclick = function () {
+    this.parentElement.nextElementSibling.children[1].style.display = "block";
+    this.parentElement.nextElementSibling.children[0].style.display="none";
+}
 
 

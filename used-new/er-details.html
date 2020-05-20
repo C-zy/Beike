@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" href="img/logo.ico" type="images/x-ico" />
+    <link rel="stylesheet" href="css/send-hand.css">
+</head>
+
+<body>
+    <div class="inner">
+        <div class="inner-item item1">
+            <span class="icon-back"></span>
+            <span class="city">郑州</span>
+            <span class="icon-down"></span>
+        </div>
+        <div class="inner-item login"></div>
+        <div class="inner-item icon-user"></div>
+    </div>
+    <script>
+        var icon_back=document.getElementsByClassName("icon-back")[0];
+        icon_back.onclick=function(){
+            window.location.href="ershoufang.html"
+        }
+        var title=document.getElementsByTagName("title")[0];
+        var id=window.location.search.split("=")[1]
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost:3000/details?id="+id, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var data = JSON.parse(xhr.responseText)
+                title.innerHTML=data.data[0].title
+            }
+        }
+        xhr.send();
+    </script>
+</body>
+
+</html>

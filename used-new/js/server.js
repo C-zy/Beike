@@ -33,6 +33,15 @@ app.get('/ershoufang', (req, res) => {
         res.json(obj)
     })
 });
+app.get('/details', (req, res) => {
+    connection.query("select * from ershoufang where id='"+req.query.id+"'", function (err, result) {
+        const obj = {
+            status: 200,
+            data: result
+        }
+        res.json(obj)
+    })
+});
 app.get('/xinfang', (req, res) => {
     connection.query("select * from xinfang", function (err, result) {
         const obj = {
@@ -42,5 +51,4 @@ app.get('/xinfang', (req, res) => {
         res.json(obj)
     })
 });
-
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

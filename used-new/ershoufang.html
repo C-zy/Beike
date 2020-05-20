@@ -115,9 +115,10 @@
                 </div>
                 <div class="tit-content content3">
                     <div class="cont2-top">
-                        <h3>房型</h3>  
+                        <h3>房型</h3>
                         <ul class="cont2-ul2">
-                            <li @click="cont3(index,house_type)" v-for="(house_type,index) in house_types" :key="index">{{house_type}}
+                            <li @click="cont3(index,house_type)" v-for="(house_type,index) in house_types" :key="index">
+                                {{house_type}}
                             </li>
                         </ul>
                     </div>
@@ -129,99 +130,211 @@
                         <div class="cont2-bot2" @click="cont3_btn">
                             查看房源
                         </div>
-                        </div>
-                    </div>
-                    <div class="tit-content">
-                        <div class="cont2-top cont2-top1" v-for="group in groups">
-                            <h3>建筑面积</h3>  
-                            <ul class="cont2-ul3">
-                                <li v-for="(area,index) in group.areas" :key="index" @click="more(index)">{{area}}
-                                </li>
-                            </ul>
-                            <h3>房源特色</h3>
-                            <ul class="cont2-ul3">
-                                <li v-for="(feature,index) in group.features" :key="index"  @click="more(index)">{{feature}}</li>
-                            </ul>
-                            <h3>朝向</h3>
-                            <ul class="cont2-ul3">
-                                <li v-for="(ori,index) in group.oris" :key="index"  @click="more(index)">{{ori}}</li>
-                            </ul>
-                            <h3>楼层</h3>
-                            <ul class="cont2-ul3">
-                                <li v-for="(floor,index) in group.floors" :key="index"   @click="more(index)">{{floor}}</li>
-                            </ul>
-                            <h3>楼龄</h3>
-                            <ul class="cont2-ul3">
-                            <li v-for="(towerage,index) in group.towerages" :key="index"  @click="more(index)">{{towerage}}</li>
-                            </ul>
-                            <h3>装修</h3>
-                            <ul class="cont2-ul3">
-                                <li v-for="(finish,index) in group.finish" :key="index"    @click="more(index)">{{finish}}</li>
-                            </ul>
-                            <h3>用途</h3>
-                            <ul class="cont2-ul3">
-                                <li v-for="(use,index) in group.use" :key="index"  @click="more(index)" >{{use}}</li>
-                            </ul>
-                            <h3>电梯</h3>
-                            <ul class="cont2-ul3">
-                                <li v-for="(lift,index) in group.lift" :key="index"   @click="more(index)">{{lift}}</li>
-                            </ul>
-                            <h3>供暖</h3>
-                            <ul class="cont2-ul3">
-                                <li v-for="(heating,index) in group.heating" :key="index"  @click="more(index)" >{{heating}}</li>
-                            </ul>
-                            <h3>权属</h3>
-                            <ul class="cont2-ul3">
-                                <li v-for="(owner,index) in group.owner" :key="index"   @click="more(index)">{{owner}}</li>
-                            </ul>
-                            <h3>类型</h3>
-                            <ul class="cont2-ul3">
-                                <li v-for="(type,index) in group.type" :key="index"  @click="more(index)" >{{type}}</li>
-                            </ul>
-                        </div>
-                        <div class="cont2-bottom">
-                            <div class="cont2-bot1">
-                                <p class="bot1-img"><img src="img/sweep.png" alt=""></p>
-                                <p class="bot1-text">重置</p>
-                            </div>
-                            <div class="cont2-bot2" @click="more_btn">
-                                查看房源
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tit-content">
-                        <ul class="cont5-tit">
-                            <li v-for="(sort,index) in sorts" :key="index" @click="cont5(sort,index)">{{sort}}</li>
-                        </ul>
                     </div>
                 </div>
-            </div>
-            <div class="tit-type">
-                <span class="type-item">满五年</span>
-                <span class="type-item">近地铁</span>
-                <span class="type-item">VR房源</span>
-                <span class="type-item">7日以上</span>
-            </div>
-            <div class="tit-san"></div>
-            <div class="type-bottom">
-                <span>保存搜索条件，获取最新房源</span>
-                <span class="install">安装app</span>
-            </div>
-            <div class="lists">
-                <ul id="list"></ul>
+                <div class="tit-content">
+                    <div class="cont2-top cont2-top1" v-for="group in groups">
+                        <h3>建筑面积</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(area,index) in group.areas" :key="index" @click="more(index)">{{area}}
+                            </li>
+                        </ul>
+                        <h3>房源特色</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(feature,index) in group.features" :key="index" @click="more(index)">{{feature}}
+                            </li>
+                        </ul>
+                        <h3>朝向</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(ori,index) in group.oris" :key="index" @click="more(index)">{{ori}}</li>
+                        </ul>
+                        <h3>楼层</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(floor,index) in group.floors" :key="index" @click="more(index)">{{floor}}</li>
+                        </ul>
+                        <h3>楼龄</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(towerage,index) in group.towerages" :key="index" @click="more(index)">
+                                {{towerage}}</li>
+                        </ul>
+                        <h3>装修</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(finish,index) in group.finish" :key="index" @click="more(index)">{{finish}}</li>
+                        </ul>
+                        <h3>用途</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(use,index) in group.use" :key="index" @click="more(index)">{{use}}</li>
+                        </ul>
+                        <h3>电梯</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(lift,index) in group.lift" :key="index" @click="more(index)">{{lift}}</li>
+                        </ul>
+                        <h3>供暖</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(heating,index) in group.heating" :key="index" @click="more(index)">{{heating}}
+                            </li>
+                        </ul>
+                        <h3>权属</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(owner,index) in group.owner" :key="index" @click="more(index)">{{owner}}</li>
+                        </ul>
+                        <h3>类型</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(type,index) in group.type" :key="index" @click="more(index)">{{type}}</li>
+                        </ul>
+                    </div>
+                    <div class="cont2-bottom">
+                        <div class="cont2-bot1">
+                            <p class="bot1-img"><img src="img/sweep.png" alt=""></p>
+                            <p class="bot1-text">重置</p>
+                        </div>
+                        <div class="cont2-bot2" @click="more_btn">
+                            查看房源
+                        </div>
+                    </div>
+                </div>
+                <div class="tit-content">
+                    <ul class="cont5-tit">
+                        <li v-for="(sort,index) in sorts" :key="index" @click="cont5(sort,index)">{{sort}}</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="footer">
-            <div class="footer-item1">
-                <span class="span1">贝壳找房郑州站</span>
-                <span>郑州二手房</span>
-                <span>|</span>
-                <span>营业执照</span>
-                <span>|</span>
-                <span>ICP证</span>
+        <div class="tit-type">
+            <span class="type-item">满五年</span>
+            <span class="type-item">近地铁</span>
+            <span class="type-item">VR房源</span>
+            <span class="type-item">7日以上</span>
+        </div>
+        <div class="tit-san"></div>
+        <div class="type-bottom">
+            <span>保存搜索条件，获取最新房源</span>
+            <span class="install">安装app</span>
+        </div>
+        <div class="lists">
+            <ul id="list"></ul>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-item1">
+            <span class="span1">贝壳找房郑州站</span>
+            <span>郑州二手房</span>
+            <span>|</span>
+            <span>营业执照</span>
+            <span>|</span>
+            <span>ICP证</span>
+        </div>
+        <div class="footer-tab">
+            <div class="tab-item1 tab-item">南圈二手房</div>
+            <div class="tab-item2 tab-item">热门二手房</div>
+        </div>
+        <div class="tab-item-con">
+            <div class="tab-item1-con">
+                <ul class="item-con item1-con">
+                    <li>
+                        <p>黄河南路二手房</p>
+                    </li>
+                    <li>
+                        <p>第八大街二手房</p>
+                    </li>
+                    <li>
+                        <p>郑州晚报社二手房</p>
+                    </li>
+                    <li>
+                        <p>刘寨二手房</p>
+                    </li>
+                    <li>
+                        <p>二七二手房</p>
+                    </li>
+                    <li>
+                        <p>新密市二手房</p>
+                    </li>
+                    <li>
+                        <p>交警二大队二手房</p>
+                    </li>
+                    <li>
+                        <p>沙口路二手房</p>
+                    </li>
+                    <li>
+                        <p>中原二手房</p>
+                    </li>
+                    <li>
+                        <p>陇海汽车站二手房</p>
+                    </li>
+                    <li>
+                        <p>白沙二手房</p>
+                    </li>
+                    <li>
+                        <p>北大学城二手房</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-item2-con">
+                <ul class="item-con item2-con">
+                    <li>
+                        <p>英协鼎峰二手房</p>
+                    </li>
+                    <li>
+                        <p>新世纪社区二手房</p>
+                    </li>
+                    <li>
+                        <p>锦绣中原二手房</p>
+                    </li>
+                    <li>
+                        <p>绿化东街二手房</p>
+                    </li>
+                    <li>
+                        <p>工农路32号院二手房</p>
+                    </li>
+                    <li>
+                        <p>沁河路60号二手房</p>
+                    </li>
+                    <li>
+                        <p>豫法东苑二手房</p>
+                    </li>
+                    <li>
+                        <p>鹏飞花园二手房</p>
+                    </li>
+                    <li>
+                        <p>盛世之都二手房</p>
+                    </li>
+                    <li>
+                        <p>中原区教师住宅小区二手房</p>
+                    </li>
+                    <li>
+                        <p>正商城福苑二手房</p>
+                    </li>
+                    <li>
+                        <p>建文社区二手房</p>
+                    </li>
+                </ul>
             </div>
         </div>
-        <script src="js/ershoufang.js"></script>
+        <div class="footer-text">
+            <p>网上有害信息举报专区</p>
+            <p>天津小屋信息科技有限公司</p>
+            <p>地址:天津经济技术开发区南港工业区综合服务区办公楼</p>
+            <p>C座一层112室09单元</p>
+            <p>电话:10106188</p>
+            <p>网络经营许可证津ICP备18000836号</p>
+            <p>网络文化经营许可证 津网文（2017）2063-011号</p>
+            <p>ICP经营许可证 津B2-20170026</p>
+            <p>copyright©2020 ke.com 版权所有</p>
+            <p class="beians">
+                <img src="img/beian.png" alt="" class="beian">
+                津公网安备 12019002000223号
+            </p>
+            <div class="text-left">
+            </div>
+            <div class="text-left1">
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed1">
+        <img src="img/message.svg" alt="">
+    </div>
+    <script src="js/ershoufang.js"></script>
 </body>
 
 </html>
