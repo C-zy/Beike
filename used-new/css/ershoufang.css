@@ -121,6 +121,7 @@ li{
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 10;
 }
 .top_tab{
     position: fixed;
@@ -128,6 +129,7 @@ li{
     left: 0;
     height: 2.5rem;
     background-color: white;
+    z-index: 10;
 }
 .tit{
     background-color: white;
@@ -157,6 +159,7 @@ li{
     width: 100%;
     top: 19.6rem;
     bottom: 0;
+    z-index: 9999;
 }
 .tit-type{
     text-align: center;
@@ -337,7 +340,7 @@ li{
     height: 10rem;
     border-bottom: 1px solid #cecece;
     position: relative;
-    z-index: -1;
+    z-index: 0;
 }
 .lists-left{
     width: 40%;

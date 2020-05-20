@@ -248,6 +248,40 @@ new Vue({
             this.$el.children[1].children[this.num4].children[0].children[this.num10].classList.add("active");
             this.titles.splice(this.num4, 1, sort);
             document.getElementsByTagName("body")[0].style.overflow = "auto"
+        },
+        // 重置功能
+        reset() {
+            var a = this.$el.children[1].children[this.num4].children[0].children[2].children;
+            for (var i = 0; i < a.length; i++) { 
+                a[i].classList.remove("active2");
+                this.num6=0
+            }
+        },
+        reset1() {
+            var a = this.$el.children[1].children[this.num4].children[0].children[1].children;
+            for (var i = 0; i < a.length; i++) { 
+                a[i].classList.remove("active2");
+                this.num7=0
+            }
+        },
+        reset2() {
+            var a = this.$el.children[1].children[this.num4].children[0].children;
+            console.log(a) 
+            for (var i = 0; i < a.length; i++) { 
+                (function (i) { 
+                    if (i % 2 == 0) { 
+                        var n = i + 1
+                        for (var i = 0; i < a[n].children.length; i++) { 
+                            // console.log(a[n].children[i])
+                            a[n].children[i].classList.remove("active2")
+                            this.num9 = 0
+                            console.log(this.num9)
+                        }
+                    }
+                   
+                })(i)
+            }
+          
         }
     }
 });
@@ -329,6 +363,7 @@ xhr.onreadystatechange = function () {
 xhr.send();
 function details(id) { 
     window.location.href = "er-details.html?id=" + id
+    console.log(id)
 }
 
 // 点击底部的tab切换

@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
     <link rel="icon" href="img/logo.ico" type="images/x-ico" />
-    <link rel="stylesheet" href="css/send-hand.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/3.4.2/css/swiper.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+    <link rel="stylesheet" href="css/er-details.css">
 </head>
 
 <body>
+
     <div class="inner">
         <div class="inner-item item1">
             <span class="icon-back"></span>
@@ -19,23 +23,134 @@
         <div class="inner-item login"></div>
         <div class="inner-item icon-user"></div>
     </div>
-    <script>
-        var icon_back=document.getElementsByClassName("icon-back")[0];
-        icon_back.onclick=function(){
-            window.location.href="ershoufang.html"
-        }
-        var title=document.getElementsByTagName("title")[0];
-        var id=window.location.search.split("=")[1]
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "http://localhost:3000/details?id="+id, true);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                var data = JSON.parse(xhr.responseText)
-                title.innerHTML=data.data[0].title
-            }
-        }
-        xhr.send();
-    </script>
+    <div id="app">
+        <title>{{lists.title}}</title>
+        <div class="swiper-container">
+            <div class="swiper-wrapper" id="swiper">
+                <div class="swiper-slide" data-index="0">
+                    <img v-bind:src="lists.img" alt="">
+                </div>
+                <div class="swiper-slide" data-index="1">
+                    <img v-bind:src="lists.img1" alt="">
+                </div>
+                <div class="swiper-slide" data-index="2">
+                    <img v-bind:src="lists.img2" alt="">
+                </div>
+                <div class="swiper-slide" data-index="3">
+                    <img v-bind:src="lists.img3" alt="">
+                </div>
+                <div class="swiper-slide" data-index="4">
+                    <img v-bind:src="lists.img4" alt="">
+                </div>
+                <div class="swiper-slide" data-index="5">
+                    <img v-bind:src="lists.img5" alt="">
+                </div>
+                <div class="swiper-slide" data-index="6">
+                    <img v-bind:src="lists.typehouse" alt="">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <div class="type-1">
+                <span class="span1">图片</span>
+                <span class="span2">户型</span>
+            </div>
+
+        </div>
+        <div class="ershoufang-detail">
+            <div class="new">{{lists.keyword}}</div>
+            <div class="tit-new">
+                <h1 class="house-title">{{lists.title}}</h1>
+                <div class="xin">
+                    <p> <img src="img/xin.svg" alt=""></p>
+                    关注
+                </div>
+            </div>
+            <div class="theman">
+                房产负责人:吕丽丽
+            </div>
+            <div class="house-desc">
+                <div class="price desc1">
+                    <p class="shoujia">{{lists.price}}万</p>
+                    <p class="txt">售价</p>
+                </div>
+                <div class="desc1">
+                    <p class="shoujia">{{desc1}}</p>
+                    <p class="txt">房型</p>
+                </div>
+                <div>
+                    <p class="shoujia">{{desc2}}</p>
+                    <p class="txt">建筑面积</p>
+                </div>
+            </div>
+        </div>
+        <div class="detail-house">
+            <ul class="houses">
+                <li>
+                    <span class="gray">售价:</span>
+                    <span>{{lists.price1}}</span>
+                </li>
+                <li>
+                    <span class="gray">挂牌:</span>
+                    <span>2020.05.20</span>
+                </li>
+                <li>
+                    <span class="gray">朝向:</span>
+                    <span>{{desc3}}</span>
+                </li>
+                <li>
+                    <span class="gray">楼层:</span>
+                    <span>高楼层/6层</span>
+                </li>
+                <li>
+                    <span class="gray">楼型:</span>
+                    <span>板楼</span>
+                </li>
+                <li>
+                    <span class="gray">装修:</span>
+                    <span>其他</span>
+                </li>
+                <li>
+                    <span class="gray">年代:</span>
+                    <span>{{lists.year}}</span>
+                </li>
+                <li>
+                    <span class="gray">用途:</span>
+                    <span>普通住宅</span>
+                </li>
+                <li>
+                    <span class="gray">权属:</span>
+                    <span>商品房</span>
+                </li>
+            </ul>
+            <div class="bubget">
+                <span class="small">首付预算:</span>
+                <span>净首付26.8万，月供、税费点击查看详情</span>
+            </div>
+            <div>
+                <span class="small">小区:</span>
+                <span>{{desc4}}</span>
+            </div>
+            <div class="voice">
+                <img src="img/logo.png" alt="" class="voice-img">
+                <span>打开贝壳找房，经纪人语音实时讲房</span>
+                <span class="jian">
+                    <img src="img/icon-right.svg" alt="" >
+                </span>
+            </div>
+            <div class="ranking">
+                <img src="https://img.ljcdn.com/beike/bangdan/1565234456984.png" class="voice-img">
+                <span>所选小区入选{{lists.rob}}</span>
+                <span class="jian">
+                    <img src="img/icon-right.svg" alt="" >
+                </span>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+    <script src="js/er-details.js"></script>
 </body>
 
 </html>
