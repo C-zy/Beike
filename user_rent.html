@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://s1.ljcdn.com/clogin/favicon.ico">
+    <meta name="viewport"
+        content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="css/user.rent.css">
+    <script src="js/zepto.js"></script>
+    <title>我关注的租房</title>
+</head>
+<body>
+    <div class="content">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="flexbox left">
+                <a href="index.html" class="header_back"></a>
+                <a href="#" class="city_wrap">
+                    <span class="switch_city">
+                        <em class="city" id="city">郑州</em>
+                        <i class="icon_pull"></i>
+                    </span>
+                </a>
+            </div>
+            <a href="#" class="logo_wrap center">
+                <span class="logo">贝壳找房</span>
+            </a>
+            <a href="#" class="my right ua">
+                <i class="icon_user"></i>
+            </a>
+        </div>
+        <!-- 内容 -->
+        <div class="content_area" id="content_area">
+            
+        </div>
+        <!-- 无内容 -->
+        <div class="house_none" id="house_none">
+            <p class="text1">您还没有关注的房源</p>
+        </div>
+    </div>
+
+    <script>
+        //自适应字体大小
+        (function () {
+            function w() {
+                var all = document.documentElement;
+                var test = all.getBoundingClientRect().width;
+                rem = test / 26;
+                all.style.fontSize = rem + 'px'
+            }
+            w();
+            window.addEventListener("resize", function () {
+                w()
+            }, false)
+        })();
+        // 城市改变
+        $("#city").click(()=>{
+            window.location.href="city.html"
+        })
+        if(sessionStorage.city){
+            $("#city").html(sessionStorage.city)
+        }else{
+            $("#city").html("郑州")
+        }
+    </script>
+</body>
+</html>

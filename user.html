@@ -6,7 +6,8 @@
     <meta name="viewport"
         content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="css/user.css">
-    <script src="js/jquery.min.js"></script>
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <script src="js/zepto.js"></script>
     <title>个人中心</title>
 </head>
 <body>
@@ -41,29 +42,29 @@
         </div>
         <!-- 下半部分 -->
         <div class="page_list">
-            <ul>
+            <ul id="house_ul">
                 <li> 
-                    <a href="#">我关注的房源</a>
+                    <a href="javascript:void(0)" id="hou">我关注的房源</a>
                     <span class="list_item"></span>
                     <span class="right_arrow"></span>
                 </li>
                 <li> 
-                    <a href="#">我关注的小区</a>
+                    <a href="javascript:void(0)" id="xiao">我关注的小区</a>
                     <span class="list_item item_focus_community"></span>
                     <span class="right_arrow"></span>
                 </li>
                 <li> 
-                    <a href="#">我关注的新房</a>
+                    <a href="javascript:void(0)" id="new">我关注的新房</a>
                     <span class="list_item item_focus_new_house"></span>
                     <span class="right_arrow"></span>
                 </li>
                 <li> 
-                    <a href="#">我关注的租房</a>
+                    <a href="javascript:void(0)" id="rent">我关注的租房</a>
                     <span class="list_item item_focus_zu_house"></span>
                     <span class="right_arrow"></span>
                 </li>
                 <li> 
-                    <a href="#">我的租房优惠券</a>
+                    <a href="javascript:void(0)" id="youhui">我的租房优惠券</a>
                     <span class="list_item item_focus_zu_youhui"></span>
                     <span class="right_arrow"></span>
                 </li>
@@ -90,12 +91,31 @@
         var name=sessionStorage.name;
         if(name=="undefined"){
             $(".logout").hide()
+            $("#house_ul li a").click(()=>{
+                window.location.href="login.html"
+            })
         }else{
             $("#user a").hide()
             $("#user").prepend(`
                 <div>欢迎你，${name}</div>
             `)
             $(".logout").show()
+            // 跳转页面
+            $("#hou").click(()=>{
+                window.location.href="user_house.html?n=house"
+            })
+            $("#xiao").click(()=>{
+                window.location.href="user_house.html?n=xiao"
+            })
+            $("#new").click(()=>{
+                window.location.href="user_house.html?n=new"
+            })
+            $("#youhui").click(()=>{
+                window.location.href="user_coupons.html"
+            })
+            $("#rent").click(()=>{
+                window.location.href="user_rent.html"
+            })
         }
         // 退出登录
         $(".logout").click(()=>{
@@ -108,7 +128,11 @@
         $("#city").click(()=>{
             window.location.href="city.html"
         })
-        $("#city").html(sessionStorage.city)
+        if(sessionStorage.city){
+            $("#city").html(sessionStorage.city)
+        }else{
+            $("#city").html("郑州")
+        }
     </script>
 </body>
 </html>
