@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://s1.ljcdn.com/clogin/favicon.ico">
+    <meta name="viewport"
+        content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="css/user_house.css">
+    <script src="js/zepto.js"></script>
+    <title>我的关注</title>
+</head>
+<body>
+    <div class="content">
+        <!-- 顶部app -->
+        <div class="app">
+            <div class="pictext">
+                <div class="download_logo">
+                    <img src="img/top-img/logo.png" alt="">
+                </div>
+                <div class="download_desc box_col">
+                    <div class="download_title">贝壳找房APP</div>
+                    <div class="download_sub">及时获知房源动态变化</div>
+                </div>
+                <div class="download_btn">立即打开</div>
+            </div>
+        </div>
+        <!-- 头部 -->
+        <div class="header">
+            <div class="flexbox left">
+                <a href="index.html" class="header_back"></a>
+                <a href="#" class="city_wrap">
+                    <span class="switch_city">
+                        <em class="city" id="city">郑州</em>
+                        <i class="icon_pull"></i>
+                    </span>
+                </a>
+            </div>
+            <a href="#" class="logo_wrap center">
+                <span class="logo">贝壳找房</span>
+            </a>
+            <a href="#" class="my right ua">
+                <i class="icon_user"></i>
+            </a>
+        </div>
+        <!-- 内容 -->
+        <div class="content_area" id="content_area">
+            <!-- <div class="mod_box">
+                <a href="#">
+                    <div class="mod_img">
+                        <img src="img/home/1.jpg" alt="">
+                    </div>
+                    <div class="iten_list">
+                        <div class="item_main">保利海上五月花百合园 4室2厅 南 北</div>
+                        <div class="item_minor">
+                            <span class="info">4室2厅130m²  南 北</span>
+                            <span class="price_total">238万</span>
+                        </div>
+                        <div class="item_other">
+                            <span class="location">保利海上五月花百合园</span>
+                            <span class="unit_price">18307.7元/平</span>
+                        </div>
+                    </div>
+                </a>
+            </div> -->
+        </div>
+        <!-- 无内容 -->
+        <div class="house_none" id="house_none">
+            <p class="text1">暂无关注</p>
+        </div>
+    </div>
+
+    <script>
+        //自适应字体大小
+        (function () {
+            function w() {
+                var all = document.documentElement;
+                var test = all.getBoundingClientRect().width;
+                rem = test / 26;
+                all.style.fontSize = rem + 'px'
+            }
+            w();
+            window.addEventListener("resize", function () {
+                w()
+            }, false)
+        })();
+        // 城市改变
+        $("#city").click(()=>{
+            window.location.href="city.html"
+        })
+        if(sessionStorage.city){
+            $("#city").html(sessionStorage.city)
+        }else{
+            $("#city").html("郑州")
+        }
+        // 判断获取谁的信息
+        var how=decodeURI(window.location.search.split("=")[1]);
+        if(how=='undefined'){
+            console.log(000)
+            $("#house_none").show()
+        }else if(how=='house'){
+            console.log(111)
+        }else if(how=='xiao'){
+            console.log(222)
+        }else if(how=='new'){
+            console.log(333)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+    outline: none;
+}
+a {
+    background: transparent;
+    text-decoration: none;
+    color: #000;
+}
+em {
+    font-style: normal;
+}
+body{
+    background: #F8F8F9;
+}
+
+/* 头部 */
+.user_comp {
+    height: 15.5625rem;
+    background-image: url(../img/user/bgi.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.header {
+    /* margin-bottom: 1.5rem; */
+    display: flex;
+    width: 100%;
+    height: 3.125rem;
+    padding: 0 1.1875rem 0 1.25rem;
+    text-align: left;
+    box-sizing: border-box;
+    justify-content: space-between;
+    background-color: #fff;
+    z-index: 10;
+    border-bottom: 1px solid #E4E6F0;
+}
+.header .left {
+    text-align: left;
+}
+.flexbox {
+    display: flex;
+}
+.header .header_back {
+    display: block;
+    height: 100%;
+    font-size: 0;
+    margin-right: .9375rem;
+}
+.header .header_back:after, .header .icon_pull, .header .icon_user, .header .logo, .home_header .icon_user {
+    font-size: 0;
+    display: inline-block;
+    background-image: url(../img/user/s2.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -webkit-transform: none;
+    transform: none;
+}
+.header .header_back:after {
+    content: "";
+    height: 1.25rem;
+    width: 1.25rem;
+    background-size: 1.25rem;
+    margin: .9375rem 0 0 -.3125rem;
+    background-position: 0 -1.484375rem;
+}
+.header .city_wrap {
+    display: block;
+    padding: 0 .5rem;
+    font-size: 0;
+}
+.header .switch_city {
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+}
+.header, .header .switch_city {
+    color: #222;
+    line-height: 3.125rem;
+}
+.header .switch_city .city {
+    font-size: .8125rem;
+    vertical-align: middle;
+}
+.header .icon_pull {
+    width: .5625rem;
+    height: .6rem;
+    background-size: .5625rem;
+    background-position: 0 -4.0078125rem;
+    margin: 0 0 0 .18rem;
+}
+.header .logo_wrap {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+}
+.header .center, .header .left, .header .right {
+    padding: 0;
+    font-size: 0;
+    -webkit-box: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+.header .logo {
+    display: inline-block;
+    width: 7rem;
+    height: 2rem;
+    margin: 0 -1.125rem 0 0;
+    background-image: url(../img/user/zu.png);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    vertical-align: middle;
+    background-position: 0;
+}
+.header .icon_user {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-size: 1.8rem;
+    margin-top: .2rem;
+    margin-right: -.3rem;
+}
+.header .app, .header .my {
+    display: inline-block;
+    width: 2.5rem;
+    height: 100%;
+    line-height: 1em;
+    padding-top: .5rem;
+    font-size: .75rem;
+    color: #3072f6;
+    text-align: center;
+    box-sizing: border-box;
+}
+.header .right {
+    text-align: right;
+}
+/* 内容 */
+.mod_box{
+    padding: 1.25rem;
+    background-color: #fff;
+    border-bottom: 1px solid #E4E6F0;
+}
+.mod_box a{
+    display: flex;
+}
+img{
+    max-height: 100%;
+}
+.mod_img{
+    position: relative;
+    /* width: 5.0625rem; */
+    height: 5.0625rem;
+}
+.iten_list{
+    overflow: hidden;
+    padding-left: 1.25rem;
+}
+.iten_list .item_main {
+    margin-bottom: .45rem;
+    line-height: 1.2em;
+    overflow: hidden;
+    font-size: 1rem;
+    color: #101D37;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.item_minor, .item_other {
+    display: flex;
+    justify-content: space-between;
+}
+.item_minor, .item_other {
+    margin-bottom: .45rem;
+    line-height: 1.2em;
+    color: #333;
+    font-size: .75rem;
+}
+.item_minor .info{
+    vertical-align: middle;
+    margin-right: .1125rem;
+}
+.item_minor .price_total {
+    color: #fa5741;
+    font-size: .9375rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.item_other, .pictext .item_other a {
+    color: #8b8b8b;
+}
+.unit_price{
+    font-size: .6875rem;
+}
+.house_none {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 32rem;
+    padding: 19rem 0 0;
+    background: url(../img/user/wu.png) center 8rem no-repeat #fff;
+    -moz-background-size: 8rem 9.4375rem;
+    -o-background-size: 8rem 9.4375rem;
+    background-size: 10rem 10rem;
+    text-align: center;
+}
+.house_none .text1 {
+    font-size: 1rem;
+    line-height: 1.375rem;
+    text-align: center;
+    color: #9399a5;
+}
