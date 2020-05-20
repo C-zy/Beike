@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郑州公寓出租_郑州精装公寓出租信息-郑州贝壳找房</title>
+    <link rel="stylesheet" href="./css/apartment.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="content">
+        <div class="inner">
+            <div class="inner-item item1">
+                <span class="icon-back"></span>
+                <span class="city">郑州</span>
+                <span class="icon-down"></span>
+            </div>
+            <div class="inner-item login"></div>
+            <div class="inner-item icon-user"></div>
+        </div>
+        <!-- 导航栏 -->
+        <div id="app">
+            <child :titles="titles" :areas="areas" :ways="ways" :rentals="rentals" :filter_rr="filter_rr"></child>
+        </div>
+        <!-- 正文部分 -->
+        <div class="wraper" id="wraper">
+           
+        </div>
+
+        <!-- 固定定位的小图标 -->
+        <div class="r_fixed">
+            <img src="./img/Rent_fixed.png" alt="">
+       </div>
+       <!-- 底部 -->
+       <div class="r_footer">
+        <p class="f_top">
+            <a href="./Rent_house.html" style="color: rgb(142, 142, 142);">郑州租房网</a>
+            >
+            <a href="">郑州租房</a>
+        </p>
+        <div class="f_center">
+            <div class="tab_title">
+                <p class="tab_active">热门商圈</p>
+                <p>推荐小区</p>
+                <p>租房城市</p>
+            </div>
+            <div class="tab_con">
+                <div class="show_item">
+                    <ul>
+                        <li class="show_cont">
+                            <a href="">富田大厦租房</a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">南龙湖商圈租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">陇海汽车站租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">中原区租房</a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">大石桥租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">通泰路租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">新密市租房</a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">未来大厦租房  </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">登封市租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">管南区域租房</a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">上街区租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href=""> 海洋馆租房 </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="show_item" style="display: none;">
+                    <ul>
+                        <li class="show_cont">
+                            <a href=""> 新安办香园社区汝南路20号院租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">正弘臻筑租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href=""> 索河路302号租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href=""> 纬四路5号院租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href=""> 缔景天城紫苑租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href=""> 宏基花园租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">13号院租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">丽康名邸小区租房   </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">步行街家属院租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">商业建筑公司家属院租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">清馨园租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href=""> 二环支路43号租房 </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="show_item" style="display: none;">
+                    <ul>
+                        <li class="show_cont">
+                            <a href="">佛山租房</a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">惠州租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">绍兴租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">合肥租房</a>
+                        </li>
+                        <li class="show_cont">
+                            <a href=""> 珠海租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">贵阳租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">新密市租房</a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">厦门租房  </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">湖州租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href="">廊坊租房</a>
+                        </li>
+                        <li class="show_cont">
+                            <a href=""> 三亚租房 </a>
+                        </li>
+                        <li class="show_cont">
+                            <a href=""> 唐山租房 </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f_foo">
+                <div class="foo_l">
+                    <a href="javascrupt:;">
+                        <img src="./img/iOS.png" alt="">
+                    </a>
+                    <a href="javascrupt:;">
+                        <img src="./img/Android.png" alt="">
+                    </a>
+                </div>
+                <div class="foo_r">
+                    <p>天津小屋信息科技有限公司</p>
+                    <p>地址:天津经济技术开发区南港工业区综合服务区办公楼</p>
+                    <p>C座一层112室09单元</p>
+                    <p>电话:10106188</p>
+                    <p>网络经营许可证 <a href="" style="text-decoration: none; color: #717171;">津ICP备18000836号</a></p>
+                    <p>网络文化经营许可证 津网文（2017）2063-011号</p>
+                    <p>ICP经营许可证 津B2-20170026</p>
+                    <p>copyright©2018 ke.com 版权所有</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        <script src="./js/apartment.js"></script>
+        <script>
+            (function () {
+                function fn() {
+                    var dom = document.documentElement;
+                    var wid = dom.getBoundingClientRect().width;
+                    if (wid > 750) {
+                        wid = 750;
+                    }
+                    var rem = wid / 25;
+                    dom.style.fontSize = rem + 'px';
+                }
+                fn();
+                window.addEventListener("resize", function () {
+                    fn();
+                }, false)
+            })();
+
+            Vue.component('child', {
+                props: ['titles', 'areas', 'ways', 'rentals', 'filter_rr'],
+                data() {
+                    return {
+                        num: 0,
+                        val: "不限",
+                        tab_tt: null,
+                        num1: null,
+                        way_num: 0,
+                        val_t: "不限",
+                        rent_num: "不限",
+                        sum: 0
+                    }
+                },
+                template: `
+    <div class="all_back" style="z-index: 10;">
+        <ul class="lists-t">
+            <li v-for="(title,index) in titles" @click="tab_t(index)"><span :class="{area_active:tab_tt==index}">{{title}}</span><i :class="{act:tab_tt==index}"></i></li>
+        </ul>
+        <div class="contents" v-show="num1==0">
+            <ul class="area_keys1">
+                <li v-for="(areas,key1,index) in areas" @click="chanage_area1(index)" :class="{area_active:num==index}">{{key1}}</li>
+            </ul>
+            <ul class="area_keys2">
+                <li v-for="(area,key2,index) in areas" v-show="num==index">
+                    <p v-for="(areas,key3,index) in areas[key2]" @click="change_area2(key3)" :class="{area_active:val==key3}">{{key3}}</p>
+                </li>
+            </ul>
+            <ul class="area_keys3">
+                <li v-for="(area,key2,index) in areas">
+                    <div v-for="(area,key3,index) in areas[key2]"  v-show="val==key3">
+                        <p v-for="(keys,index) in areas[key2][key3]" @click="replace(keys)" :class="{area_active:val_t==keys}">{{keys}}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class=contents1 v-show="num1==1">
+            <a v-for="(way,index) in ways" @click="way_w(index,way)" :class="{area_active:way_num==index}">{{way}}</a>  
+        </div>
+        <div class=contents2 v-show="num1==2">
+            <ul>
+                <li v-for="(rental,index) in rentals">
+                    <a @click="therent(index,rental)" :class="{area_active:rent_num==rental}">{{rental}}</a>
+                </li>
+           </ul>
+           <div>
+                <input type="text" placeholder="最小" id="r_ipt1"><i> — </i><input type="text" placeholder="最大" id="r_ipt2">
+                <button @click="sure_rr">确定</button>
+           </div>
+        </div>
+        <div class=contents3 v-show="num1==3">
+            <div class="right">
+                <ul class="ff_rr">
+                    <li v-for="(filter_rr,i_items,index) in filter_rr">
+                        <span>{{i_items}}</span>
+                        <a class="blue" v-for="(i_keys,index) in filter_rr" @click="f_type($event,i_keys)" :clalss="{fliter_last:f_type}">
+                           {{i_keys}}
+                        </a>
+                    </li>
+                </ul>
+                <p class="ff_zz">
+                    <span @click="remove_cl">清除</span>
+                    <button @click="sure_cl">确定</button>
+                </p>
+            </div>
+        </div>
+    </div>
+        `,
+                mounted() {
+                    $(".area_keys3").hide()
+                    $(".area_keys2").css("width", "50%")
+                    $(".area_keys1").css("width", "50%")
+                },
+                methods: {
+                    chanage_area1(i) {
+                        console.log(444)
+                        $(".area_keys2").css("width", "50%")
+                        $(".area_keys1").css("width", "50%")
+                        $(".area_keys3").hide()
+                        this.num = i
+
+                    },
+                    // 二级
+                    change_area2(key) {
+                        console.log(key)
+                        $(".area_keys1").css("width", "33%")
+                        $(".area_keys2").css("width", "33%")
+                        $(".area_keys3").css("width", "33%")
+                        this.val = key
+                        $(".area_keys3").show()
+                        if (this.val == "1km" || this.val == "2km" || this.val == "3km") {
+                            $(".area_keys3").hide()
+                            alert("位置服务被拒绝")
+                            $(".area_keys2").css("width", "50%")
+                            $(".area_keys1").css("width", "50%")
+                        }
+                        if (key == "不限") {
+                            this.titles.splice(0, 1, "区域")
+                            $(".area_keys3").hide()
+                            this.num1 = null
+                            $(".area_keys2").css("width", "50%")
+                            $(".area_keys1").css("width", "50%")
+                            $(".all_back").css("position", "relative")
+                        }
+                    },
+                    // 替换标题的内容
+                    replace(val) {
+                        this.titles.splice(0, 1, val)
+                        this.val_t = val
+                        this.num1 = null //选择完之后当前的块隐藏
+                        if (val == "不限") {
+                            console.log(12345)
+                            this.titles.splice(0, 1, "区域")
+
+                        }
+                        $(".all_back").css("position", "relative")
+                    },
+                    //   点击对应的title显示对应的内容
+                    tab_t(i) {
+                        this.tab_tt = i//控制title颜色
+                        this.num1 = i
+                        $(".all_back").css({
+                            position: "fixed",
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            " background-color": " rgba(0,0,0,.5)"
+                        })
+                        if (i == 0) {
+                            $(".contents").slideDown()
+                        }
+                        if (i == 1) {
+                            $(".contents1").slideDown()
+                        }
+                        if (i == 2) {
+                            $(".contents2").slideDown()
+                        }
+                        if (i == 3) {
+                            $(".lists-t").hide()
+                            $(".contents3").fadeIn("slow")
+                        }
+                    },
+                    // 方式下拉模块
+                    way_w(i, val) {
+                        this.num1 = null
+                        this.way_num = i
+                        this.titles.splice(1, 1, val)
+                        if (val == "不限") {
+                            this.titles.splice(1, 1, "方式")
+                        }
+                        $(".all_back").css("position", "relative")
+                    },
+                    // 租金下拉模块
+                    therent(i, val) {
+                        this.num1 = null
+                        this.titles.splice(2, 1, val)
+                        this.rent_num = val
+                        if (val == "不限") {
+                            this.titles.splice(2, 1, "租金")
+                        }
+                        $(".all_back").css("position", "relative")
+                    },
+                    sure_rr() {
+                        this.num1 = null
+                        if ($("#r_ipt1").val() != "" && $("#r_ipt2").val() == "") {
+                            this.titles.splice(2, 1, $("#r_ipt1").val() + '元以下')
+                        } else if ($("#r_ipt1").val() == "" && $("#r_ipt2").val() != "") {
+                            this.titles.splice(2, 1, $("#r_ipt2").val() + '元以上')
+                        } else if ($("#r_ipt1").val() == "" && $("#r_ipt2").val() == "") {
+                            this.titles.splice(2, 1, "租金")
+                        } else {
+                            this.titles.splice(2, 1, $("#r_ipt1").val() + '-' + $("#r_ipt2").val() + '元')
+                        }
+                        $(".all_back").css("position", "relative")
+                    },
+                    f_type(e, val) {
+                        if (e.target.classList.contains("fliter_last")) {
+                            e.target.classList.remove("fliter_last");
+                            this.sum--
+                        } else {
+                            e.target.classList.add("fliter_last")
+                            this.sum++
+                        }
+                        if (this.sum != 1) {
+                            this.titles.splice(3, 1, "筛选")
+                        } else {
+                            this.titles.splice(3, 1, val)
+                        }
+
+                    },
+                    remove_cl() {
+                        $(".blue").removeClass("fliter_last")
+                    },
+                    sure_cl() {
+                        $(".lists-t").show()
+                        this.num1 = null
+                        $(".all_back").css("position", "relative")
+                    }
+
+                }
+            })
+            new Vue({
+                el: "#app",
+                data: {
+                    titles: ["区域", "方式", "租金", "筛选"],
+                    ways: ["不限", "整租", "合租"],
+                    rentals: ["不限", "≤1000元", "1000-1500元", "1500-2000元", "2000-3000元", "3000-4000元", "≥4500元"],
+                    areas: {
+                        "区域": {
+                            "不限": [],
+                            "二七": ["不限", "碧沙岗", "常西湖", "电力新村", "帝湖", "古玩城", "管南区域", "火车站"],
+                            "中原": ["不限", "碧沙岗", "常西湖", "电力新村", "儿童公园"],
+                            "管城回族区": ["不限", "第三大街", "第八建材", "东建材", "二里岗", "凤凰路", "管南区域", "火车站", "航空港商圈", "世纪欢乐园", "万客来", "鞋城", "燕庄", "紫荆山"],
+                            "惠济": ["不限", "北大学城", "绿茵广场", "刘寨", "庙李", "省体育中心", "新郑大", "石佛", "索林路北段"],
+                            "金水": ["不限", "北大学城", "财富广场", "陈寨", "CBD", "大石桥", "海洋馆", "富田大厦"],
+                            "郑东新区": ["不限", "白沙"],
+                            "荥阳市": ["不限", "巩义市", "新密市"],
+                            "新郑市": ["不限", "园博园商圈", "南龙湖商圈", "双鹤湖商圈", "新郑市"],
+                            "上街区": ["不限", "上街区"],
+                            "登封市": ["不限", "登封市", "巩义市"],
+                            "经开区": ["不限", "黄河南路", "航空港圈", "通泰路", "郑州东站"],
+                        },
+                        "地铁": {
+                            "不限": [],
+                            "1号线": ["不限", "河南大学", "文苑北路", "龙子湖", "博学路", "东风南路", "农业南路", "黄河南路", "会展中心", "民航路", "燕庄"],
+                            "14号线": ["不限", "市委党校", "铁炉", "奥体中心"],
+                            "2号线": ["不限", "贾河", "惠济区政府", "黄河迎宾馆", "金洼", "金达路", "柳林", "沙门", "北三环", "东风路", "关虎屯", "陇海东路", "二里岗"],
+                            "城郊线": ["不限", "十八里河", "双湖大道", "华南城西", "沙窝里", "华南城", "孟妆", "康平河", "南湖公园", "恩平湖", "新郑机场"],
+                            "5号线": ["不限", "五一公园", "桐淮", "后河芦", "京广南路", "南五里堡", "城东南路", "航海广场", "福塔东", "沙口路", "月季公园", "海滩寺"],
+                        },
+                        "附近": {
+                            "不限": [],
+                            "1km": [],
+                            "2km": [],
+                            "3km": []
+                        }
+                    },
+                    filter_rr: {
+                        "面积": ["≤40㎡", "80-100㎡", "100-120㎡", "≥120㎡"],
+                        "服务保障": ["品质认证", "租住保障"],
+                        "租期": ["月租", "年租", "一个月起租", "1-3个月", "4-6个月"],
+                       
+                    }
+
+                }
+            })
+          
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,457 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+content{
+    width: 100%;
+    height: 100%;
+}
+/* 顶部 */
+.inner{
+    display: flex;
+    padding: 0 .35rem;
+    font-weight:400 ;
+    padding:0 1rem;
+}
+.inner-item{
+    width:33.4%;
+    height: 4rem;
+    box-sizing: border-box;
+}
+.login{
+    background: url(../img/logo.png) no-repeat 75%/75%;
+    cursor: pointer;
+}
+.icon-user{
+    background: url(../img/user.png) no-repeat 100%/17%;
+    cursor: pointer;
+}
+.item1{
+    display: flex;
+    align-items: center;
+}
+.item1 span{
+    cursor: pointer;
+}
+.icon-back{
+    display: inline-block;
+    width: 1.7rem;
+    height: 100%;
+    background: url(../img/back.png) no-repeat 0/40%;
+}
+.icon-down{
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-left:0.2rem;
+    background: url(../img/down.png) no-repeat 0/100%;
+}
+/* 导航栏 */
+#app .all_back .lists-t{
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    padding: 3% 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e4e6f0;
+}
+.lists-t li{
+    width: 25%;
+    display: flex;
+   justify-content: center;
+}
+.lists-t li span{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 1rem;
+}
+.lists-t li i{
+    display: inline-block;
+    font-style: normal;
+    width: 0;
+    height: 0;
+    margin: 8% 0;
+    margin-left: 8%;
+    border: .3rem solid transparent;
+    border-top-color: #9ea1a3;
+    transition: all .1s;
+    transform-origin: 60% 25%;
+}
+.lists-t li i.act{
+    transform: rotateZ(180deg);
+    border-top-color: #3072f6;
+}
+#app .all_back .contents{
+    background: #fff;
+    display: flex;
+    height: 18rem;
+    justify-content: space-between;
+   padding-left: 5%;
+    box-sizing: border-box;
+}
+#app .all_back .contents ul{
+    width: 33%;
+    overflow: scroll;
+}
+#app .all_back .contents ul li{
+    font-size:1rem;
+}
+#app .all_back .contents .area_keys1{
+    background: #fff;
+    padding-top: 5%;
+  
+}
+.area_keys1 li{
+    padding-bottom: 15%;
+
+}
+.area_keys2{
+    background-color: #f5f5f5;
+    padding-top: 5%;
+    margin-left: -1%;
+
+}
+.area_keys2 li p{
+    padding-bottom: 15%;
+    padding-left: 5%;
+    margin-bottom: 10px; 
+    color: #000;
+    font-size: 1rem;
+}
+.area_keys3{
+    background-color: #f2f2f2;
+    padding-top: 5%;
+    margin-left: -2%;
+}
+.area_keys3 li div p{
+    padding-bottom: 15%; 
+    padding-left: 5%;
+    margin-bottom: 0%;
+    color: #000;
+    margin-top: 0%;
+    font-size: 1rem;
+}
+#app .all_back .area_active{
+    color: #3072f6;
+}
+.contents1,.contents2{
+    height: 18rem;
+}
+.contents1{
+    background-color: #fff;
+}
+.contents1 a{
+    color: #000;
+    display: block;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5% 0;
+    margin: 0 5%;
+    border-bottom: 1px solid #e4e6f0;
+}
+.contents2{
+    background-color: #fff;
+}
+.contents2 ul{
+    height: 13rem;
+    overflow: scroll;
+}
+.contents2 a{
+    color: #000;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5% 0;
+    margin: 0 5%;
+}
+.contents2 div{
+    display: flex;
+    padding: 5% 5%;
+    justify-content: space-around;
+    border-top: 1px solid #e4e6f0;
+    box-sizing: border-box;
+}
+.all_back .contents2 input{
+    border-radius: 0%;
+    border: 1px solid #e5e5e5;
+    width: 10%;
+    padding: 4.5% 6%;
+    font-size: .23rem;
+    height:0;
+    margin-bottom: 0;
+}
+.all_back .contents2 i{
+    line-height: 2rem;
+    font-size: .3rem;
+    font-style: normal;
+}
+.contents2 div button{
+    padding: 0%;
+    border-radius: 0%;
+    width: 35%;
+    border: none;
+    border: 1px solid  #3072f6;
+    background-color: #fff;
+    color:#3072f6;
+    outline: none;
+    font-size: 1rem;
+}
+.contents3{
+    height: 40rem;
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: flex-end;;
+}
+.contents3 .right{
+    width: 80%;
+    background: #fff;
+}
+.contents3 .right .ff_rr{
+    padding-left: 8%;
+    height: 85%;
+    overflow: scroll;
+}
+.contents3 .right .ff_rr li{
+    font-size:1.1rem;
+    padding-top: 5%;
+    padding-bottom: 10%;
+    border-bottom: 1px solid #e4e6f0;
+  
+}
+.contents3 .right .ff_rr li span{
+    display: block;
+}
+
+.contents3 .right .ff_rr li a{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #9399a5;
+    font-size:.9rem;
+    display: inline-block;
+    border: 1px solid #ccc;
+    width: 27%;
+    text-align: center;
+    padding: 1% 0;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+.contents3 .right .ff_rr li a.fliter_last{
+    background-color: rgba(48,114,246,.15);
+    border-color: rgba(48,114,246,.15);
+    color: #3072f6;
+}
+.ff_zz{
+    display: flex;
+    width: 80%;
+    position: absolute;
+    bottom:0;
+    box-sizing: border-box;
+    right: 0;
+    background: #fff;
+}
+.ff_zz span{
+    padding: 5% 10%;
+    background: #fff;
+    font-size: 1rem;
+
+}
+.ff_zz button{
+    width: 68%;
+    border-radius: 0%;
+    padding: 5% 28%;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background: #3072f6;
+    color: #fff;
+}
+/* 正文部分 */
+.apart_container{
+    padding: 5% 5%;
+}
+.apart_container a{
+    display: block;
+    padding-bottom: 5%;
+    border-bottom: 1px solid #e4e6f0;;
+    width: 100%;
+    text-decoration: none;
+    color: #222;
+}
+.apart_container a span{
+    position: relative;
+}
+.apart_container a img{
+    width: 100%;
+}
+.apart_container a span i{
+    font-size: .8em;
+    font-style: normal;
+    padding: 1% 1%;
+    background-color: #fff;
+    position: absolute;
+    top: -10.5rem;
+    left: 2%;
+    border-radius: .2rem;
+}
+.apart_container a span i.full{
+    color: #9399a5;
+}
+.dec{
+    padding-top: 5%;
+    position: relative;
+}
+.dec i{
+    position: absolute;
+    top: -35%;
+    right: 5%;
+    border-radius: 50%;
+    display: inline-block;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+.dec p{
+    font-size: .8rem;
+    color: #9399a5;
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+.dec span:nth-of-type(1){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fe615a;
+}
+.dec span:nth-of-type(2){
+    color: #9399a5;
+    font-size: .8rem;
+   margin-right: 0;
+   position: absolute;
+   right: 0;
+}
+/* 固定定位的小图标 */
+.r_fixed{
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 70%;
+    right: 5%;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0.25rem 1.0625rem 0 rgba(0,0,0,.3)
+}
+.r_fixed img{
+    width: 50%;
+}
+/* 底部 */
+.r_footer{
+    background: #2f3130;
+}
+.r_footer .f_top{
+    margin: 0 5%;
+    padding: 4% 0;
+    border-bottom: 1px solid #3e403f;
+    color: #7b7b7b;
+    font-size: .23rem;
+}
+.r_footer .f_top a{
+    
+    color: #7b7b7b;
+    text-decoration: none;
+}
+.f_center{
+    padding-top: 3%;
+}
+.tab_title {
+    display: flex;
+    justify-content: space-around;
+}
+.tab_title p{
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(125, 125, 125);
+    background: rgb(33, 33, 33);
+    padding: 2% 3%;
+}
+.tab_title p.tab_active{
+    background: rgb(60, 63, 61);
+    color: #fff;
+}
+/* 底部的tab切换 */
+.show_item ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 2% 0;
+    padding-left: 3%;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+.show_cont{
+    width: 30%;
+    text-align: left;
+    display: flex;
+    padding: 3% 0;
+}
+.show_cont a{
+    width: 93%;
+    font-size: 1rem;
+    color: #828383;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.show_cont a::before{
+    margin-right: 10%;
+    display: inline-block;
+    content: "";
+    width: .4rem;
+    height: .4rem;
+    border-radius: 50%;
+    background-color: #737373;
+}
+.f_foo{
+    overflow: hidden;
+    position: relative;
+    padding-top: 3%;
+}
+.foo_l{
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    width: 50%;
+    padding-left: 6%;
+    box-sizing: border-box;
+
+}
+.foo_l a{
+    text-decoration: none;
+    width:100%;
+}
+.foo_l a img{
+    width: 35%;
+}
+.foo_r{
+    width: 65%;
+    float: right;
+    padding-right: 4%;
+}
+.foo_r p{
+    text-align: right;
+    font-size: .2rem;
+    color: #717171;;
+}

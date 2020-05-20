@@ -61,3 +61,67 @@ header{
     width: 50%;
     vertical-align: middle;
 }
+.wraper_cc{
+    padding: 0 5%;
+}
+.center_top{
+    padding-top: 10%;
+}
+.center_top h3{
+    padding-top: 3%;
+    font-size: .37rem;
+    color: #222;
+}
+.center_top ul{
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    padding: 7% 5%;
+    padding-bottom: 10%;
+}
+.center_top ul li{
+    text-align: center;
+    margin-right: 23%;
+    width: 20%;
+}
+.center_top ul li a{
+    width: 100%;
+    text-decoration: none;
+    color: #222;
+}
+.center_top ul li a img{
+    width: 70%;
+}
+.center_top ul li a p{
+    font-size: .3rem;
+}
+.footer_con p{
+    display: flex;
+    padding: 1% 5%;
+    box-sizing: border-box;
+}
+.footer_con span:nth-of-type(1){
+    display: inline-block;
+    width: .25rem;
+    height: .3rem;
+    background: url(../img/tel.png) center center no-repeat;
+    background-size:100% 77%;
+}
+.footer_con span:nth-of-type(2){
+    font-size: .2rem;
+    padding-left: 3%;
+    color: #222;
+}
+.footer_con p i{
+    font-style: normal;
+    font-size: .2rem;
+    color: #3072f6;;
+}
+.f_text{
+    font-size: .2rem;
+    color: #ccc;
+}
+.footer_con{
+    padding-top: 30%;
+}

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <link rel="stylesheet" href="./css/contact.css"> -->
-    <link rel="stylesheet" href="./css/Rent_house.css">
+    <link rel="stylesheet" href="./css/contact.css">
 
 </head>
+
 <body>
-     <!-- 头部 -->
-     <header>
+    <!-- 头部 -->
+    <header>
         <div class="h_left">
             <a href="">
                 <img src="./img/back.png" alt="">
@@ -24,8 +26,49 @@
             <a href=""><img src="./img/user.png" alt=""></a>
         </div>
     </header>
+    <div>
+        <div class="wraper_cc">
+            <div class="center_top">
+                <h3>我是租客</h3>
+                <ul>
+                    <li>
+                        <a href="">
+                            <img src="./img/complaint1.png" alt="">
+                            <p>我要投诉</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/complaint3.png" alt="">
+                            <p>意见反馈</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="center_top">
+                <h3>我是租客</h3>
+                <ul style="border: none;">
+                    <li>
+                        <a href="">
+                            <img src="./img/complaint2.png" alt="">
+                            <p>我要入驻</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer_con">
+        <p>
+            <span></span>
+            <span>客服热线电话 </span>
+            <i>10106188</i>
+        </p>
+        <p class="f_text">客服工作时间：9:00-22:00（除春节外节假日正常上班）</p>
+    </div>
     <script>
-         (function () {
+      
+        (function () {
             function font() {
                 var all = document.documentElement;  // 获取html元素
                 var w = all.getBoundingClientRect().width;  // 获取当前设备的宽度
@@ -35,11 +78,12 @@
                 rem = w / 7.5;
                 all.style.fontSize = rem + 'px'
             }
-            font(); 
+            font();
             window.addEventListener("resize", function () {
                 font()
             }, false)
         })();
     </script>
 </body>
+
 </html>

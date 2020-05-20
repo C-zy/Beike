@@ -42,5 +42,16 @@ app.get('/details', (req, res) => {
         console.log('111', res)
       })
 })
+app.get('/apart', (req, res) => { 
+  connection.query('select * from apartment', function (err, rent) {
+      if (err) throw err
+        const obj={
+            status:200,
+            data:rent
+        }
+        res.json(obj)
+      console.log('111', res)
+    })
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
