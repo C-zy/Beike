@@ -36,7 +36,7 @@
         <div class="home-hot-menu">
             <ul class="home-ul">
                 <li>
-                    <a href="#">
+                    <a href="ershoufang.html">
                         <div class="li-img">
                             <img src="img/top-img/t1.png" alt="">
                         </div>
@@ -397,57 +397,22 @@
         $.ajax({
             type : "get",
             url : "http://localhost:3000/index",
-            // url : "http://localhost/beike/PHP/house.php",
             data : {},
             success : function(result) {
-                // console.log(result)
-                // var data = JSON.parse(result);
                 var data=result.data
                 // console.log(data)
                 for(var i=0;i<3;i++){
-                    // 二手房数据渲染
-                    $("#house_se").append(`
-                        <a href="#" class="card-item">
-                            <div class="img-wrap">
-                                <span class="area-tag">${data[i].Position}</span>
-                                <img src="${data[i].img}" alt="" class="img">
-                            </div>
-                            <div class="card-title">${data[i].house_type}/${data[i].area}m²</div>
-                            <div class="focus">5人关注此房</div>
-                            <div class="price">${data[i].price}万</div>
-                        </a>
-                    `)
                     //新房数据渲染
                     $("#house_new").append(`
-                        <a href="#" class="card-item">
+                        <a href="er-details.html?id=${data[i].id}" class="card-item">
                             <div class="img-wrap">
-                                <span class="area-tag">${data[i+3].Position}</span>
+                                <span class="area-tag">${data[i+3].house_type}</span>
                                 <img src="${data[i+3].img}" class="img" alt="">
                             </div>
                             <div class="card-title">${data[i+3].Community}</div>
                             <div class="focus">${data[i+3].area}m²</div>
                             <div class="price">${data[i+3].prices}元/平</div>
                         </a>
-                    `)
-                    // 二手房推荐渲染
-                    $("#house_sec").append(`
-                        <a href="#" class="item">
-                        <div class="img-wrap">
-                            <img src="${data[i].img}" alt="" class="img">
-                        </div>
-                        <div class="detail">
-                            <p class="title more-row">${data[i].title}</p>
-                            <p class="info">${data[i].house_type}/${data[i].area}m²/${data[i].towards}/${data[i].Community}</p>
-                            <div class="tags">
-                                <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">随时可看</span>
-                                <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">地铁</span>
-                            </div>
-                            <div class="price">
-                                <span class="total">${data[i].price} <span class="total-unit">万</span></span>
-                                <span class="unit">${data[i].prices}元/平</span>
-                            </div>
-                        </div>
-                    </a>
                     `)
                     // 新房推荐渲染
                     $("#house_new_rec").append(`
@@ -492,6 +457,51 @@
                 }
             }
         });
+        // 二手房渲染
+        $.ajax({
+            type : "get",
+            url : "http://localhost:3000/ershoufang",
+            data : {},
+            success : function(result) {
+                var data=result.data
+                // console.log(data)
+                // console.log(111)
+                for(var i=0;i<3;i++){
+                    // 必看二手房
+                    $("#house_se").append(`
+                        <a href="er-details.html?id=${data[i].id}" class="card-item">
+                            <div class="img-wrap">
+                                <span class="area-tag">${data[i].keyword}</span>
+                                <img src="${data[i].img}" alt="" class="img">
+                            </div>
+                            <div class="card-title">${data[i].desc}</div>
+                            <div class="focus">5人关注此房</div>
+                            <div class="price">${data[i].price}万</div>
+                        </a>
+                    `)
+                    // 二手房推荐渲染
+                    $("#house_sec").append(`
+                        <a href="er-details.html?id=${data[i].id}" class="item">
+                        <div class="img-wrap">
+                            <img src="${data[i].img}" alt="" class="img">
+                        </div>
+                        <div class="detail">
+                            <p class="title more-row">${data[i].title}</p>
+                            <p class="info">${data[i].desc}</p>
+                            <div class="tags">
+                                <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">${data[i].keyword}</span>
+                                <span class="tag" style="background-color: rgb(244, 247, 249); color: rgb(132, 154, 174);">地铁</span>
+                            </div>
+                            <div class="price">
+                                <span class="total">${data[i].price} <span class="total-unit">万</span></span>
+                                <span class="unit">${data[i].price1}</span>
+                            </div>
+                        </div>
+                    </a>
+                    `)
+                }
+            }
+        })
         // 底部tap切换
         $("#ho_tp").click(()=>{
             if($("#ho_tp").hasClass("active")){

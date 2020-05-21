@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>北京二手房_北京二手房出售买卖信息网【北京贝壳找房】</title>
+    <link rel="icon" href="img/logo.ico" type="images/x-ico" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="js/zepto.js"></script>
+    <link rel="stylesheet" href="css/ershoufang.css">
+</head>
+
+<body>
+    <div class="content">
+        <div class="inner">
+            <div class="inner-item item1">
+                <span class="icon-back" id="home"></span>
+                <span class="city" id="city">郑州</span>
+                <span class="icon-down" ></span>
+            </div>
+            <div class="inner-item login"></div>
+            <div class="inner-item icon-user" id="user"></div>
+        </div>
+        <div class="search">
+            <div class="ipt">
+                <input type="text" placeholder="请输入小区或商圈名称">
+                <i class="icon-search"></i>
+            </div>
+        </div>
+        <div id="select">
+            <ul class="tab_item">
+                <li v-for="(title,index) in titles" class="select-item" :key="index" v-bind:data-index="index"
+                    v-on:click="select(index)">
+                    <p class="tit-con"><span class="title">{{title}}</span>
+                        <i class="triangleGray"></i>
+                        <i class="triangleBlue"></i>
+                    </p>
+                </li>
+            </ul>
+            <div class="tit">
+                <div class="tit-content content1">
+                    <div class="cont1-left">
+                        <p class="left-p1" v-for="(city,index) in citys" :key="index" @click="city1(index)"
+                            v-bind:class="{active1:num==index}">{{city}}</p>
+                    </div>
+                    <div class="cont1-zhong">
+                        <p class="zhong-p1" v-for="(next_city,index) in next_citys" :key="index" v-show="num==0"
+                            @click="city_next(index)" v-bind:class="{active1:num1==index}">{{next_city}}</p>
+                        <p class="zhong-p2" v-for="(metro,index) in metros" :key="index" v-show="num==1"
+                            @click="city_next(index)" v-bind:class="{active1:num1==index}">{{metro}}</p>
+                    </div>
+                    <div class="cont1-right">
+                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2"
+                            @click="change(index,next_city)" v-show="num2==0" v-bind:class="{active1:num3==index}">
+                            {{next_city}}</p>
+                        <p v-for="(city,index) in citys" :key="index" class="zhong-p2" @click="change(index,city)"
+                            v-show="num2==1" v-bind:class="{active1:num3==index}">{{city}}</p>
+                        <p v-for="(title,index) in titles" :key="index" class="zhong-p2" @click="change(index,title)"
+                            v-show="num2==2" v-bind:class="{active1:num3==index}">{{title}}</p>
+                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2"
+                            @click="change(index,next_city)" v-show="num2==3" v-bind:class="{active1:num3==index}">
+                            {{next_city}}</p>
+                        <p v-for="(city,index) in citys" :key="index" class="zhong-p2" @click="change(index,city)"
+                            v-show="num2==4" v-bind:class="{active1:num3==index}">{{city}}</p>
+                        <p v-for="(type,index) in types" :key="index" class="zhong-p2" @click="change(index,type)"
+                            v-show="num2==5" v-bind:class="{active1:num3==index}">{{type}}</p>
+                        <p v-for="(metro,index) in metros" :key="index" class="zhong-p2" @click="change(index,metro)"
+                            v-show="num2==6" v-bind:class="{active1:num3==index}">{{metro}}</p>
+                        <p v-for="(title,index) in titles" :key="index" class="zhong-p2" @click="change(index,title)"
+                            v-show="num2==7" v-bind:class="{active1:num3==index}">{{title}}</p>
+                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2"
+                            @click="change(index,next_city)" v-show="num2==8" v-bind:class="{active1:num3==index}">
+                            {{next_city}}</p>
+                        <p v-for="(title,index) in titles" :key="index" class="zhong-p2" @click="change(index,title)"
+                            v-show="num2==9" v-bind:class="{active1:num3==index}">{{title}}</p>
+                        <p v-for="(city,index) in citys" :key="index" class="zhong-p2" @click="change(index,city)"
+                            v-show="num2==10" v-bind:class="{active1:num3==index}">{{city}}</p>
+                        <p v-for="(title,index) in titles" :key="index" class="zhong-p2" @click="change(index,title)"
+                            v-show="num2==11" v-bind:class="{active1:num3==index}">{{title}}</p>
+                        <p v-for="(next_city,index) in next_citys" :key="index" class="zhong-p2"
+                            @click="change(index,next_city)" v-show="num2==12" v-bind:class="{active1:num3==index}">
+                            {{next_city}}</p>
+                        <p v-for="(metro,index) in metros" :key="index" class="zhong-p2" @click="change(index,metro)"
+                            v-show="num2==13" v-bind:class="{active1:num3==index}">{{metro}}</p>
+                        <p v-for="(type,index) in types" :key="index" class="zhong-p2" @click="change(index,type)"
+                            v-show="num2==14" v-bind:class="{active1:num3==index}">{{type}}</p>
+                        <p v-for="(title,index) in titles" :key="index" class="zhong-p2" @click="change(index,title)"
+                            v-show="num2==15" v-bind:class="{active1:num3==index}">{{title}}</p>
+                        <p v-for="(metro,index) in metros" :key="index" class="zhong-p2" @click="change(index,metro)"
+                            v-show="num2==16" v-bind:class="{active1:num3==index}">{{metro}}</p>
+                    </div>
+                </div>
+                <div class="tit-content content2">
+                    <div class="cont2-top">
+                        <h3>价格区间 (万)</h3>
+                        <p class="cont2-p1">
+                            <input type="text" class="input-top" placeholder="最低价格">
+                            <span>至</span>
+                            <input type="text" class="input-top" placeholder="最高价格">
+                        </p>
+                        <ul class="cont2-ul">
+                            <li @click="cont2_ul(index,price)" v-for="(price,index) in prices" :key="index">{{price}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cont2-bottom">
+                        <div class="cont2-bot1"  @click="reset">
+                            <p class="bot1-img"><img src="img/sweep.png" alt=""></p>
+                            <p class="bot1-text">重置</p>
+                        </div>
+                        <div class="cont2-bot2" @click="cont2">
+                            查看房源
+                        </div>
+                    </div>
+                </div>
+                <div class="tit-content content3">
+                    <div class="cont2-top">
+                        <h3>房型</h3>
+                        <ul class="cont2-ul2">
+                            <li @click="cont3(index,house_type)" v-for="(house_type,index) in house_types" :key="index">
+                                {{house_type}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cont2-bottom">
+                        <div class="cont2-bot1"  @click="reset1">
+                            <p class="bot1-img"><img src="img/sweep.png" alt=""></p>
+                            <p class="bot1-text">重置</p>
+                        </div>
+                        <div class="cont2-bot2" @click="cont3_btn">
+                            查看房源
+                        </div>
+                    </div>
+                </div>
+                <div class="tit-content">
+                    <div class="cont2-top cont2-top1" v-for="group in groups">
+                        <h3>建筑面积</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(area,index) in group.areas" :key="index" @click="more(index)">{{area}}
+                            </li>
+                        </ul>
+                        <h3>房源特色</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(feature,index) in group.features" :key="index" @click="more(index)">{{feature}}
+                            </li>
+                        </ul>
+                        <h3>朝向</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(ori,index) in group.oris" :key="index" @click="more(index)">{{ori}}</li>
+                        </ul>
+                        <h3>楼层</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(floor,index) in group.floors" :key="index" @click="more(index)">{{floor}}</li>
+                        </ul>
+                        <h3>楼龄</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(towerage,index) in group.towerages" :key="index" @click="more(index)">
+                                {{towerage}}</li>
+                        </ul>
+                        <h3>装修</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(finish,index) in group.finish" :key="index" @click="more(index)">{{finish}}</li>
+                        </ul>
+                        <h3>用途</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(use,index) in group.use" :key="index" @click="more(index)">{{use}}</li>
+                        </ul>
+                        <h3>电梯</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(lift,index) in group.lift" :key="index" @click="more(index)">{{lift}}</li>
+                        </ul>
+                        <h3>供暖</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(heating,index) in group.heating" :key="index" @click="more(index)">{{heating}}
+                            </li>
+                        </ul>
+                        <h3>权属</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(owner,index) in group.owner" :key="index" @click="more(index)">{{owner}}</li>
+                        </ul>
+                        <h3>类型</h3>
+                        <ul class="cont2-ul3">
+                            <li v-for="(type,index) in group.type" :key="index" @click="more(index)">{{type}}</li>
+                        </ul>
+                    </div>
+                    <div class="cont2-bottom">
+                        <div class="cont2-bot1" @click="reset2">
+                            <p class="bot1-img"><img src="img/sweep.png" alt=""></p>
+                            <p class="bot1-text">重置</p>
+                        </div>
+                        <div class="cont2-bot2" @click="more_btn">
+                            查看房源
+                        </div>
+                    </div>
+                </div>
+                <div class="tit-content">
+                    <ul class="cont5-tit">
+                        <li v-for="(sort,index) in sorts" :key="index" @click="cont5(sort,index)">{{sort}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tit-type">
+            <span class="type-item">满五年</span>
+            <span class="type-item">近地铁</span>
+            <span class="type-item">VR房源</span>
+            <span class="type-item">7日以上</span>
+        </div>
+        <div class="tit-san"></div>
+        <div class="type-bottom">
+            <span>保存搜索条件，获取最新房源</span>
+            <span class="install">安装app</span>
+        </div>
+        <div class="lists">
+            <ul id="list"></ul>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-item1">
+            <span class="span1">贝壳找房郑州站</span>
+            <span>郑州二手房</span>
+            <span>|</span>
+            <span>营业执照</span>
+            <span>|</span>
+            <span>ICP证</span>
+        </div>
+        <div class="footer-tab">
+            <div class="tab-item1 tab-item">南圈二手房</div>
+            <div class="tab-item2 tab-item">热门二手房</div>
+        </div>
+        <div class="tab-item-con">
+            <div class="tab-item1-con">
+                <ul class="item-con item1-con">
+                    <li>
+                        <p>黄河南路二手房</p>
+                    </li>
+                    <li>
+                        <p>第八大街二手房</p>
+                    </li>
+                    <li>
+                        <p>郑州晚报社二手房</p>
+                    </li>
+                    <li>
+                        <p>刘寨二手房</p>
+                    </li>
+                    <li>
+                        <p>二七二手房</p>
+                    </li>
+                    <li>
+                        <p>新密市二手房</p>
+                    </li>
+                    <li>
+                        <p>交警二大队二手房</p>
+                    </li>
+                    <li>
+                        <p>沙口路二手房</p>
+                    </li>
+                    <li>
+                        <p>中原二手房</p>
+                    </li>
+                    <li>
+                        <p>陇海汽车站二手房</p>
+                    </li>
+                    <li>
+                        <p>白沙二手房</p>
+                    </li>
+                    <li>
+                        <p>北大学城二手房</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-item2-con">
+                <ul class="item-con item2-con">
+                    <li>
+                        <p>英协鼎峰二手房</p>
+                    </li>
+                    <li>
+                        <p>新世纪社区二手房</p>
+                    </li>
+                    <li>
+                        <p>锦绣中原二手房</p>
+                    </li>
+                    <li>
+                        <p>绿化东街二手房</p>
+                    </li>
+                    <li>
+                        <p>工农路32号院二手房</p>
+                    </li>
+                    <li>
+                        <p>沁河路60号二手房</p>
+                    </li>
+                    <li>
+                        <p>豫法东苑二手房</p>
+                    </li>
+                    <li>
+                        <p>鹏飞花园二手房</p>
+                    </li>
+                    <li>
+                        <p>盛世之都二手房</p>
+                    </li>
+                    <li>
+                        <p>中原区教师住宅小区二手房</p>
+                    </li>
+                    <li>
+                        <p>正商城福苑二手房</p>
+                    </li>
+                    <li>
+                        <p>建文社区二手房</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-text">
+            <p>网上有害信息举报专区</p>
+            <p>天津小屋信息科技有限公司</p>
+            <p>地址:天津经济技术开发区南港工业区综合服务区办公楼</p>
+            <p>C座一层112室09单元</p>
+            <p>电话:10106188</p>
+            <p>网络经营许可证津ICP备18000836号</p>
+            <p>网络文化经营许可证 津网文（2017）2063-011号</p>
+            <p>ICP经营许可证 津B2-20170026</p>
+            <p>copyright©2020 ke.com 版权所有</p>
+            <p class="beians">
+                <img src="img/beian.png" alt="" class="beian">
+                津公网安备 12019002000223号
+            </p>
+            <div class="text-left">
+            </div>
+            <div class="text-left1">
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed1">
+        <img src="img/message.svg" alt="">
+    </div>
+    <script src="js/ershoufang.js"></script>
+    <script>
+        // 城市改变
+        $("#city").click(()=>{
+            window.location.href="city.html"
+        })
+        if(sessionStorage.city){
+            $("#city").html(sessionStorage.city)
+        }else{
+            $("#city").html("郑州")
+        }
+        $("#home").click(()=>{
+            window.location.href="index.html"
+        })
+        $("#user").click(()=>{
+            window.location.href="user.html"
+        })
+    </script>
+</body>
+
+</html>

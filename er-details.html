@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.ico" type="images/x-ico" />
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/3.4.2/css/swiper.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+    <link rel="stylesheet" href="css/er-details.css">
+</head>
+
+<body>
+
+    <div class="inner">
+        <div class="inner-item item1">
+            <span class="icon-back" id="home"></span>
+            <span class="city" id="city">郑州</span>
+            <span class="icon-down"></span>
+        </div>
+        <div class="inner-item login"></div>
+        <div class="inner-item icon-user" id="user"></div>
+    </div>
+    <div id="app">
+        <title>{{lists.title}}</title>
+        <div class="swiper-container">
+            <div class="swiper-wrapper" id="swiper">
+                <div class="swiper-slide" data-index="0">
+                    <img v-bind:src="lists.img" alt="">
+                </div>
+                <div class="swiper-slide" data-index="1">
+                    <img v-bind:src="lists.img1" alt="">
+                </div>
+                <div class="swiper-slide" data-index="2">
+                    <img v-bind:src="lists.img2" alt="">
+                </div>
+                <div class="swiper-slide" data-index="3">
+                    <img v-bind:src="lists.img3" alt="">
+                </div>
+                <div class="swiper-slide" data-index="4">
+                    <img v-bind:src="lists.img4" alt="">
+                </div>
+                <div class="swiper-slide" data-index="5">
+                    <img v-bind:src="lists.img5" alt="">
+                </div>
+                <div class="swiper-slide" data-index="6">
+                    <img v-bind:src="lists.typehouse" alt="">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <div class="type-1">
+                <span class="span1">图片</span>
+                <span class="span2">户型</span>
+            </div>
+
+        </div>
+        <div class="ershoufang-detail">
+            <div class="new">{{lists.keyword}}</div>
+            <div class="tit-new">
+                <h1 class="house-title">{{lists.title}}</h1>
+                <div class="xin">
+                    <p> <img src="img/xin.svg" alt=""></p>
+                    关注
+                </div>
+            </div>
+            <div class="theman">
+                房产负责人:吕丽丽
+            </div>
+            <div class="house-desc">
+                <div class="price desc1">
+                    <p class="shoujia">{{lists.price}}万</p>
+                    <p class="txt">售价</p>
+                </div>
+                <div class="desc1">
+                    <p class="shoujia">{{desc1}}</p>
+                    <p class="txt">房型</p>
+                </div>
+                <div>
+                    <p class="shoujia">{{desc2}}</p>
+                    <p class="txt">建筑面积</p>
+                </div>
+            </div>
+        </div>
+        <div class="detail-house">
+            <ul class="houses">
+                <li>
+                    <span class="gray">售价:</span>
+                    <span>{{lists.price1}}</span>
+                </li>
+                <li>
+                    <span class="gray">挂牌:</span>
+                    <span>2020.05.20</span>
+                </li>
+                <li>
+                    <span class="gray">朝向:</span>
+                    <span>{{desc3}}</span>
+                </li>
+                <li>
+                    <span class="gray">楼层:</span>
+                    <span>高楼层/6层</span>
+                </li>
+                <li>
+                    <span class="gray">楼型:</span>
+                    <span>板楼</span>
+                </li>
+                <li>
+                    <span class="gray">装修:</span>
+                    <span>其他</span>
+                </li>
+                <li>
+                    <span class="gray">年代:</span>
+                    <span>{{lists.year}}</span>
+                </li>
+                <li>
+                    <span class="gray">用途:</span>
+                    <span>普通住宅</span>
+                </li>
+                <li>
+                    <span class="gray">权属:</span>
+                    <span>商品房</span>
+                </li>
+            </ul>
+            <div class="bubget">
+                <span class="small">首付预算:</span>
+                <span>净首付26.8万，月供、税费点击查看详情</span>
+            </div>
+            <div>
+                <span class="small">小区:</span>
+                <span>{{desc4}}</span>
+            </div>
+            <div class="voice">
+                <img src="img/logo.png" alt="" class="voice-img">
+                <span>打开贝壳找房，经纪人语音实时讲房</span>
+                <span class="jian">
+                    <img src="img/icon-right.svg" alt="">
+                </span>
+            </div>
+            <div class="ranking">
+                <img src="https://img.ljcdn.com/beike/bangdan/1565234456984.png" class="voice-img">
+                <span>所选小区入选{{lists.rob}}</span>
+                <span class="jian">
+                    <img src="img/icon-right.svg" alt="">
+                </span>
+            </div>
+            <div class="man">
+                <div class="title-man">推荐经纪人</div>
+                <div class="man-icon">
+                    <div class="photo">
+                        <img :src="lists.img" alt="">
+                    </div>
+                    <div class="name-item">
+                        <div class="name1">
+                            <span>常琳</span>
+                            <span>德佑</span>
+                        </div>
+                        <div class="name-detail">
+                            好评经纪人，熟悉本房特色
+                        </div>
+                    </div>
+                    <div class="tel">
+                        <span class="im">
+                            <img src="img/icon_im.png" alt="">
+                        </span>
+                        <span>
+                            <img src="img/icon_tel.png" alt="">
+                        </span>
+                    </div>
+                </div>
+                <div class="man-icon">
+                    <div class="photo">
+                        <img :src="lists.img4" alt="">
+                    </div>
+                    <div class="name-item">
+                        <div class="name1">
+                            <span>张三丰</span>
+                            <span>德佑</span>
+                        </div>
+                        <div class="name-detail">
+                            好评经纪人，熟悉本房特色
+                        </div>
+                    </div>
+                    <div class="tel">
+                        <span class="im">
+                            <img src="img/icon_im.png" alt="">
+                        </span>
+                        <span>
+                            <img src="img/icon_tel.png" alt="">
+                        </span>
+                    </div>
+                </div>
+                <div class="man-icon">
+                    <div class="photo">
+                        <img :src="lists.img1" alt="">
+                    </div>
+                    <div class="name-item">
+                        <div class="name1">
+                            <span>张无忌</span>
+                            <span>德佑</span>
+                        </div>
+                        <div class="name-detail">
+                            好评经纪人，熟悉本房特色
+                        </div>
+                    </div>
+                    <div class="tel">
+                        <span class="im">
+                            <img src="img/icon_im.png" alt="">
+                        </span>
+                        <span>
+                            <img src="img/icon_tel.png" alt="">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="describe">
+                <p class="house_type_title">户型分间</p>
+                <div class="house_type">
+                    <ul class="house_left">
+                        <li>客厅:&nbsp;{{lists.room}}</li>
+                        <li>卧室A:&nbsp;{{lists.bedroomA}}</li>
+                        <li>卧室B:&nbsp;{{lists.bedroomB}}</li>
+                    </ul>
+                    <div class="house_right">
+                        <img :src="lists.typehouse" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cap">
+            <img src="img/staticimage.png" alt="">
+        </div>
+        <div class="source">
+            <div class="source-item">
+                <h2 class="source-h2">房源介绍</h2>
+                <p class="source-p"><img src="img/icon-right.svg" alt=""></p>
+            </div>
+            <div class="source-item1">
+                有房本，满五年，业主因为置换，所以出售
+                房屋恒通2008年开始开发，至2012年交房完毕，小区一共分为五期，小区多以多层房为主，得房率高，单气小区，很有生活氛围，房子是两卧室朝南，采光好，主卧有飘窗，次卧有阳台，独立餐厅，客厅大窗户，全明户型小区门口就是好又多超市，菜市场，往南有野孩子公园，往东有绿博园，方特，生活氛围很好小区网南有商都路，往北有物流通道，郑开大道，，门口是敬业路，前程路，凤西路，
+            </div>
+        </div>
+        <div class="kong"></div>
+        <div class="fake-new">
+            <div class="fake">
+                <img src="img/icon_zhen@2x.png" alt="" class="zhen">
+                真实房源,假一赔百元
+                <p class="fake-right">
+                    <img src="img/icon-right.svg" alt="">
+                </p>
+            </div>
+        </div>
+        <div class="kong"></div>
+    </div>
+    <div id="like">
+        <h2>猜您喜欢</h2>
+        <ul>
+            <li v-for="like in likes" class="like-item">
+                <div class="like-img">
+                    <img :src="like.img" alt="">
+                </div>
+                <div class="like-tit">
+                    <h2>{{like.title}}</h2>
+                    <p class="desc">{{like.desc}}</p>
+                    <p class="prices">
+                        <span class="price1">{{like.price}}万</span>
+                        <span class="price2">{{like.price1}}</span>
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <div class="help">
+            <p class="help-item1">考虑卖房？我们可以帮到你</p>
+            <p class="help-item2">30万业主信赖的选择，卖房专业又省心</p>
+            <span class="sell">帮我卖房</span>
+        </div>
+        <div class="report">
+            <div>
+                <span class="hao">贝壳号104104120523</span>
+                <span class="jubao">举报该房源</span>
+            </div>
+            <p class="cankao">房源所示“户型图、房屋用途、交易权属、建成年代、产权年限、建筑结构”仅供参考，购房时请以房本信息为准。</p>
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+        <div class="footer-item1">
+            <span class="span-1">贝壳找房郑州站</span>
+            <span>郑州二手房</span>
+            <span>|</span>
+            <span>营业执照</span>
+            <span>|</span>
+            <span>ICP证</span>
+        </div>
+        <div class="footer-tab">
+            <div class="tab-item1 tab-item">区域二手房</div>
+            <div class="tab-item2 tab-item">热门推荐</div>
+            <div class="tab-item3 tab-item">周边城市</div>
+        </div>
+        <div class="tab-item-con">
+            <div class="tab-item1-con">
+                <ul class="item-con item1-con">
+                    <li>
+                        <p>黄河南路二手房</p>
+                    </li>
+                    <li>
+                        <p>第八大街二手房</p>
+                    </li>
+                    <li>
+                        <p>郑州晚报社二手房</p>
+                    </li>
+                    <li>
+                        <p>刘寨二手房</p>
+                    </li>
+                    <li>
+                        <p>二七二手房</p>
+                    </li>
+                    <li>
+                        <p>新密市二手房</p>
+                    </li>
+                    <li>
+                        <p>交警二大队二手房</p>
+                    </li>
+                    <li>
+                        <p>沙口路二手房</p>
+                    </li>
+                    <li>
+                        <p>中原二手房</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-item2-con">
+                <ul class="item-con item2-con">
+                    <li>
+                        <p>郑州二手房</p>
+                    </li>
+                    <li>
+                        <p>郑州地铁房</p>
+                    </li>
+                    <li>
+                        <p>郑州新房</p>
+                    </li>
+                    <li>
+                        <p>郑州租房</p>
+                    </li>
+                    <li>
+                        <p>郑州地铁租房</p>
+                    </li>
+                    <li>
+                        <p>郑州卖房</p>
+                    </li>
+                    <li>
+                        <p>郑州经纪人</p>
+                    </li>
+                    <li>
+                        <p>郑州二手房成交</p>
+                    </li>
+                    <li>
+                        <p>郑州买房</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-item3-con">
+                <ul class="item-con item3-con">
+                    <li>
+                        <p>许昌二手房</p>
+                    </li>
+                    <li>
+                        <p>漯河二手房</p>
+                    </li>
+                    <li>
+                        <p>濮阳二手房</p>
+                    </li>
+                    <li>
+                        <p>菏泽二手房</p>
+                    </li>
+                    <li>
+                        <p>邯郸二手房</p>
+                    </li>
+                    <li>
+                        <p>毫州二手房</p>
+                    </li>
+                    <li>
+                        <p>临汾二手房</p>
+                    </li>
+                    <li>
+                        <p>信阳二手房</p>
+                    </li>
+                    <li>
+                        <p>聊城二手房</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-text">
+            <p>网上有害信息举报专区</p>
+            <p>天津小屋信息科技有限公司</p>
+            <p>地址:天津经济技术开发区南港工业区综合服务区办公楼</p>
+            <p>C座一层112室09单元</p>
+            <p>电话:10106188</p>
+            <p>网络经营许可证津ICP备18000836号</p>
+            <p>网络文化经营许可证 津网文（2017）2063-011号</p>
+            <p>ICP经营许可证 津B2-20170026</p>
+            <p>copyright©2020 ke.com 版权所有</p>
+            <p class="beians">
+                <img src="img/beian.png" alt="" class="beian">
+                津公网安备 12019002000223号
+            </p>
+            <div class="text-left">
+            </div>
+            <div class="text-left1">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+    <script src="js/er-details.js"></script>
+    <script>
+        // 城市改变
+        $("#city").click(()=>{
+            window.location.href="city.html"
+        })
+        if(sessionStorage.city){
+            $("#city").html(sessionStorage.city)
+        }else{
+            $("#city").html("郑州")
+        }
+        $("#home").click(()=>{
+            window.history.go(-1)
+        })
+        $("#user").click(()=>{
+            window.location.href="user.html"
+        })
+    </script>
+</body>
+
+</html>

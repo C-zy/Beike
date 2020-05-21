@@ -61,5 +61,33 @@ app.get('/list', (req, res, next) => {
         res.json(result)
     })
 })
+// 二手房
+app.get('/ershoufang', (req, res) => {
+    connection.query('select * from ershoufang', function (err, result) {
+        const obj = {
+            status: 200,
+            data: result
+        }
+        res.json(obj)
+    })
+});
+app.get('/details', (req, res) => {
+    connection.query("select * from ershoufang where id='"+req.query.id+"'", function (err, result) {
+        const obj = {
+            status: 200,
+            data: result
+        }
+        res.json(obj)
+    })
+});
+app.get('/xinfang', (req, res) => {
+    connection.query("select * from xinfang", function (err, result) {
+        const obj = {
+            status: 200,
+            data: result
+        }
+        res.json(obj)
+    })
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
