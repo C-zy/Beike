@@ -1,0 +1,290 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fff;
+}
+li{
+    list-style: none;
+}
+content{
+    width: 100%;
+    height: 100%;
+}
+/* 顶部 */
+.inner{
+    display: flex;
+    padding: 0 .35rem;
+    font-weight:400 ;
+    padding:0 1rem;
+    background: #fff;
+}
+.inner-item{
+    width:33.4%;
+    height: 4rem;
+    box-sizing: border-box;
+}
+.login{
+    background: url(../img/logo.png) no-repeat 75%/75%;
+    cursor: pointer;
+}
+.icon-user{
+    background: url(../img/user.png) no-repeat 100%/17%;
+    cursor: pointer;
+}
+.item1{
+    display: flex;
+    align-items: center;
+}
+.item1 span{
+    cursor: pointer;
+}
+.icon-back{
+    display: inline-block;
+    width: 1.7rem;
+    height: 100%;
+    background: url(../img/back.png) no-repeat 0/40%;
+}
+.icon-down{
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-left:0.2rem;
+    background: url(../img/down.png) no-repeat 0/100%;
+}
+/* 内容块 */
+.det_con{
+    padding: 5% 5%;
+    display: flex;
+}
+.det_con h2{
+    line-height: 2rem;
+    width: 82%;
+    font-size: 1.5rem;
+    color: #222;
+}
+.det_con div{
+    width: 17%;
+    text-align: right;
+    margin-top:5%;
+  
+}
+.det_con div span{
+    display: block;
+    font-size: 1.3rem;
+}
+.det_con div span.like{
+    color:  #fa5741;
+}
+
+.det_con div p{
+    font-size: .7rem;
+    color: #222;
+}
+.det_nav{
+    padding: 0 5%;
+    background: #fff;
+}
+.det_nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+.det_nav ul li{
+    padding-right: 5%;
+    box-sizing: border-box;
+    border-right: 1px solid #e5e5e5;
+}
+.det_nav ul li span{
+    color: #222;
+    font-size: .8rem;
+}
+.det_nav ul li p{
+    font-size: 1.1rem;
+    color: #fa5741;
+    font-weight: 700;
+    padding-top: 1%;
+}
+.det_box{
+    padding: 5% 5%;
+    box-sizing: border-box;
+    background: #fff;
+}
+.det_box .b_tit span{
+    font-size: .8rem;
+    color: #5680a6;
+    padding: 1% 1%;
+    border-radius: .2rem;
+    background: #e6ecf2;
+}
+.b_pro{
+    padding-top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.b_pro li{
+    padding-bottom: 3%;
+    width: 50%;
+}
+.b_pro li span:nth-of-type(1){
+    color: #9399a5;
+}
+.b_rent span:nth-of-type(1){
+    color: #9399a5;
+    font-size: 1.1rem;
+}
+.b_rent span:nth-of-type(2){
+    color: #222;
+    font-size: 1.1rem;
+}
+.b_rent span:nth-of-type(3){
+    color: #3072f6;
+    font-size: 1.1rem;
+    float: right;
+}
+.det_page{
+    background: #fff;
+    width: 100%;
+    height: 10rem;
+    background: url(../img/page.jpg) center center no-repeat;
+    background-size: 100% 100%;
+}
+.det_page>a{
+    padding-top: 5%;
+    padding-left: 5%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    display: block;
+}
+.det_page a i{
+    box-sizing: border-box;
+    color: #9399a5;
+    font-weight: normal;
+    font-size: 1.4rem;
+}
+.p_list{
+    padding-top: 5%;
+    padding-left: 5%;
+    box-sizing: border-box;
+}
+.p_list li{
+    font-size: .8rem;
+}
+.p_list li a{
+    padding-left: 2%;
+    color: #222;
+    text-decoration: none;
+}
+.p_list li a img{
+    vertical-align: middle;
+    margin-right: 1.5%;
+    width: 1.3rem;
+}
+.det_map{
+    background-color: #fff;
+    padding-top: 5%;
+}
+.det_map h3{
+    font-size: 1.5rem;
+    padding:5% 0;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-top: 1px solid #e5e5e5;
+}
+.m_pic{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 16rem;
+    /* background: url(../img/map.png) center center no-repeat; */
+    background-size: 100% 100%;
+}
+.m_pic span{
+    padding: 5% 5%;
+    display: inline-block;
+    background-color: #fff;
+    font-size: 1.1rem;
+    margin-top: 22%;
+    z-index: 10;
+    transform: translateY(-50%);
+    color: #3e4143;
+    position: relative;
+}
+.m_pic span::after{
+    position: absolute;
+    top: 98%;
+    left: 44%;
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+    border: .9rem solid #fff;
+    border-color: #fff transparent transparent transparent;
+}
+.m_pic div{
+    width: 1.5rem;
+    height: 1.5rem;
+    border: .1rem solid #3072f6;
+    background: rgba(48,114,246,.2);
+    border-radius: 50%;
+    position: absolute;
+    top: 46%;
+    left: 48%;
+}
+/* 房源简介 */
+.det_pro{
+    padding: 5% 5%;
+    box-sizing: border-box;
+    background: #fff;
+}
+.det_pro h3{
+    font-size: 1.5rem;
+
+}
+.p_lists ul{
+    padding-bottom:3%;
+    padding-top: 5%;
+    background: #fff;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.p_lists ul li{
+    width: 20%;
+    text-align: center;
+}
+.p_lists ul li img{
+    width:45%;
+}
+.p_lists ul li p{
+    font-size: .8rem;
+}
+/* 房屋评价 */
+.det_coment{
+    background: #fff;
+    position: relative;
+    padding: 5% 0;
+    margin: 0 5%;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+.det_coment a{
+    display: inline-block;
+    width: 75%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    color: #222;
+    font-size: 1rem;
+}
+.det_coment span{
+    top: 30%;
+    right: 0%;
+    position: absolute;
+    font-size: 1.1rem;
+    color: #5680a6;;
+}

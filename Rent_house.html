@@ -46,7 +46,7 @@
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="./apartment.html">
                 <img src="./img/Rent_t3.png" alt="">
                 <p>独栋公寓</p>
             </a>
@@ -58,7 +58,7 @@
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="https://landlord.m.ke.com/clue?position=rent_m_rent">
                 <img src="./img/Rent_t5.png" alt="">
                 <p>我要出租</p>
             </a>
@@ -86,7 +86,7 @@
         <h2>优选房源</h2>
         <div class="pro_details" id="pro_details" style="padding-top: 3%;">
             <div v-for="list in lists" class="data_link">
-                <a href="">
+                <a :href="'./details.html?id='+list.id">
                     <div class="pro_l">
                         <img :src=list.rent_img alt="">
                     </div>
