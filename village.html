@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>找小区</title>
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" href="css/village.css">
+    <link rel="stylesheet" href="fonts/fonts_village/iconfont.css">
+    <script src="js/zepto.js"></script>
+    <script src="js/mui.min.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="header all">
+        <span class="iconfont icon-zuojiantou jt"></span>
+        <div class="logo">
+            <a href="city.html" class="header_city">北京
+                <span class="iconfont icon-xiajiantou jt_s"></span>
+            </a>
+            <img src="img/img_village/0.png" alt="">
+            <span class="iconfont icon-user"></span>
+        </div>
+    </div>
+    <!-- 搜索框 -->
+    <div class="search all all_pd">
+        <a href="">
+            <span class="iconfont icon-search"></span>
+            <input type="text" placeholder="请输入小区或商圈名~">
+        </a>
+    </div>
+    <!-- 类型选择 -->
+    <ul class="option all all_pd">
+
+    </ul>
+    <!-- 小区列表 -->
+    <ul class="lists_add all all_pd">
+
+    </ul>
+    <!-- 圆圈 -->
+    <button type="button" class="mui-btn btn_1 iconfont icon-cebianlan-shunxuqiehuan"><br>排序</button>
+    <a href=""><button type="button" class="mui-btn btn_2 iconfont icon-xiaoxi"></button></a>
+    <!-- 排序 -->
+    <div class="sort">
+        <div class="sort_inner">
+            <p class="sort_1">默认排序</p>
+            <p class="sort_2">均价从低到高</p>
+            <p class="sort_3">均价从高到低</p>
+        </div>
+
+    </div>
+    <!-- 底部 -->
+    <div class="kem__footer">
+        <div class="footer-breadcrumb">
+            贝壳找房郑州站
+            <span>|</span> 营业执照
+            <span>|</span> ICP证
+        </div>
+        <div class="footer-nav">
+            <div class="link-tit">
+                <h3 class="tit active" id="ho_tp">二手房</h3>
+                <h3 class="tit " id="ho_tpl">小区</h3>
+            </div>
+            <div class="link-cont">
+                <ul class="cont co1">
+                    <li><a href="#">北京二手房</a></li>
+                    <li><a href="#">上海二手房</a></li>
+                    <li><a href="#">广州二手房</a></li>
+                    <li><a href="#">深圳二手房</a></li>
+                    <li><a href="#">天津二手房</a></li>
+                    <li><a href="#">成都二手房</a></li>
+                    <li><a href="#">南京二手房</a></li>
+                    <li><a href="#">杭州二手房</a></li>
+                    <li><a href="#">青岛二手房</a></li>
+                    <li><a href="#">大连二手房</a></li>
+                    <li><a href="#">苏州二手房</a></li>
+                    <li><a href="#">厦门二手房</a></li>
+                </ul>
+                <ul class="cont co2">
+                    <li><a href="#">北京小区</a></li>
+                    <li><a href="#">上海小区</a></li>
+                    <li><a href="#">广州小区</a></li>
+                    <li><a href="#">深圳小区</a></li>
+                    <li><a href="#">天津小区</a></li>
+                    <li><a href="#">成都小区</a></li>
+                    <li><a href="#">南京小区</a></li>
+                    <li><a href="#">杭州小区</a></li>
+                    <li><a href="#">青岛小区</a></li>
+                    <li><a href="#">大连小区</a></li>
+                    <li><a href="#">苏州小区</a></li>
+                    <li><a href="#">厦门小区</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-info ke">
+            <div class="icon-box">
+                <span class="icon-iphone ">iPhone客户端</span>
+                <span class="icon-android ">Android客户端</span>
+            </div>
+            <div class="copyright">
+                <p class="company">天津小屋信息科技有限公司</p>
+                <p class="record">C座一层112室09单元</p>
+                <p class="record">电话:111111111</p>
+                <p class="record">网络经营许可证</p>
+                <p class="record">津ICP备18000836号</p>
+                <p class="record">网络文化经营许可证 津网文（2017）2063-011号</p>
+                <p class="record">ICP经营许可证 津B2-20170026</p>
+                <p class="record">copyright©</p>
+                <p class="record">
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12019002000223"><img src="img/foot/f2.png" alt=""> 津公网安备 12019002000223号</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    function fn() {
+        var all = document.documentElement;
+        var all_width = all.getBoundingClientRect().width;
+        rem = all_width / 7.5
+        all.style.fontSize = rem + 'px'
+    }
+    fn();
+    window.addEventListener("resize", function() {
+            fn()
+        }, false)
+        // 底部tap切换
+    $("#ho_tp").click(() => {
+        if ($("#ho_tp").hasClass("active")) {
+
+        } else {
+            $(".co1").show()
+            $(".co2").hide()
+            $("#ho_tp").addClass("active")
+            $("#ho_tpl").removeClass("active")
+        }
+    })
+    $("#ho_tpl").click(() => {
+        if ($("#ho_tpl").hasClass("active")) {
+
+        } else {
+            $(".co2").show()
+            $(".co1").hide()
+            $("#ho_tp").removeClass("active")
+            $("#ho_tpl").addClass("active")
+        }
+    })
+    $('.btn_1').click(() => {
+        $('.sort').show()
+    })
+    $('.sort').click(() => {
+        $('.sort').hide()
+    })
+
+    var a = 0
+    add(a)
+
+    function add(i) {
+        $.getJSON('http://localhost:3000/village?num=' + i, function(data) {
+            for (var i = 0; i < data.length; i++) {
+                $('.lists_add').get(0).innerHTML += `
+                <a href="#"><li class="list clear">
+                    <div class="img _fl">
+                        <img src="${data[i].img}" alt="">
+                        <p class="blue_bg">小区攻略</p>
+                    </div>
+                    <div class="right _fl">
+                        <p class="name">${data[i].name}</p>
+                        <p class="present">${data[i].present}</p>
+                        <p class="price">${data[i].price}</p>
+                    </div>
+                </li></a>
+            `
+            }
+        })
+    }
+    setTimeout(() => {
+        window.onscroll = function() {
+            if ($(this).scrollTop() > $('.kem__footer').offset().top - $('.kem__footer').height()) {
+                a++
+                add(a)
+            }
+        }
+    }, 500);
+    var num_scroll = $(".option").offset().top
+    window.addEventListener("scroll", function() {
+        if ($(this).scrollTop() > num_scroll) {
+            $('.option').addClass('flexd')
+        } else if ($(this).scrollTop() < num_scroll) {
+            $('.option').removeClass('flexd')
+        }
+    })
+</script>
+
+</html>

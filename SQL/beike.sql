@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : ZY
+ Source Server         : test
  Source Server Type    : MySQL
  Source Server Version : 50726
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 21/05/2020 20:38:31
+ Date: 22/05/2020 13:02:39
 */
 
 SET NAMES utf8mb4;
@@ -433,6 +433,84 @@ INSERT INTO `user` VALUES ('15239438911', '123456');
 INSERT INTO `user` VALUES ('333', '333');
 INSERT INTO `user` VALUES ('123', '111');
 INSERT INTO `user` VALUES ('555', '555');
+
+-- ----------------------------
+-- Table structure for village
+-- ----------------------------
+DROP TABLE IF EXISTS `village`;
+CREATE TABLE `village`  (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `present` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `price` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `img` varchar(2550) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `num` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of village
+-- ----------------------------
+INSERT INTO `village` VALUES (1, '时尚街区东区', '通州梨园  塔楼/塔板结合 2003年建成', '44217元/平', 'https://ke-image.ljcdn.com/hdic-resblock/cb78701c-2a36-41c3-a33d-964609709847.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (2, '加州水郡四期', '房山长阳  塔楼/板楼/塔板结合2010年建成', '31631元/平', 'https://ke-image.ljcdn.com/hdic-resblock/068c05d9-6303-4609-b4c3-9ad3b6158d71.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (3, '管庄西里', '朝阳管庄  塔楼/板楼1976年建成', '47599元/平', 'https://ke-image.ljcdn.com/hdic-resblock/c06d1054-63a7-4367-b050-27eeb608d0ed.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (4, '益丰苑', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '79829元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8554038c-0b3e-48af-b532-618996c80851.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (5, '慈云寺', '房山长阳  塔楼/板楼/塔板结合2010年建成', '59809元/平', 'https://ke-image.ljcdn.com/hdic-resblock/6dc8585a-cd9a-433c-b3c4-4537860cb2fa.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (6, '柳芳北里', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '71421元/平', 'https://ke-image.ljcdn.com/hdic-resblock/3e1abf5b-16e1-4e8b-a608-7f72c84193dd.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (7, '郁花园二里', '房山长阳  塔楼/板楼/塔板结合2010年建成', '42695元/平', 'https://ke-image.ljcdn.com/hdic-resblock/a47c1fec-6d96-41d8-813e-12fa610b9b14.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (8, '龙腾苑六区', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '40943元/平', 'https://ke-image.ljcdn.com/hdic-resblock/3a97ce1b-fd8a-47c8-bddb-2f9e6dba96ed.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (9, '华源冠军城', '房山长阳  塔楼/板楼/塔板结合2010年建成', '75219元/平', 'https://ke-image.ljcdn.com/hdic-resblock/d24e0aa7-48c9-429d-89f4-f4555bc3c118.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (10, '西辛南区', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '384991元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8a7dd65a-68de-4b7f-8da5-590df6897ff6.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (11, '江山赋', '房山长阳  塔楼/板楼/塔板结合2010年建成', '55605元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8a7dd65a-68de-4b7f-8da5-590df6897ff6.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (12, '领秀新硅谷2号院', '通州梨园  塔楼/塔板结合 2003年建成', '80299元/平', 'https://ke-image.ljcdn.com/hdic-resblock/855dd695-b5fb-4db9-827e-e0c785b21d41.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (13, '新纪家园', '房山长阳  塔楼/板楼/塔板结合2010年建成', '74764元/平', 'https://ke-image.ljcdn.com/hdic-resblock/a23ad431-7bca-4a5b-af81-0f811a9a2e72.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (14, '首开常青藤一期', '通州梨园  塔楼/塔板结合 2003年建成', '64130元/平', 'https://ke-image.ljcdn.com/hdic-resblock/911f1d1f-ba9c-494c-9383-f18fbba7a8ec.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (15, '南露园', '房山长阳  塔楼/板楼/塔板结合2010年建成', '107281元/平', 'https://ke-image.ljcdn.com/hdic-resblock/6adae9c2-1257-48c4-8622-38ba9aaffbc9.jpg.210x164.jpg?from=ke.com', '0');
+INSERT INTO `village` VALUES (16, '新纪家园', '房山长阳  塔楼/板楼/塔板结合2010年建成', '74764元/平', 'https://ke-image.ljcdn.com/hdic-resblock/a23ad431-7bca-4a5b-af81-0f811a9a2e72.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (17, '华源冠军城', '房山长阳  塔楼/板楼/塔板结合2010年建成', '75219元/平', 'https://ke-image.ljcdn.com/hdic-resblock/d24e0aa7-48c9-429d-89f4-f4555bc3c118.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (18, '西辛南区', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '384991元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8a7dd65a-68de-4b7f-8da5-590df6897ff6.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (19, '江山赋', '房山长阳  塔楼/板楼/塔板结合2010年建成', '55605元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8a7dd65a-68de-4b7f-8da5-590df6897ff6.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (20, '领秀新硅谷2号院', '通州梨园  塔楼/塔板结合 2003年建成', '80299元/平', 'https://ke-image.ljcdn.com/hdic-resblock/855dd695-b5fb-4db9-827e-e0c785b21d41.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (21, '柳芳北里', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '71421元/平', 'https://ke-image.ljcdn.com/hdic-resblock/3e1abf5b-16e1-4e8b-a608-7f72c84193dd.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (22, '郁花园二里', '房山长阳  塔楼/板楼/塔板结合2010年建成', '42695元/平', 'https://ke-image.ljcdn.com/hdic-resblock/a47c1fec-6d96-41d8-813e-12fa610b9b14.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (23, '龙腾苑六区', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '40943元/平', 'https://ke-image.ljcdn.com/hdic-resblock/3a97ce1b-fd8a-47c8-bddb-2f9e6dba96ed.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (24, '华源冠军城', '房山长阳  塔楼/板楼/塔板结合2010年建成', '75219元/平', 'https://ke-image.ljcdn.com/hdic-resblock/d24e0aa7-48c9-429d-89f4-f4555bc3c118.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (25, '西辛南区', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '384991元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8a7dd65a-68de-4b7f-8da5-590df6897ff6.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (26, '始上街区东区', '通州梨园  塔楼/塔板结合 2003年建成', '44217元/平', 'https://ke-image.ljcdn.com/hdic-resblock/cb78701c-2a36-41c3-a33d-964609709847.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (27, '加州水郡四期', '房山长阳  塔楼/板楼/塔板结合2010年建成', '31631元/平', 'https://ke-image.ljcdn.com/hdic-resblock/068c05d9-6303-4609-b4c3-9ad3b6158d71.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (28, '管庄西里', '朝阳管庄  塔楼/板楼1976年建成', '47599元/平', 'https://ke-image.ljcdn.com/hdic-resblock/c06d1054-63a7-4367-b050-27eeb608d0ed.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (29, '益丰苑', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '79829元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8554038c-0b3e-48af-b532-618996c80851.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (30, '慈云寺', '房山长阳  塔楼/板楼/塔板结合2010年建成', '59809元/平', 'https://ke-image.ljcdn.com/hdic-resblock/6dc8585a-cd9a-433c-b3c4-4537860cb2fa.jpg.210x164.jpg?from=ke.com', '1');
+INSERT INTO `village` VALUES (31, '始上街区东区', '通州梨园  塔楼/塔板结合 2003年建成', '44217元/平', 'https://ke-image.ljcdn.com/hdic-resblock/cb78701c-2a36-41c3-a33d-964609709847.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (32, '加州水郡四期', '房山长阳  塔楼/板楼/塔板结合2010年建成', '31631元/平', 'https://ke-image.ljcdn.com/hdic-resblock/068c05d9-6303-4609-b4c3-9ad3b6158d71.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (33, '管庄西里', '朝阳管庄  塔楼/板楼1976年建成', '47599元/平', 'https://ke-image.ljcdn.com/hdic-resblock/c06d1054-63a7-4367-b050-27eeb608d0ed.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (34, '益丰苑', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '79829元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8554038c-0b3e-48af-b532-618996c80851.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (35, '慈云寺', '房山长阳  塔楼/板楼/塔板结合2010年建成', '59809元/平', 'https://ke-image.ljcdn.com/hdic-resblock/6dc8585a-cd9a-433c-b3c4-4537860cb2fa.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (36, '柳芳北里', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '71421元/平', 'https://ke-image.ljcdn.com/hdic-resblock/3e1abf5b-16e1-4e8b-a608-7f72c84193dd.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (37, '郁花园二里', '房山长阳  塔楼/板楼/塔板结合2010年建成', '42695元/平', 'https://ke-image.ljcdn.com/hdic-resblock/a47c1fec-6d96-41d8-813e-12fa610b9b14.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (38, '龙腾苑六区', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '40943元/平', 'https://ke-image.ljcdn.com/hdic-resblock/3a97ce1b-fd8a-47c8-bddb-2f9e6dba96ed.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (39, '华源冠军城', '房山长阳  塔楼/板楼/塔板结合2010年建成', '75219元/平', 'https://ke-image.ljcdn.com/hdic-resblock/d24e0aa7-48c9-429d-89f4-f4555bc3c118.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (40, '西辛南区', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '384991元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8a7dd65a-68de-4b7f-8da5-590df6897ff6.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (41, '柳芳北里', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '71421元/平', 'https://ke-image.ljcdn.com/hdic-resblock/3e1abf5b-16e1-4e8b-a608-7f72c84193dd.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (42, '郁花园二里', '房山长阳  塔楼/板楼/塔板结合2010年建成', '42695元/平', 'https://ke-image.ljcdn.com/hdic-resblock/a47c1fec-6d96-41d8-813e-12fa610b9b14.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (43, '龙腾苑六区', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '40943元/平', 'https://ke-image.ljcdn.com/hdic-resblock/3a97ce1b-fd8a-47c8-bddb-2f9e6dba96ed.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (44, '华源冠军城', '房山长阳  塔楼/板楼/塔板结合2010年建成', '75219元/平', 'https://ke-image.ljcdn.com/hdic-resblock/d24e0aa7-48c9-429d-89f4-f4555bc3c118.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (45, '西辛南区', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '384991元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8a7dd65a-68de-4b7f-8da5-590df6897ff6.jpg.210x164.jpg?from=ke.com', '2');
+INSERT INTO `village` VALUES (46, '江山赋', '房山长阳  塔楼/板楼/塔板结合2010年建成', '55605元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8a7dd65a-68de-4b7f-8da5-590df6897ff6.jpg.210x164.jpg?from=ke.com', '3');
+INSERT INTO `village` VALUES (47, '领秀新硅谷2号院', '通州梨园  塔楼/塔板结合 2003年建成', '80299元/平', 'https://ke-image.ljcdn.com/hdic-resblock/855dd695-b5fb-4db9-827e-e0c785b21d41.jpg.210x164.jpg?from=ke.com', '3');
+INSERT INTO `village` VALUES (48, '新纪家园', '房山长阳  塔楼/板楼/塔板结合2010年建成', '74764元/平', 'https://ke-image.ljcdn.com/hdic-resblock/a23ad431-7bca-4a5b-af81-0f811a9a2e72.jpg.210x164.jpg?from=ke.com', '3');
+INSERT INTO `village` VALUES (49, '首开常青藤一期', '通州梨园  塔楼/塔板结合 2003年建成', '64130元/平', 'https://ke-image.ljcdn.com/hdic-resblock/911f1d1f-ba9c-494c-9383-f18fbba7a8ec.jpg.210x164.jpg?from=ke.com', '3');
+INSERT INTO `village` VALUES (50, '南露园', '房山长阳  塔楼/板楼/塔板结合2010年建成', '107281元/平', 'https://ke-image.ljcdn.com/hdic-resblock/6adae9c2-1257-48c4-8622-38ba9aaffbc9.jpg.210x164.jpg?from=ke.com', '3');
+INSERT INTO `village` VALUES (51, '新纪家园', '房山长阳  塔楼/板楼/塔板结合2010年建成', '74764元/平', 'https://ke-image.ljcdn.com/hdic-resblock/a23ad431-7bca-4a5b-af81-0f811a9a2e72.jpg.210x164.jpg?from=ke.com', '3');
+INSERT INTO `village` VALUES (52, '华源冠军城', '房山长阳  塔楼/板楼/塔板结合2010年建成', '75219元/平', 'https://ke-image.ljcdn.com/hdic-resblock/d24e0aa7-48c9-429d-89f4-f4555bc3c118.jpg.210x164.jpg?from=ke.com', '3');
+INSERT INTO `village` VALUES (53, '西辛南区', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '384991元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8a7dd65a-68de-4b7f-8da5-590df6897ff6.jpg.210x164.jpg?from=ke.com', '3');
+INSERT INTO `village` VALUES (54, '江山赋', '房山长阳  塔楼/板楼/塔板结合2010年建成', '55605元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8a7dd65a-68de-4b7f-8da5-590df6897ff6.jpg.210x164.jpg?from=ke.com', '3');
+INSERT INTO `village` VALUES (55, '领秀新硅谷2号院', '通州梨园  塔楼/塔板结合 2003年建成', '80299元/平', 'https://ke-image.ljcdn.com/hdic-resblock/855dd695-b5fb-4db9-827e-e0c785b21d41.jpg.210x164.jpg?from=ke.com', '3');
+INSERT INTO `village` VALUES (56, '时尚街区东区', '通州梨园  塔楼/塔板结合 2003年建成', '44217元/平', 'https://ke-image.ljcdn.com/hdic-resblock/cb78701c-2a36-41c3-a33d-964609709847.jpg.210x164.jpg?from=ke.com', '3');
+INSERT INTO `village` VALUES (57, '加州水郡四期', '房山长阳  塔楼/板楼/塔板结合2010年建成', '31631元/平', 'https://ke-image.ljcdn.com/hdic-resblock/068c05d9-6303-4609-b4c3-9ad3b6158d71.jpg.210x164.jpg?from=ke.com', '3');
+INSERT INTO `village` VALUES (58, '益丰苑', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '79829元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8554038c-0b3e-48af-b532-618996c80851.jpg.210x164.jpg?from=ke.com', '3');
+INSERT INTO `village` VALUES (59, '慈云寺', '房山长阳  塔楼/板楼/塔板结合2010年建成', '59809元/平', 'https://ke-image.ljcdn.com/hdic-resblock/6dc8585a-cd9a-433c-b3c4-4537860cb2fa.jpg.210x164.jpg?from=ke.com', '3');
+INSERT INTO `village` VALUES (60, '西辛南区', '\r\n丰台丽泽  板楼/塔板结合 2010年建成', '384991元/平', 'https://ke-image.ljcdn.com/hdic-resblock/8a7dd65a-68de-4b7f-8da5-590df6897ff6.jpg.210x164.jpg?from=ke.com', '3');
 
 -- ----------------------------
 -- Table structure for xinfang
