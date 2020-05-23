@@ -27,7 +27,7 @@
         <!-- 头部 -->
         <div class="header">
             <div class="flexbox left">
-                <a href="index.html" class="header_back"></a>
+                <a href="user.html" class="header_back" id="home"></a>
                 <a href="#" class="city_wrap">
                     <span class="switch_city">
                         <em class="city" id="city">郑州</em>
@@ -98,12 +98,54 @@
             console.log(000)
             $("#house_none").show()
         }else if(how=='house'){
-            console.log(111)
+            // console.log(111)
+            // 获取我关注的房源的信息
+            $.ajax({
+                    type : "get",
+                    url : "http://localhost:3000/star_house",
+                    data : {
+                    },
+                    success : function(result) {
+                        var data=result.data
+                        // console.log(data)
+                        if(data.length>0){
+                            $("#house_none").hide()
+                        }else{
+                            $("#house_none").show()
+                        }
+                        for(var i=0;i<data.length;i++){
+                            $("#content_area").append(`
+                                <div class="mod_box">
+                                    <a href="er-details.html?id=${data[i].id}">
+                                        <div class="mod_img">
+                                            <img src="${data[i].img}" alt="">
+                                        </div>
+                                        <div class="iten_list">
+                                            <div class="item_main">${data[i].title}</div>
+                                            <div class="item_minor">
+                                                <span class="info">${data[i].desc}</span>
+                                                <span class="price_total">${data[i].price}万</span>
+                                            </div>
+                                            <div class="item_other">
+                                                <span class="location">${data[i].rob}</span>
+                                                <span class="unit_price">${data[i].price1}</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            `)
+                        }
+                    }
+                })
         }else if(how=='xiao'){
             console.log(222)
+            // $("#house_none").hide()
         }else if(how=='new'){
             console.log(333)
+            // $("#house_none").hide()
         }
+
+    
     </script>
 </body>
 </html>
