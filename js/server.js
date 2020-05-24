@@ -95,5 +95,27 @@ app.get('/xinfang', (req, res) => {
         res.json(obj)
     })
 });
+//获取收藏信息
+app.get('/star_house', (req, res) => {
+    connection.query("select * from ershoufang where star=1", function(err, result) {
+        const obj = {
+            status: 200,
+            data: result
+        }
+        res.json(obj)
+    })
+});
+// 点击收藏
+app.get('/star', (req, res) => {
+    connection.query("update ershoufang set star='1' where id='"+req.query.id+"'", function(err, result) {
+        const obj = {
+            status: 200,
+            data: result
+        }
+        res.json(obj)
+    })
+});
+
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

@@ -61,7 +61,7 @@
             <div class="new">{{lists.keyword}}</div>
             <div class="tit-new">
                 <h1 class="house-title">{{lists.title}}</h1>
-                <div class="xin">
+                <div class="xin" id="xin">
                     <p> <img src="img/xin.svg" alt=""></p>
                     关注
                 </div>
@@ -430,6 +430,18 @@
         })
         $("#user").click(()=>{
             window.location.href="user.html"
+        })
+        // 点击关注进行收藏
+        $("#xin").click(()=>{
+            var x=window.location.search.split("=")[1]
+            $.ajax({
+                type : "get",
+                url : "http://localhost:3000/star",
+                data : {
+                    id:x
+                }
+            })
+            alert("已关注")
         })
     </script>
 </body>
