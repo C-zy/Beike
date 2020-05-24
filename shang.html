@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>贝壳商业</title>
+    <link rel="icon" href="img/logo.ico" type="images/x-ico" />
     <link rel="stylesheet" href="css/mui.min.css">
     <link rel="stylesheet" href="css/shang.css">
     <link rel="stylesheet" href="fonts/iconfont.css">
@@ -245,17 +246,17 @@
         })
     }
     tab_list(0)
-    // 返回首页
-    $("#home").click(()=>{
-        window.location.href="index.html"
+        // 返回首页
+    $("#home").click(() => {
+            window.location.href = "index.html"
+        })
+        // 城市改变
+    $("#city").click(() => {
+        window.location.href = "city.html"
     })
-    // 城市改变
-    $("#city").click(()=>{
-        window.location.href="city.html"
-    })
-    if(sessionStorage.city){
-        $("#city").html(sessionStorage.city+"<span class='sjx'></span>")
-    }else{
+    if (sessionStorage.city) {
+        $("#city").html(sessionStorage.city + "<span class='sjx'></span>")
+    } else {
         $("#city").html("郑州<span class='sjx'></span>")
     }
 </script>

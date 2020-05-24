@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>找小区</title>
+    <link rel="icon" href="img/logo.ico" type="images/x-ico" />
     <link rel="stylesheet" href="css/mui.min.css">
     <link rel="stylesheet" href="css/village.css">
     <link rel="stylesheet" href="fonts/fonts_village/iconfont.css">
@@ -17,7 +18,7 @@
     <div class="header all">
         <span class="iconfont icon-zuojiantou jt"></span>
         <div class="logo">
-            <a href="city.html" class="header_city">北京
+            <a href="city.html" class="header_city" id="city">北京
                 <span class="iconfont icon-xiajiantou jt_s"></span>
             </a>
             <img src="img/img_village/0.png" alt="">
@@ -32,9 +33,87 @@
         </a>
     </div>
     <!-- 类型选择 -->
-    <ul class="option all all_pd">
-
+    <ul class="option all all_pd option_flexd">
+        <li class="tab_option">区域<span class="sjx"></span></li>
+        <li class="tab_option">均价<span class="sjx"></span></li>
+        <li class="tab_option">类型<span class="sjx"></span></li>
+        <li class="tab_option">楼龄<span class="sjx"></span></li>
     </ul>
+    <!-- 隐藏的类型 -->
+    <div class="hide_option">
+        <ul class="option all all_pd">
+            <li class="tab_option_1 active">区域<span class="sjx"></span></li>
+            <li class="tab_option_1">均价<span class="sjx"></span></li>
+            <li class="tab_option_1">类型<span class="sjx"></span></li>
+            <li class="tab_option_1">楼龄<span class="sjx"></span></li>
+        </ul>
+        <div class="_city hide_div">
+            <div class="left">
+                <p class="list_change">区域</p>
+            </div>
+            <div class="center">
+                <p class="list_change city_1 active">不限</p>
+                <p class="list_change city_1">二七</p>
+                <p class="list_change city_1">郑东新区</p>
+                <p class="list_change city_1">荥阳市</p>
+                <p class="list_change city_1">新郑市</p>
+                <p class="list_change city_1">上街区</p>
+                <p class="list_change city_1">巩义市</p>
+                <p class="list_change city_1">新密市</p>
+                <p class="list_change city_1">登封市</p>
+                <p class="list_change city_1">中牟县</p>
+                <p class="list_change city_1">经发区</p>
+            </div>
+            <div class="right add_city_right">
+                <p class="list_change city_2 city_2_default active">不限</p>
+            </div>
+        </div>
+        <div class="_price hide_div">
+            <p class="list_change" data-value="均价">不限</p>
+            <p class="list_change" data-value="2万以下">2万以下</p>
+            <p class="list_change" data-value="2-3万">2-3万</p>
+            <p class="list_change" data-value="3-4万">3-4万</p>
+            <p class="list_change" data-value="4-5万">4-5万</p>
+            <p class="list_change" data-value="5-6万">5-6万</p>
+            <p class="list_change" data-value="6万以上">6万以上</p>
+            <p class="list_change" data-value="其他">自定义价格
+                <span> <input type="text"> - <input type="text"> <button>确定</button></span>
+            </p>
+        </div>
+        <div class="_type hide_div">
+            <p class="list_change">塔楼
+                <span class="checkbox"></span>
+            </p>
+            <p class="list_change">板楼
+                <span class="checkbox"></span>
+            </p>
+            <p class="list_change">板塔结合
+                <span class="checkbox"></span>
+            </p>
+            <p class="list_change">其他
+                <span class="checkbox"></span>
+            </p>
+            <button class="true">确定</button>
+        </div>
+        <div class="_age hide_div">
+            <p class="list_change">5年以内
+                <span class="checkbox"></span>
+            </p>
+            <p class="list_change">10年以内
+                <span class="checkbox"></span>
+            </p>
+            <p class="list_change">15年以内
+                <span class="checkbox"></span>
+            </p>
+            <p class="list_change">20年以内
+                <span class="checkbox"></span>
+            </p>
+            <p class="list_change">20年以上
+                <span class="checkbox"></span>
+            </p>
+            <button class="true">确定</button>
+        </div>
+    </div>
     <!-- 小区列表 -->
     <ul class="lists_add all all_pd">
 
@@ -115,6 +194,9 @@
         </div>
     </div>
     </div>
+    <div class="alert" style="width: 2rem;background-color: rgba(0, 0, 0, 0.5);height: 1rem; position: fixed; top: 50%;line-height: 1rem;text-align: center;left: 50%;color: #fff;transform: translateX(-50%);font-size: .4rem;display: none;">
+        加载中...
+    </div>
 </body>
 <script>
     function fn() {
@@ -125,8 +207,120 @@
     }
     fn();
     window.addEventListener("resize", function() {
-            fn()
-        }, false)
+        fn()
+    }, false)
+
+    //类型选择tab切换
+    $('.tab_option').on('click', function() {
+        $('.hide_option').show()
+        num = $(this).index()
+        $('.tab_option_1').eq(num).addClass('active').siblings().removeClass('active')
+        $('.hide_div').eq(num).show().siblings('.hide_div').hide()
+    })
+    $('.tab_option_1').on('click', function(e) {
+        num = $(this).index()
+        $(this).addClass('active').siblings().removeClass('active')
+        e.stopPropagation()
+        $('.hide_div').eq(num).show().siblings('.hide_div').hide()
+    })
+    $('.hide_option').click(() => {
+        $('.hide_option').hide()
+    })
+    $('.hide_div').click((e) => {
+            e.stopPropagation()
+        })
+        //区域点击
+    var city_arr = [
+        ['不限'],
+        ['不限', '碧沙岗', '常西湖', '电力新村', '帝湖', '古玩城', '火车站', '老航院', '河医立交桥 '],
+        ['不限', '白沙', '北大学城', '北站', 'CBD', '第八大街', '黄河南路'],
+        ['不限', '常西湖', '巩义市', '邙山', '万客来', '荥阳', '新密市'],
+        ['不限', '管南区域', '航空港商圈', '航空港商圈', '南龙湖商圈'],
+        ['不限', '上街区'],
+        ['不限', '巩义市'],
+        ['不限', '登封市', '南龙湖商圈', '万客来', '荥阳', '新密市', '新郑市'],
+        ['不限', '登封市', '巩义市'],
+        ['不限', '白沙', '第八大街', '管南区域', '航空港商圈'],
+        ['不限', '白沙', '第八大街', '第三大街', '航空港商圈', '黄河南路', '世纪欢乐园']
+    ]
+    $('._city .city_1').on('click', function() {
+        $(this).addClass('active').siblings('.city_1').removeClass('active')
+        $('.add_city_right').get(0).innerHTML = ''
+        for (var i = 0; i < city_arr[$(this).index()].length; i++) {
+            $('.add_city_right').get(0).innerHTML += `
+                <p class="list_change city_2">${city_arr[$(this).index()][i]}</p>
+                `
+        }
+        if ($('.add_city_right .active').length == 0) {
+            $('.add_city_right .city_2').eq(0).addClass('active')
+        }
+        $('.city_2').on('click', function() {
+            $(this).addClass('active').siblings('.city_2').removeClass('active')
+            if ($(this).text() == '不限') {
+                $('.tab_option').eq(0).html('区域' + `<span class="sjx"></span>`).removeClass('active')
+            } else {
+                $('.tab_option').eq(0).html($(this).text() + `<span class="sjx"></span>`).addClass('active')
+            }
+            $('.hide_option').hide()
+        })
+    })
+    $('.city_2_default').on('click', function() {
+        $('.hide_option').hide()
+    })
+
+    //均价点击
+    $('._price .list_change').on('click', function() {
+            $(this).addClass('active_color').siblings('._price .list_change').removeClass('active_color')
+            $('.tab_option').eq(1).html(this.dataset['value'] + `<span class="sjx"></span>`).addClass('active')
+            if (this.dataset['value'] == '均价') {
+                $('.tab_option').eq(1).removeClass('active')
+            }
+            $('.hide_option').hide()
+        })
+        //类型点击
+    $('._type .list_change').on('click', function() {
+        $(this).toggleClass('active')
+        $('._type .checkbox').eq($(this).index()).html(`
+                <span class="mui-icon mui-icon-checkmarkempty true"></span>
+                `)
+    })
+    $('._type .true').on('click', function() {
+            if ($('._type .active').length == 0) {
+                $('.tab_option').eq(2).html('均价' + `<span class="sjx"></span>`).removeClass('active')
+            } else if ($('._type .active').length == 1) {
+                if ($('._type .active').text().length > 66) {
+                    var _type = $('._type .active').text().slice(0, 3) + '...'
+                } else {
+                    var _type = $('._type .active').text()
+                }
+                $('.tab_option').eq(2).html(_type + `<span class="sjx"></span>`).addClass('active')
+            } else {
+                $('.tab_option').eq(2).html('多选' + `<span class="sjx"></span>`).addClass('active')
+            }
+            $('.hide_option').hide()
+        })
+        //楼龄点击
+    $('._age .list_change').on('click', function() {
+        $(this).toggleClass('active')
+        $('._age .checkbox').eq($(this).index()).html(`
+                <span class="mui-icon mui-icon-checkmarkempty true"></span>
+                `)
+    })
+    $('._age .true').on('click', function() {
+            if ($('._age .active').length == 0) {
+                $('.tab_option').eq(3).html('均价' + `<span class="sjx"></span>`).removeClass('active')
+            } else if ($('._age .active').length == 1) {
+                if ($('._age .active').text().length > 68) {
+                    var _age = $('._age .active').text().slice(0, 3) + '...'
+                } else {
+                    var _age = $('._age .active').text()
+                }
+                $('.tab_option').eq(3).html(_age + `<span class="sjx"></span>`).addClass('active')
+            } else {
+                $('.tab_option').eq(3).html('多选' + `<span class="sjx"></span>`).addClass('active')
+            }
+            $('.hide_option').hide()
+        })
         // 底部tap切换
     $("#ho_tp").click(() => {
         if ($("#ho_tp").hasClass("active")) {
@@ -156,26 +350,40 @@
     })
 
     var a = 0
-    add(a)
+    window.onload = function() {
+        add(a)
+    }
 
     function add(i) {
-        $.getJSON('http://localhost:3000/village?num=' + i, function(data) {
-            for (var i = 0; i < data.length; i++) {
-                $('.lists_add').get(0).innerHTML += `
-                <a href="#"><li class="list clear">
-                    <div class="img _fl">
-                        <img src="${data[i].img}" alt="">
-                        <p class="blue_bg">小区攻略</p>
-                    </div>
-                    <div class="right _fl">
-                        <p class="name">${data[i].name}</p>
-                        <p class="present">${data[i].present}</p>
-                        <p class="price">${data[i].price}</p>
-                    </div>
-                </li></a>
-            `
-            }
-        })
+        $('.alert').show()
+        if (i < 4) {
+            $.getJSON('http://localhost:3000/village?num=' + i, function(data) {
+                for (var i = 0; i < data.length; i++) {
+                    $('.lists_add').get(0).innerHTML += `
+                            <a href="#"><li class="list clear">
+                                <div class="img _fl">
+                                    <img src="${data[i].img}" alt="">
+                                    <p class="blue_bg">小区攻略</p>
+                                </div>
+                                <div class="right _fl">
+                                    <p class="name">${data[i].name}</p>
+                                    <p class="present">${data[i].present}</p>
+                                    <p class="price">${data[i].price}</p>
+                                </div>
+                            </li></a>
+                        `
+                }
+                setTimeout(() => {
+                    $('.alert').hide()
+                }, 200);
+            })
+        } else {
+            $('.alert').text('到底了...')
+            setTimeout(() => {
+                $('.alert').hide()
+            }, 200);
+        }
+
     }
     setTimeout(() => {
         window.onscroll = function() {
@@ -183,16 +391,33 @@
                 a++
                 add(a)
             }
+
         }
-    }, 500);
+    }, 1000);
     var num_scroll = $(".option").offset().top
     window.addEventListener("scroll", function() {
-        if ($(this).scrollTop() > num_scroll) {
-            $('.option').addClass('flexd')
-        } else if ($(this).scrollTop() < num_scroll) {
-            $('.option').removeClass('flexd')
-        }
+            if ($(this).scrollTop() > num_scroll) {
+                $('.option_flexd').addClass('flexd')
+            } else if ($(this).scrollTop() < num_scroll) {
+                $('.option_flexd').removeClass('flexd')
+            }
+        })
+        // 用户本地存储
+    var na = decodeURI(window.location.search.split("=")[1]);
+    if (na == "undefined") {
+
+    } else {
+        sessionStorage.name = na;
+    }
+    // 城市改变
+    $("#city").click(() => {
+        window.location.href = "city.html"
     })
+    if (sessionStorage.city) {
+        $("#city").html(sessionStorage.city + `<span class="iconfont icon-xiajiantou jt_s"></span>`)
+    } else {
+        $("#city").html(`北京<span class="iconfont icon-xiajiantou jt_s"></span>`)
+    }
 </script>
 
 </html>

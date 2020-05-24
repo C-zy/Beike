@@ -20,7 +20,7 @@ body li {
 }
 
 .all_pd {
-    padding: 0 .5rem;
+    padding: 0 .3rem;
 }
 
 .flexd {
@@ -56,7 +56,7 @@ body li {
 
 .jt {
     position: absolute;
-    left: .5rem;
+    left: .4rem;
     font-size: .45rem !important;
     font-weight: bolder;
     color: blue;
@@ -123,7 +123,169 @@ body li {
 .option {
     height: 1rem;
     background-color: #fff;
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid #e4e6f0;
+}
+
+.option li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 1rem;
+    font-size: .35rem;
+    font-weight: 100;
+    color: #333;
+}
+
+.option li .sjx {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: .1rem solid transparent;
+    border-top: .1rem solid #333;
+    margin-left: .1rem;
+    vertical-align: middle;
+}
+
+.option .active {
+    color: blue;
+}
+
+.option .active .sjx {
+    border-top: .1rem solid blue;
+}
+
+.hide_option {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hide_option .tab_option_1 {
+    font-weight: bolder !important;
+}
+
+.hide_option .active .sjx {
+    transform: rotateX(180deg);
+    transform-origin: 30% 30%;
+}
+
+.hide_option .hide_div {
+    background-color: #fff;
+    display: none;
+}
+
+.hide_option p.active_color {
+    color: blue !important;
+}
+
+.hide_option .active {
+    color: blue !important;
+}
+
+.hide_option .active span.checkbox {
+    border-color: blue;
+}
+
+.hide_option .active span.checkbox span.mui-icon,
+.hide_option .active span.checkbox span.mui-icon::before {
+    display: inline-block;
+}
+
+.hide_option .list_change {
+    padding: 0 .6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: .4rem;
+    border-bottom: 1px solid #e4e6f0;
+    color: #000;
+}
+
+.hide_option .list_change button,
+.hide_option .list_change input {
+    vertical-align: middle;
+    height: .3rem;
+    width: .8rem;
+    margin: 0;
+    padding: 0;
+    font-size: .2rem;
+}
+
+.hide_option .list_change button {
+    color: #fff;
+    background-color: blue;
+    padding: 0 .1rem;
+    transition: none;
+}
+
+.hide_option .list_change .checkbox {
+    display: inline-block;
+    width: .4rem;
+    height: .4rem;
+    background-color: #fff;
+    border: 1px solid #e4e6f0;
+    position: relative;
+}
+
+.hide_option .list_change .checkbox span.mui-icon,
+.hide_option .list_change .checkbox span.mui-icon::before {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: .4rem;
+    font-weight: bolder;
+}
+
+.hide_option button.true {
+    transition: none;
+    width: 100%;
+    height: 1rem;
+    font-size: .4rem;
+    line-height: 1rem;
+    padding: 0;
+    border: none;
+    background-color: blue;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.hide_option ._city {
+    height: 9rem;
+    background-color: #e4e6f0;
+}
+
+.hide_option ._city div {
+    background-color: #fff;
+    width: 33%;
+    float: left;
+    height: 100%;
+    overflow: auto;
+}
+
+.hide_option ._city div .list_change {
+    padding-right: 0;
+}
+
+.hide_option ._city .left {
+    width: 25%;
+}
+
+.hide_option ._city .right,
+.hide_option ._city .center {
+    border-left: 1px solid #e4e6f0;
+}
+
+.hide_option ._city .right {
+    width: 42%;
 }
 
 .lists_add {
@@ -342,6 +504,9 @@ body li {
     vertical-align: middle;
     margin-right: 1.333vw;
 }
+
+
+/*# sourceMappingURL=village.css.map */
 
 
 /*# sourceMappingURL=village.css.map */
