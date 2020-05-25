@@ -70,31 +70,31 @@
             template: `
             <div class="all_back" style="z-index: 10;">
                 <ul class="lists-t">
-                    <li v-for="(title,index) in titles" @click="tab_t(index)"><span :class="{area_active:tab_tt==index}">{{title}}</span><i :class="{act:tab_tt==index}"></i></li>
+                    <li v-for="(title,index) in titles" :key=index @click="tab_t(index)"><span :class="{area_active:tab_tt==index}">{{title}}</span><i :class="{act:tab_tt==index}"></i></li>
                 </ul>
                 <div class="contents" v-show="num1==0">
                     <ul class="area_keys1">
-                        <li v-for="(areas,key1,index) in areas" @click="chanage_area1(index)" :class="{area_active:num==index}">{{key1}}</li>
+                        <li v-for="(areas,key1,index) in areas" :key=index @click="chanage_area1(index)" :class="{area_active:num==index}">{{key1}}</li>
                     </ul>
                     <ul class="area_keys2">
-                        <li v-for="(area,key2,index) in areas" v-show="num==index">
-                            <p v-for="(areas,key3,index) in areas[key2]" @click="change_area2(key3)" :class="{area_active:val==key3}">{{key3}}</p>
+                        <li v-for="(area,key2,index) in areas" :key=index v-show="num==index">
+                            <p v-for="(areas,key3,index) in areas[key2]" :key=index @click="change_area2(key3)" :class="{area_active:val==key3}">{{key3}}</p>
                         </li>
                     </ul>
                     <ul class="area_keys3">
-                        <li v-for="(area,key2,index) in areas">
-                            <div v-for="(area,key3,index) in areas[key2]"  v-show="val==key3">
-                                <p v-for="(keys,index) in areas[key2][key3]" @click="replace(keys)" :class="{area_active:val_t==keys}">{{keys}}</p>
+                        <li v-for="(area,key2,index) in areas" :key=index>
+                            <div v-for="(area,key3,index) in areas[key2]" :key=index  v-show="val==key3">
+                                <p v-for="(keys,index) in areas[key2][key3]" :key=index @click="replace(keys)" :class="{area_active:val_t==keys}">{{keys}}</p>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class=contents1 v-show="num1==1">
-                    <a v-for="(way,index) in ways" @click="way_w(index,way)" :class="{area_active:way_num==index}">{{way}}</a>  
+                    <a v-for="(way,index) in ways" :key=index @click="way_w(index,way)" :class="{area_active:way_num==index}">{{way}}</a>  
                 </div>
                 <div class=contents2 v-show="num1==2">
                     <ul>
-                        <li v-for="(rental,index) in rentals">
+                        <li v-for="(rental,index) in rentals" :key=index>
                             <a @click="therent(index,rental)" :class="{area_active:rent_num==rental}">{{rental}}</a>
                         </li>
                    </ul>
@@ -106,9 +106,9 @@
                 <div class=contents3 v-show="num1==3">
                     <div class="right">
                         <ul class="ff_rr">
-                            <li v-for="(filter_rr,i_items,index) in filter_rr">
+                            <li v-for="(filter_rr,i_items,index) in filter_rr" :key=index>
                                 <span>{{i_items}}</span>
-                                <a class="blue" v-for="(i_keys,index) in filter_rr" @click="f_type($event,i_keys)" :clalss="{fliter_last:f_type}">
+                                <a class="blue" v-for="(i_keys,index) in filter_rr" :key=index @click="f_type($event,i_keys)" :clalss="{fliter_last:f_type}">
                                    {{i_keys}}
                                 </a>
                             </li>

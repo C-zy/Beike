@@ -25,7 +25,7 @@ header{
     text-decoration: none;
 }
 .h_left a:first-child{
-   margin-right: 20%;
+   margin-right: 10%;
    width:10%;
 }
 .h_left a:first-child img{
@@ -33,10 +33,8 @@ header{
     vertical-align: middle;
 }
 .h_left a:last-child{
-    /* width: 25%; */
+    width: 45%;
     color: #222;
-    vertical-align: top;
-    
 }
 .h_left a:last-child img{
     width: 20%;
@@ -46,20 +44,24 @@ header{
 .h_middle{
     text-align: left;
     display: flex;
+    width: 38%;
     /* margin-top: 5%; */
     margin: 0 auto;
 }
+.h_middle a{
+    width: 100%;
+}
 .h_middle img{
-   width: 55%;
-   vertical-align: middle;
+    margin-top: 3%;
+    width: 60%;
+    text-align: center;
 }
 .h_right{
-    display: flex;
+ width: 5%;
     text-align: right;
 }
 .h_right img{
-    width: 50%;
-    vertical-align: middle;
+    width: 100%;
 }
 /* 搜索框 */
 .r_search{

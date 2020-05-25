@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "12465878",
+      "name": "心 爱心",
+      "font_class": "xinaixin1",
+      "unicode": "e69b",
+      "unicode_decimal": 59035
+    },
+    {
+      "icon_id": "6899390",
+      "name": "心 爱心",
+      "font_class": "xinaixin",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
       "icon_id": "14515210",
       "name": "dui",
       "font_class": "dui",

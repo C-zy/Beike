@@ -1,5 +1,19 @@
 
-
+(function () {
+    function fn() {
+        var dom = document.documentElement;
+        var wid = dom.getBoundingClientRect().width;
+        if (wid > 750) {
+            wid = 750;
+        }
+        var rem = wid / 25;
+        dom.style.fontSize = rem + 'px';
+    }
+    fn();
+    window.addEventListener("resize", function () {
+        fn();
+    }, false)
+})();
 var det_conents=document.getElementById("det_conents")
 var xhr=new XMLHttpRequest()
 xhr.onreadystatechange=function(){
@@ -131,31 +145,6 @@ xhr.open("GET","http://localhost:3000/cont_det?id="+str,true)
 xhr.send()
 
 
-
-var item2Show = false, item3Show = false;//子选项卡是否显示标志
-        document.querySelector('.mui-slider').addEventListener('slide', function (event) {
-            if (event.detail.slideNumber === 1 && !item2Show) {
-                //切换到第二个选项卡
-                //根据具体业务，动态获得第二个选项卡内容；
-                var content =document.getElementsByClassName("slider_img")[0]
-                    //显示内容
-                    // document.getElementById("item2").innerHTML = content;
-                //改变标志位，下次直接显示
-                item2Show = true;
-            } else if (event.detail.slideNumber === 2 && !item3Show) {
-                //切换到第三个选项卡
-                //根据具体业务，动态获得第三个选项卡内容；
-                var content =document.getElementsByClassName("slider_img")[1]
-                    //显示内容
-                    // document.getElementById("item3").innerHTML = content;
-                //改变标志位，下次直接显示
-                item3Show = true;
-            }
-        });
-        // document.querySelector('.mui-slider').addEventListener('slide', function (event) {
-        //     //注意slideNumber是从0开始的；
-        //     document.getElementById("info").innerHTML= "你正在看第" + (event.detail.slideNumber + 1) + "张图片";
-        // });
        
         $("#like").click(()=>{
             $("#fonts").toggleClass("like")
