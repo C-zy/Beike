@@ -89,7 +89,7 @@ blackmodel2=()=>{
     }
     else{
         $(".blackmodel9").show()
-        window.location.href="./success.html"
+        $("#sure_btn").html()=='提交委托'? window.location.href="./mine_success.html": window.location.href="./success.html"
     }
     setTimeout(() => {
         $(".blackmodel2").hide()
