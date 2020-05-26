@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我要出租</title>
+    <link rel="stylesheet" href="./css/mine_rent.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <script src="./js/zepto.min(1.2.0).js"></script>
+</head>
+
+<body>
+
+    <!-- <div style="position: relative;width: 100%;overflow: hidden;"> -->
+    <div class="sellers">
+
+        <!-- 信息录入 -->
+        <div class="s_cont">
+            <div class="s_message">
+                <h2>信息录入</h2>
+            </div>
+            <ul class="s_content">
+                <li class="con_lilsts">
+                    <h3>当前城市</h3>
+                    <span><input type="text" value="郑州"></span>
+                    <i class="icon_img"></i>
+                </li>
+                <li class="con_lilsts">
+                    <h3>所在小区</h3>
+                    <span style="color: #ccc;">
+                        <input type="text" id="community_name" placeholder="请输入小区名称">
+                    </span>
+                    <i class="icon_img"></i>
+                </li>
+                <li class="con_lilsts">
+                    <h3>具体地址</h3>
+                    <span style="color: #ccc;">
+                        <input type="text" id="house_number" placeholder="请输入门牌号">
+                    </span>
+                    <i class="icon_img"></i>
+                </li>
+                <li class="con_lilsts towards">
+                    <h3>房屋朝向</h3>
+                    <span style="color: #ccc;">
+                        <input type="text" id="toward" placeholder="请选择房屋朝向">
+                    </span>
+                    <i class="icon_img"></i>
+
+                    <!-- 请选择房屋朝向隐藏模块 -->
+                    <div class="toward">
+                        <ul id="toward_list">
+                            <li>东</li>
+                            <li>东南</li>
+                            <li>南</li>
+                            <li>西南</li>
+                            <li>西</li>
+                            <li>西北</li>
+                            <li>北</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="con_lilsts r_w">
+                    <h3>出租方式</h3>
+                    <span style="color: #ccc;">
+                        <input type="text" id="r_w" placeholder="请输入门牌号">
+                    </span>
+                    <i class="icon_img"></i>
+                       <!-- 请选择房屋朝向隐藏模块 -->
+                    <div class="rent_ways">
+                        <ul class="rr_ww">
+                            <li>整租</li>
+                            <li>合租</li>
+                            <li>拼租</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="con_lilsts" style="border-bottom:none">
+                    <h3>房屋面积</h3>
+                    <span style="display: flex;width:75%">
+                        <input type="text" placeholder="请输入房屋面积" style="width:80%">
+                        <em
+                            style="display: inline-block;color:#ccc;font-style: normal;width:20%;text-align: right;">平方米</em>
+                    </span>
+                </li>
+                <li class="con_lilsts" style="border-bottom:none">
+                    <h3>期望租金</h3>
+                    <span style="display: flex;width:75%">
+                        <input type="text" id="selling_price" placeholder="请输入期望租金" style="width:80%">
+                        <em
+                            style="display: inline-block;color:#ccc;font-style: normal;width:20%;text-align: right;">万元</em>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="s_bott">
+            <div class="s_conitem">
+                <ul class="s_contetnt">
+                    <li class="con_lilsts">
+                        <h3>如何称呼</h3>
+                        <span>
+                            <input type="text" placeholder="请输入姓名" id="callme">
+                        </span>
+                    </li>
+                    <li class="con_lilsts">
+                        <h3>联系方式</h3>
+                        <span>188888888</span>
+                    </li>
+                </ul>
+                <div class="r_process">
+                    <p>房源发布流程</p>
+                    <div>
+                        <img src="https://s1.ljcdn.com/rent_landlord/_next/static/images/release_progress@3x-5193363e12ed4f9cd93c00513e9bd3df.png" alt="">
+                    </div>
+                </div>
+                <div class="r_servers">
+                    <p>服务介绍</p>
+                    <div>
+                        <ul>
+                            <li style="border-right: 1px solid #f6f6f6;;border-bottom: 1px solid #f6f6f6;padding-bottom: 3%;">
+                                <img src="https://s1.ljcdn.com/rent_landlord/_next/static/images/icon_fast_beike@3x-d7470caadcb192b63d6d3f3bea4926f7.png" alt="">
+                                <p>快速上架</p>
+                                <p>24小时内上架房源</p>
+                            </li>
+                            <li style="border-bottom: 1px solid #f6f6f6;">
+                                <img src="https://s1.ljcdn.com/rent_landlord/_next/static/images/icon_arrow_beike@3x-1d63c3c054fed9ab16c73f0427032679.png" alt="">
+                                <p>海量租客</p>
+                                <p>全网精准快速匹配租客</p>
+                            </li>
+                            <li style="border-right: 1px solid #f6f6f6;padding-top: 3%;">
+                                <img src="https://s1.ljcdn.com/rent_landlord/_next/static/images/icon_s_beike@3x-9300a193332a92885ce0ade8b963ddd3.png" alt="">
+                                <p>全程服务</p>
+                                <p>25万+专业经纪人为您服务</p>
+                            </li>
+                            <li style="padding-top: 3%;">
+                                <img src="https://s1.ljcdn.com/rent_landlord/_next/static/images/icon_money_beike@3x-ff69f6a56d14ca249c6a9c40324ea539.png" alt="">
+                                <p>收益稳定</p>
+                                <p>快速出房，出租更省心</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="conitem_d">
+                    提示：该房源信息提交后，将由北京链家房地产经纪有限公司负责房源的维护、拟租客源的管理。您点击提交委托后，即视为您同意委托北京链家房地产经纪有限公司为您的拟租房源提供居间服务。
+                </div>
+                <div class="s_sure">
+                    <button id="sure_btn">提交委托</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 请输入小区名称显示隐藏 -->
+        <div class="none_black blackmodel1" style="width: 3rem;">
+            <i class="iconfont">&#xe612;</i>
+            <p>请输入小区名称</p>
+        </div>
+        <!-- 请选择小区的显示隐藏 -->
+        <div class="none_black blackmodel2" style="width: 2rem;">
+            <i class="iconfont">&#xe612;</i>
+            <p>请选择小区</p>
+        </div>
+        <!-- 请选择楼栋号 -->
+        <div class="none_black blackmodel3" style="width: 2.5rem;">
+            <i class="iconfont">&#xe612;</i>
+            <p>请选择楼栋号</p>
+        </div>
+        <!-- 请选择单元号 -->
+        <div class="none_black blackmodel4" style="width: 2.5rem;">
+            <i class="iconfont">&#xe612;</i>
+            <p>请选择单元号</p>
+        </div>
+        <!-- 请选择门牌号 -->
+        <div class="none_black blackmodel5" style="width: 2.5rem;">
+            <i class="iconfont">&#xe612;</i>
+            <p>请选择门牌号</p>
+        </div>
+        <!--请填写售价  -->
+        <div class="none_black blackmodel6" style="width: 2.3rem;">
+            <i class="iconfont">&#xe612;</i>
+            <p>请填写售价</p>
+        </div>
+        <!--请输入称呼 -->
+        <div class="none_black blackmodel7" style="width: 2rem;">
+            <i class="iconfont">&#xe612;</i>
+            <p>请输入称呼</p>
+        </div>
+        <!--请输入大于0的数字 -->
+        <div class="none_black blackmodel8" style="width: 3rem;">
+            <i class="iconfont">&#xe612;</i>
+            <p>请输入大于0的数字</p>
+        </div>
+        <!--交委托成功 -->
+        <div class="none_black blackmodel9" style="width: 2.3rem;">
+            <i class="iconfont">&#xe62f;</i>
+            <p>交委托成功</p>
+        </div>
+    </div>
+    <!-- 隐藏的模块 -->
+
+    <div class="None_model">
+
+        <!-- 1.小区名称模块 -->
+        <div class="community_name ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.3s">
+            <div class="s_top">
+                <a href=""></a>
+                <h3>小区名称</h3>
+            </div>
+            <div class="enter_text">
+                <input type="text" name="" id="text_f" placeholder="请输入小区名称">
+                <button id="enter_btn">完成</button>
+            </div>
+        </div>
+        <!-- 2.门牌号模块 -->
+        <div class="house_number">
+            <div class="s_top">
+                <a href=""></a>
+                <h3>门牌号</h3>
+            </div>
+            <div class="enter_text" style="margin: 0 3%;" id="enter_text0">
+                <input type="text" name="" id="unit_input0" placeholder="请输入门牌号" style="width: 94%;">
+            </div>
+            <div class="floor_id">
+                <p>您可直接选择</p>
+                <ul class="id_lists" id="id_lists0">
+                    <li id="unit_number">9号楼</li>
+                    <li id="unit_number1">10号楼</li>
+                    <li id="unit_number2" style="border-bottom: none;">无楼栋号</li>
+                </ul>
+                <p id="manually_enter1">手动输入楼栋号</p>
+            </div>
+
+            <!-- 单元号显示与隐藏 -->
+            <div class="unit_number unit_number1">
+                <div class="s_top">
+                    <a href=""></a>
+                    <h3>单元号</h3>
+                </div>
+                <div class="enter_text" style="margin: 0 3%;" id="enter_text1">
+                    <input type="text" name="" id="unit_input1" placeholder="请输入单元号" style="width: 94%;">
+                </div>
+                <div class="floor_id">
+                    <p>您可直接选择</p>
+                    <ul class="id_lists" id="id_lists1">
+                        <li id="items_tab1">1单元</li>
+                        <li id="items_tab2">2单元</li>
+                        <li id="items_tab3">3单元</li>
+                        <li id="items_tab4" style="border-bottom: none;">无单元号</li>
+                    </ul>
+                    <p class="manually_enter2">手动输入单元号</p>
+                </div>
+            </div>
+            <!-- 手动输入单元号 -->
+            <div class="unit_number unit_number2">
+                <div class="s_top">
+                    <a href=""></a>
+                    <h3>单元号</h3>
+                </div>
+                <div class="enter_text" style="margin: 0 3%;" id="enter_text2">
+                    <input type="text" name="" id="unit_input2" placeholder="请输入单元号" style="width: 94%;">
+                </div>
+                <div class="floor_id">
+                    <p class="manually_enter2">手动输入单元号</p>
+                </div>
+            </div>
+            <!-- 单元号里的门牌号显示与隐藏 -->
+            <!-- 1-30 -->
+            <div class="unithouse_num items_tab1">
+                <div class="s_top">
+                    <a href=""></a>
+                    <h3>门牌号</h3>
+                </div>
+                <div class="enter_text" style="margin: 0 3%;" id="enter_text2">
+                    <input type="text" name="" id="unit_input2" placeholder="请输入门牌号" style="width: 94%;">
+                </div>
+                <div class="floor_id">
+                    <p>您可直接选择</p>
+                    <ul class="id_lists">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                        <li>10</li>
+                        <li style="border-bottom: none;">无门牌号</li>
+                    </ul>
+                    <p class="manually_enter3">手动输入门牌号</p>
+                </div>
+            </div>
+            <div class="unithouse_num items_tab2">
+                <div class="s_top">
+                    <a href=""></a>
+                    <h3>门牌号</h3>
+                </div>
+                <div class="enter_text" style="margin: 0 3%;">
+                    <input type="text" name="" id="" placeholder="请输入门牌号" style="width: 94%;">
+                </div>
+                <div class="floor_id">
+                    <p>您可直接选择</p>
+                    <ul class="id_lists">
+                        <li>11</li>
+                        <li>12</li>
+                        <li>13</li>
+                        <li>14</li>
+                        <li>15</li>
+                        <li>16</li>
+                        <li>17</li>
+                        <li>18</li>
+                        <li>19</li>
+                        <li>20</li>
+                        <li style="border-bottom: none;">无门牌号</li>
+                    </ul>
+                    <p class="manually_enter3">手动输入门牌号</p>
+                </div>
+            </div>
+            <div class="unithouse_num items_tab3">
+                <div class="s_top">
+                    <a href=""></a>
+                    <h3>门牌号</h3>
+                </div>
+                <div class="enter_text" style="margin: 0 3%;">
+                    <input type="text" name="" id="" placeholder="请输入门牌号" style="width: 94%;">
+                </div>
+                <div class="floor_id">
+                    <p>您可直接选择</p>
+                    <ul class="id_lists">
+                        <li>21</li>
+                        <li>22</li>
+                        <li>23</li>
+                        <li>24</li>
+                        <li>25</li>
+                        <li>26</li>
+                        <li>27</li>
+                        <li>28</li>
+                        <li>29</li>
+                        <li>30</li>
+                        <li style="border-bottom: none;">无门牌号</li>
+                    </ul>
+                    <p class="manually_enter3">手动输入门牌号</p>
+                </div>
+            </div>
+            <div class="unithouse_num items_tab4">
+                <div class="s_top">
+                    <a href=""></a>
+                    <h3>门牌号</h3>
+                </div>
+                <div class="enter_text" style="margin: 0 3%;">
+                    <input type="text" name="" id="" placeholder="请输入门牌号" style="width: 94%;">
+                </div>
+                <div class="floor_id">
+                    <p class="manually_enter3">手动输入门牌号</p>
+                </div>
+            </div>
+            <!-- 手动输入房源地址隐藏模块 -->
+            <div class="manually_enter">
+                <div class="s_top">
+                    <a href=""></a>
+                    <h3>手动输入房源地址</h3>
+                </div>
+                <ul class="id_lists">
+                    <li>
+                        <input type="text" placeholder="请输入楼栋号">
+                    </li>
+                    <li>
+                        <input type="text" placeholder="请输入单元号">
+                    </li>
+                    <li style="border-bottom: none;">
+                        <input type="text" placeholder="请输入门牌号">
+                    </li>
+                </ul>
+                <div class="s_sure" style="padding-top: 2%;width: 85%;margin: 0 auto;">
+                    <button id="sure_finish">完成</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="./js/sellers.js"></script>
+    <script>
+        (function () {
+            function font() {
+                var all = document.documentElement;  // 获取html元素
+                var w = all.getBoundingClientRect().width;  // 获取当前设备的宽度
+                if (w > 750) {
+                    w = 750;
+                }
+                rem = w / 7.5;
+                all.style.fontSize = rem + 'px'
+            }
+            font();
+            window.addEventListener("resize", function () {
+                font()
+            }, false)
+        })();
+        var towards=document.getElementById("toward")
+        var toward=document.getElementsByClassName("toward")[0]
+        var toward_list=document.getElementById("toward_list")
+        toward_list.onclick=(e)=>{
+            console.log(e.target)
+            toward.style.display="none"
+            towards.value=e.target.innerHTML
+            e.target.nextElementSibling.className=""
+            e.target.previousElementSibling.className=""
+            e.target.className="t_l"
+
+        }
+        towards.onfocus=()=>{
+            toward.style.display="block"
+        }
+        var rent_ways=document.getElementsByClassName("rent_ways")[0]
+        var r_w=document.getElementById("r_w")
+        var rr_ww=document.getElementsByClassName("rr_ww")[0]
+        rr_ww.onclick=(e)=>{
+            r_w.value=e.target.innerHTML
+            rent_ways.style.display="none"
+            e.target.className="t_l"
+        }
+        r_w.onfocus=()=>{
+            rent_ways.style.display="block"
+        }
+       
+    </script>
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : test
+ Source Server         : ZY
  Source Server Type    : MySQL
  Source Server Version : 50726
  Source Host           : localhost:3306
@@ -11,11 +11,51 @@
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 26/05/2020 18:11:34
+ Date: 26/05/2020 22:33:21
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for apartment
+-- ----------------------------
+DROP TABLE IF EXISTS `apartment`;
+CREATE TABLE `apartment`  (
+  `id` int(255) NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `tag` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `adress` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `price` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `right_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of apartment
+-- ----------------------------
+INSERT INTO `apartment` VALUES (1, 'https://ke-image.ljcdn.com/rent-user-avatar/b0b3c4f7-53bc-45ac-b5dd-8d5b96057e2f.670x360.webp', '随时入住', '一如公寓·华强广场店', '电厂路46号1号楼 ', '1500-1700元/月', '7个房型 | 4套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/7d93a204-6f3d-4cc0-91cf-bce22c5b0d0d.200x200.jpg');
+INSERT INTO `apartment` VALUES (2, 'https://ke-image.ljcdn.com/rent-user-avatar/a0f44dd4-6ce9-41f7-85f0-4b0d9e23e365.670x360.webp', '已满房', '博辰公寓·祥瑞苑店', ' 万科祥瑞苑', '暂无', '1个房型 | 0套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/20c219aa-3b3e-4919-9fab-6397ceffec5d.200x200.jpg');
+INSERT INTO `apartment` VALUES (3, 'https://ke-image.ljcdn.com/rent-user-avatar/74e87b63-12f0-4876-b700-fec39fa01957.670x360.webp', '随时入住', '博辰公寓·万科城小世界店', '科学大道与红叶路交叉口', '1000-1100元/月', '2个房型 | 30套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/20c219aa-3b3e-4919-9fab-6397ceffec5d.200x200.jpg');
+INSERT INTO `apartment` VALUES (4, 'https://ke-image.ljcdn.com/rent-user-avatar/b70ed491-976d-480d-93ea-ec27ea5fcfaf.670x360.webp', '已满房', '林海公寓·二七店', '二道街192号 ', '暂无', '1个房型 | 0套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/32b8cf6b-16bb-4202-841e-ee8e40ba8e2c.200x200.jpg');
+INSERT INTO `apartment` VALUES (5, 'https://ke-image.ljcdn.com/rent-user-avatar/c3c177be-fa3c-4edf-be2d-104b41ad5bd1.670x360.webp', '随时入住', '仟那酒店公寓  ·黄科大轻巢店 ', '漓江路连云路交叉口东200米路南', '1900-2000元/月', '1个房型 | 16套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/f5dc457a-8023-4514-872e-d56d9188e1ec.200x200.jpg');
+INSERT INTO `apartment` VALUES (6, 'https://ke-image.ljcdn.com/rent-user-avatar/46cbe3af-becb-4fae-b688-f4c1079e22d6.670x360.webp', '随时入住', '海龙公寓·高新区店', '丁里香3号', '999-1100元/月', '1个房型 | 9套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/80d30e4a-b655-4be0-96fc-fd2ecd0719ad.200x200.jpg');
+INSERT INTO `apartment` VALUES (7, 'https://ke-image.ljcdn.com/rent-user-avatar/42419331-9059-43c7-9a66-85edeebeb52b.670x360.jpg', '已满房', '条玛青年公寓·二七广场店 ', ' 北下街22号', '暂无', '1个房型 | 0套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/6ae7bdb7-107a-401c-9717-135a5c335afa.200x200.jpg');
+INSERT INTO `apartment` VALUES (8, 'https://ke-image.ljcdn.com/rent-user-avatar/39cf0fb7-06b3-49bf-8c00-99a4355b838a.670x360.jpg', '随时入住', '郑州考拉公寓·金城时代广场店', '姚寨路与黄河路交叉口东北角 ', '1700-1900元/月', '2个房型 | 6套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/948fb926-83f0-4ff7-a584-2558ac3b46da.200x200.jpg');
+INSERT INTO `apartment` VALUES (9, 'https://ke-image.ljcdn.com/rent-user-avatar/d0102326-f5d6-4d55-8bc8-3c51f8f2e7c7.670x360.jpg', '随时入住', '逸家繁星·正弘城店 ', '东风路花园路正弘城丽汀公寓', '5896-8700元/月', '4个房型 | 18套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/9971a772-5b84-49f0-a945-9b2f9f95406c.200x200.jpg');
+INSERT INTO `apartment` VALUES (10, 'https://ke-image.ljcdn.com/rent-user-avatar/b313f58f-f7b0-4bcd-8ffd-29a1b3fdbdba.670x360.webp', '已满房', '泊寓·郑州大学店 ', '腊梅路57号', '暂无', '10个房型 | 0套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/41952d2d-d914-4eac-8a41-2a48c8503e6c.200x200.jpg');
+INSERT INTO `apartment` VALUES (11, 'https://ke-image.ljcdn.com/rent-user-avatar/2a64f42e-c243-4f15-962b-c97d49979788.670x360.webp', '随时入住', '郑州1+公寓·西大学科技园店', '长椿路化工路交叉口东北角', '1100-1200元/月', '2个房型 | 34套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/e6db580e-72fe-4582-b034-c0fdcb9c5149.200x200.jpg');
+INSERT INTO `apartment` VALUES (12, 'https://ke-image.ljcdn.com/rent-user-avatar/1475adfd-22fc-4fc0-8e1a-b0d9ef712553.670x360.webp', '随时入住', '三园公寓·七大街店', ' 经北六路 ', '1150-1500元/月', '8个房型 | 49套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/0a6a33da-931b-4211-9ddd-6caf43f62d15.200x200.jpg');
+INSERT INTO `apartment` VALUES (13, 'https://ke-image.ljcdn.com/rent-user-avatar/beca9347-64e0-403a-b1dd-34f16c0580e6.670x360.jpg', '随时入住', '条玛青年公寓·人民路店 ', '太康路72号-1-2层', '1500-1850元/月', '15个房型 | 76套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/6ae7bdb7-107a-401c-9717-135a5c335afa.200x200.jpg');
+INSERT INTO `apartment` VALUES (14, 'https://ke-image.ljcdn.com/rent-user-avatar/29a0d37b-107a-41f1-9fe2-9c224997efda.670x360.jpg', '随时入住', '爱途斯维登服务公寓·瀚海璞丽中心省人民医院店', '黄河路与经二路交叉口瀚海璞丽中心B座一楼大厅 ', '3400-3600元/月', '2个房型 | 3套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/6c3545d7-0d50-48e8-a4dd-3f9e93906004.200x200.jpg');
+INSERT INTO `apartment` VALUES (15, 'https://ke-image.ljcdn.com/rent-user-avatar/94ff84d0-50f2-4df6-9b01-4c601e56f4dc.670x360.jpg', '已满房', '康桥酒店·郑大南校区店 ', '大学路80号', '暂无', '1个房型 | 0套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/f5f1bb75-a220-46a4-b208-5109fe0a2727.200x200.jpg');
+INSERT INTO `apartment` VALUES (16, 'https://ke-image.ljcdn.com/rent-user-avatar/a26cae59-02e7-427a-afc4-881e4d823bfb.670x360.jpg', '已满房', '瑞客公寓·经开第四大街店 ', '经开第四大街', '暂无', '4个房型 | 0套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/72e8b4bf-f64c-447e-8803-9d98d7c83137.200x200.jpg');
+INSERT INTO `apartment` VALUES (17, 'https://ke-image.ljcdn.com/rent-user-avatar/9f541d91-45a2-4d41-966b-aac2288e49b2.670x360.jpg', '随时入住', '郑州1+公寓·王府井店', '建设路桐柏路国棉一厂家属院内一厂医院对面 ', '1150-1600元/月', '6个房型 | 48套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/e6db580e-72fe-4582-b034-c0fdcb9c5149.200x200.jpg');
+INSERT INTO `apartment` VALUES (18, 'https://ke-image.ljcdn.com/rent-user-avatar/40b56838-f2ac-45c0-9574-2bc00a4b66ae.670x360.jpg', '随时入住', '积家公寓·凤凰茶城店', '东明路南17号 ', '1598-3000元/月', '6个房型 | 12套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/1675f5a5-b0e6-4590-afd4-010b7c73c99d.200x200.jpg');
+INSERT INTO `apartment` VALUES (19, 'https://ke-image.ljcdn.com/rent-user-avatar/50688e92-9ad0-4436-8fae-deb7538d47f7.670x360.jpg', '随时入住', '积家公寓·二七万达店 ', '航海中路96号', '1638-2920月/月', '3个房型 | 9套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/1675f5a5-b0e6-4590-afd4-010b7c73c99d.200x200.jpg');
+INSERT INTO `apartment` VALUES (20, 'https://ke-image.ljcdn.com/rent-user-avatar/1749eae8-d58f-427d-b8e8-566ce61c4f96.670x360.webp', '随时入住', '携家公寓·京广路店', '航海中路81号', '1499-1780元/月', '3个房型 | 12套在租', 'https://ke-image.ljcdn.com/rent-user-avatar/f4880e83-6779-4130-9229-bb393fb93d27.200x200.jpg');
 
 -- ----------------------------
 -- Table structure for beike
@@ -456,6 +496,48 @@ INSERT INTO `list_shang` VALUES (77, '石佛营正规底商，临街。582平，
 INSERT INTO `list_shang` VALUES (78, '优质底商欢迎咨询', '73㎡/枣园·兴城丽源', '简单装修', '1000万元', '34450元/㎡', 'https://image1.ljcdn.com/110000-inspection/6018b38c-78ac-4c5f-ab2b-e6498f9b4846.jpg.600x.jpg!m_fill,w_210,h_160,l_fbk,f_jpg,ls_50', 3);
 INSERT INTO `list_shang` VALUES (79, '长滩壹号，装修干净整洁，环境优美。', '271.22㎡/南邵·长滩壹号', '精装修', '2200万元', '138376元/㎡', 'https://image1.ljcdn.com/crep/product/image/1555640461468-201904191021042169.jpg!m_fill,w_210,h_160,l_fbk,f_jpg,ls_50', 3);
 INSERT INTO `list_shang` VALUES (80, '金地格林格林底商可开明火 业主没使用 毛坯', '68.44㎡/马甸·阳光丽景', '优质', '1500万元', '36850元/㎡', 'https://image1.ljcdn.com/110000-inspection/42fa8453-92e7-4b26-8edf-e05f29df9676.jpg.600x.jpg!m_fill,w_210,h_160,l_fbk,f_jpg,ls_50', 3);
+
+-- ----------------------------
+-- Table structure for rent_house
+-- ----------------------------
+DROP TABLE IF EXISTS `rent_house`;
+CREATE TABLE `rent_house`  (
+  `id` int(255) NOT NULL,
+  `rent_img` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `content_item1` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `content_item2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `content_item3` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `content_item4` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `number` int(255) NULL DEFAULT NULL,
+  `details_img1` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `map` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of rent_house
+-- ----------------------------
+INSERT INTO `rent_house` VALUES (1, 'https://ke-image.ljcdn.com/410100-inspection/prod-f05939b8-9e9e-4075-a9ec-9e5376411324.jpg!m_fill,w_248,h_186,l_fbk,o_auto', '整租·南阳路174号院 2室1厅 南/北', '70㎡/刘寨', NULL, NULL, NULL, NULL, 1450, 'https://ke-image.ljcdn.com/410100-inspection/prod-349ec87d-2a7a-4fc4-9f44-d7109ff9e48b.jpg!m_fill,w_750,h_563,l_fbk,o_auto', '南阳路174号院', '//api.map.baidu.com/staticimage?center=113.632391,34.813839&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (2, 'https://ke-image.ljcdn.com/rent-house-1/78c965990bffcc7a676316ed689b5a34-1552030023536/1209363e50988140b595bfd501f6f777.jpg.248x186.webp', '合租·兴华雅苑 4居室 东卧', '魔飞公寓/19㎡/兴华南街', '月租', '精装', '押一付一', '随时看房', 770, 'https://ke-image.ljcdn.com/rent-user-avatar/e03e2da3-6d07-4f80-8593-71fd88afbb36.750x563.jpg', '兴华雅苑', '//api.map.baidu.com/staticimage?center=113.72108885211,34.710158070456&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (3, 'https://ke-image.ljcdn.com/110000-inspection/ee62b48c-6086-422e-a633-05bb59de3925.jpg!m_fill,w_248,h_186,l_fbk,o_auto', '整租·秀水苑 2室2厅 南/北 ', '120㎡/杨金路 ', NULL, NULL, NULL, NULL, 1500, 'https://ke-image.ljcdn.com/110000-inspection/c115005a-0c17-4463-b7bf-729f96b0cb68.jpg!m_fill,w_750,h_563,l_fbk,o_auto', '秀水苑', '//api.map.baidu.com/staticimage?center=113.81160895891,34.842362876238&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (4, 'https://ke-image.ljcdn.com/rent-user-avatar/c141b1b9-5eb9-4952-97e5-0eca43998f56.248x186.webp', '合租·财信圣堤亚纳小区 5居室 北卧 ', '  乐之家公寓/20㎡/黄河南路 ', '月租', '精装', '独立阳台', '集中供暖', 650, 'https://ke-image.ljcdn.com/110000-inspection/4c6b481392a27f993c4a2138b591b146-038.jpg!m_fill,w_750,h_563,l_fbk,o_auto', '财信圣堤亚纳小区', '//api.map.baidu.com/staticimage?center=113.750897,34.75297&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (5, 'https://ke-image.ljcdn.com/110000-inspection/3995ce7001b3095c56a1ec5f1edb0445-097.jpg!m_fill,w_248,h_186,l_fbk,o_auto', '整租·祥悦苑 2室2厅 南 ', '90㎡/众意路', '集中供暖', '随时看房', NULL, NULL, 1200, 'https://ke-image.ljcdn.com/410100-inspection/ffb1124e-7c20-4335-8626-76dec1cdcbd9.jpg!m_fill,w_750,h_563,l_fbk,o_auto', '祥悦苑', '//api.map.baidu.com/staticimage?center=113.719646,34.800154&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (6, 'https://ke-image.ljcdn.com/rent-user-avatar/02615232-033e-4b5f-95c4-0bf3f0b0255f.248x186.webp', '合租·公园道北苑 5居室 南卧', '沃家公寓/20㎡/新郑大 ', '月租', '精装', '押一付一', NULL, 750, 'https://ke-image.ljcdn.com/rent-user-avatar/3b66af8c-7154-4b0e-80e1-be7add13ebe2.750x563.jpg', '公园道北苑 ', '//api.map.baidu.com/staticimage?center=113.56054254372,34.826433255272&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (7, 'https://ke-image.ljcdn.com/410100-inspection/166d2ba7-c942-4265-97b6-fe46772c2d83.jpg!m_fill,w_248,h_186,l_fbk,o_auto', '整租·新庄新苑 2室1厅 南/北', '链家/73㎡/邙山', '精装', NULL, NULL, NULL, 1250, 'https://ke-image.ljcdn.com/110000-inspection/cbae1b81-44f8-4f02-bda8-2e6c78cab955.jpeg!m_fill,w_750,h_563,l_fbk,o_auto', '新庄新苑', '//api.map.baidu.com/staticimage?center=113.60271355784,34.892312362006&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (8, 'https://ke-image.ljcdn.com/110000-inspection/12b2faabb30be2ca85f64135a3c02b2f-031.jpg!m_fill,w_248,h_186,l_fbk,o_auto', '整租·奥马和园 3室2厅 南/北 ', '141㎡/万客来', '集中供暖', '双卫生间', NULL, NULL, 1300, 'https://ke-image.ljcdn.com/110000-inspection/5788726f3f100faf3a5d477c022afa39-018.jpg!m_fill,w_750,h_563,l_fbk,o_auto', '奥马和园', '//api.map.baidu.com/staticimage?center=113.63836295966,34.679055005062&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (9, 'https://ke-image.ljcdn.com/410100-inspection/683b92e9-a24f-46ce-a19e-e584d3284ee1.jpg!m_fill,w_248,h_186,l_fbk,o_auto', '整租·响水湾西社区8号院 1室1厅 东南', '56㎡/火车站', '随时看房', NULL, NULL, NULL, 1200, 'https://ke-image.ljcdn.com/110000-inspection/4856c43c-2e32-422b-96a3-f4f732dc21f0.jpg!m_fill,w_750,h_563,l_fbk,o_auto', '响水湾西社区8号院', '//api.map.baidu.com/staticimage?center=113.660221,34.766075&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (10, 'https://ke-image.ljcdn.com/110000-inspection/2b06e979605517f9f57643adcde276a1-025.jpg!m_fill,w_248,h_186,l_fbk,o_auto', '整租·亚星盛世雅居 3室2厅 南', '101㎡/兴华南街', '集中供暖', NULL, NULL, NULL, 1300, 'https://ke-image.ljcdn.com/rent-user-avatar/41c1796d-15f0-4663-ad2d-ed9f0011d1d5.750x563.jpg', '亚星盛世雅居', '//api.map.baidu.com/staticimage?center=113.64052161616,34.713995999535&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (11, 'https://ke-image.ljcdn.com/110000-inspection/73ce534c13f169058cb41641cbe78221-040.jpg!m_fill,w_248,h_186,l_fbk,o_auto', '整租·豫军长基花园 1室1厅 南 ', '40㎡/绿茵广场', '集中供暖', '随时看房', NULL, NULL, 1100, 'https://ke-image.ljcdn.com/rent-user-avatar/9d5c78ce-d3ed-4695-ac54-7df583ad831c.750x563.jpg', '豫军长基花园', '//api.map.baidu.com/staticimage?center=113.64860227079,34.815710432801&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (12, 'https://ke-image.ljcdn.com/rent-house-1/78c965990bffcc7a676316ed689b5a34-1552029374187/e9c00c2d16b795a1728bcd2c5445d6c8.jpg.248x186.webp', '合租·正商明钻 4居室 北卧', '魔飞公寓/14㎡/五龙口', '月租', '精装', '押一付一', '随时看房', 799, 'https://ke-image.ljcdn.com/rent-house-1/78c965990bffcc7a676316ed689b5a34-1552029374232/f52186e509aa8f6fdf7eb3faca117c3c.jpg.750x563.jpg', '正商明钻', '//api.map.baidu.com/staticimage?center=113.60992123188,34.788481945295&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (15, 'https://ke-image.ljcdn.com/110000-inspection/pc1_G441antzW_1.jpg!m_fill,w_248,h_186,l_fbk,o_auto', '整租·棉纺东路25号 1室1厅 南', '39㎡/河医立交桥/距碧沙岗站0.8km', '近地铁', '集中供暖', NULL, NULL, 1300, 'https://ke-image.ljcdn.com/410100-inspection/prod-ab21b301-19af-45f5-a637-88d713f6ba32.jpg!m_fill,w_750,h_563,l_fbk,o_auto', '棉纺东路25号', '//api.map.baidu.com/staticimage?center=113.637596,34.763575&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (16, 'https://ke-image.ljcdn.com/110000-inspection/42129f60-ea65-48b2-ba0d-6d3b8d526160.jpg!m_fill,w_248,h_186,l_fbk,o_auto', ' 整租·长兴苑 3室2厅 南', '96㎡/邙山 ', '随时看房', NULL, NULL, NULL, 1500, 'https://ke-image.ljcdn.com/110000-inspection/0b5a87c1-792a-4efd-8be9-16dead3222f0.jpg!m_fill,w_750,h_563,l_fbk,o_auto', '长兴苑', '//api.map.baidu.com/staticimage?center=113.54923027549,34.914326321542&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (17, 'https://ke-image.ljcdn.com/110000-inspection/3b6a4819-bd03-4684-8db8-76177a95b8ce.jpg!m_fill,w_248,h_186,l_fbk,o_auto', '整租·府前街南段东侧202号 2室2厅 东 ', ' 108㎡/中牟县 ', '押一付一', '集中供暖', NULL, NULL, 750, 'https://ke-image.ljcdn.com/110000-inspection/cbba92ab-0a69-4719-ba88-4abd0e39e762.jpg!m_fill,w_750,h_563,l_fbk,o_auto', '府前街南段东侧202号', '//api.map.baidu.com/staticimage?center=114.02871962132,34.719863875017&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (18, 'https://ke-image.ljcdn.com/110000-inspection/d12bbdc3-f494-4df8-87e7-7f15aa4d91ff.jpeg!m_fill,w_248,h_186,l_fbk,o_auto', '整租·北录庄大郭村花李庄安置区 2室2厅 南 ', ' 链家/80㎡/杨金路', '精装', '', NULL, NULL, 1200, 'https://ke-image.ljcdn.com/110000-inspection/a4bb12e478d73df420b309aa1db324d7-098.jpg!m_fill,w_750,h_563,l_fbk,o_auto', '北录庄大郭村花李庄安置区', '//api.map.baidu.com/staticimage?center=113.77725475054,34.839141739623&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (19, 'https://ke-image.ljcdn.com/rent-user-avatar/a7a17314-b2ff-4c7e-8c10-b11e7636117d.248x186.webp', '合租·盛润锦绣城 4居室 南卧', '青年汇公寓/20㎡/五一公园/距碧沙岗站1km', '租住保障', '近地铁', '精装', '', 850, 'https://ke-image.ljcdn.com/110000-inspection/e1dcbc67-38c9-4af0-a4c1-6bdb4f8e74d4.jpg!m_fill,w_750,h_563,l_fbk,o_auto', '盛润锦绣城', '//api.map.baidu.com/staticimage?center=113.628781,34.766863&width=750&height=450&zoom=19');
+INSERT INTO `rent_house` VALUES (20, 'https://ke-image.ljcdn.com/rent-user-avatar/a69c9542-2a46-4552-9afa-d4eeb05b2992.248x186.webp', '合租·远大理想城 5居室 南卧 ', '魔飞公寓/27㎡/第三大街/距中原福塔站1.1km ', '近地铁', '精装', '独立阳台', '', 950, 'https://ke-image.ljcdn.com/rent-user-avatar/c989276e-cfea-48c9-9aa3-844d2a51c317.750x563.jpg', '远大理想城', '//api.map.baidu.com/staticimage?center=113.74453543591,34.733013566916&width=750&height=450&zoom=19');
 
 -- ----------------------------
 -- Table structure for user

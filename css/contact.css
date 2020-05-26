@@ -1,0 +1,130 @@
+/* 头部 */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+header{
+    width: 100%;
+    height:1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e4e6f0;
+    box-sizing: border-box;
+    padding: 0% 5%;
+}
+.h_left{
+    display: flex;
+    width:33%;
+}
+.h_left,.h_middle,.h_right{
+    font-size:.3rem;
+}
+.h_left a{
+    text-decoration: none;
+}
+.h_left a:first-child{
+   margin-right: 10%;
+   width:10%;
+}
+.h_left a:first-child img{
+    width:100%;
+    vertical-align: middle;
+}
+.h_left a:last-child{
+    width: 45%;
+    color: #222;
+}
+.h_left a:last-child img{
+    width: 20%;
+    padding-left: 10%;
+    vertical-align: middle;
+}
+.h_middle{
+    text-align: left;
+    display: flex;
+    width: 38%;
+    /* margin-top: 5%; */
+    margin: 0 auto;
+}
+.h_middle a{
+    width: 100%;
+}
+.h_middle img{
+    margin-top: 3%;
+    width: 60%;
+    text-align: center;
+}
+.h_right{
+ width: 5%;
+    text-align: right;
+}
+.h_right img{
+    width: 100%;
+    vertical-align: middle;
+}
+.wraper_cc{
+    padding: 0 5%;
+}
+.center_top{
+    padding-top: 10%;
+}
+.center_top h3{
+    padding-top: 3%;
+    font-size: .37rem;
+    color: #222;
+}
+.center_top ul{
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    padding: 7% 5%;
+    padding-bottom: 10%;
+}
+.center_top ul li{
+    text-align: center;
+    margin-right: 23%;
+    width: 20%;
+}
+.center_top ul li a{
+    width: 100%;
+    text-decoration: none;
+    color: #222;
+}
+.center_top ul li a img{
+    width: 70%;
+}
+.center_top ul li a p{
+    font-size: .3rem;
+}
+.footer_con p{
+    display: flex;
+    padding: 1% 5%;
+    box-sizing: border-box;
+}
+.footer_con span:nth-of-type(1){
+    display: inline-block;
+    width: .25rem;
+    height: .3rem;
+    background: url(../img/tel.png) center center no-repeat;
+    background-size:100% 77%;
+}
+.footer_con span:nth-of-type(2){
+    font-size: .2rem;
+    padding-left: 3%;
+    color: #222;
+}
+.footer_con p i{
+    font-style: normal;
+    font-size: .2rem;
+    color: #3072f6;;
+}
+.f_text{
+    font-size: .2rem;
+    color: #ccc;
+}
+.footer_con{
+    padding-top: 30%;
+}

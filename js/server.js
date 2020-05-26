@@ -115,7 +115,54 @@ app.get('/star', (req, res) => {
         res.json(obj)
     })
 });
-
+// 列表页
+app.get('/cont', (req, res) => {
+    connection.query('select * from rent_house', function (err, rent) {
+        if (err) throw err
+          const obj={
+              status:200,
+              data:rent
+          }
+          res.json(obj)
+        console.log('111', res)
+      })
+})
+// 详情页
+app.get('/cont_det', (req, res) => {
+  console.log(req.query.id)
+  connection.query("select * from rent_house where id="+req.query.id, function (err, rent) {
+      if (err) throw err
+        const obj={
+            status:200,
+            data:rent
+        }
+        res.json(obj)
+      console.log('111', res)
+    })
+})
+//查看更多房源的数据
+app.get('/detailsy', (req, res) => { 
+    connection.query('select * from rent_house limit 10', function (err, rent) {
+        if (err) throw err
+          const obj={
+              status:200,
+              data:rent
+          }
+          res.json(obj)
+        // console.log('111', res)
+      })
+})
+app.get('/apart', (req, res) => { 
+  connection.query('select * from apartment', function (err, rent) {
+      if (err) throw err
+        const obj={
+            status:200,
+            data:rent
+        }
+        res.json(obj)
+      console.log('111', res)
+    })
+})
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
