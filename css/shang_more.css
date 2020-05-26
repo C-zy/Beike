@@ -1,0 +1,430 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff !important;
+}
+
+body p {
+    margin: 0;
+}
+
+body li {
+    list-style: none;
+}
+
+.all {
+    width: 100%;
+}
+
+.all_pd {
+    padding: 0 .3rem;
+}
+
+.flexd {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.fl,
+._fl {
+    float: left;
+}
+
+.fr,
+._fr {
+    float: right;
+}
+
+.clear::after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.header {
+    background-color: #fff;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #e4e6f0;
+}
+
+.jt {
+    position: absolute;
+    left: .4rem;
+    font-size: .45rem !important;
+    font-weight: bolder;
+    color: blue;
+}
+
+.logo {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: .3rem;
+}
+
+.flexd {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.logo img {
+    height: 100%;
+}
+
+.nav {
+    padding-top: .3rem;
+    width: 100%;
+    background-color: #fff;
+}
+
+.search {
+    position: relative;
+    height: .6rem;
+    margin-bottom: .1rem;
+}
+
+.search input {
+    text-align: center;
+    height: 100%;
+    font-size: .3rem;
+    background-color: #F5F5F5;
+    padding-left: 1rem;
+    border: none !important;
+    font-weight: bolder;
+}
+
+::-webkit-input-placeholder {
+    color: #999;
+}
+
+.search .icon-search {
+    position: absolute;
+    font-size: .4rem;
+    color: #999;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.option {
+    height: 1rem;
+    background-color: #fff;
+    border-bottom: 1px solid #e4e6f0;
+}
+
+.option li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 1rem;
+    font-size: .35rem;
+    font-weight: 100;
+    color: #333;
+}
+
+.option li .sjx {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: .1rem solid transparent;
+    border-top: .1rem solid #333;
+    margin-left: .1rem;
+    vertical-align: middle;
+}
+
+.option .active {
+    color: blue;
+}
+
+.option .active .sjx {
+    border-top: .1rem solid blue;
+}
+
+.hide_option {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hide_option .tab_option_1 {
+    font-weight: bolder !important;
+}
+
+.hide_option .active .sjx {
+    transform: rotateX(180deg);
+    transform-origin: 30% 30%;
+}
+
+.hide_option .hide_div {
+    background-color: #fff;
+    display: none;
+}
+
+.hide_option p.active_color {
+    color: blue !important;
+}
+
+.hide_option .active {
+    color: blue !important;
+}
+
+.hide_option .active span.checkbox {
+    border-color: blue;
+}
+
+.hide_option .active span.checkbox span.mui-icon,
+.hide_option .active span.checkbox span.mui-icon::before {
+    display: inline-block;
+}
+
+.hide_option .list_change {
+    padding: 0 .6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: .3rem;
+    color: #000;
+}
+
+.hide_option .list_change button,
+.hide_option .list_change input {
+    vertical-align: middle;
+    height: .3rem;
+    width: .8rem;
+    margin: 0;
+    padding: 0;
+    font-size: .2rem;
+}
+
+.hide_option .list_change button {
+    color: #fff;
+    background-color: blue;
+    padding: 0 .1rem;
+    transition: none;
+}
+
+.hide_option .list_change .checkbox {
+    display: inline-block;
+    width: .4rem;
+    height: .4rem;
+    background-color: #fff;
+    border: 1px solid #e4e6f0;
+    position: relative;
+}
+
+.hide_option .list_change .checkbox span.mui-icon,
+.hide_option .list_change .checkbox span.mui-icon::before {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: .4rem;
+    font-weight: bolder;
+}
+
+.hide_option button.true {
+    transition: none;
+    width: 100%;
+    height: 1rem;
+    font-size: .4rem;
+    line-height: 1rem;
+    padding: 0;
+    border: none;
+    background-color: blue;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.hide_option ._price {
+    height: 7rem;
+    background-color: #FFF;
+}
+
+.hide_option ._city div .list_change {
+    padding-right: 0;
+}
+
+.hide_option ._price .left {
+    height: 5.5rem;
+    float: left;
+    width: 40%;
+    background-color: #fff;
+}
+
+.hide_option .bottom {
+    text-align: center;
+}
+
+.hide_option .bottom button {
+    width: 2rem;
+    line-height: .5rem;
+    font-size: .3rem;
+    transition: none;
+    border: none;
+    margin-top: .4rem;
+}
+
+.hide_option .bottom .price_all {
+    background-color: #F8F8F9;
+    color: #999;
+}
+
+.hide_option .bottom .price_true {
+    background-color: blue;
+    color: #fff;
+}
+
+.hide_option ._price .right {
+    height: 5.5rem;
+    width: 60%;
+    float: left;
+    background-color: #F8F8F9;
+}
+
+.tab_option {
+    width: 20% !important;
+    font-size: .3rem !important;
+}
+
+.change_span {
+    font-size: .3rem !important;
+    color: #999;
+}
+
+.active .change_span {
+    color: blue;
+}
+
+.option li .sjx {
+    border-top: .1rem solid #999 !important;
+}
+
+.child_hide {
+    height: auto;
+    background-color: #fff;
+}
+
+.hide_option ._age button.list_change,
+.hide_option ._type button.list_change {
+    transition: none;
+    display: inline-block;
+    margin: .1rem;
+    height: .7rem;
+    line-height: .7rem;
+    background-color: #F8F8F9;
+    padding: 0 .4rem;
+}
+
+.hide_option ._age .bottom,
+.hide_option ._type .bottom {
+    padding-bottom: .3rem;
+}
+
+.hide_option ._age p.list_change,
+.hide_option ._type p.list_change {
+    padding-left: .2rem;
+}
+
+.hide_option ._age {
+    position: relative;
+}
+
+.hide_option ._age .top {
+    width: 100%;
+    height: 8rem;
+    overflow: auto;
+    padding-bottom: 2rem;
+}
+
+.hide_option ._age .bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+}
+
+.lists {
+    margin-top: .5rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.lists .list {
+    width: 100%;
+    padding-bottom: .3rem;
+    overflow: hidden;
+    border-bottom: 1px solid #F5F5F5;
+}
+
+.lists .list p {
+    color: #000;
+    font-size: .25rem;
+    line-height: .25rem;
+    margin-bottom: .2rem;
+}
+
+.lists .list .list_img {
+    width: 35%;
+    height: 2rem;
+    margin-right: .3rem;
+}
+
+.lists .list .list_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.lists .list .list_content {
+    width: 60%;
+}
+
+.lists .list .list_name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: .4rem;
+    line-height: .4rem;
+    font-weight: bolder;
+}
+
+.lists .list .list_nice .bg_blue {
+    color: #999;
+    background-color: #EDF0F3;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.lists .list .list_price {
+    color: #999;
+}
+
+.lists .list .list_price .clr_red {
+    color: red;
+    font-size: .4rem;
+    line-height: .4rem;
+    font-weight: bolder;
+}
+
+
+/*# sourceMappingURL=shang_more.css.map */

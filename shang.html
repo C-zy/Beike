@@ -31,19 +31,19 @@
             <a href="user.html" class="bg"></a>
         </div>
         <ul class="search_bottom">
-            <li class="list"><img src="img/img_shang/1-1.png" alt="">租商铺
+            <li class="list list_top"><img src="img/img_shang/1-1.png" alt="">租商铺
                 <div class="top_img"><img src="img/img_shang/2-1.png" alt=""></div>
             </li>
-            <li class="list"><img src="img/img_shang/1-2.png" alt="">买商铺
+            <li class="list list_top"><img src="img/img_shang/1-2.png" alt="">买商铺
                 <div class="top_img"><img src="img/img_shang/2-2.png" alt=""></div>
             </li>
-            <li class="list"><img src="img/img_shang/1-3.png" alt="">租写字楼
+            <li class="list list_top"><img src="img/img_shang/1-3.png" alt="">租写字楼
                 <div class="top_img"><img src="img/img_shang/2-3.png" alt=""></div>
             </li>
-            <li class="list"><img src="img/img_shang/1-4.png" alt="">买写字楼
+            <li class="list list_top"><img src="img/img_shang/1-4.png" alt="">买写字楼
                 <div class="top_img"><img src="img/img_shang/2-4.png" alt=""></div>
             </li>
-            <li class="list"><img src="img/img_shang/1-5.png" alt="">共享办公
+            <li class="list list_top"><img src="img/img_shang/1-5.png" alt="">共享办公
                 <div class="top_img"><img src="img/img_shang/2-5.png" alt=""></div>
                 <div class="top_new"><img src="img/img_shang/2-6.png" alt=""></div>
             </li>
@@ -259,6 +259,9 @@
     } else {
         $("#city").html("郑州<span class='sjx'></span>")
     }
+    $('.list_top').click(() => {
+        window.location.href = "shang_more.html"
+    })
 </script>
 
 </html>
