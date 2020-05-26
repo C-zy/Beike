@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/price.css">
+    <!-- <link rel="stylesheet" href="./css/mui.css"> -->
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script>
+        function getWidth() {
+            var html = document.getElementsByTagName("html")[0]
+            html.style.fontSize=(html.clientWidth/320*100)+"px"
+        }
+        getWidth()
+        window.onresize=function () {
+           getWidth()
+        }
+</script>
+<style>
+    .show{
+        display: block;
+    }
+    .bottom_layer{
+        display: none;
+    }
+    .bottom_one{
+        display: none;
+    }
+    .bottom-three{
+        display: none;
+    }
+</style>
+</head>
+<style>
+    body{
+        background-color: #fff;
+    }
+    .w_mange-sp1 {
+        line-height: .45rem;
+        color: #333;
+        float: left;
+        width: 30%;
+    }
+    .w_mange-sp2 {
+        color: #999;
+        margin-left: 10px;
+        float: left;
+        line-height: .45rem;
+    }
+
+    .w_mange-foot {
+        padding: 0 .1rem;
+        margin-top: .8rem;
+    }
+
+    .w_mange-foot button {
+        line-height: .37rem;
+        height: .37rem;
+        font-size: .128rem;
+        width: 100%;
+        background: #fd2645;
+        color: #fff;
+    }
+
+    .w_manage-spi {
+        float: right;
+        line-height: .6rem;
+    }
+
+    .w_manage-spanright {
+        float: right;
+    }
+
+    .mui-dtpicker-title h5 {
+        display: none;
+    }
+
+    .mui-popover {
+        display: block;
+        width: 100%;
+        font-size: 0.128rem;
+        top: inherit !important;
+        left: inherit !important;
+        bottom: 0 !important;
+        text-align: center;
+    }
+
+    .w_mange-alist {
+        width: 100%;
+        border: 0;
+        padding: 0;
+        font-size: inherit;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <header class="top">
+            <div class="header-left">
+                <!-- <span class="icon-back"> -->
+                    <img class="icon-back1" src="./image/icon.png" alt="">
+                <!-- </span> -->
+                <a href="" class="switch-city">郑州
+                    <img class="img" src="./image/icon2.png" alt="">
+                </a>
+            </div>
+            <a href="" class="logo">
+                <img class="img1" src="./image/beike.png" alt="">
+            </a>
+            <a href="" class="header-right">
+                <i class="icon_user">
+                    <img class="img3" src="./image/people.png" alt="">
+                </i>
+            </a>
+        </header>
+        <div class="top-bottom">
+            累计超过892579093次估价请求
+        </div>
+        <div class="middle">
+            <ul class="lists">
+                <li class="li_item">
+                    <div class="flex-box">
+                        <span class="tit">小区</span>
+                        <a class="xuanze" href="xiaoqu.html">请选择
+                            <img src="./image/right.png" alt="">
+                        </a>
+                   
+                    </div>
+                </li>
+                <li class="li_item">
+                    <div class="flex-box">
+                        <span class="tit">面积</span>
+                        <input class="test" placeholder="请输入大于0的数字" type="text">
+                        平米
+                    </div>
+                </li>
+                <li class="li_item">
+                    <div class="flex-box item-three">
+                        <span class="tit">户型</span>
+                        <a class="xuanze xuanze_three">请选择
+                            <img src="./image/right.png" alt="">
+                        </a>
+                    </div>
+                </li>
+                <li class="li_item item-one">
+                    <div class="flex-box ">
+                        <span class="tit">朝向</span>
+                        <a class="xuanze xuanze_one">请选择
+                            <img src="./image/right.png" alt="">
+                        </a>
+                    </div>
+                </li>
+                <li class="li_item">
+                    <div class="flex-box">
+                        <span class="tit">楼层</span>
+                        <input class="test-one" placeholder="请输入" type="text">
+                        层
+                        <input class="test-two" placeholder="请输入" type="text">
+                        总层数
+                    </div>
+                </li>
+                <li class="li_item item-two">
+                    <div class="flex-box">
+                        <span class="tit">税费情况</span>
+                        <a class="xuanze xuanze_two">请选择
+                            <img src="./image/right.png" alt="">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+       </div>
+       <div class="ge">
+
+       </div>
+       <!-- 底部 -->
+       <div class="option-item">
+           <a class="look" href="">查看估价结果</a>
+           <a class="look-one" href="">估值结果由贝壳大数据根据海量交易提供
+               <span>?</span>
+           </a>
+       </div>
+       <!-- 遮罩层 -->
+       <div id="cover"></div>
+       <div class="bottom_layer show">
+           <div class="title">
+               <span class="cancle">取消</span>
+               <p>朝向</p>
+           </div>
+           <div class="option_web">
+               <ul class="dianji">
+                <li>东</li>
+                <li>西</li>
+                <li>南</li>
+                <li>北</li>
+                <li>东南</li>
+                <li>东北</li>
+                <li>南北</li>
+               </ul>
+           </div>
+        </div>
+        <div class="bottom-three">
+            <div class="title">
+                <span class="cancle">取消</span>
+                <p class="house">请选择房屋</p>
+            </div>
+            <div class="option_wrap  ">
+                <ul class="dianji-three">
+                   <li>一室</li>
+                   <li>二室</li>
+                   <li>三室</li>
+                   <li>四室</li>
+                   <li>五室</li>
+                   <li>六室</li>
+                   <li>七室</li>
+                </ul>
+            </div>
+            <div class=" option-one">
+                <ul class="dianji-three dianji-four">
+                   <li>0厅</li>
+                   <li>一厅</li>
+                   <li>二厅</li>
+                   <li>三厅</li>
+                   <li>四厅</li>
+                   <li>五厅</li>
+                   <li>六厅</li>
+                </ul>
+            </div>
+            <div class="option-two">
+                <ul class="dianji-three dianji-five">
+                   <li>0卫</li>
+                   <li>一卫</li>
+                   <li>二卫</li>
+                   <li>三卫</li>
+                   <li>四卫</li>
+                   <li>五卫</li>
+                   <li>六卫</li>
+                </ul>
+            </div>
+         </div>
+       <div class="bottom_one">
+        <div class="title">
+            <span class="cancle">取消</span>
+            <p>房屋税费</p>
+        </div>
+        <div class="option_why">
+            <ul class="dianji-one">
+               <li>满五唯一</li>
+               <li>唯一不满五</li>
+            </ul>
+        </div>
+     </div>
+   <script src="./js/price.js"></script>
+</body>
+</html>
