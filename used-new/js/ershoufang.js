@@ -265,17 +265,14 @@ new Vue({
             }
         },
         reset2() {
+            this.num9 = 0
             var a = this.$el.children[1].children[this.num4].children[0].children;
-            console.log(a) 
             for (var i = 0; i < a.length; i++) { 
                 (function (i) { 
                     if (i % 2 == 0) { 
                         var n = i + 1
                         for (var i = 0; i < a[n].children.length; i++) { 
-                            // console.log(a[n].children[i])
                             a[n].children[i].classList.remove("active2")
-                            this.num9 = 0
-                            console.log(this.num9)
                         }
                     }
                    
@@ -290,9 +287,11 @@ var triangleBlue = document.getElementsByClassName("triangleBlue");
 var triangleGray = document.getElementsByClassName("triangleGray");
 tit_san.onclick = function () {
     this.previousElementSibling.previousElementSibling.children[1].style.display = "none";
+
     this.previousElementSibling.previousElementSibling.removeAttribute("class");
     this.style.display = "none";
     var a = this.previousElementSibling.previousElementSibling.children[0].children;
+    console.log(a)
     for (var i = 0; i < a.length; i++) {
         a[i].classList.remove("active");
         if (a[i].children[0].children[0].classList[1] == "active") {
@@ -318,6 +317,7 @@ for (var i = 0; i < type_item.length; i++) {
     }
 };
 var tab_item = document.getElementsByClassName('tab_item')[0];
+console.log(tab_item)
 window.onscroll = function () {
     if (window.scrollY > 125) {
         tab_item.classList.add("top_tab");
@@ -369,39 +369,21 @@ function details(id) {
 // 点击底部的tab切换
 var tab_item1 = document.getElementsByClassName("tab-item1")[0];
 var tab_item2 = document.getElementsByClassName("tab-item2")[0];
-var tab_item3 = document.getElementsByClassName("tab-item3")[0];
 tab_item1.onclick = function () {
     this.parentElement.nextElementSibling.children[0].style.display = "block";
     this.parentElement.nextElementSibling.children[1].style.display = "none";
-    this.parentElement.nextElementSibling.children[2].style.display = "none";
     this.classList.add("tab-item1")
     this.classList.remove("tab-item2")
     tab_item2.classList.add("tab-item2")
     tab_item2.classList.remove("tab-item1")
-    tab_item3.classList.add("tab-item2")
-    tab_item3.classList.remove("tab-item1")
 }
 tab_item2.onclick = function () {
     tab_item1.classList.remove("tab-item1")
     tab_item1.classList.add("tab-item2")
-    tab_item3.classList.remove("tab-item1")
-    tab_item3.classList.add("tab-item2")
     this.classList.remove("tab-item2")
     this.classList.add("tab-item1")
     this.parentElement.nextElementSibling.children[1].style.display = "block";
     this.parentElement.nextElementSibling.children[0].style.display="none";
-    this.parentElement.nextElementSibling.children[2].style.display="none";
-}
-tab_item3.onclick = function () {
-    tab_item1.classList.remove("tab-item1")
-    tab_item1.classList.add("tab-item2")
-    tab_item2.classList.remove("tab-item1")
-    tab_item2.classList.add("tab-item2")
-    this.classList.remove("tab-item2")
-    this.classList.add("tab-item1")
-    this.parentElement.nextElementSibling.children[2].style.display = "block";
-    this.parentElement.nextElementSibling.children[0].style.display="none";
-    this.parentElement.nextElementSibling.children[1].style.display="none";
 }
 
 

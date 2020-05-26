@@ -505,6 +505,9 @@ html{
 .footer-tab{
     display: flex;
 }
+.footer-item1{
+    margin-bottom: 0.5rem;
+}
 .tab-item{
     width: 30%;
     margin: 0 5%;
