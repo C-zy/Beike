@@ -14,6 +14,10 @@
         fn();
     }, false)
 })();
+var iconback=document.getElementsByClassName("icon-back")[0]
+iconback.onclick=()=>{
+    window.location.href="./Rent_house.html"
+}
 var det_conents=document.getElementById("det_conents")
 var xhr=new XMLHttpRequest()
 xhr.onreadystatechange=function(){
@@ -22,19 +26,26 @@ xhr.onreadystatechange=function(){
         console.log(data.data[0])
             det_conents.innerHTML+=`
             <div class="mui-slider" style="background: #fff;">
-                <div class="mui-slider-group">
-                    <div class="mui-slider-item">
-                        <div class="slider_img" id="slider">
-                            <img src="${data.data[0].rent_img}" alt="">
-                        </div>
+            <div class="mui-slider" style="background: #fff;">
+            <div class="mui-slider-group">
+                <div class="mui-slider-item">
+                    <div class="slider_img" id="slider">
+                        <img src="${data.data[0].rent_img}" alt="">
                     </div>
-                   <div class="mui-slider-item">
-                        <div class="slider_img">
-                            <img src="${data.data[0].details_img1}" alt="">
-                        </div>
-                    </div> 
+                </div>
+                <div class="mui-slider-item">
+                    <div class="slider_img1">
+                        <img src="${data.data[0].details_img1}" alt="">
+                    </div>
+                </div>
+                <div class="mui-slider-item">
+                    <div class="slider_img2">
+                        <img src="${data.data[0].details_img1}" alt="">
+                    </div>
                 </div>
             </div>
+        </div>
+             
             <!-- 内容块 -->
             <div style="background: #fff;">
                 <div class="det_con">
@@ -143,16 +154,13 @@ var str=window.location.search.substring(4)
 console.log(str)
 xhr.open("GET","http://localhost:3000/cont_det?id="+str,true)
 xhr.send()
-
-
-       
-        $("#like").click(()=>{
-            $("#fonts").toggleClass("like")
-            if($("#fonts").hasClass("like")){
-                $("#liking").html("已关注")
-                $("#liking").css("margin-right","-7%")
-            }else{
-                $("#liking").html("关注")
-                $("#liking").css("margin-right","0")
-            }
-        })
+    $("#like").click(()=>{
+        $("#fonts").toggleClass("like")
+        if($("#fonts").hasClass("like")){
+            $("#liking").html("已关注")
+            $("#liking").css("margin-right","-7%")
+        }else{
+            $("#liking").html("关注")
+            $("#liking").css("margin-right","0")
+        }
+    })

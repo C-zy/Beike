@@ -7,7 +7,7 @@
     <title>我要出租</title>
     <link rel="stylesheet" href="./css/mine_rent.css">
     <link rel="stylesheet" href="./font/iconfont.css">
-    <script src="./js/zepto.min(1.2.0).js"></script>
+    <script src="./js/zepto(1.6.2).js"></script>
 </head>
 
 <body>
@@ -400,28 +400,28 @@
         var towards=document.getElementById("toward")
         var toward=document.getElementsByClassName("toward")[0]
         var toward_list=document.getElementById("toward_list")
-        toward_list.onclick=(e)=>{
-            console.log(e.target)
-            toward.style.display="none"
-            towards.value=e.target.innerHTML
-            e.target.nextElementSibling.className=""
-            e.target.previousElementSibling.className=""
-            e.target.className="t_l"
-
-        }
+        var r_dd=document.getElementsByClassName("r_dd")
         towards.onfocus=()=>{
             toward.style.display="block"
+            rent_ways.style.display="none"
         }
+        $("#toward_list li").click(function(){
+            $(this).addClass("t_l").siblings().removeClass("t_l")
+            $(".toward").hide()
+            $("#toward").val($(this).html())
+        })
         var rent_ways=document.getElementsByClassName("rent_ways")[0]
         var r_w=document.getElementById("r_w")
         var rr_ww=document.getElementsByClassName("rr_ww")[0]
-        rr_ww.onclick=(e)=>{
-            r_w.value=e.target.innerHTML
-            rent_ways.style.display="none"
-            e.target.className="t_l"
-        }
+        $(".rr_ww li").click(function(){
+            console.log($(this))
+            $(".rent_ways").hide()
+            $("#r_w").val($(this).html())
+            $(this).addClass("t_l").siblings().removeClass("t_l")
+        })
         r_w.onfocus=()=>{
             rent_ways.style.display="block"
+            toward.style.display="none"
         }
        
     </script>

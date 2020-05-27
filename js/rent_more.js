@@ -10,15 +10,15 @@ mui.init({
     }
 });
 getData()
-var x=0
+var x = 0
 function up() {
-    x+=10
+    x += 10
     setTimeout(() => {
         getData()
         this.endPullupToRefresh(false)
     }, 1500)
 }
-window.onscroll=function(){
+window.onscroll = function () {
     // this.console.log(this.)
 }
 

@@ -190,7 +190,7 @@ body header{
     color: #3072f6;
 }
 .contents1,.contents2{
-    height: 7rem;
+    height: 5.5rem;
 }
 .contents1{
     background-color: #fff;
@@ -208,7 +208,7 @@ body header{
     background-color: #fff;
 }
 .contents2 ul{
-    height: 5.5rem;
+    height: 4rem;
     overflow: scroll;
 }
 .contents2 a{
@@ -335,15 +335,6 @@ body header{
     overflow: hidden;
     width: 100%;
 }
-/* body .down_push .mui-scroll-wrapper {
-    position: initial;
-    z-index: 2;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    width: 100%;
-} */
 .mui-scroll-wrapper .mui-scroll .pro_details .data_link a{
     display: flex;
     text-decoration: none;
@@ -388,7 +379,6 @@ body header{
     text-align: center;
     color: #849aae;
     background: rgba(237,240,243,.8);
-    padding: 0 1%;
     border-radius: .05rem;
 }
 .mui-scroll-wrapper .mui-scroll .pro_r p:nth-child(4){
