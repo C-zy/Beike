@@ -16,7 +16,7 @@
 <body>
     <!-- 头部 -->
     <div class="header all">
-        <span class="iconfont icon-zuojiantou jt"></span>
+        <span class="iconfont icon-zuojiantou jt" id="home"></span>
         <div class="logo">
             <a href="city.html" class="header_city" id="city">北京
                 <span class="iconfont icon-xiajiantou jt_s"></span>
@@ -403,12 +403,12 @@
             }
         })
         // 用户本地存储
-    var na = decodeURI(window.location.search.split("=")[1]);
-    if (na == "undefined") {
+    // var na = decodeURI(window.location.search.split("=")[1]);
+    // if (na == "undefined") {
 
-    } else {
-        sessionStorage.name = na;
-    }
+    // } else {
+    //     sessionStorage.name = na;
+    // }
     // 城市改变
     $("#city").click(() => {
         window.location.href = "city.html"
@@ -416,8 +416,11 @@
     if (sessionStorage.city) {
         $("#city").html(sessionStorage.city + `<span class="iconfont icon-xiajiantou jt_s"></span>`)
     } else {
-        $("#city").html(`北京<span class="iconfont icon-xiajiantou jt_s"></span>`)
+        $("#city").html(`郑州<span class="iconfont icon-xiajiantou jt_s"></span>`)
     }
+    $("#home").click(()=>{
+        window.location.href="index.html"
+    })
 </script>
 
 </html>

@@ -279,44 +279,56 @@
     </div>
         `,
                 mounted() {
-                    $(".area_keys3").hide()
-                    $(".area_keys2").css("width", "50%")
-                    $(".area_keys1").css("width", "50%")
+                    var area_keys3=document.getElementsByClassName("area_keys3")[0]
+                    var area_keys2=document.getElementsByClassName("area_keys2")[0]
+                    var area_keys1=document.getElementsByClassName("area_keys1")[0]
+                    area_keys3.style="display:none"
+                    area_keys2.style="width:50%"
+                    area_keys1.style="width:50%"
                 },
                 methods: {
                     chanage_area1(i) {
                         console.log(444)
-                        $(".area_keys2").css("width", "50%")
-                        $(".area_keys1").css("width", "50%")
-                        $(".area_keys3").hide()
+                        var area_keys3=document.getElementsByClassName("area_keys3")[0]
+                        var area_keys2=document.getElementsByClassName("area_keys2")[0]
+                        var area_keys1=document.getElementsByClassName("area_keys1")[0]
+                        area_keys3.style="display:none"
+                        area_keys2.style="width:50%"
+                        area_keys1.style="width:50%"
                         this.num = i
 
                     },
                     // 二级
                     change_area2(key) {
                         console.log(key)
-                        $(".area_keys1").css("width", "33%")
-                        $(".area_keys2").css("width", "33%")
-                        $(".area_keys3").css("width", "33%")
+                        var area_keys3=document.getElementsByClassName("area_keys3")[0]
+                        var area_keys2=document.getElementsByClassName("area_keys2")[0]
+                        var area_keys1=document.getElementsByClassName("area_keys1")[0]
+                        var all_back=document.getElementsByClassName("all_back")[0]
+                        area_keys3.style="width:33%"
+                        area_keys2.style="width:33%"
+                        area_keys1.style="width:33%"
                         this.val = key
-                        $(".area_keys3").show()
+                        area_keys3.style="display:block"
                         if (this.val == "1km" || this.val == "2km" || this.val == "3km") {
-                            $(".area_keys3").hide()
+                            area_keys3.style="display:none"
                             alert("位置服务被拒绝")
-                            $(".area_keys2").css("width", "50%")
-                            $(".area_keys1").css("width", "50%")
+                            area_keys2.style="width:50%"
+                            area_keys1.style="width:50%"
                         }
                         if (key == "不限") {
                             this.titles.splice(0, 1, "区域")
-                            $(".area_keys3").hide()
+                            area_keys3.style="display:none"
                             this.num1 = null
-                            $(".area_keys2").css("width", "50%")
-                            $(".area_keys1").css("width", "50%")
-                            $(".all_back").css("position", "relative")
+                            area_keys2.style="width:50%"
+                            area_keys1.style="width:50%"
+                            all_back.style="position:relative"
+                            all_back.style="z-index:10"
                         }
                     },
                     // 替换标题的内容
                     replace(val) {
+                        var all_back=document.getElementsByClassName("all_back")[0]
                         this.titles.splice(0, 1, val)
                         this.val_t = val
                         this.num1 = null //选择完之后当前的块隐藏
@@ -325,12 +337,15 @@
                             this.titles.splice(0, 1, "区域")
 
                         }
-                        $(".all_back").css("position", "relative")
+                        all_back.style="position:relative"
+                        all_back.style="z-index:10"
+                        // $(".all_back").css("position", "relative")
                     },
                     //   点击对应的title显示对应的内容
                     tab_t(i) {
                         this.tab_tt = i//控制title颜色
                         this.num1 = i
+                        var all_back=document.getElementsByClassName("all_back")[0]
                         $(".all_back").css({
                             position: "fixed",
                             top: 0,
@@ -354,13 +369,16 @@
                     },
                     // 方式下拉模块
                     way_w(i, val) {
+                        var all_back=document.getElementsByClassName("all_back")[0]
                         this.num1 = null
                         this.way_num = i
                         this.titles.splice(1, 1, val)
                         if (val == "不限") {
                             this.titles.splice(1, 1, "方式")
                         }
-                        $(".all_back").css("position", "relative")
+                        all_back.style="position:relative"
+                        all_back.style="z-index:10"
+                        // $(".all_back").css("position", "relative")
                     },
                     // 租金下拉模块
                     therent(i, val) {
@@ -370,20 +388,35 @@
                         if (val == "不限") {
                             this.titles.splice(2, 1, "租金")
                         }
-                        $(".all_back").css("position", "relative")
+                        var all_back=document.getElementsByClassName("all_back")[0]
+                        all_back.style="position:relative"
+                        all_back.style="z-index:10"
                     },
                     sure_rr() {
                         this.num1 = null
-                        if ($("#r_ipt1").val() != "" && $("#r_ipt2").val() == "") {
-                            this.titles.splice(2, 1, $("#r_ipt1").val() + '元以下')
-                        } else if ($("#r_ipt1").val() == "" && $("#r_ipt2").val() != "") {
-                            this.titles.splice(2, 1, $("#r_ipt2").val() + '元以上')
-                        } else if ($("#r_ipt1").val() == "" && $("#r_ipt2").val() == "") {
+                        var r_ipt1=document.getElementById("r_ipt1")
+                        var r_ipt2=document.getElementById("r_ipt2")
+                        if(r_ipt1.value!=""&&r_ipt2.value==""){
+                            this.titles.splice(2, 1, r_ipt1.value+ '元以下')
+                        }else if(r_ipt1.value==""&&r_ipt2.value!=""){
+                            this.titles.splice(2, 1, r_ipt2.value + '元以上')
+                        }else if(r_ipt1.value==""&&r_ipt2.value==""){
                             this.titles.splice(2, 1, "租金")
-                        } else {
-                            this.titles.splice(2, 1, $("#r_ipt1").val() + '-' + $("#r_ipt2").val() + '元')
+                        }else{
+                            this.titles.splice(2, 1,r_ipt1.value + '-' + r_ipt2.value + '元')
                         }
-                        $(".all_back").css("position", "relative")
+                        // if ($("#r_ipt1").val() != "" && $("#r_ipt2").val() == "") {
+                        //     this.titles.splice(2, 1, $("#r_ipt1").val() + '元以下')
+                        // } else if ($("#r_ipt1").val() == "" && $("#r_ipt2").val() != "") {
+                        //     this.titles.splice(2, 1, $("#r_ipt2").val() + '元以上')
+                        // } else if ($("#r_ipt1").val() == "" && $("#r_ipt2").val() == "") {
+                        //     this.titles.splice(2, 1, "租金")
+                        // } else {
+                        //     this.titles.splice(2, 1, $("#r_ipt1").val() + '-' + $("#r_ipt2").val() + '元')
+                        // }
+                        var all_back=document.getElementsByClassName("all_back")[0]
+                        all_back.style="position:relative"
+                        all_back.style="z-index:10"
                     },
                     f_type(e, val) {
                         if (e.target.classList.contains("fliter_last")) {
@@ -401,12 +434,18 @@
 
                     },
                     remove_cl() {
-                        $(".blue").removeClass("fliter_last")
+                        var blue=document.getElementsByClassName("blue")
+                        for(var i=0;i<blue.length;i++){
+                            blue[i].classList.remove("fliter_last")
+                        }
                     },
                     sure_cl() {
-                        $(".lists-t").show()
+                        var listsT=document.getElementsByClassName("lists-t")[0]
+                        var all_back=document.getElementsByClassName("all_back")[0]
+                        listsT.style="display:flex"
+                        all_back.style="position:relative"
+                        all_back.style="z-index:10"
                         this.num1 = null
-                        $(".all_back").css("position", "relative")
                     }
 
                 }
