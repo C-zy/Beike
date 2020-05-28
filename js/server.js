@@ -102,7 +102,7 @@ app.get('/xinfang', (req, res) => {
         res.json(obj)
     })
 });
-//获取收藏信息
+//获取二手房收藏信息
 app.get('/star_house', (req, res) => {
     connection.query("select * from ershoufang where star=1", function(err, result) {
         const obj = {
@@ -112,9 +112,29 @@ app.get('/star_house', (req, res) => {
         res.json(obj)
     })
 });
-// 点击收藏
+// 点击收藏二手房
 app.get('/star', (req, res) => {
     connection.query("update ershoufang set star='1' where id='" + req.query.id + "'", function(err, result) {
+        const obj = {
+            status: 200,
+            data: result
+        }
+        res.json(obj)
+    })
+});
+//获取小区收藏信息
+app.get('/get_village', (req, res) => {
+    connection.query("select * from village where star=1", function(err, result) {
+        const obj = {
+            status: 200,
+            data: result
+        }
+        res.json(obj)
+    })
+});
+// 点击收藏小区
+app.get('/star_village', (req, res) => {
+    connection.query("update village set star='1' where id='" + req.query.id + "'", function(err, result) {
         const obj = {
             status: 200,
             data: result

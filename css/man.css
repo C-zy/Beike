@@ -1,0 +1,420 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.page{
+    padding-top: .5rem;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 0 0.39rem;
+    height: 1rem;
+    font-size: .25rem;
+    vertical-align: baseline;
+   line-height: .5rem;
+}
+.header-left{
+    width: 2.2rem;
+}
+
+.header-left span{
+font-size: .45rem;
+    width: .4rem;
+    color: #3072f6;
+}
+ .header-left .left-city:after {
+    position: absolute;
+    left: 0.6rem;
+    top: .1rem;
+    display: block;
+    content: "";
+    width: .18rem;
+    height: .18rem;
+    background: url(https://s1.ljcdn.com/m-new/client/media/src/client/components/Header/img/icon-down.5cc914bd.png) no-repeat 0/.18rem;
+}
+.header-left a{
+position: relative;
+top: -0.1rem;
+    
+}
+.header-conter{
+    width: 2.3rem;
+    margin-left: .5rem;
+}
+.header-conter span img{
+    width: 1.4rem;
+}
+.header-right{
+    width: 2.1rem;
+}
+.header-right span{
+    position: absolute;
+    right: 0;
+    font-size: .8rem;
+    color:  #3072f6;
+}
+.lj-trak .search-input {
+    display: block;
+    width: 6.5rem;
+    height: 1rem;
+    margin: 0 6.4vw 3.2vw;
+    padding: 3vw 4.267vw;
+    background: #fff;
+    border-radius: 1.333vw;
+    font-weight: 700;
+    font-size: .32rem;
+    color: #999;
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #ccc;
+}
+.lj-trak .search-input:before {
+    content: "";
+    display: inline-block;
+    width: 5.067vw;
+    height: 5.067vw;
+    background-image: url(https://s1.ljcdn.com/m-new/client/media/src/client/pages/jingjiren/List/img/icon-search.56a22698.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: -.8vw;
+    margin-right: .8vw;
+}
+.search-part{
+    padding: 0 .5rem;
+}
+.search-part .list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.search-part .list .list-item {
+    font-size: .25rem;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-part .list .list-item .img-wrap{
+    margin-bottom: 1.6vw;
+}
+.search-part .list .list-item img{
+    width: 0.79rem;
+}
+.search-part .list .text{
+        font-family: PingFangSC-Semibold;
+        color: #222;
+        line-height: 3.467vw;
+        font-weight: 700;
+}
+ .agentlist-title {
+    font-family: PingFangSC-Semibold;
+    font-size: .43rem;
+    color: #222;
+    line-height: 5.867vw;
+    margin: 6.4vw 6.4vw 2.667vw;
+    font-weight: 700;
+    margin-bottom: .4rem;
+}
+.filter-bar{
+    background-color: white;
+    position: relative;
+    top: 0;
+}
+.filter-bar .tab{
+    position: relative;
+    margin-left: .5rem;
+    display: flex;
+    margin-bottom: .3rem;
+}
+.filter-bar .tab-list{
+    font-size: .27rem;
+}
+ .tab-list {
+    width: auto;
+    flex: none;
+    margin-right: 14.667vw;
+    padding-left: 0!important;
+    font-weight: 700;
+}
+.tab-list:after {
+    content: "";
+    position: absolute;
+    left: .8rem;
+   top: .2rem;
+    transform: translateY(-50%);
+    width: 2.133vw;
+    height: 2.133vw;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 2.133vw;
+    background-image: url(https://s1.ljcdn.com/m-new/client/media/src/client/components/TabBar/img/icon_down_grey.146ef7ae.png);
+    display: block;
+}
+.agent-item{
+    display: flex;
+    justify-content: start;
+}
+.has-data  .left-picture img{
+    width: 1.2rem;
+    height: 1.6rem;
+}
+.has-data  .left-picture {
+    width: 1.5rem;
+    height: 2.1rem;
+}
+.has-data  .main-info{
+    font-size: .2rem;
+}
+.main-info .desc {
+    margin: 1.333vw 0;
+    font-size: 3.2vw;
+    color: #222;
+    line-height: 4.8vw;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: nowrap;
+    max-width: 53.333vw;
+    text-overflow: ellipsis;
+}
+.main-info .tag {
+    background: #f6f6f6;
+    border-radius: 1px;
+    font-size: 2.933vw;
+    line-height: 4.533vw;
+    color: #999;
+    margin-right: 1.6vw;
+    padding: 0 1.067vw;
+    display: inline-block;
+    margin-bottom: 1.333vw;
+}
+.main-info .count-box {
+    display: flex;
+    margin-top: 1.333vw;
+}
+
+.main-info .count-item {
+    position: relative;
+    max-width: 23.467vw;
+    min-width: 21.333vw;
+}
+ .main-info .count {
+    font-size: .43rem;
+    color: #222;
+    line-height: 5.867vw;
+    font-weight: 700;
+    display: flex;
+    font-family: DINAlternate-Bold;
+}
+ .main-info .count-title {
+    font-size: .25rem;
+    color: #999;
+    line-height: 4.267vw;
+    max-width: 16.533vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    white-space: nowrap;
+}
+ .main-info .name {
+    font-size: .3rem;
+    color: #222;
+    line-height: 4.267vw;
+    font-weight: 700;
+}
+.has-data li{
+    margin-left: .3rem;
+    width: 6.52rem;
+    padding: .4rem 0;
+    border-top: 1px solid rgba(51, 51, 51, 0.1);;
+}
+
+
+.area-left{
+    width: 1.68rem;
+    margin-left: .4rem;
+}
+.big{
+    font-weight: 700;
+    font-size: 0.27rem;
+}
+.big ul{
+    display: flex;
+}
+.big-area{
+    background-color: #f0f0f0;
+    display: flex;
+}
+.big-list{
+     color: #3072f6;
+    margin-left: .4rem;
+    width: auto;
+    flex: none;
+    margin-right: 14.667vw;
+    padding-left: 0!important;
+}
+.area-right{
+    background-color: #f8f8f8;
+    
+    width: 5.97rem;
+}
+.activee{
+    color: #3072f6;
+}
+.area-left,.area-right .item{
+    padding: 2.667vw 6.4vw;
+    color: #222;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 3.733vw;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 0.83rem;
+}
+.white{
+    color: #3072f6!important;
+    background-color: white;
+}
+ .kem__footer a {
+    color: #939494;
+}
+.kem__footer {
+    padding: 0 4vw 5.333vw;
+    background: #2f3130;
+    margin-top: 3.2vw;
+}
+.kem__footer .footer-breadcrumb {
+    padding: 2.133vw 0;
+    border-bottom: 1px solid #3e403f;
+}
+.kem__footer .breadcrumb {
+    font-size: 0;
+    display: flex;
+    align-items: center;
+}
+.kem__footer .breadcrumb-item {
+    
+    display: inline-block;
+    font-size: 2.667vw;
+}
+.kem__footer  .breadcrumb-item:after {
+    content: "";
+    width: 3.733vw;
+    height: 3.2vw;
+    vertical-align: middle;
+}
+.kem__footer .extra-split {
+    color: #939494;
+    margin: 0 .8vw;
+}
+.kem__footer .breadcrumb-extra {
+    display: inline-block;
+    font-size: 2.667vw;
+}
+.kem__footer .link-tit {
+    display: flex;
+}
+.link-cont{
+    height: 1rem;
+}
+.kem__footer  .tit.active {
+    background-color: #3c3f3d;
+    color: #fff;
+}
+.kem__footer  .link-tit .tit {
+    flex: 1 1;
+    width: 30%;
+    margin-right: 4vw;
+    height: 8.533vw;
+    line-height: 8.533vw;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.23rem;
+    color: #6e6e6e;
+    background-color: #212121;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.kem__footer  .tit:last-child {
+    margin-right: 0;
+}
+.kem__footer  .cont.active {
+    display: block;
+}
+.kem__footer .cont {
+    list-style: none;
+    display: none;
+    padding: 2.667vw 0;
+}
+.kem__footer  .cont li {
+    font-size: 0.23rem;
+    list-style-type: disc;
+    list-style-position: inside;
+    float: left;
+    height: 8vw;
+    line-height: 8vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 33.33%;
+    padding-left: 2.133vw;
+    box-sizing: border-box;
+}
+ .bottom-info {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    justify-content: start;
+}
+.kem__footer .bottom-info .icon-box {
+    
+    flex: 1 1;
+}
+.kem__footer .bottom-info .copyright {
+    color: #6e6e6e;
+    font-size: .25rem;
+    line-height: 1.5;
+    width: 58.667vw;
+    text-align: right;
+}
+.kem__footer  .icon-iphone {
+    display: inline-block;
+    width: 16vw;
+    height: 6.133vw;
+    background: url(https://s1.ljcdn.com/m-new/client/media/src/client/components/Footer/img/icon-phone.314d7c66.png) no-repeat;
+    background-size: 16vw;
+    font-size: 0;
+    vertical-align: top;
+    opacity: .32;
+}
+.kem__footer  .icon-android {
+    display: inline-block;
+    width: 16vw;
+    height: 6.133vw;
+    background: url(https://s1.ljcdn.com/m-new/client/media/src/client/components/Footer/img/icon-phone.314d7c66.png) no-repeat;
+    background-size: 16vw;
+    font-size:0;
+    vertical-align: top;
+    opacity: .32;
+
+    display: inline-block;
+
+}
+
+.kem__footer  .icon-android {
+    background-position: 0 -6.133vw;
+}
+.kem__footer .footer-nav {
+    margin-top: 4.267vw;
+}

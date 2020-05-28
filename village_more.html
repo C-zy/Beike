@@ -16,9 +16,9 @@
 <body>
     <!-- 头部 -->
     <div class="header all">
-        <span class="iconfont icon-zuojiantou jt"></span>
+        <span class="iconfont icon-zuojiantou jt" id="home"></span>
         <div class="logo">
-            <a href="city.html" class="header_city" id="city">北京
+            <a href="javascript:void(0)" class="header_city" id="city">北京
                 <span class="iconfont icon-xiajiantou jt_s"></span>
             </a>
             <img src="img/img_village/0.png" alt="">
@@ -49,7 +49,7 @@
                 <h2 class="name" id="name"></h2>
                 <p class="present" id="present"></p>
             </div>
-            <div class="right _fr">
+            <div class="right _fr" id="xin">
                 <span class="iconfont icon-like"></span>
                 <p>777人关注</p>
             </div>
@@ -306,6 +306,30 @@
         $('#price').text(parseFloat(data[0].price))
         $('.add_img').html(`<img src="${data[0].img}" />`)
     })
+            // 城市改变
+            $("#city").click(()=>{
+            window.location.href="city.html"
+        })
+        if(sessionStorage.city){
+            $("#city").html(sessionStorage.city+"<span class='iconfont icon-xiajiantou jt_s'></span>")
+        }else{
+            $("#city").html("郑州<span class='iconfont icon-xiajiantou jt_s'></span>")
+        }
+        $("#home").click(()=>{
+            window.history.go(-1)
+        })
+        // 点击关注进行收藏
+        $("#xin").click(()=>{
+            var x=window.location.search.split("=")[1]
+            $.ajax({
+                type : "get",
+                url : "http://localhost:3000/star_village",
+                data : {
+                    id:x
+                }
+            })
+            alert("已关注")
+        })
 </script>
 
 </html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/man.css">
+    <link rel="stylesheet" href="./font/iconfonts.css">
+    <title>找经纪人</title>
+</head>
+
+<body>
+    <div class="page">
+        <div class="app">
+            <div class="header">
+                <div class="header-left">
+                    <span class="iconfont icon-jiantouarrowhead7" id="home">
+                    </span>
+                    <a href="city.html" class="left-city" id="city">郑州</a>
+                </div>
+                <div class="header-conter">
+                    <span>
+                        <img src="https://s1.ljcdn.com/m-new/client/media/src/client/components/Header/img/logo_beikezhaofang.3b9e5d47.png"
+                            alt="">
+                    </span>
+                </div>
+                <div class="header-right">
+                    <span class="iconfont icon-lianxiren">
+
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="lj-trak">
+            <div>
+                <input class="search-input" placeholder="请输入经纪人姓名">
+                </input>
+            </div>
+        </div>
+        <div class="search-part">
+            <ul class="list">
+                <li class="list-item">
+                    <div class="img-wrap">
+                        <img src="https://img.ljcdn.com/beike/m-new/1581587224463.png" alt="">
+                    </div>
+                    <span class="text">双一流高校</span>
+                </li>
+                <li class="list-item">
+                    <div class="img-wrap">
+                        <img src="https://img.ljcdn.com/beike/m-new/1581587224418.png" alt="">
+                    </div>
+                    <span class="text">成交量高</span>
+                </li>
+                <li class="list-item">
+                    <div class="img-wrap">
+                        <img src="https://img.ljcdn.com/beike/m-new/1581587224434.png" alt="">
+                    </div>
+                    <span class="text">行业资深</span>
+                </li>
+                <li class="list-item">
+                    <div class="img-wrap">
+                        <img src="https://img.ljcdn.com/beike/m-new/1581587373675.png" alt="">
+                    </div>
+                    <span class="text">客户评分高</span>
+                </li>
+            </ul>
+        </div>
+        <div class="agentlist-title"> 全部经纪人</div>
+        <div class="container">
+            <div class="filter-bar">
+                <ul class="tab" style="background-color: white;">
+                    <li class="tab-list" onclick="tab()">区域</li>
+                    <li class="tab-list active">
+                        综合表现从高到底
+
+                    </li>
+                </ul>
+                <div>
+                    <div class="big" style="display: none;">
+                        <!-- <ul>
+                            <li class="big-list">区域</li>
+                            <li class="big-list">客户评分从高到底</li>
+                        </ul> -->
+                        <div class="big-area">
+                            <div class="area-left ">
+                                区域
+                            </div>
+                            <div class="area-right">
+                                <div class="active item">不限</div>
+                                <div class="item">二七区</div>
+                                <div class="item">中原区</div>
+                                <div class="item">金水区</div>
+                                <div class="item">上街区</div>
+                                <div class="item">惠济区</div>
+                                <div class="item">荥阳市</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="has-data">
+                <ul>
+                    <li>
+                        <div class="agent-item">
+                            <div class="left-picture">
+                                <img src="https://ke-image.ljcdn.com/usercenter/images/uc_ehr_avatar/d2245068-eac3-44ac-b432-617eaac34781.jpg.150x200.jpg?from=ke.com"
+                                    alt="">
+                            </div>
+                            <div class="main-info">
+                                <div class="name-box"><span class="name">胡启元</span></div>
+                                <p class="desc">链家·兴华南街·亚星悦都C店</p>
+                                <div class="tag-wrap"><span class="tag">推荐房源精准</span><span class="tag">房源讲解到位</span>
+                                </div>
+
+                                <div class="count-box">
+                                    <div class="count-item"><span class="count">89</span>
+                                        <p class="count-title">历史成交</p>
+                                    </div>
+                                    <div class="count-item"><span class="count">4.8</span>
+                                        <p class="count-title">用户评价</p>
+                                    </div>
+                                    <div class="count-item"><span class="count">551</span>
+                                        <p class="count-title">综合表现</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="agent-item">
+                            <div class="left-picture">
+                                <img src="https://ke-image.ljcdn.com/usercenter/images/uc_ehr_avatar/8578fb6a-b48c-40a9-a456-aa941a8764ce.jpg.150x200.jpg?from=ke.com"
+                                    alt="">
+                            </div>
+                            <div class="main-info">
+                                <div class="name-box"><span class="name">景江飞</span></div>
+                                <p class="desc">链家·回龙观·龙泽城铁店</p>
+                                <div class="tag-wrap"><span class="tag">推荐房源精准</span><span class="tag">房源讲解到位</span>
+                                </div>
+
+                                <div class="count-box">
+                                    <div class="count-item"><span class="count">83</span>
+                                        <p class="count-title">历史成交</p>
+                                    </div>
+                                    <div class="count-item"><span class="count">5.0</span>
+                                        <p class="count-title">用户评价</p>
+                                    </div>
+                                    <div class="count-item"><span class="count">556</span>
+                                        <p class="count-title">综合表现</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="agent-item">
+                            <div class="left-picture">
+                                <img src="https://ke-image.ljcdn.com/usercenter/images/uc_ehr_avatar/bd0a3f47-1988-4271-89e6-257b06787373.jpg.150x200.jpg?from=ke.com"
+                                    alt="">
+                            </div>
+                            <div class="main-info">
+                                <div class="name-box"><span class="name">孙艳花</span></div>
+                                <p class="desc">链家·德胜门·德外桥临时店</p>
+                                <div class="tag-wrap"><span class="tag">推荐房源精准</span><span class="tag">房源讲解到位</span>
+                                </div>
+
+                                <div class="count-box">
+                                    <div class="count-item"><span class="count">67</span>
+                                        <p class="count-title">历史成交</p>
+                                    </div>
+                                    <div class="count-item"><span class="count">5.0</span>
+                                        <p class="count-title">用户评价</p>
+                                    </div>
+                                    <div class="count-item"><span class="count">558</span>
+                                        <p class="count-title">综合表现</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="agent-item">
+                            <div class="left-picture">
+                                <img src="https://ke-image.ljcdn.com/usercenter/images/uc_ehr_avatar/86b67a44-d3be-413d-bf1b-45af7c95f15a.jpg.150x200.jpg?from=ke.com"
+                                    alt="">
+                            </div>
+                            <div class="main-info">
+                                <div class="name-box"><span class="name">王佳伟</span></div>
+                                <p class="desc">链家·兴华南街·亚星悦都C店</p>
+                                <div class="tag-wrap"><span class="tag">推荐房源精准</span><span class="tag">房源讲解到位</span>
+                                </div>
+
+                                <div class="count-box">
+                                    <div class="count-item"><span class="count">131</span>
+                                        <p class="count-title">历史成交</p>
+                                    </div>
+                                    <div class="count-item"><span class="count">5.0</span>
+                                        <p class="count-title">用户评价</p>
+                                    </div>
+                                    <div class="count-item"><span class="count">555</span>
+                                        <p class="count-title">综合表现</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="agent-item">
+                            <div class="left-picture">
+                                <img src="https://ke-image.ljcdn.com/usercenter/images/uc_ehr_avatar/d2245068-eac3-44ac-b432-617eaac34781.jpg.150x200.jpg?from=ke.com"
+                                    alt="">
+                            </div>
+                            <div class="main-info">
+                                <div class="name-box"><span class="name">韩晓宇</span></div>
+                                <p class="desc">链家·兴华南街·亚星悦都C店</p>
+                                <div class="tag-wrap"><span class="tag">推荐房源精准</span><span class="tag">房源讲解到位</span>
+                                </div>
+
+                                <div class="count-box">
+                                    <div class="count-item"><span class="count">117</span>
+                                        <p class="count-title">历史成交</p>
+                                    </div>
+                                    <div class="count-item"><span class="count">5.0</span>
+                                        <p class="count-title">用户评价</p>
+                                    </div>
+                                    <div class="count-item"><span class="count">499</span>
+                                        <p class="count-title">综合表现</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="kem__footer">
+            <div class="breadcrumb">
+                <ul>
+                    <li class="breadcrumb-item"><a>贝壳找房北京站</a></li>
+                    <li class="breadcrumb-item cur">
+                        <h3><a>北京房屋经纪人</a></h3>
+                    </li>
+                </ul>
+                <div class="breadcrumb-extra">
+                    <span class="extra-split">|</span>
+                    <span class="extra-item"><a>营业执照</a></span>
+                    <span class="extra-split">|</span>
+                    <span class="extra-item"><a>ICP证</a></span>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <div class="link-tit">
+                    <h3 class="tit active">经纪人</h3>
+                    <h3 class="tit">热门小区</h3>
+                </div>
+                <div class="link-cont">
+                    <ul class="cont active">
+                        <li><a href="https://m.ke.com/bj/jingjiren/">北京经纪人</a></li>
+                        <li><a href="https://m.ke.com/sh/jingjiren/">上海经纪人</a></li>
+                        <li><a href="https://m.ke.com/gz/jingjiren/">广州经纪人</a></li>
+                        <li><a href="https://m.ke.com/sz/jingjiren/">深圳经纪人</a></li>
+                        <li><a href="https://m.ke.com/tj/jingjiren/">天津经纪人</a></li>
+                        <li><a href="https://m.ke.com/cd/jingjiren/">成都经纪人</a></li>
+                        <li><a href="https://m.ke.com/nj/jingjiren/">南京经纪人</a></li>
+                        <li><a href="https://m.ke.com/hz/jingjiren/">杭州经纪人</a></li>
+                        <li><a href="https://m.ke.com/qd/jingjiren/">青岛经纪人</a></li>
+                        <li><a href="https://m.ke.com/dl/jingjiren/">大连经纪人</a></li>
+                        <li><a href="https://m.ke.com/su/jingjiren/">苏州经纪人</a></li>
+                        <li><a href="https://m.ke.com/xm/jingjiren/">厦门经纪人</a></li>
+                    </ul>
+
+
+                </div>
+            </div>
+
+            <div class="bottom-info ">
+                <div class="icon-box">
+                    <span title="iPhone客户端" class="icon-iphone ">iPhone客户端</span>
+                    <span title="Android客户端" class="icon-android ">Android客户端</span>
+                </div>
+                <div class="copyright">
+                    <p class="record"><a target="_blank" href="//www.12377.cn">网上有害信息举报专区</a></p>
+                    <p class="company">天津小屋信息科技有限公司</p>
+                    <p class="record">地址:天津经济技术开发区南港工业区综合服务区办公楼<br>C座一层112室09单元</p>
+                    <p class="record">电话:10106188</p>
+                    <p class="record">网络经营许可证<a target="_blank" href="http://beian.miit.gov.cn">津ICP备18000836号</a></p>
+                    <p class="record">网络文化经营许可证 津网文（2017）2063-011号</p>
+                    <p class="record">ICP经营许可证 津B2-20170026</p>
+                    <p class="record">copyright©2020&nbsp;ke.com&nbsp;版权所有</p>
+                    <p class="record"><a target="_blank"
+                            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12019002000223"><img
+                                src="https://s1.ljcdn.com/mensa/static/m/images/common/beian.png?_v=2019082220591265f">津公网安备
+                            12019002000223号</a></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        (function () {
+            function w() {
+                var all = document.documentElement;
+                var test = all.getBoundingClientRect().width;
+                rem = test / 7.5;
+                all.style.fontSize = rem + 'px'
+            }
+            w();
+            window.addEventListener("resize", function () {
+                w()
+            }, false)
+        })();
+        var search = document.getElementsByClassName('search-input')[0]
+        var big = document.getElementsByClassName('big')[0]
+        function tab() {
+            big.style.display = 'block'
+            $('.tab-list ,.area-left').addClass('activee')
+            $('.filter-bar')[0].style.position = 'absolute'
+        }
+        $('.item').click(function () {
+            $('.tab-list')[0].innerHTML = $(this)[0].innerHTML
+            $(this).addClass('white').siblings().removeClass('white')
+            $('.big').hide()
+            $('.filter-bar')[0].style.position = ''
+        })
+
+        $('.search-input').bind('keyup', function (event) {
+            if (event.keyCode == "13") {
+              
+                //回车执行查询
+                $('.name').each(function () { 
+                    var a=$(this)[0].innerHTML
+                    var b=$('.search-input')[0].value
+                    if(a == b){
+                        $('.search-input')[0].value=''
+                    
+
+                    }
+                    else{
+                    
+                        alert('没有这个经济人')
+                        $(this)[0].value=''
+                    }
+                })
+
+            }
+
+        });
+        // 城市改变
+        $("#city").click(()=>{
+            window.location.href="city.html"
+        })
+        if(sessionStorage.city){
+            $("#city").html(sessionStorage.city)
+        }else{
+            $("#city").html("郑州")
+        }
+        $("#home").click(()=>{
+            window.location.href="index.html"
+        })
+    </script>
+</body>
+
+</html>
