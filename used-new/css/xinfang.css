@@ -543,9 +543,20 @@ ul{
     display: none;
 }
 .fixed1{
-    width:4rem;
-    height: 4rem;
-    background-color: white;
+    width:5rem;
+    height: 5rem;
+    border-radius: 50%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 10rem;
+    right: 2rem;
+    z-index: 1000;
+}
+.fixed2{
+    width:5rem;
+    height: 5rem;
     border-radius: 50%;
     position: fixed;
     display: flex;
@@ -556,7 +567,10 @@ ul{
     z-index: 1000;
 }
 .fixed1 img{
-    width: 40%;
+    width: 100%;
+}
+.fixed2 img{
+    width: 100%;
 }
 .footer-text{
     font-size: 0.35rem;
@@ -594,4 +608,7 @@ ul{
 }
 .text-left img{
     width: 100%;
+}
+.xiaoqu{
+    margin-bottom: 0.5rem;
 }

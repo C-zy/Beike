@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="img/logo.ico" type="images/x-ico" />
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/3.4.2/css/swiper.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="css/xin-details.css">
+</head>
+
+<body>
+    <div class="inner">
+        <div class="inner-item item1">
+            <span class="icon-back"></span>
+            <span class="city">郑州</span>
+            <span class="icon-down"></span>
+        </div>
+        <div class="inner-item login"></div>
+        <div class="inner-item icon-user"></div>
+    </div>
+    <div id="app">
+        <title>{{lists.title}}</title>
+        <div class="swiper-container">
+            <div class="swiper-wrapper" id="swiper">
+                <div class="swiper-slide" data-index="0">
+                    <img v-bind:src="lists.img" alt="">
+                </div>
+                <div class="swiper-slide" data-index="1">
+                    <img v-bind:src="lists.img1" alt="">
+                </div>
+                <div class="swiper-slide" data-index="2">
+                    <img v-bind:src="lists.img2" alt="">
+                </div>
+                <div class="swiper-slide" data-index="3">
+                    <img v-bind:src="lists.img3" alt="">
+                </div>
+                <div class="swiper-slide" data-index="4">
+                    <img v-bind:src="lists.img4" alt="">
+                </div>
+                <div class="swiper-slide" data-index="5">
+                    <img v-bind:src="lists.img5" alt="">
+                </div>
+                <div class="swiper-slide" data-index="6">
+                    <img v-bind:src="lists.typehouse" alt="">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <div class="type-1">
+                <span class="span1">图片</span>
+                <span class="span2">户型</span>
+            </div>
+
+        </div>
+        <div class="ershoufang-detail">
+            <div class="tit-new">
+                <h1 class="house-title">{{lists.title}}</h1>
+                <div class="xin">
+                    <p> <img src="img/xin.svg" alt=""></p>
+                    关注
+                </div>
+            </div>
+            <div class="sub-title">
+                {{lists.rob}}
+            </div>
+            <div class="new">{{lists.keyword}}</div>
+            <div class="vr-house">
+                <div class="vr-left">
+                    <img src="img/xin-img/icon_vr_bar@3x.png" alt="" class="book">
+                </div>
+                <div class="vr-right">
+                    <p class="vr-p1">VR掌上售楼部</p>
+                    <p class="vr-p2">VR掌上售楼部</p>
+                </div>
+                <div class="vr-bottom">
+                    <div class="btn">
+                        立即体验
+                    </div>
+                </div>
+            </div>
+            <div class="lianjie">
+                <span class="tejia">【一周特价房】</span>
+                <a class="tejia1" href="javascript:void(0)">【一周特惠】5月买房，聚焦好盘，青年人才购房好政策，新上好盘立减优惠+特价房！</a>
+            </div>
+            <div class="price">
+                <p class="p1">
+                    <span>参考总价:</span>
+                    <span class="price-1">{{lists.price}}万/套</span>
+                </p>
+                <div class="price-2 p1">
+                    <p>
+                        <span class="price-item1">建面:</span>
+                        <span>80~112m²</span>
+                    </p>
+                    <p>
+                        <span class="price-item1">
+                            户型:
+                        </span>
+                        <span>{{desc1}}</span>
+                    </p>
+                </div>
+                <div class="price-2 p1">
+                    <p>
+                        <span class="price-item1">结构:</span>
+                        <span>板楼</span>
+                    </p>
+                    <p>
+                        <span class="price-item1">
+                            开盘:
+                        </span>
+                        <span>{{lists.year}}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="xuanfu">
+                    <img src="img/logo.png" alt="" class="xuanfu-img">
+                    <span>打开贝壳找房App，在线咨询新房顾问</span>
+            </div>
+            <div class="describe">
+                <p class="house_type_title">户型分间</p>
+                <div class="house_type">
+                    <ul class="house_left">
+                        <li>客厅:&nbsp;{{lists.room}}</li>
+                        <li>卧室A:&nbsp;{{lists.bedroomA}}</li>
+                        <li>卧室B:&nbsp;{{lists.bedroomB}}</li>
+                    </ul>
+                    <div class="house_right">
+                        <img :src="lists.typehouse" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="cap">
+                <img src="img/staticimage.png" alt="">
+            </div>
+            <div class="source">
+                <div class="source-item">
+                    <h2 class="source-h2">房源介绍</h2>
+                    <p class="source-p"><img src="img/icon-right.svg" alt=""></p>
+                </div>
+                <div class="source-item1">
+                    有房本，满五年，业主因为置换，所以出售
+                    房屋恒通2008年开始开发，至2012年交房完毕，小区一共分为五期，小区多以多层房为主，得房率高，单气小区，很有生活氛围，房子是两卧室朝南，采光好，主卧有飘窗，次卧有阳台，独立餐厅，客厅大窗户，全明户型小区门口就是好又多超市，菜市场，往南有野孩子公园，往东有绿博园，方特，生活氛围很好小区网南有商都路，往北有物流通道，郑开大道，，门口是敬业路，前程路，凤西路，
+                </div>
+            </div>
+            <div class="zhuanti">
+                <h2>相关专题</h2>
+                <p class="zhuanti-a">【区域攻略】贝壳探盘 | 管城/二七/经开区购房首付成本大起底等1篇专题</p>
+            </div>
+        </div>
+    </div>
+    <div id="like">
+        <h2>猜您喜欢</h2>
+        <ul>
+            <li v-for="like in likes" class="like-item">
+                <div class="like-img">
+                    <img :src="like.img" alt="">
+                </div>
+                <div class="like-tit">
+                    <h2>{{like.rob}}</h2>
+                    <p class="desc">{{like.desc}}</p>
+                    <p class="prices">
+                        <span class="price1">{{like.price}}万</span>
+                        <span class="price2">{{like.price1}}</span>
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <div class="help">
+            <p class="help-item1">考虑卖房？我们可以帮到你</p>
+            <p class="help-item2">30万业主信赖的选择，卖房专业又省心</p>
+            <span class="sell">帮我卖房</span>
+        </div>
+        <div class="report">
+            <div>
+                <span class="hao">贝壳号104104120523</span>
+                <span class="jubao">举报该房源</span>
+            </div>
+            <p class="cankao">房源所示“户型图、房屋用途、交易权属、建成年代、产权年限、建筑结构”仅供参考，购房时请以房本信息为准。</p>
+        </div>
+    </div>
+    <div class="type-xuanfu">
+        <ul class="type-items">
+            <li class="gray">房源</li>
+            <li class="gray">专题</li>
+            <li class="gray">喜欢</li>
+            <li class="gray">帮助</li>
+        </ul>
+    </div>
+    <div class="footer">
+        <div class="footer-item1">
+            <span class="span-1">贝壳找房郑州站</span>
+            <span>郑州二手房</span>
+            <span>|</span>
+            <span>营业执照</span>
+            <span>|</span>
+            <span>ICP证</span>
+        </div>
+        <div class="footer-tab">
+            <div class="tab-item1 tab-item">热门城市</div>
+            <div class="tab-item2 tab-item">城市推荐楼盘</div>
+        </div>
+        <div class="tab-item-con">
+            <div class="tab-item1-con">
+                <ul class="item-con item1-con">
+                    <li>
+                        <p>承德新房</p>
+                    </li>
+                    <li>
+                        <p>福泉新房</p>
+                    </li>
+                    <li>
+                        <p>淄博新房</p>
+                    </li>
+                    <li>
+                        <p>库尔勒新房</p>
+                    </li>
+                    <li>
+                        <p>洪江新房</p>
+                    </li>
+                    <li>
+                        <p>昌邑新房</p>
+                    </li>
+                    <li>
+                        <p>桐江新房</p>
+                    </li>
+                    <li>
+                        <p>化州新房</p>
+                    </li>
+                    <li>
+                        <p>雅安新房</p>
+                    </li>
+                    <li>
+                        <p>甘南新房</p>
+                    </li>
+                    <li>
+                        <p>绵阳新房</p>
+                    </li>
+                    <li>
+                        <p>龙泉新房</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-item2-con">
+                <ul class="item-con item2-con">
+                    <li>
+                        <p>英协鼎峰二手房</p>
+                    </li>
+                    <li>
+                        <p>新世纪社区二手房</p>
+                    </li>
+                    <li>
+                        <p>锦绣中原二手房</p>
+                    </li>
+                    <li>
+                        <p>绿化东街二手房</p>
+                    </li>
+                    <li>
+                        <p>工农路32号院二手房</p>
+                    </li>
+                    <li>
+                        <p>沁河路60号二手房</p>
+                    </li>
+                    <li>
+                        <p>豫法东苑二手房</p>
+                    </li>
+                    <li>
+                        <p>鹏飞花园二手房</p>
+                    </li>
+                    <li>
+                        <p>盛世之都二手房</p>
+                    </li>
+                    <li>
+                        <p>中原区教师住宅小区二手房</p>
+                    </li>
+                    <li>
+                        <p>正商城福苑二手房</p>
+                    </li>
+                    <li>
+                        <p>建文社区二手房</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-text">
+            <p>网上有害信息举报专区</p>
+            <p>天津小屋信息科技有限公司</p>
+            <p>地址:天津经济技术开发区南港工业区综合服务区办公楼</p>
+            <p>C座一层112室09单元</p>
+            <p>电话:10106188</p>
+            <p>网络经营许可证津ICP备18000836号</p>
+            <p>网络文化经营许可证 津网文（2017）2063-011号</p>
+            <p>ICP经营许可证 津B2-20170026</p>
+            <p>copyright©2020 ke.com 版权所有</p>
+            <p class="beians">
+                <img src="img/beian.png" alt="" class="beian">
+                津公网安备 12019002000223号
+            </p>
+            <div class="text-left">
+            </div>
+            <div class="text-left1">
+            </div>
+        </div>
+    </div>
+    <script src="js/xin-details.js"></script>
+</body>
+
+</html>

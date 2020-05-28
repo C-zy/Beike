@@ -1,0 +1,518 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+.inner{
+    display: flex;
+    font-weight:400 ;
+    padding:0 1rem;
+}
+.inner-item{
+    width:33.4%;
+    height: 4rem;
+    box-sizing: border-box;
+}
+.login{
+    background: url(../img/login.png) no-repeat 50%/5rem;
+    cursor: pointer;
+}
+.icon-user{
+    background: url(../img/icon-user.png) no-repeat 100%/15%;
+    cursor: pointer;
+}
+/* 顶部返回 */
+.item1{
+    display: flex;
+    align-items: center;
+}
+.item1 span{
+    cursor: pointer;
+}
+.icon-back{
+    display: inline-block;
+    width: 2rem;
+    height: 100%;
+    background: url(../img/icon-back.png) no-repeat 0/40%;
+}
+.icon-down{
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-left:0.2rem;
+    background: url(../img/icon-down.png) no-repeat 0/100%;
+}
+/* 轮播部分 */
+#swiper{
+    width: 100%;
+    height: 17rem;
+    position: relative;
+}
+.swiper-container {
+    width: 100%;
+    height: 17rem;
+    margin: 0 0 1rem 0;
+
+}
+.swiper-slide {
+    text-align: center;
+    width: 100%;
+    font-size: 0.875rem;    
+    line-height: 17rem;
+}
+.swiper-slide img{
+    width: 100%;
+    height: 100%;
+}
+.swiper-pagination{
+    font-size: 0.65rem;
+    width: 3rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 1rem;
+    color: white;
+    background-color: gray;
+}
+.type-1{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 999;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    background-color: hsla(0,0%,100%,.61);
+    border-radius: 0.65rem;
+    padding: 0 0.5rem;
+}
+.type-1 span{
+    display: inline-block;
+    padding: 0 0.5rem;
+    border-radius: 0.65rem;
+
+}
+.span1{
+    background-color: rgba(48,114,246,.85);
+    color: white;
+}
+.ershoufang-detail{
+    padding: 1rem 2rem;
+}
+.new{
+    padding: 1rem 0;
+    font-size: 0.7rem;
+    color: rgb(132, 154, 174);
+}
+.tit-new{
+    position: relative;
+}
+.house-title{
+    width: 85%;
+    font-size: 1.35rem;
+}
+.xin p{
+    width: 2rem;
+    height: 2rem;
+    margin:  0 auto;
+}
+.xin img{
+    width: 100%;
+    height: 100%;
+}
+.xin{
+    position: absolute;
+    width: 2rem;
+    height: 3rem;
+    right: 0;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    font-size: 0.85rem;
+}
+.vr-house{
+    display: flex;
+    background-color: rgba(48,114,246,.05);
+    margin-bottom: 1rem;
+}
+.vr-left{
+    width: 10%;
+    text-align: center;
+}
+.vr-right{
+    width: 65%;
+}
+.vr-bottom{
+    width: 25%;
+    text-align: center;
+}
+.book{
+    width: 1rem;
+    height: 1rem;
+}
+.vr-p1{
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+.vr-p2{
+    font-size: 0.875rem;
+}
+.btn{
+    border: 1px solid #3072F6;
+    color: #3072F6;
+    padding:0.25rem 0.3rem;
+    border-radius: 0.1rem;
+}
+.lianjie{
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+.tejia1{
+    color: red;
+}
+/* 价格 */
+.price{
+    font-size: 1.1rem;
+}
+.p1{
+    margin-bottom: 0.5rem;
+}
+.price-1{
+    color: red;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.price-item1{
+    padding-right: 0.5rem;
+}
+.price-2{
+    display: flex;
+}
+.price-2 p{
+    width: 50%;
+}
+/* 描述 */
+.house_type{
+    position: relative;
+    height: 6rem;
+}
+.house_type_title{
+    margin: 1rem 0;
+}
+.house_left li{
+    color: #9399A5;
+    font-size: 0.875rem;
+    padding:  0.25rem 0;
+}
+.house_left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 6rem;
+}
+.house_right{
+    position: absolute;
+    right: 0;
+    width: 30%;
+    height: 6rem;
+}
+.house_right img{
+    width: 100%;
+    height: 100%;
+}
+.cap{
+    width: 100%;
+    height: 15rem;
+}
+.cap img{
+    width: 100%;
+    height: 100%;
+}
+.source{
+    margin-bottom: 1rem;
+}
+
+.source-item{
+    position: relative;
+    height: 3rem;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+}
+.source-h2{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.source-p{
+    position: absolute;
+    right: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.source-p img{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+.source-item1{
+    height: 8rem;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+/* 悬浮 */
+.xuanfu{
+    font-size: 1.1rem;
+    padding: 1rem 0;
+    border-top:1px solid #cecece ;
+    border-bottom:1px solid #cecece;
+}
+.xuanfu-img{
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+}
+.type-items{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #cecece;
+}
+.type-items li{
+    width: 25%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+}
+.fle{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: white;
+}
+.fle1{
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    z-index: 9999;
+    background-color: white;
+}
+.black{
+    color: black;
+}
+.gray{
+    color: gray;
+}
+/* 专题 */
+.zhuanti-a{
+    display: block;
+    width: 100%;
+    font-size: 1.25rem;
+    white-space: nowrap ;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    color: black;
+}
+#like{
+    padding: 1rem 2rem 0;
+}
+.like-item{
+    display: flex;
+    padding: 1rem 0;
+}
+.like-img{
+    width: 35%;
+    height: 7rem;
+}
+.like-img img{
+    width: 100%;
+    height:6rem;
+}
+.like-tit{
+    width: 65%;
+    height: 7rem;
+    padding-left: 5%;
+}
+.like-tit h2{
+    font-size: 1rem;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.desc{
+    font-size: 0.7rem;
+    width: 11rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0.5rem 0;
+}
+.price1{
+    font-size: 1rem ;
+    color: #fa5741;
+    font-weight: 700;
+}
+.price2{
+    font-size: 0.7rem;
+    color: gray;
+}
+/* help */
+.help{
+    text-align: center;
+}
+.help-item1{
+    font-size: 1.3rem;
+}
+.help-item2{
+    font-size: 0.875rem;
+    color: gray;
+}
+.sell{
+    display: inline-block;
+    width: 10rem;
+    line-height: 3rem;
+    height: 3rem;
+    border: 1px solid gray;
+    border-radius: 1.5rem;
+    margin: 2rem 0 3rem 0;
+}
+/* report */
+.report{
+    font-size: 0.875rem;
+}
+.report span{
+    display: inline-block;
+}
+.hao{
+    width: 68%;
+}
+.jubao{
+    width: 30%;
+    text-align: right;
+    color: royalblue;
+}
+.cankao{
+    margin: 0.5rem 0;
+    font-size: 0.7rem;
+    color: gray;
+}
+.footer{
+    padding: 0 1rem;
+    background-color: #2f3130;
+    color: #cecece;
+}
+.footer-item1 span{
+    font-size: 0.7rem;
+}
+.span-1{
+    margin-right: 0.5rem;
+}
+/* 底部tab切换 */
+.footer-tab{
+    display: flex;
+    justify-content: center;
+}
+.footer-item1{
+    margin-bottom: 0.5rem;
+}
+.tab-item{
+    width: 30%;
+    margin: 0 5%;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+.tab-item1{
+    background-color: rgba(111,111,111,.2);
+}
+.item-con{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5rem 0 0 1.5rem ;
+}
+.item-con li{
+    list-style: outside;
+    width: 25%;
+    font-size: 0.875rem;
+    height: 1.5rem;
+    padding-right: 1.25rem;
+    padding-left: 0.25rem;
+    padding-bottom: 0.5rem;
+}
+.item-con li p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tab-item2,.tab-item3{
+    background-color: rgba(0,0,0,.5);
+}
+
+.tab-item-con{
+    position: relative;
+}
+.tab-item1-con,.tab-item2-con,.tab-item3-con{
+    height: 9rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.01);
+}
+.tab-item1-con{
+    display: block;
+}.tab-item2-con{
+    display: none;
+}
+.tab-item3-con{
+    display: none;
+}
+.footer-text{
+    font-size: 0.35rem;
+    text-align: right;
+    position: relative;
+}
+.footer-text p{
+    margin-bottom: 0.1rem;
+}
+.beians{
+    margin-top:0.5rem ;
+}
+.beian{
+    vertical-align: middle;
+}
+.text-left{
+    width:4rem;
+    height: 1.5rem;
+    overflow: hidden;
+    position: absolute;
+    top: 4rem;
+    left: 0rem;
+    background: url("../img/icon-phone.314d7c66.png") no-repeat 100%/100%;
+    background-position: 0 0;
+}
+.text-left1{
+    width:4rem;
+    height: 1.5rem;
+    overflow: hidden;
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    background: url("../img/icon-phone.314d7c66.png") no-repeat 100%/100%;
+    background-position: 0 -1.5rem ;
+}
+.text-left img{
+    width: 100%;
+}
