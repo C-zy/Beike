@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>百科</title>
+    <link rel="stylesheet" href="./css/beike.css">
+    <script src="./js/jquery.min.js"></script>
+</head>
+<style>
+   
+</style>
+<body>
+    <div id="app">
+        <header class="top">
+            <div class="header-left">
+                <!-- <span class="icon-back"> -->
+                    <img class="icon-back1" src="./image/icon.png" alt="" id="home">
+                <!-- </span> -->
+                <a href="javascript:void(0)" class="switch-city" id="city">郑州
+                    <img  class="img" src="./image/icon2.png" alt="">
+                </a>
+            </div>
+            <a href="" class="logo">
+                <img class="img1" src="./image/beike.png" alt="">
+            </a>
+            <a href="" class="header-right">
+                <i class="icon_user">
+                    <img class="img3" src="./image/people.png" alt="">
+                </i>
+            </a>
+        </header>
+        <!-- 下面内容 -->
+        <div class="middle">
+            <div class="beike">
+                <i class="search-icon"></i>
+                <div class="search">
+                    <input placeholder="房产知识有疑问？来搜索吧" type="text">
+                </div>
+            </div>
+        </div>
+        <!-- 中间内容 -->
+        <div class="beike-home">
+            <div class="top-sticky">
+                <div class="lj-track">
+                    <div class="select-types">
+                        <div class="lj-track active">
+                            <span class="current-select select-span">
+                                二手房
+                            </span>
+                        </div>
+                        <div class="lj-track">
+                            <span class="current-select select-span">
+                                新房
+                            </span>
+                        </div>
+                        <div class="lj-track">
+                            <span class="current-select select-span">
+                                买房
+                            </span>
+                        </div>
+                        <div class="lj-track">
+                            <span class="current-select select-span">
+                                换房
+                            </span>
+                        </div>
+                        <div class="lj-track">
+                            <span class="current-select select-span">
+                                租房
+                            </span>
+                        </div>
+                        <a href="gengduo.html">
+                        <span class="more-root">
+                             <span>更多</span>
+                             <i class="more-icon"></i>
+                        </span>
+                    </a>
+                    </div>
+                    <!-- 准备买房 -->
+                    <div class="kandian-home__card class">
+                        <div class="lj-track inline-block">
+                            <div class="single-card" style="border: 1.5px solid rgb(234, 89, 81);overflow: visible;">
+                                <p class="card-name">准备买房</p>
+                                <p class="card-desc" style="background: rgb(234, 89, 81);">
+                                <span>政策了解房屋定价</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="lj-track inline-block">
+                            <div class="single-card">
+                                <p class="card-name">看房/选房</p>
+                                <p class="card-desc" >
+                                <span>如何找到心仪房子</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="lj-track inline-block">
+                            <div class="single-card">
+                                <p class="card-name">签约/定房</p>
+                                <p class="card-desc">
+                                <span>签合同注意事项</span>
+                               </p>
+                            </div>
+                        </div>
+                        <div class="lj-track inline-block">
+                            <div class="single-card">
+                                <p class="card-name">全款/贷款</p>
+                                <p class="card-desc">
+                                <span>房产付款全面解析</span>
+                               </p>
+                            </div>
+                        </div>
+                        <div class="lj-track inline-block">
+                            <div class="single-card">
+                                <p class="card-name">缴税/过户</p>
+                                <p class="card-desc">
+                                <span>最新流程及时了解</span>
+                            </p>
+                            </div>
+                        </div>
+                        <div class="lj-track inline-block">
+                            <div class="single-card">
+                                <p class="card-name">入住/交接</p>
+                                <p class="card-desc">
+                                <span>注意事项风险提醒</span>
+                            </p>
+                            </div>
+                        </div>
+                        <div class="lj-track inline-block">
+                            <div class="single-card">
+                                <p class="card-name">买房风险</p>
+                                <p class="card-desc">
+                                <span>保护权益减少违约</span>
+                            </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 标题 -->
+        <div class="lj-track" id="ming">
+            <!-- <a class="baike-list-card active" href="">
+               <div class="left">
+                <div class="title">非京籍能在北京买二手房吗，需要什么资格？</div>
+                <div class="desc_one">非京籍满足北京的购房资格后，可以在京买一套二手房。</div>
+              </div>
+              <div class="right">
+                  <img class="image" src="./image/loufang.jpeg" alt="">
+              </div>
+            </a>
+            <a class="baike-list-card" style="display: none;" href="">
+                <div class="left">
+                 <div class="title">在北京买新房限购吗？需要满足什么条件？</div>
+                 <div class="desc_one">在北京买新房限购，房产类型及购房人群不同，新房的限购政策也不同。</div>
+               </div>
+               <div class="right">
+                   <img class="image" src="./image/loufang.jpeg" alt="">
+               </div>
+             </a>
+             <a class="baike-list-card" style="display: none;" href="">
+                <div class="left">
+                 <div class="title">3333333333</div>
+                 <div class="desc_one">333333。</div>
+               </div>
+               <div class="right">
+                   <img class="image" src="./image/loufang.jpeg" alt="">
+               </div>
+             </a>
+             <a class="baike-list-card" style="display: none;" href="">
+                <div class="left">
+                 <div class="title">4444444444444</div>
+                 <div class="desc_one">4444444444。</div>
+               </div>
+               <div class="right">
+                   <img class="image" src="./image/loufang.jpeg" alt="">
+               </div>
+             </a>
+             <a class="baike-list-card" style="display: none;" href="">
+                <div class="left">
+                 <div class="title">555555555</div>
+                 <div class="desc_one">555555555555</div>
+               </div>
+               <div class="right">
+                   <img class="image" src="./image/loufang.jpeg" alt="">
+               </div>
+             </a>
+             <a class="baike-list-card" style="display: none;" href="">
+                <div class="left">
+                 <div class="title">666666</div>
+                 <div class="desc_one">666666</div>
+               </div>
+               <div class="right">
+                   <img class="image" src="./image/loufang.jpeg" alt="">
+               </div>
+             </a>
+             <a class="baike-list-card" style="display: none;" href="">
+                <div class="left">
+                 <div class="title">77777777</div>
+                 <div class="desc_one">77777777</div>
+               </div>
+               <div class="right">
+                   <img class="image" src="./image/loufang.jpeg" alt="">
+               </div>
+             </a> -->
+        </div>
+    </div>
+    <script>
+         // 移动端js适配
+    (function() {
+        function w() {
+            var all=document.documentElement;  // 获取html元素
+            var test=all.getBoundingClientRect().width;  // 获取当前设备的宽度
+            if(test>750) {
+                test=750;
+            }
+            rem=test/7.5;
+            all.style.fontSize=rem+'px'
+        }
+        w();
+        window.addEventListener("resize",function() {
+            w()
+        },false)
+    })();
+        var ul=document.getElementById("ming");
+        function Txt(sendOne) {
+            // console.log(sendOne);
+            var xhr = new  XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState === 4 && xhr.status === 200){
+                    var data= JSON.parse(xhr.responseText);
+                    // console.log(xhr.responseText);
+                    // console.log(data.data);
+                    for(var i = 0; i < data.data.length; i++){
+                    ul.innerHTML += `
+                    <a class="baike-list-card active_one" href="">
+                        <div class="left">
+                            <div class="title">${data.data[i].title}</div>
+                            <div class="desc_one">${data.data[i].content}</div>
+                        </div>
+                        <div class="right">
+                            <img class="image" src="${data.data[i].img}" alt="">
+                        </div>
+                    </a>
+                       `
+                    }
+                }
+            };
+            xhr.open('get','http://localhost:3000/blist?name='+sendOne);
+            xhr.send();
+        };
+        Txt('twohouse')
+    </script>
+    <script src="./js/table.js"></script>
+    <script>
+        //返回
+       $("#home").click(()=>{
+           window.location.href="index.html"
+       })
+       // 城市改变
+       $("#city").click(()=>{
+            window.location.href="city.html"
+        })
+        if(sessionStorage.city){
+            $("#city").html(sessionStorage.city+"<img class='img' src='./image/icon2.png' alt=''>")
+        }else{
+            $("#city").html("郑州<img class='img' src='./image/icon2.png' alt=''>")
+        }
+    </script>
+</body>
+</html>

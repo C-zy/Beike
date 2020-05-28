@@ -1,0 +1,272 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html {
+    height: auto;
+    width: 100%;
+    font-size: 100px;
+    background: #f4f4f4;
+    font-family:  Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+}
+#app{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.top{
+    width: 90%;
+    display: flex;
+    background: #fff;
+    margin: auto;
+    align-items: center;
+    height: 0.5rem;
+}
+.header-left{
+    display: flex;
+    align-items: center;
+    width:2.3rem;
+    justify-content: space-between;
+}
+.icon-back{
+    height: 1.52rem;
+    width: 0.80rem;
+}
+.icon-back1{
+    width: 0.12rem;
+    height: 0.12rem;
+}
+a{
+    text-decoration: none;
+}
+.switch-city{
+    position: relative;
+    display: block;
+    font-size: 0.13rem;
+    padding-right: 0.1rem;
+    color: black;
+}
+.img{
+    width: 0.1rem;
+    height: 0.1rem;
+}
+.logo{
+    width: 2.70rem;
+    display: flex;
+    justify-content: center;
+}
+.img1{
+    width: 0.5rem;
+    height: 0.2rem;
+    display: flex;
+}
+.header-right{
+    width: 2rem;
+    display: flex;
+  justify-content: flex-end;
+}
+.img3{
+    width: 0.2rem;
+    height: 0.15rem;
+    display: flex;
+}
+.top-bottom{
+    color: #9399A5;
+    line-height: 0.30rem;
+    font-size: 0.1rem;
+    text-align: center;
+    background-color: aliceblue;
+}
+/* 分割线 */
+.middle{
+    border: none;
+    padding-left: 0.3rem;
+    background-color: #fff;
+}
+.li_item{
+    line-height:0.5rem;
+    color: #101D37;
+    border-bottom: 1px solid #E4E6F0;
+    font-size: 0.18rem;
+    display: flex;
+}
+.li_item>div{
+    width: 100%;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 0.25rem;
+    font-size: 0.12rem;
+
+}
+.tit{
+    color: #101D37;
+    font-size: 0.12rem;
+}
+.xuanze{
+    color: #9399A5;
+    font-size: 0.12rem;
+}
+.test{
+  width: 60%;
+  height: 0.5rem;
+  outline: none;
+  border: none;
+  font-size: 0.12rem;
+  text-align: end;
+}
+.test-one{
+    width: 30%;
+    text-align: end;
+    height: 0.5rem;
+    outline: none;
+    border: none;
+    font-size: 0.12rem;
+}
+.test-two{
+    width: 15%;
+    height: 0.5rem;
+    outline: none;
+    border: none;
+    font-size: 0.12rem;
+}
+/* 底部 */
+.option-item{
+    background-color: #fff;
+    width: 90%;
+    margin: auto;
+}
+.look{
+    background: linear-gradient(135deg,#6797F7,#2D69E1);
+    line-height: 0.5rem;
+    color: #fff;
+    width: 100%;
+    border-radius: 0.5rem;
+    display: inline-block;
+    font-size: 0.15rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.look-one{
+    text-align: center;
+    line-height: 0.5rem;
+    font-size: 0.12em;
+    color: #9399A5;
+    display: block;
+}
+.ge{
+    width: 100%;
+    height: 0.15rem;
+    background-color: aliceblue
+}
+/* 遮罩层 */
+.bottom_layer{
+    position: fixed;
+    z-index: 100;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    background: #fff;
+    height: 300px;
+}
+.bottom-three{
+    position: fixed;
+    z-index: 100;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    background: #fff;
+    height: 300px;
+}
+.bottom-three li{
+    margin-left: 25px;
+    height: 50px;
+    text-align: center;
+    text-indent: -35px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+.bottom_one{
+    position: fixed;
+    z-index: 100;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    background: #fff;
+    height: 152px;
+}
+.bottom_one li{
+    margin-left: 25px;
+    height: 50px;
+    text-align: center;
+    text-indent: -35px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+.title{
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+.cancle{
+    position: absolute;
+    color: #9399A5;
+    right: 28px;
+    font-size: 16px;
+}
+.title p{
+    font-size: 0.16rem;
+    font-weight: 700;
+    text-align: center;
+}
+.option_wrap{
+    max-height: 100px;
+    overflow: scroll;
+    font-size: 16px;
+    max-height: 250px;
+}
+.option_why{
+    max-height: 100px;
+    overflow: scroll;
+    font-size: 16px;
+    max-height: 250px;
+}
+.option_web{
+    max-height: 100px;
+    overflow: scroll;
+    font-size: 16px;
+    max-height: 250px;
+}
+.option-one{
+    max-height: 100px;
+    overflow: scroll;
+    font-size: 16px;
+    max-height: 250px;
+}
+.option-two{
+    max-height: 100px;
+    overflow: scroll;
+    font-size: 16px;
+    max-height: 250px;
+}
+.bottom_layer li{
+    margin-left: 25px;
+    height: 50px;
+    text-align: center;
+    text-indent: -35px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+ul{
+    list-style: none;
+}
+/* 大遮罩层 */
+#cover{ 
+    position:absolute;left:0px;top:0px;
+    background-color: rgba(0,0,0,.5);
+    width:100%;  /*宽度设置为100%，这样才能使隐藏背景层覆盖原页面*/
+    height:100%;
+    filter:alpha(opacity=60);  /*设置透明度为60%*/
+    display:none; 
+    z-Index:1;  
+}

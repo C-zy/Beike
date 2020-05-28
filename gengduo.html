@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>更多</title>
+    <link rel="stylesheet" href="./css/gengduo.css">
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <div id="app">
+    <header class="top">
+        <div class="header-left">
+            <!-- <span class="icon-back"> -->
+             <a class="geng" href="baike.html">
+                <img class="icon-back1" src="./image/icon.png" alt="">
+             </a>
+            <!-- </span> -->
+            <a href="javascript:void(0)" class="switch-city" id="city">郑州
+                <img  class="img" src="./image/icon2.png" alt="">
+            </a>
+        </div>
+        <a href="" class="logo">
+            <img class="img1" src="./image/beike.png" alt="">
+        </a>
+        <a href="" class="header-right">
+            <i class="icon_user">
+                <img class="img3" src="./image/people.png" alt="">
+            </i>
+        </a>
+    </header>
+    <!-- 下面内容 -->
+    <div class="middle">
+         <div class="goufang">
+              <a class="goufang-one" href="">购房须知</a>
+         </div>
+         <div class="content">
+          <div class="hello">
+            <div class="content-name">
+                <span>购房建议</span>
+            </div>
+            <div class="content-name">
+                <span>房产政策</span>
+            </div>
+            <div class="content-name">
+                <span>购房资质</span>
+            </div>
+         </div>
+         <div class="hello">
+            <div class="content-name">
+                <span>房产政策</span>
+            </div>
+            <div class="content-name">
+                <span>产权/变更</span>
+            </div>
+            <div class="content-name">
+                <span>其他</span>
+            </div>
+         </div>
+         <div class="hello">
+            <div class="content-name">
+                <span>法律纠纷</span>
+            </div>
+            <div class="content-name">
+                <span>房产政策</span>
+            </div>
+            <div class="content-name">
+                <span>房屋装修</span>
+            </div>
+         </div>
+         </div>
+         <!-- 二手房 -->
+         <div class="goufang">
+            <a class="goufang-one" href="">二手房</a>
+        </div>
+        <div class="content">
+            <div class="hello">
+              <div class="content-name">
+                  <span>准备买房</span>
+              </div>
+              <div class="content-name">
+                  <span>看房/选房</span>
+              </div>
+              <div class="content-name">
+                  <span>签约/定房</span>
+              </div>
+           </div>
+           <div class="hello">
+              <div class="content-name">
+                  <span>全款/贷款</span>
+              </div>
+              <div class="content-name">
+                  <span>房产政策</span>
+              </div>
+              <div class="content-name">
+                  <span>缴税/过户</span>
+              </div>
+           </div>
+           <div class="hello">
+            <div class="content-name">
+                <span>买房风险</span>
+            </div>
+         </div>
+        </div>
+        <!-- 新房 -->
+        <div class="goufang">
+            <a class="goufang-one" href="">新房</a>
+        </div>
+        <div class="content">
+            <div class="hello">
+              <div class="content-name">
+                  <span>准备买房</span>
+              </div>
+              <div class="content-name">
+                  <span>看房/选房</span>
+              </div>
+              <div class="content-name">
+                  <span>认购新房</span>
+              </div>
+           </div>
+           <div class="hello">
+              <div class="content-name">
+                  <span>全款/贷款</span>
+              </div>
+              <div class="content-name">
+                  <span>装修/入住</span>
+              </div>
+              <div class="content-name">
+                  <span>房产政策</span>
+              </div>
+           </div>
+           <div class="hello">
+            <div class="content-name">
+                <span>退房/维权</span>
+            </div>
+         </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        // 移动端js适配
+   (function() {
+       function w() {
+           var all=document.documentElement;  // 获取html元素
+           var test=all.getBoundingClientRect().width;  // 获取当前设备的宽度
+           if(test>750) {
+               test=750;
+           }
+           rem=test/7.5;
+           all.style.fontSize=rem+'px'
+       }
+       w();
+       window.addEventListener("resize",function() {
+           w()
+       },false)
+   })();
+
+   // 城市改变
+   $("#city").click(()=>{
+            window.location.href="city.html"
+        })
+        if(sessionStorage.city){
+            $("#city").html(sessionStorage.city+"<img class='img' src='./image/icon2.png' alt=''>")
+        }else{
+            $("#city").html("郑州<img class='img' src='./image/icon2.png' alt=''>")
+        }
+   </script>
+</body>
+</html>

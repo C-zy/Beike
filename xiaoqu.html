@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>小区</title>
+    <link rel="stylesheet" href="./css/mui.indexedlist.css">
+  <link rel="stylesheet" href="./css/mui.min.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+        .mui-bar {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        .mui-content{
+            padding-top: 0px !important;
+        }
+    </style>
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <!-- <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">indexed list（索引列表）</h1> -->
+    </header>
+    <div class="mui-content">
+        <div id='list' class="mui-indexed-list">
+            <div class="mui-indexed-list-search mui-input-row mui-search">
+                <input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索小区">
+            </div>
+            <div class="mui-indexed-list-bar">
+                <a>A</a>
+                <a>B</a>
+                <a>C</a>
+                <a>D</a>
+                <a>E</a>
+                <a>F</a>
+                <a>G</a>
+                <a>H</a>
+                <a>I</a>
+                <a>J</a>
+                <a>K</a>
+                <a>L</a>
+                <a>M</a>
+                <a>N</a>
+                <a>O</a>
+                <a>P</a>
+                <a>Q</a>
+                <a>R</a>
+                <a>S</a>
+                <a>T</a>
+                <a>U</a>
+                <a>V</a>
+                <a>W</a>
+                <a>X</a>
+                <a>Y</a>
+                <a>Z</a>
+            </div>
+            <div class="mui-indexed-list-alert"></div>
+            <div class="mui-indexed-list-inner">
+                <div class="mui-indexed-list-empty-alert">没有数据</div>
+                <ul class="mui-table-view">
+                    <li data-group="A" class="mui-table-view-divider mui-indexed-list-group">A</li>
+                    <li data-value="AKU" data-tags="AKeSu" class="mui-table-view-cell mui-indexed-list-item">阿里小区</li>
+                    <li data-value="BPL" data-tags="ALaShanKou" class="mui-table-view-cell mui-indexed-list-item">阿拉小区</li>
+                    <li data-value="AAT" data-tags="ALeTai" class="mui-table-view-cell mui-indexed-list-item">阿勒泰小区</li>
+                    <li data-value="NGQ" data-tags="ALiKunSha" class="mui-table-view-cell mui-indexed-list-item">昆莎小区</li>
+                    <li data-group="B" class="mui-table-view-divider mui-indexed-list-group">B</li>
+                    <li data-value="BSD" data-tags="BaoShan" class="mui-table-view-cell mui-indexed-list-item">不圆小区</li>
+                    <li data-value="BAV" data-tags="BaoTou" class="mui-table-view-cell mui-indexed-list-item">北方小区</li>
+                    <li data-value="BHY" data-tags="BeiHaiFuCheng" class="mui-table-view-cell mui-indexed-list-item">北苑小区</li>
+                    <li data-group="C" class="mui-table-view-divider mui-indexed-list-group">C</li>
+                    <li data-value="NBS" data-tags="ChangBaiShan" class="mui-table-view-cell mui-indexed-list-item">长白小区</li>
+                    <li data-value="CGQ" data-tags="ChangChunLongJiaGuoJi" class="mui-table-view-cell mui-indexed-list-item">嘉国小区</li>
+                    <li data-value="CGD" data-tags="ChangDeTaoHuaYuan" class="mui-table-view-cell mui-indexed-list-item">桃花源小区</li>
+                    <li data-group="D" class="mui-table-view-divider mui-indexed-list-group">D</li>
+                    <li data-value="DLU" data-tags="DaLi" class="mui-table-view-cell mui-indexed-list-item">定海小区</li>
+                    <li data-value="DLC" data-tags="DaLianZhouShuiZiGuoJi" class="mui-table-view-cell mui-indexed-list-item">大周小区</li>
+                    <li data-value="DQA" data-tags="DaQingSaErTu" class="mui-table-view-cell mui-indexed-list-item">萨姆小区</li>
+                    <li data-group="E" class="mui-table-view-divider mui-indexed-list-group">E</li>
+                    <li data-value="DSN" data-tags="EErDuoSi" class="mui-table-view-cell mui-indexed-list-item">二龙湖小区</li>
+                    <li data-value="ENH" data-tags="EnShiXuJiaPing" class="mui-table-view-cell mui-indexed-list-item">恩施小区</li>
+                    <li data-group="F" class="mui-table-view-divider mui-indexed-list-group">F</li>
+                    <li data-value="FUG" data-tags="FuYangXiGuan" class="mui-table-view-cell mui-indexed-list-item">富源小区</li>
+                    <li data-value="FOC" data-tags="FuZhouChangLeGuoJi" class="mui-table-view-cell mui-indexed-list-item">福州小区</li>
+                    <li data-group="G" class="mui-table-view-divider mui-indexed-list-group">G</li>
+                    <li data-value="KOW" data-tags="GanZhouHuangJin" class="mui-table-view-cell mui-indexed-list-item">甘饴小区</li>
+                    <li data-value="GOQ" data-tags="GeErMu" class="mui-table-view-cell mui-indexed-list-item">格力小区</li>
+                    <li data-group="H" class="mui-table-view-divider mui-indexed-list-group">H</li>
+                    <li data-value="HRB" data-tags="HaErBinTaiPingGuoJi" class="mui-table-view-cell mui-indexed-list-item">哈斌小区</li>
+                    <li data-value="HMI" data-tags="HaMi" class="mui-table-view-cell mui-indexed-list-item">哈密小区</li>
+                    <li data-group="J" class="mui-table-view-divider mui-indexed-list-group">J</li>
+                    <li data-value="TNA" data-tags="JiNanYaoQiangGuoJi" class="mui-table-view-cell mui-indexed-list-item">济南小区</li>
+                    <li data-value="JNG" data-tags="JiNingQuFu" class="mui-table-view-cell mui-indexed-list-item">疾风小区</li>
+                    <li data-value="JXA" data-tags="JiXiXingKaiHu" class="mui-table-view-cell mui-indexed-list-item">鸡西小区</li>
+                    <li data-group="K" class="mui-table-view-divider mui-indexed-list-group">K</li>
+                    <li data-value="KHG" data-tags="KaShi" class="mui-table-view-cell mui-indexed-list-item">卡尔小区</li>
+                    <li data-value="KRY" data-tags="KeLaMaYi" class="mui-table-view-cell mui-indexed-list-item">克拉小区</li>
+                    <li data-value="KCA" data-tags="KuCheGuiZi" class="mui-table-view-cell mui-indexed-list-item">库车小区</li>
+                    <li data-group="L" class="mui-table-view-divider mui-indexed-list-group">L</li>
+                    <li data-value="LXA" data-tags="LaSaGongGa" class="mui-table-view-cell mui-indexed-list-item">拉萨小区</li>
+                    <li data-value="LHW" data-tags="LanZhouZhongChuan" class="mui-table-view-cell mui-indexed-list-item">兰州小区</li>
+                    <li data-group="M" class="mui-table-view-divider mui-indexed-list-group">M</li>
+                    <li data-value="NZH" data-tags="ManZhouLiXiJiao" class="mui-table-view-cell mui-indexed-list-item">满洲里小区</li>
+                    <li data-value="MIG" data-tags="MianYangNanJiao" class="mui-table-view-cell mui-indexed-list-item">绵阳小区</li>
+                    <li data-value="OHE" data-tags="MoHeGuLian" class="mui-table-view-cell mui-indexed-list-item">摩诃小区</li>
+                    <li data-group="N" class="mui-table-view-divider mui-indexed-list-group">N</li>
+                    <li data-value="KHN" data-tags="NanChangChangBeiGuoJi" class="mui-table-view-cell mui-indexed-list-item">南昌小区</li>
+                    <li data-value="NAO" data-tags="NanChongGaoPing" class="mui-table-view-cell mui-indexed-list-item">南充小区</li>
+                    <li data-value="NKG" data-tags="NanJingLuKouGuoJi" class="mui-table-view-cell mui-indexed-list-item">南蛮小区</li>
+                    <li data-group="P" class="mui-table-view-divider mui-indexed-list-group">P</li>
+                    <li data-value="SYM" data-tags="PuErSiMao" class="mui-table-view-cell mui-indexed-list-item">普洱小区</li>
+                    <li data-group="Q" class="mui-table-view-divider mui-indexed-list-group">Q</li>
+                    <li data-value="NDG" data-tags="QiQiHaErSanJiaZi" class="mui-table-view-cell mui-indexed-list-item">齐家小区</li>
+                    <li data-value="SHP" data-tags="QinHuangDaoShanHaiGuan" class="mui-table-view-cell mui-indexed-list-item">秦黄小区</li>
+                    <li data-group="R" class="mui-table-view-divider mui-indexed-list-group">R</li>
+                    <li data-value="RKZ" data-tags="RiKaZeHePing" class="mui-table-view-cell mui-indexed-list-item">日喀则小区</li>
+                    <li data-group="S" class="mui-table-view-divider mui-indexed-list-group">S</li>
+                    <li data-value="SYX" data-tags="SanYaFengHuangGuoJi" class="mui-table-view-cell mui-indexed-list-item">三亚小区</li>
+                    <li data-value="SWA" data-tags="ShanTouWaiSha" class="mui-table-view-cell mui-indexed-list-item">松江小区</li>
+                    <li data-value="SHA" data-tags="ShangHaiHongQiaoGuoJi" class="mui-table-view-cell mui-indexed-list-item">素华小区</li>
+                    <li data-value="PVG" data-tags="ShangHaiPuDongGuoJi" class="mui-table-view-cell mui-indexed-list-item">素人小区</li>
+                    <li data-group="T" class="mui-table-view-divider mui-indexed-list-group">T</li>
+                    <li data-value="TCG" data-tags="TaCheng" class="mui-table-view-cell mui-indexed-list-item">塔城小区</li>
+                    <li data-value="TYN" data-tags="TaiYuanWuSuGuoJi" class="mui-table-view-cell mui-indexed-list-item">太阳小区</li>
+                    <li data-value="HYN" data-tags="TaiZhouLuQiao-HuangYanJiChang" class="mui-table-view-cell mui-indexed-list-item">泰勒小区</li>
+                    <li data-group="W" class="mui-table-view-divider mui-indexed-list-group">W</li>
+                    <li data-value="WXN" data-tags="WanZhouWuQiao" class="mui-table-view-cell mui-indexed-list-item">万千小区</li>
+                    <li data-value="WEF" data-tags="WeiFang" class="mui-table-view-cell mui-indexed-list-item">潍坊小区</li>
+                    <li data-value="WEH" data-tags="WeiHaiDaShuiBo" class="mui-table-view-cell mui-indexed-list-item">威海小区</li>
+                    <li data-group="X" class="mui-table-view-divider mui-indexed-list-group">X</li>
+                    <li data-value="XIY" data-tags="XiAnXianYangGuoJi" class="mui-table-view-cell mui-indexed-list-item">咸阳小区</li>
+                    <li data-value="XIC" data-tags="XiChangQingShan" class="mui-table-view-cell mui-indexed-list-item">西昌小区</li>
+                    <li data-value="XIL" data-tags="XiLinHaoTe" class="mui-table-view-cell mui-indexed-list-item">西风小区</li>
+                    <li data-group="Y" class="mui-table-view-divider mui-indexed-list-group">Y</li>
+                    <li data-value="ENY" data-tags="YanAnErShiLiBao" class="mui-table-view-cell mui-indexed-list-item">阳坝小区</li>
+                    <li data-value="YNZ" data-tags="YanCheng" class="mui-table-view-cell mui-indexed-list-item">业城小区</li>
+                    <li data-value="YNJ" data-tags="YanJiChaoYangChuan" class="mui-table-view-cell mui-indexed-list-item">宜宾小区</li>
+                    <li data-value="YNT" data-tags="YanTaiLaiShanGuoJi" class="mui-table-view-cell mui-indexed-list-item">艺恩小区</li>
+                    <li data-group="Z" class="mui-table-view-divider mui-indexed-list-group">Z</li>
+                    <li data-value="ZHA" data-tags="ZhanJiang" class="mui-table-view-cell mui-indexed-list-item">湛江小区</li>
+                    <li data-value="ZAT" data-tags="ZhaoTong" class="mui-table-view-cell mui-indexed-list-item">中和小区</li>
+                    <li data-value="CGO" data-tags="ZhengZhouXinZhengGuoJi" class="mui-table-view-cell mui-indexed-list-item">镇江小区</li>
+                    <li data-value="HJJ" data-tags="ZhiJiang" class="mui-table-view-cell mui-indexed-list-item">芷江小区</li>
+                    <li data-value="CKG" data-tags="ZhongQingJiangBeiGuoJi" class="mui-table-view-cell mui-indexed-list-item">醉风小区</li>					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="./js/mui.min.js"></script>
+    <script src="./js/mui.indexedlist.js"></script>
+    <script>
+    mui.init();
+			mui.ready(function() {
+				var header = document.querySelector('header.mui-bar');
+				var list = document.getElementById('list');
+				//calc hieght
+				list.style.height = (document.body.offsetHeight - header.offsetHeight) + 'px';
+				//create
+				window.indexedList = new mui.IndexedList(list);
+            });
+        </script>
+</body>
+</html>

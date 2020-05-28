@@ -190,6 +190,15 @@ app.get('/apart', (req, res) => {
         console.log('111', res)
     })
 })
-
+//百科
+app.get('/blist', (req, res) => {
+    connection.query('select * from beikes where name="'+req.query.name+'";', function (err, result) {
+        const obj={
+            status: 200,
+            data: result
+        }
+        res.json(obj)
+    })
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

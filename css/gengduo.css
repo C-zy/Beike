@@ -1,0 +1,115 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 100px;
+    height: auto;
+}
+#app{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.top{
+    width: 90%;
+    display: flex;
+    background: #fff;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    height: 1.5rem;
+}
+.geng{
+    display: flex;
+}
+.header-left{
+    display: flex;
+    align-items: center;
+    width: 30%;
+    justify-content: space-between;
+}
+.icon-back{
+    height: 1.6rem;
+    width: 0.80rem;
+}
+.icon-back1{
+    width: 0.3rem;
+    height: 0.4rem;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+.switch-city{
+    position: relative;
+    display: block;
+    font-size: 0.26rem;
+    padding-right: 0.1rem;
+}
+.img{
+     width: 0.30rem;
+     height: 0.20rem;
+}
+.logo{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+.img1{
+    width: 1.2rem;
+    height: 0.50rem;
+    display: flex;
+}
+.header-right{
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+.img3{
+    width: 0.5rem;
+    height: 0.50rem;
+    display: flex;
+}
+/* 下面内容 */
+.middle{
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    margin: auto;
+}
+.goufang{
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.goufang-one{
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+}
+.content{
+    height: auto;
+    overflow: hidden;
+    margin: auto;
+    width: 100%;
+}
+.content-name{
+    width: 30%;
+    height: 50px;
+    background-color: #f5f5f5;
+    display: flex;
+    float: left;
+    justify-content: center;
+    align-items: center;
+}
+.content-name span{
+    font-size: 12px;
+    color: #222222;
+}
+.hello{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px
+}
