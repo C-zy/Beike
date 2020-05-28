@@ -360,7 +360,7 @@
             $.getJSON('http://localhost:3000/village?num=' + i, function(data) {
                 for (var i = 0; i < data.length; i++) {
                     $('.lists_add').get(0).innerHTML += `
-                            <a href="#"><li class="list clear">
+                            <li class="list clear">
                                 <div class="img _fl">
                                     <img src="${data[i].img}" alt="">
                                     <p class="blue_bg">小区攻略</p>
@@ -370,8 +370,12 @@
                                     <p class="present">${data[i].present}</p>
                                     <p class="price">${data[i].price}</p>
                                 </div>
-                            </li></a>
-                        `
+                            </li>
+                        `;
+                    $('.list').on('click', function() {
+                        var id_num = $(this).index() + 1
+                        window.location.href = "village_more.html?id=" + id_num
+                    })
                 }
                 setTimeout(() => {
                     $('.alert').hide()
@@ -403,8 +407,8 @@
             }
         })
         // 用户本地存储
-    // var na = decodeURI(window.location.search.split("=")[1]);
-    // if (na == "undefined") {
+        // var na = decodeURI(window.location.search.split("=")[1]);
+        // if (na == "undefined") {
 
     // } else {
     //     sessionStorage.name = na;
@@ -418,8 +422,8 @@
     } else {
         $("#city").html(`郑州<span class="iconfont icon-xiajiantou jt_s"></span>`)
     }
-    $("#home").click(()=>{
-        window.location.href="index.html"
+    $("#home").click(() => {
+        window.location.href = "index.html"
     })
 </script>
 
