@@ -15,26 +15,21 @@
     }, false)
 })();
 var det_conents=document.getElementById("det_conents")
+var slider1=document.getElementById("slider1")
+var slider2=document.getElementById("slider2")
 var xhr=new XMLHttpRequest()
 xhr.onreadystatechange=function(){
     if(xhr.readyState==4&&xhr.status==200){
         var data=JSON.parse(xhr.responseText)
         console.log(data.data[0])
+        slider1.innerHTML+=`
+            <img src="${data.data[0].rent_img}" alt="">
+        `
+        slider2.innerHTML+=`
+            <img src="${data.data[0].details_img1}" alt="">
+        `
             det_conents.innerHTML+=`
-            <div class="mui-slider" style="background: #fff;">
-                <div class="mui-slider-group">
-                    <div class="mui-slider-item">
-                        <div class="slider_img" id="slider">
-                            <img src="${data.data[0].rent_img}" alt="">
-                        </div>
-                    </div>
-                   <div class="mui-slider-item">
-                        <div class="slider_img">
-                            <img src="${data.data[0].details_img1}" alt="">
-                        </div>
-                    </div> 
-                </div>
-            </div>
+            
             <!-- 内容块 -->
             <div style="background: #fff;">
                 <div class="det_con">
