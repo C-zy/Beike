@@ -363,14 +363,27 @@
 </div>
 
 <div class="fixed1">
-    <img src="img/message.svg" alt="">
+    <img src="img/xin-img/left-bot.png" alt="">
+</div>
+<div class="fixed2">
+    <img src="img/xin-img/phpdYujk51589939446.png" alt="">
 </div>
 </body>
 <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
 <script src="js/xinfang.js"></script>
+<script src="js/zepto.js"></script>
 <script>
     function home(){
         window.location.href="index.html"
     }
+    // 城市改变
+    $("#city").click(()=>{
+            window.location.href="city.html"
+        })
+        if(sessionStorage.city){
+            $("#city").html(sessionStorage.city)
+        }else{
+            $("#city").html("郑州")
+        }
 </script>
 </html>

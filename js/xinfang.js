@@ -337,7 +337,7 @@ xhr.onreadystatechange = function () {
                     </div>
                     <div class="lists-right">
                         <p class="xiaoqu">
-                            <span>${data.data[i].desc.split("/")[3]}</span>
+                            <span class="xiaoqu-span1">${data.data[i].desc.split("/")[3]}</span>
                             <span class="zhuzhai">住宅</span>
                         </p>
                         <p class="price1">
@@ -362,6 +362,9 @@ xhr.onreadystatechange = function () {
     }
 }
 xhr.send();
+function details(id) { 
+   window.location.href="xin-details.html?id="+id
+}
 // 点击底部的tab切换
 var tab_item1 = document.getElementsByClassName("tab-item1")[0];
 var tab_item2 = document.getElementsByClassName("tab-item2")[0];
