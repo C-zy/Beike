@@ -1,0 +1,813 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.page{
+    padding-top: .2rem;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.active{
+    color: black!important;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 0 0.39rem;
+    height: .7rem;
+    font-size: .25rem;
+    vertical-align: baseline;
+   line-height: .5rem;
+}
+.header-left{
+    width: 2.2rem;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: white!important;
+
+    width: 4vw!important;
+    height: 1.067vw!important;
+    border-radius: .8vw!important;
+}
+  
+
+
+.swiper-pagination-bullet {
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #000;
+    opacity: 0.2;
+}
+.header-left span{
+font-size: .45rem;
+    width: .4rem;
+    color: #3072f6;
+}
+
+.header-left a{
+position: relative;
+top: -0.1rem;
+    
+}
+.header-conter{
+    width: 2.3rem;
+    margin-left: .5rem;
+}
+.header-conter span img{
+    width: 1.8rem;
+}
+.header-right{
+    width: 2.1rem;
+}
+.header-right span{
+    position: absolute;
+    right: 0;
+    font-size: .8rem;
+    color:  #3072f6;
+}
+.lj-trak{
+    position: absolute;
+    top: 1.2rem;
+    z-index: 2;
+}
+.lj-trak .search-input {
+    display: block;
+    width: 6.5rem;
+    height: 1rem;
+    margin: 0 6.4vw 3.2vw;
+    padding: 3vw 4.267vw;
+    background: #fff;
+    border-radius: 1.333vw;
+    font-weight: 700;
+    font-size: .32rem;
+    color: #999;
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #ccc;
+}
+.lj-trak .search-input:before {
+    content: "";
+    display: inline-block;
+    width: 5.067vw;
+    height: 5.067vw;
+    background-image: url(https://s1.ljcdn.com/m-new/client/media/src/client/pages/jingjiren/List/img/icon-search.56a22698.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: -.8vw;
+    margin-right: .8vw;
+}
+.search-part{
+    padding: 0 .5rem;
+}
+.search-part .list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.search-part .list .list-item {
+    font-size: .25rem;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-part .list .list-item .img-wrap{
+    margin-bottom: 1.6vw;
+}
+.search-part .list .list-item img{
+    width: 0.79rem;
+}
+.search-part .list .text{
+        font-family: PingFangSC-Semibold;
+        color: #222;
+        line-height: 3.467vw;
+        font-weight: 700;
+}
+.home-page__ball-area {
+    font-size: 0;
+    background: #fff;
+    padding: 4.267vw 3.067vw 0;
+}
+.home-page__ball-area .ball-box {
+    display: inline-block;
+    width: 19.99%;
+    text-align: center;
+    position: relative;
+    margin-top: 2.133vw;
+}
+.home-page__ball-area .ball-box .ball-img {
+    width: 8.533vw;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: .533vw;
+}
+img {
+    border-style: none;
+}
+.home-page__ball-area .ball-box .ball-name {
+    font-size: 3.2vw;
+    color: #222;
+    line-height: 3.467vw;
+    margin-top: 2.667vw;
+    font-family: PingFangSC-Semibold;
+}
+.home-page__ball-area .ball-box .ball-tip {
+    background: #fa5741;
+    border: .4vw solid #fff;
+    position: absolute;
+    width: 6.933vw;
+    height: 3.733vw;
+    top: -2.133vw;
+    right: -1.067vw;
+    border-top-left-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+    font-size: 2.4vw;
+    color: #fff;
+    line-height: 3.733vw;
+}
+.home-page__hot-nations .hot-nations {
+    margin-bottom: 1.867vw;
+    margin-top: 6.4vw;
+}
+.home-page__hot-nations  .hot-nations-panel {
+    margin-bottom: 3.2vw;
+}
+.home-page__hot-nations .hot-nations .hot-nations-title {
+    font-size: 6.4vw;
+    color: #222;
+    padding: 0 6.4vw;
+    margin-bottom: 5.067vw;
+  
+}
+.home-page__hot-nations .hot-nations .hot-nations-text {
+    font-size: 3.467vw;
+    color: #9399a5;
+    margin-top: 1.867vw;
+    float: right;
+}
+.home-page__hot-nations .hot-nations .img-list {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 35.733vw;
+}
+.home-page__hot-nations .hot-nations .img-list .list-content {
+    overflow-x: auto;
+    height: 38.4vw;
+    width: 100%;
+    white-space: nowrap;
+    padding: 0 6.4vw;
+}
+.home-page__hot-nations .hot-nations .nation-img-box, .home-page__hot-nations .hot-nations .nation-img-box .nation-img-lj-box {
+    display: inline-block;
+    width: 26.933vw;
+    height: 35.733vw;
+    border-radius: .533vw;
+    margin-right: 2.667vw;
+}
+.home-page__hot-nations .hot-nations .nation-img-box .nation-img-lj-box .nation-img {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-size: cover;
+    border-radius: .533vw;
+    position: relative;
+}
+.home-page__hot-nations .hot-nations .nation-img-box .nation-img-lj-box .nation-img .nation-name {
+    padding: 4.8vw 3.2vw 0;
+    font-size: 4.267vw;
+    font-family: PingFangSC-Semibold;
+}
+.home-page__hot-nations .hot-nations .nation-img-box .nation-img-lj-box .nation-img .nation-price {
+    padding-left: 3.2vw;
+    font-family: PingFangSC-Regular;
+    margin-bottom: .533vw;
+    opacity: .8;
+    font-size: 3.2vw;
+}
+.home-page__hot-nations .hot-nations .nation-img-box .nation-img-lj-box .nation-img .nation-line {
+    background: #fff;
+    border-radius: 1px;
+    margin-left: 3.467vw;
+    width: 3.2vw;
+    height: .533vw;
+}
+.home-page__hot-nations .hot-nations .nation-img-box .nation-img-lj-box .nation-img .nation-view {
+    opacity: .8;
+    background: #fff;
+    border-radius: 2.933vw;
+    width: 10.667vw;
+    height: 5.333vw;
+    display: inline-block;
+    line-height: 5.333vw;
+    text-align: center;
+    margin-left: 3.467vw;
+    font-size: 3.2vw;
+    color: #3e4c68;
+    position: absolute;
+    bottom: 5.0vw;
+    font-family: PingFangSC-Medium;
+}
+.home-page__hot-nations .hot-nations .city-panel1 {
+    margin-bottom: 2.667vw;
+}
+.home-page__hot-nations .hot-nations .city-panel {
+    display: flex;
+    margin-bottom: 6.4vw;
+    padding: 0 6.4vw;
+}
+.home-page__hot-nations .hot-nations .city-panel .city-name {
+    height: 8.267vw;
+    width: 22.5%;
+    margin-right: 2.667vw;
+    background: #f8f8f8;
+    border-radius: .533vw;
+    line-height: 8.267vw;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1 1;
+    font-family: PingFangSC-Regular;
+    font-size: 3.2vw;
+    ;
+}
+.home-page__seminar-list {
+    margin-top: 8.533vw;
+}
+.home-page__seminar-list .seminar-container .title-container {
+    margin: 0 6.4vw;
+    position: relative;
+}
+.home-page__seminar-list .seminar-container .title-container .title {
+    margin-bottom: 1.6vw;
+    font-family: PingFangSC-Semibold;
+    font-size: 6.4vw;
+    color: #222;
+    letter-spacing: 0;
+    line-height: 6.4vw;
+}
+.home-page__seminar-list .seminar-container .title-container .more-box {
+    font-size: 3.467vw;
+    color: #9399a5;
+    margin-top: 1.867vw;
+    position: absolute;
+    top: 0;
+    right: 1px;
+    display: flex;
+    align-items: center;
+}
+.home-page__seminar-list .seminar-container .title-container .more-box .more-text {
+    margin-right: 1.333vw;
+    color: #9399a5;
+    vertical-align: middle;
+    font-family: PingFangSC-Regular;
+}
+.home-page__seminar-list .seminar-container .title-container .more-box .more-detail {
+    display: inline-block;
+    width: 1.867vw;
+    height: 3.2vw;
+    background: url(https://s1.ljcdn.com/hw-mn-static/client/media/src/client/statics/images/icon-more.03725e91.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+}
+.home-page__seminar-list .seminar-container .list {
+    margin-top: 5.333vw;
+    margin-bottom: 2.133vw;
+}
+.home-page__seminar-list .seminar-container .list .seminar-card-container {
+    margin-bottom: 4vw;
+}
+
+.seminar-card-container {
+    width: 87.2vw;
+    height: 29.067vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    margin: 0 6.4vw 6.4vw;
+    position: relative;
+}
+.seminar-card-container .seminar-cover {
+    width: 100%;
+
+    background-image: linear-gradient(90deg,#000,transparent);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: .5;
+    border-radius: .533vw;
+}
+element.style {
+    background-image: url(https://image1.ljcdn.com/overseas/img-21348f4e-d025-447f-bbd4-2563be4925a0.jpg.1000x.jpg);
+}
+
+.seminar-card-container .seminar-card {
+    height: 29.067vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: .533vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5.333vw;
+}
+.seminar-card-container .seminar-card .label-red {
+    background: #fe615a;
+}
+
+.seminar-card-container .seminar-card .seminar-label {
+    border-radius: .533vw 0 1.067vw 0;
+    font-family: PingFangSC-Semibold;
+    font-size: 2.933vw;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14.4vw;
+    height: 4.8vw;
+    line-height: 4.8vw;
+    text-align: center;
+    z-index: 2;
+}
+.seminar-card-container .seminar-card .seminar-title {
+    width: 76.533vw;
+    font-family: PingFangSC-Semibold;
+    font-size: 4.267vw;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    z-index: 2;
+}
+.seminar-card-container .seminar-card .seminar-time {
+    margin-top: 2.133vw;
+    font-family: PingFangSC-Regular;
+    font-size: 3.2vw;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+    z-index: 2;
+}
+.home-page__four-marketing {
+    padding: 0 6.4vw;
+    margin-bottom: 6.667vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.home-page__four-marketing .marketing-img {
+    width: 48.4%;
+    margin-bottom: 1.867vw;
+    margin-right: 1.867vw;
+    display: inline-block;
+}
+.home-page__four-marketing .marketing-img img {
+    border-radius: .533vw;
+    width: 100%;
+}
+.home-page__four-marketing .marketing-img:nth-child(2n) {
+    margin-right: 0;
+}
+.home-page__star-house .house-header {
+    overflow: hidden;
+    height: 8.933vw;
+    font-family: PingFangSC-Semibold;
+}
+.home-page__star-house .house-header .house-header-content {
+    height: 11.6vw;
+    overflow-x: auto;
+    display: flex;
+    white-space: nowrap;
+    padding: 0 6.4vw;
+}
+.home-page__star-house .house-header .black-name {
+    color: #222;
+}
+
+.home-page__star-house .house-header .name {
+    font-size: 6.4vw;
+    margin-right: 6.4vw;
+    color: #aaa;
+}
+.home-page__star-house .house-desc {
+    margin-top: -.8vw;
+    margin-bottom: 5.6vw;
+    padding-left: 3.2vw;
+    font-family: PingFangSC-Regular;
+}
+.home-page__star-house .house-desc .desc {
+    color: #aaa;
+    font-size: 3.2vw;
+    display: none;
+}
+
+.home-page__star-house .house-desc {
+    margin-top: -.8vw;
+    margin-bottom: 5.6vw;
+    padding-left: 3.2vw;
+    font-family: PingFangSC-Regular;
+}
+.home-page__star-house .house-desc .desc {
+    color: #aaa;
+    font-size: 3.2vw;
+    display: none;
+}
+
+.home-page__star-house .house-desc {
+    display: block;
+    margin-top: -.8vw;
+    margin-bottom: 5.6vw;
+    padding-left: 3.2vw;
+    font-family: PingFangSC-Regular;
+}
+
+ .show-list {
+    display: block!important;
+}
+
+.home-page__star-house .house-list {
+    display: none;
+    margin-bottom: 5.867vw;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    height: 51.733vw;
+}
+.home-page__star-house .house-list .list-content {
+    position: absolute;
+    height: 54.4vw;
+    overflow-x: auto;
+    padding-left: 6.4vw;
+    width: 100%;
+    white-space: nowrap;
+}
+.star-house-card {
+    padding-right: 3.2vw;
+    width: 42.133vw;
+    display: inline-table;
+}
+.star-house-card .house-pic {
+    width: 42.133vw;
+    height: 28.267vw;
+    position: relative;
+    margin-bottom: 2.933vw;
+    background-size: cover;
+}
+.star-house-card .tags {
+    font-size: 3.2vw;
+    color: #222;
+    margin-bottom: .8vw;
+}
+.star-house-card .title {
+    font-size: 4.267vw;
+    color: #222;
+    width: 100%;
+    overflow: hidden;
+    max-height: 10.4vw;
+    white-space: normal;
+    font-family: PingFangSC-Semibold;
+    margin-bottom: 1.333vw;
+    line-height: 5.333vw;
+}
+.star-house-card .price {
+    font-size: 3.733vw;
+    color: #fa5741;
+    font-family: PingFangSC-Semibold;
+}
+.star-house-card .house-pic img {
+    width: 100%;
+    height: 100%;
+    border-radius: .533vw;
+}
+.star-house-card .house-pic .area {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 8vw;
+    text-align: center;
+    line-height: 8vw;
+    background-color: rgba(0,0,0,.3);
+    color: #fff;
+    font-size: 3.2vw;
+    border-bottom-right-radius: .533vw;
+    border-bottom-left-radius: .533vw;
+}
+.home-page__content-tag .content-list {
+    margin-bottom: -5.333vw;
+    position: relative;
+}
+.home-page__content-tag .content-list .title {
+    margin-bottom: 4.267vw;
+    margin-left: 6.4vw;
+    font-family: PingFangSC-Semibold;
+    font-size: 6.4vw;
+    color: #222;
+    letter-spacing: 0;
+    line-height: 6.4vw;
+}
+.slick-list, .slick-slider {
+    position: relative;
+    display: block;
+}
+.home-page__content-tag {
+    position: relative;
+    margin-top: 7.733vw;
+}
+.home-page__content-tag  .title {
+    margin-bottom: 4.267vw;
+    margin-left: 6.4vw;
+    font-family: PingFangSC-Semibold;
+    font-size: 6.4vw;
+    color: #222;
+    letter-spacing: 0;
+    line-height: 6.4vw;
+}
+.home-page__content-tag .carousel{
+    margin-top: 1.3rem;
+}
+.home-page__content-tag   .pa{
+    position: absolute;
+    top: .7rem;
+    left: .5rem;
+}
+.home-page__content-tag .item img{
+    float: left;
+    justify-content: start;
+    height: 2.35rem!important; 
+    width: 3rem!important;
+    margin-left: .5rem;
+    margin-bottom: .5rem;
+
+}
+
+.home-page__content-tag .item{
+    height: 8rem;
+   width: 100%;
+}
+.filter-content .filter-header {
+    height: 4.84375rem;
+}
+.filter-content .filter-normal {
+    position: relative;
+    padding-top: 2.667vw;
+    z-index: 3;
+    background: #fff;
+}
+
+.filter-tab {
+    float: right;
+    margin-bottom: -.533vw;
+}
+.filter-active {
+    color: #3072f6;
+}
+
+.filter-active, .filter-text {
+    font-size: 3.467vw;
+    color: #aaa;
+    margin-right: 2.667vw;
+}
+.home-page div.filter-title {
+    font-size: 6.4vw;
+}
+.filter-title {
+    font-size: 5.333vw;
+    color: #222;
+    position: relative;
+    padding: 0 6.4vw;
+    margin-bottom: -.533vw;
+    font-family: PingFangSC-Semibold;
+}
+.filter-tab {
+    float: right;
+    margin-bottom: -.533vw;
+}
+.navs {
+    position: relative;
+    display: flex;
+   
+    align-items: center;
+    background: #fff;
+    z-index: 2;
+    margin-left: .4rem;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 25% ;
+    box-sizing: border-box;
+}
+.nav span.active {
+    color: #3072f6;
+}
+
+.nav span {
+    display: inline-block;
+    max-width: 100%;
+    font-size: .3rem;
+    color: #101d37;
+    line-height: .875rem;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.nav span:after {
+    content: " ";
+    display: inline-block;
+    width: .375rem;
+    height: 100%;
+}
+.filter-content .house-list {
+    min-height: 20rem;
+}
+.house-card-container {
+    margin: 0 6.4vw;
+    padding: 5.333vw 0 5.067vw;
+    border-bottom: .5px solid #e4e6f0;
+}
+li, ol, ul {
+    list-style: none;
+}
+.house-card-container .house-card {
+    display: flex;
+}
+.house-card-container .house-card .house-card-left {
+    width: 28vw;
+    margin-right: 4.8vw;
+    position: relative;
+}
+.house-card-container .house-card-left .image-container {
+    position: relative;
+    width: 28vw;
+    height: 21.333vw;
+}
+.house-card-container .image-container .cover-image {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: .533vw;
+}
+.house-card-container  .image-container .location-view {
+    background: transparent;
+    color: #fff;
+    font-size: 3.2vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    height: 8vw;
+    line-height: 8vw;
+    border-bottom-left-radius: .533vw;
+    border-bottom-right-radius: .533vw;
+    text-align: center;
+}
+.house-card-container .image-container .area {
+    background: #333;
+    opacity: .3;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 8vw;
+    line-height: 8vw;
+    border-bottom-left-radius: .533vw;
+    border-bottom-right-radius: .533vw;
+}
+.house-card-container .house-title {
+    margin-bottom: .8vw;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #222;
+    font-size: 4.267vw;
+   
+    line-height: 5.333vw;
+}
+.house-card-container .house-card-right .house-subtitle {
+    color: #222;
+    line-height: 4.267vw;
+    font-size: 2.933vw;
+    margin-bottom: 1.333vw;
+}
+.house-card-container  .house-tags {
+    font-size: 2.933vw;
+    letter-spacing: 0;
+    overflow: hidden;
+    margin-bottom: 1.333vw;
+    margin-top: 1.6vw;
+    height: 4.267vw;
+}
+.house-card-container .house-tags .tag {
+    float: left;
+    height: 4vw;
+    line-height: 4vw;
+    color: #849aae;
+    border-radius: .533vw;
+    padding: 0 .8vw;
+    background: #edf0f3;
+    margin-right: 1.333vw;
+    margin-bottom: .8vw;
+}
+.house-card-container .house-price {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #9399a5;
+}
+.house-card-container .house-price .rmb-price {
+    font-size: 4vw;
+    line-height: 4vw;
+    color: #fa5741;
+    margin-right: 1.6vw;
+}
+.house-card-container .house-card .house-card-right .house-price .price {
+    font-size: 2.933vw;
+    line-height: 3.733vw;
+}
+.house-card-container .house-card .house-card-right .discounts-item {
+    margin-top: 1.867vw;
+    font-size: 2.933vw;
+    color: #101d37;
+    height: 4.267vw;
+   
+}
+.house-card-container .discounts-item .discounts-icon {
+    width: 4.267vw;
+    height: 4.267vw;
+    vertical-align: middle;
+    margin-right: 1.6vw;
+    display: inline-block;
+    background: #ff746e;
+    line-height: 4.267vw;
+    text-align: center;
+    color: #fff;
+    border-radius: .533vw;
+    font-size: 3.2vw;
+}
+.house-card-container  .discounts-item span {
+    vertical-align: middle;
+    font-size: 3.2vw;
+}
